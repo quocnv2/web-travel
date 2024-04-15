@@ -43,6 +43,7 @@
     <!-- [ Main Content ] end -->
 
     @include('admin_view.layouts_view.Foorter.jsFoorter')
+    @yield('js')
 </body>
 <!-- [Body] end -->
 
