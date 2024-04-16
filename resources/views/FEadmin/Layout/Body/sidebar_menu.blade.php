@@ -94,9 +94,9 @@
                         <span class="pc-mtext">Tuyền Dụng</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="">Danh sách</a>
+                        <li class="pc-item"><a class="pc-link" href="{{route('view_list_recruitment')}}">Danh sách</a>
                         </li>
-                        <li class="pc-item"><a class="pc-link" href="{{route('view_creater_recruitment')}}">Thêm mới</a>
+                        <li class="pc-item"><a class="pc-link" href="{{route('view_create_recruitment')}}">Thêm mới</a>
                         </li>
                     </ul>
                 </li>

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('slug')->nullable(false);
             $table->string('title')->nullable(false);
-            $table->string('content')->nullable(false);
+            $table->longText('content')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->string('timeCreate');
             $table->timestamps();

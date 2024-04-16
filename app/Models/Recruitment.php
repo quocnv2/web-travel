@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 class Recruitment extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
+
     protected $table = 'recruitment';
     public $timestamps = false;
 
@@ -24,15 +25,45 @@ class Recruitment extends Model
     ];
 
     // phương thức thêm mới
-    public function create_recruitment($req){
+    public function create_recruitment($req)
+    {
         $currentTime = now();
         $creates = $this->Create([
-            'title' => $req -> title,
-            'slug' => $req -> slug,
-            'content' => $req -> content,
-            'status' => $req -> status,
+            'title' => $req->title,
+            'slug' => $req->slug,
+            'content' => $req->content,
+            'status' => $req->status,
             'timeCreate' => $currentTime,
         ]);
         return $creates;
     }
+
+    public function get_orderBy_ASC()
+    {
+        return $this->orderBy('timeCreate', 'DESC')->get();
+    }
+
+    public function get_link_slug($slug)
+    {
+        $obj = DB::table('recruitment')->where('slug', $slug)->first();
+        return $obj;
+    }
+
+    public function deleteRecruitment($slug)
+    {
+        $obj = DB::table('recruitment')->where('slug', $slug)->delete();
+        return $obj;
+    }
+
+    public function update_recruitment($req, $slug)
+    {
+        $obj = DB::table('recruitment')->where('slug', $slug)->update([
+            'title' => $req->title,
+            'slug' => $req->slug,
+            'content' => $req->content,
+            'status' => $req->status,
+        ]);
+        return $obj;
+    }
+
 }
