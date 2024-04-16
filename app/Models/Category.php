@@ -24,4 +24,13 @@ class Category extends Model
         ]);
         return $creates;
     }
+    public function update_category($request, $slug){
+        $obj = DB::table('categories')->where('slug', $slug)->update([
+            'name' => $request -> name,
+            'slug' => $request -> slug,
+            'status' => $request -> status,
+        ]);
+        return $obj;
+    }
+
 }
