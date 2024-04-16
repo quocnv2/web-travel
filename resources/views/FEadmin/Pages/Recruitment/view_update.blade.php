@@ -1,7 +1,7 @@
 @extends ('FEadmin.master')
 @section('css_view')
-    @include('FEadmin.Layout.Head.css_header')
-    @include('FEadmin.Layout.Head.js_header')
+    @include('FEadmin.Layout.Head.Editter.css')
+    @include('FEadmin.Layout.Head.Editter.js')
 @stop
 @section('view')
     <div class="pc-content">
@@ -58,9 +58,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">Content</label>
-                            <textarea type="text" class="form-control" placeholder="Content"
-                                      name="content"
-                            >{{ $obj->content}}</textarea>
+                            <textarea name="content" id="classic-editor" class="form-control" placeholder="Content" rows="6">{{ $obj->content }}</textarea>
                             @error('content')
                             <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
@@ -102,4 +100,13 @@
     @include('FEadmin.Layout.Fooder.js_fooder')
     @include('FEadmin.Layout.JS.Change_to_slug')
     @include('FEadmin.Layout.JS.Reset_button')
+
+    <script src="{{ url('assets') }}/js/plugins/ckeditor/classic/ckeditor.js"></script>
+    <script>
+        (function () {
+            ClassicEditor.create(document.querySelector('#classic-editor')).catch((error) => {
+                console.error(error);
+            });
+        })();
+    </script>
 @stop
