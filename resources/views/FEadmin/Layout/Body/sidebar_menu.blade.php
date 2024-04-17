@@ -4,7 +4,7 @@
             <a href="{{ route('view_home_admin') }}" class="b-brand text-primary">
                 <!-- ========   Change your logo from here   ============ -->
                 <img style="max-width: 70%;" src="{{ url('assets') }}/images/logo_white_background.png"
-                     class="img-fluid logo-lg" alt="logo">
+                    class="img-fluid logo-lg" alt="logo">
                 <span class="badge bg-light-success rounded-pill ms-2 theme-version">v9.0</span>
             </a>
         </div>
@@ -14,14 +14,14 @@
                     <div class="d-flex align-items-center">
                         <div class="flex-shrink-0">
                             <img src="{{ url('assets') }}/images/user/avatar-1.jpg" alt="user-image"
-                                 class="user-avtar wid-45 rounded-circle"/>
+                                class="user-avtar wid-45 rounded-circle" />
                         </div>
                         <div class="flex-grow-1 ms-3 me-2">
                             <h6 class="mb-0">Demo</h6>
                             <small>admin</small>
                         </div>
                         <a class="btn btn-icon btn-link-secondary avtar" data-bs-toggle="collapse"
-                           href="#pc_sidebar_userlink">
+                            href="#pc_sidebar_userlink">
                             <svg class="pc-icon">
                                 <use xlink:href="#custom-sort-outline"></use>
                             </svg>
@@ -29,14 +29,14 @@
                     </div>
                     <div class="collapse pc-user-links" id="pc_sidebar_userlink">
                         <div class="pt-3">
-{{--                            <a href="{{ route('view_profile') }}">--}}
-{{--                                <i class="ti ti-user"></i>--}}
-{{--                                <span>Tài khoản của tôi</span>--}}
-{{--                            </a>--}}
-{{--                            <a href="{{ route('index_password') }}">--}}
-{{--                                <i class="ti ti-lock"></i>--}}
-{{--                                <span>Mật Khẩu</span>--}}
-{{--                            </a>--}}
+                            <a href="{{ route('view_profile') }}">
+                                <i class="ti ti-user"></i>
+                                <span>Tài khoản của tôi</span>
+                            </a>
+                            <a href="{{ route('index_password') }}">
+                                <i class="ti ti-lock"></i>
+                                <span>Mật Khẩu</span>
+                            </a>
                             <a href="{{ route('logout_admin') }}">
                                 <i class="ti ti-power"></i>
                                 <span>Đăng xuất</span>
@@ -86,17 +86,19 @@
                 </li>
                 <li class="pc-item pc-hasmenu">
                     <a class="pc-link">
-                       <span class="pc-micon">
-                          <svg class="pc-icon">
-                            <use xlink:href="#custom-document-upload"></use>
-                          </svg>
+                        <span class="pc-micon">
+                            <svg class="pc-icon">
+                                <use xlink:href="#custom-document-upload"></use>
+                            </svg>
                         </span>
                         <span class="pc-mtext">Tuyền Dụng</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="{{route('view_list_recruitment')}}">Danh sách</a>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_list_recruitment') }}">Danh
+                                sách</a>
                         </li>
-                        <li class="pc-item"><a class="pc-link" href="{{route('view_create_recruitment')}}">Thêm mới</a>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_create_recruitment') }}">Thêm
+                                mới</a>
                         </li>
                     </ul>
                 </li>

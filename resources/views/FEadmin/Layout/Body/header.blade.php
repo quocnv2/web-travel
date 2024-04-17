@@ -48,11 +48,11 @@
                         </svg>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end pc-h-dropdown">
-{{--                        <a href="{{route('view_profile')}}" class="dropdown-item">--}}
-{{--                            <i class="ti ti-user"></i>--}}
-{{--                            <span>Tài Khoản của tôi</span>--}}
-{{--                        </a>--}}
-                        <a href="{{route('logout_admin')}}" class="dropdown-item">
+                        <a href="{{ route('view_profile') }}" class="dropdown-item">
+                            <i class="ti ti-user"></i>
+                            <span>Tài Khoản của tôi</span>
+                        </a>
+                        <a href="{{ route('logout_admin') }}" class="dropdown-item">
                             <i class="ti ti-power"></i>
                             <span>Đăng xuất</span>
                         </a>
