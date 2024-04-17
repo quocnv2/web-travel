@@ -29,18 +29,18 @@
                     </div>
                     <div class="collapse pc-user-links" id="pc_sidebar_userlink">
                         <div class="pt-3">
-                            {{--                            <a href="{{ route('view_profile') }}">--}}
-                            {{--                                <i class="ti ti-user"></i>--}}
-                            {{--                                <span>Tài khoản của tôi</span>--}}
-                            {{--                            </a>--}}
-                            {{--                            <a href="{{ route('index_password') }}">--}}
-                            {{--                                <i class="ti ti-lock"></i>--}}
-                            {{--                                <span>Mật Khẩu</span>--}}
-                            {{--                            </a>--}}
-                            {{--                            <a href="{{ route('logout_admin') }}">--}}
-                            {{--                                <i class="ti ti-power"></i>--}}
-                            {{--                                <span>Đăng xuất</span>--}}
-                            {{--                            </a>--}}
+{{--                            <a href="{{ route('view_profile') }}">--}}
+{{--                                <i class="ti ti-user"></i>--}}
+{{--                                <span>Tài khoản của tôi</span>--}}
+{{--                            </a>--}}
+{{--                            <a href="{{ route('index_password') }}">--}}
+{{--                                <i class="ti ti-lock"></i>--}}
+{{--                                <span>Mật Khẩu</span>--}}
+{{--                            </a>--}}
+                            <a href="{{ route('logout_admin') }}">
+                                <i class="ti ti-power"></i>
+                                <span>Đăng xuất</span>
+                            </a>
                         </div>
                     </div>
                 </div>

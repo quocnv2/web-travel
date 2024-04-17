@@ -5,7 +5,7 @@ use App\Http\Controllers\AdminController\Category\CategoryController;
 use App\Http\Controllers\AdminController\Account\AccountController;
 use App\Http\Controllers\AdminController\Recruitment\RecruitmentController;
 
-//use App\Http\Controllers\AccountController\User\LoginController;
+use App\Http\Controllers\AccountController\User\LoginController;
 use App\Http\Controllers\AdminController\Home\HomeController;
 
 
