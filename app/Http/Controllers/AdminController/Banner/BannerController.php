@@ -100,6 +100,13 @@ class BannerController extends Controller
             return view('FEadmin.Pages.Error.error404');
         }
 
+        $file = '';
+        if ($req->file('file')) {
+            $response = $req->file('file') ?  cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->imgBanner;
+            $file = $response;
+        }
+        $req->merge(['imgBanner' => $file]);
+
         if ($banner->update_Banner($req, $slug) >= 0) {
             return redirect()->route('view_list_banner')->with('success', 'Cập Nhật Danh Mục Thành Công!');
         } else {

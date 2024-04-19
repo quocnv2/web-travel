@@ -2,6 +2,23 @@
 @section('css_view')
     @include('FEadmin.Layout.Head.Editter.css')
     @include('FEadmin.Layout.Head.Editter.js')
+    <style>
+        #editor {
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        .ck-editor__editable[role="textbox"] {
+            /* Editing area */
+            min-height: 400px;
+        }
+
+        .ck-content .image {
+            /* Block images */
+            max-width: 80%;
+            margin: 20px auto;
+        }
+    </style>
 @stop
 @section('view')
     <div class="pc-content">
@@ -63,11 +80,19 @@
                                    id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
                         </div>
                         <div class="form-group col-12">
-                            <label class="form-label">Content</label>
-                            <textarea name="content" id="classic-editor" class="form-control" placeholder="Content" rows="6"></textarea>
-                            @error('content')
-                            <small style="color: #f33923;">{{ $message }}</small>
+
+                            @error('blogDetails')
+                            <div class="form-group">
+                                <div class="alert alert-danger">
+                                    <strong>Cảnh Báo!</strong> Nội Dung Bài Viết Không Được Để Trống!
+                                </div>
+                            </div>
                             @enderror
+                            <div class="form-group">
+                                <textarea name="content" id="editor">
+                                        {{ old('content') ?? 'Nội Dung Bài Viết' }}
+                                    </textarea>
+                            </div>
                         </div>
                         <div class="form-group col-12 row mb-0">
                             <label class="form-label">Trạng thái</label>
@@ -97,6 +122,7 @@
     </div>
 @stop
 @section('view_js')
+    @include('FEadmin.Layout.JS.formTiny')
     @include('FEadmin.Layout.Fooder.js_fooder')
     @include('FEadmin.Layout.JS.Change_to_slug')
     @include('FEadmin.Layout.JS.Reset_button')

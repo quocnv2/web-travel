@@ -77,8 +77,13 @@
                             <label class="form-label">Đường dẫn sạch</label>
                             <input type="text" class="form-control" name="slug" value="{{ $obj->slug }}"
                                    id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
-
-
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="control-label mb-10">Link Liên Kết</label>
+                            <input type="text" class="form-control" name="linkCourses" id="linkCourses" value="{{$obj->linkCourses}}">
+                            @error('linkCourses')
+                            <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="input-group mb-3">
                             <input type="file" class="form-control" id="inputGroupFile02" name="file">
@@ -86,12 +91,14 @@
                             <button type="button" class="btn btn-success" id="popoverButton"
                                     style="border-bottom-right-radius: 8px; border-top-right-radius: 8px;">Xem
                             </button>
-                            @error('file')
-                            <small style="color: #f33923;">{{ $message }}</small>
-                            @enderror
                             <div class="image-container">
                                 <img src="{{ $obj->imgBanner }}" class="img-thumbnail" alt="Cinque Terre">
                             </div>
+
+                            @error('file')
+                            <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
+
                         </div>
                         <div class="form-group row mb-0">
                             <label class="form-label">Trạng thái</label>

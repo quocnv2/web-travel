@@ -21,10 +21,25 @@ class createRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            'name' => 'required',
+            'slug' => 'unique:banner',
+            'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'linkCourses' => 'required',
+            'status' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Trường không được để trống!',
+            'file.required' => 'Trường không được để trống!',
+            'linkCourses.required' => 'Trường không được để trống!',
+            'slug.unique' => 'Bài viết đã tồn tại!',
+            'status.required' => 'Trạng thái là bắt buộc!',
         ];
     }
 }

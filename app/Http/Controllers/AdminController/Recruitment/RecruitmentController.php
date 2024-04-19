@@ -16,6 +16,12 @@ class RecruitmentController extends Controller
         return view('FEadmin.Pages.Recruitment.view_list', compact('list'));
     }
 
+    // Phương thức chi tiết bài viết|
+    public function detail_recruitment(Recruitment $recruitment, $slug){
+        $objBlog = $recruitment -> get_link_slug($slug);
+        return response()->json($objBlog);
+    }
+
     // View thêm mới
     public function view_create()
     {

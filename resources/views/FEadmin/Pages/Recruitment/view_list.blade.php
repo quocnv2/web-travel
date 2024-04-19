@@ -70,11 +70,12 @@
                                                 aria-expanded="false">Lựa chọn
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item"
-                                                   href="" data-bs-target="#customer-modal-{{$value->id}}"
-                                                   data-bs-toggle="modal"><span
-                                                        style="display: flex; justify-content: flex-start; color: #0069c3;"><i
-                                                            class="ti ti-eye f-18"></i> Chi Tiết</span></a>
+                                                <a class="dropdown-item text-inverse pr-10 blog_detail"
+                                                   data-id="{{ $value->slug }}" data-toggle="tooltip" title="Edit">
+                                                        <span
+                                                            style="display: flex; justify-content: flex-start; color: #2686dc;"><i
+                                                                class="ti ti-eye me-1"></i> Xem</span>
+                                                </a>
                                                 <a class="dropdown-item"
                                                    href="{{route('delete_recruitment', $value->slug) }}" title="Delete"
                                                    onclick="return confirm('Bạn Có Chắc Muốn Bài Tuyển Dụng Không?')">
@@ -119,7 +120,9 @@
             </div>
         </div>
     </div>
+    @include('FEadmin.Layout.Body.modal_detail_blog')
 @stop
 @section('view_js')
+    @include('FEadmin.Layout.JS.modal_blog')
     @include('FEadmin.Layout.Fooder.js_dataTable')
 @stop

@@ -46,6 +46,7 @@ Route::prefix('travel-admin')->middleware('admin')->group(function () {
 
     // Router Tuyen dung
     Route::get('/view-danh-sach-bai-tuyen-dung', [RecruitmentController::class, 'view_list'])->name('view_list_recruitment');
+    Route::get('/chi-tiet-tuyen-dung/{slug}', [RecruitmentController::class, 'detail_recruitment'])->name('detail_recruitment');
     Route::get('/view-them-moi-bai-tuyen-dung', [RecruitmentController::class, 'view_create'])->name('view_create_recruitment');
     Route::post('/them-moi-bai-tuyen-dung', [RecruitmentController::class, 'creater_recruitment'])->name('create_recruitment');
     Route::get('/xoa-bai-tuyen-dung/{slug}', [RecruitmentController::class, 'delete_recruitment'])->name('delete_recruitment');

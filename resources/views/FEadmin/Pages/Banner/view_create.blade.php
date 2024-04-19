@@ -30,59 +30,65 @@
         <div class="row">
             <div class="col-sm-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3">
                 <!-- Basic Inputs -->
-                <form class="card" action="{{ route('create_banner') }}" method="POST" id="formReset" enctype="multipart/form-data">
+                <form class="card" action="{{ route('create_banner') }}" method="POST" id="formReset"
+                      enctype="multipart/form-data">
                     @csrf
                     <div class="card-header">
                         <h5>Thêm Mới Banner</h5>
                     </div>
                     <div class="card-body">
                         @error('status')
-                            <div class="alert alert-primary">
-                                <div class="media align-items-center">
-                                    <i class="ti ti-info-circle h2 f-w-400 mb-0"></i>
-                                    <div class="media-body ms-3">{{ $message }}.</div>
-                                </div>
+                        <div class="alert alert-primary">
+                            <div class="media align-items-center">
+                                <i class="ti ti-info-circle h2 f-w-400 mb-0"></i>
+                                <div class="media-body ms-3">{{ $message }}.</div>
                             </div>
+                        </div>
                         @enderror
                         <div class="form-group">
                             <label class="form-label">Tên Banner</label>
                             <input type="text" class="form-control form-control" placeholder="Tên Banner"
-                                onkeyup="ChangeToSlug();" fdprocessedid="w3ptog" name="name" id="slug"
-                                value="{{ old('name') }}">
+                                   onkeyup="ChangeToSlug();" fdprocessedid="w3ptog" name="name" id="slug"
+                                   value="{{ old('name') }}">
                             @error('name')
-                                <small style="color: #f33923;">{{ $message }}</small>
+                            <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                             @error('slug')
-                                <small style="color: #f33923;">{{ $message }}</small>
+                            <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
-                        </div>
-
-                        <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="inputGroupFile02" name="file">
-                            <label class="input-group-text" for="inputGroupFile02">Ảnh</label>
-                        </div>
-                        <div class="form-group col-md-12">
-                            <label class="control-label mb-10">Link ảnh</label>
-                            <input type="text" class="form-control" name="linkCourses" value="{{ old('linkCourses') }}">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Đường dẫn sạch</label>
                             <input type="text" class="form-control" name="slug" value="{{ old('slug') }}"
-                                id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
+                                   id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label class="control-label mb-10">Link Liên Kết</label>
+                            <input type="text" class="form-control" name="linkCourses" id="linkCourses" value="{{old('linkCourses')}}">
+                            @error('linkCourses')
+                            <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="inputGroupFile02" name="file">
+                            <label class="input-group-text" for="inputGroupFile02">Ảnh</label>
+                            @error('file')
+                            <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group row mb-0">
                             <label class="form-label">Trạng thái</label>
                             <div class="col-sm-12">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="status" value="0"
-                                        id="customCheckinlhstate1" {{ old('status') == '0' ? 'checked' : '' }}
-                                        data-gtm-form-interact-field-id="2">
+                                           id="customCheckinlhstate1" {{ old('status') == '0' ? 'checked' : '' }}
+                                           data-gtm-form-interact-field-id="2">
                                     <label class="form-check-label" for="customCheckinlhstate1"> Hiện </label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="status" value="1"
-                                        id="customCheckinlhstate2" {{ old('status') == '1' ? 'checked' : '' }}
-                                        data-gtm-form-interact-field-id="1">
+                                           id="customCheckinlhstate2" {{ old('status') == '1' ? 'checked' : '' }}
+                                           data-gtm-form-interact-field-id="1">
                                     <label class="form-check-label" for="customCheckinlhstate2"> Ẩn </label>
                                 </div>
                             </div>
@@ -101,4 +107,14 @@
     @include('FEadmin.Layout.Fooder.js_fooder')
     @include('FEadmin.Layout.JS.Change_to_slug')
     @include('FEadmin.Layout.JS.Reset_button')
+    <script>
+        window.onload = function () {
+            // Sử dụng JavaScript để kiểm tra session
+            @if(session('imgBanner'))
+            var imgBanner = "{{ session('imgBanner') }}";
+            document.getElementById('linkCourses').value = imgBanner;
+            @endif
+        };
+    </script>
+
 @stop
