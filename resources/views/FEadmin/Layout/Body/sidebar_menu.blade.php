@@ -91,13 +91,31 @@
                                 <use xlink:href="#custom-document-upload"></use>
                             </svg>
                         </span>
-                        <span class="pc-mtext">Tuyền Dụng</span><span class="pc-arrow"><i
+                        <span class="pc-mtext">Tuyển Dụng</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
                         <li class="pc-item"><a class="pc-link" href="{{ route('view_list_recruitment') }}">Danh
                                 sách</a>
                         </li>
                         <li class="pc-item"><a class="pc-link" href="{{ route('view_create_recruitment') }}">Thêm
+                                mới</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pc-item pc-hasmenu">
+                    <a class="pc-link">
+                        <span class="pc-micon">
+                            <svg class="pc-icon">
+                                <use xlink:href="#custom-document-upload"></use>
+                            </svg>
+                        </span>
+                        <span class="pc-mtext">Banner</span><span class="pc-arrow"><i
+                                data-feather="chevron-right"></i></span></a>
+                    <ul class="pc-submenu">
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_list_banner') }}">Danh
+                                sách</a>
+                        </li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_create_banner') }}">Thêm
                                 mới</a>
                         </li>
                     </ul>

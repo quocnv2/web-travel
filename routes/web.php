@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController\Recruitment\RecruitmentController;
 use App\Http\Controllers\AdminController\Profile\ProfileController;
 use App\Http\Controllers\AccountController\User\LoginController;
 use App\Http\Controllers\AdminController\Home\HomeController;
+use App\Http\Controllers\AdminController\Banner\BannerController;
 
 
 // // Router Đăng Nhập Admin
@@ -20,10 +21,10 @@ Route::prefix('travel-admin')->middleware('admin')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('view_home_admin');
 
     // Router Frofile
-    Route::get('/thong-tin-ca-nhan', [ProfileController::class,'index'])->name('view_profile');
-    Route::post('/cap-nhat-thong-tin-ca-nhan',[ProfileController::class,'update_profile'])->name('update_profile');
-    Route::get('/thong-tin-mat-khau', [ProfileController::class,'index_password'])->name('index_password');
-    Route::post('/cap-nhat-mat-khau-ca-nhan',[ProfileController::class,'update_password_profile'])->name('update_password_profile');
+    Route::get('/thong-tin-ca-nhan', [ProfileController::class, 'index'])->name('view_profile');
+    Route::post('/cap-nhat-thong-tin-ca-nhan', [ProfileController::class, 'update_profile'])->name('update_profile');
+    Route::get('/thong-tin-mat-khau', [ProfileController::class, 'index_password'])->name('index_password');
+    Route::post('/cap-nhat-mat-khau-ca-nhan', [ProfileController::class, 'update_password_profile'])->name('update_password_profile');
 
     // // Router Account
     Route::get('/view-danh-sach-nhan-su', [AccountController::class, 'view_list'])->name('view_list_account');
@@ -50,5 +51,12 @@ Route::prefix('travel-admin')->middleware('admin')->group(function () {
     Route::get('/xoa-bai-tuyen-dung/{slug}', [RecruitmentController::class, 'delete_recruitment'])->name('delete_recruitment');
     Route::get('/cap-nhat-bai-tuyen-dung/{slug}', [RecruitmentController::class, 'view_update'])->name('view_update_recruitment');
     Route::post('/cap-nhat-bai-tuyen-dung/{slug}', [RecruitmentController::class, 'update_recruitment'])->name('update_recruitment');
+
+    Route::get('/view-danh-sach-banner', [BannerController::class, 'view_list'])->name('view_list_banner');
+    Route::get('/view-them-moi-banner', [BannerController::class, 'view_create'])->name('view_create_banner');
+    Route::post('/them-moi-banner', [BannerController::class, 'create_banner'])->name('create_banner');
+    Route::get('/xoa-banner/{slug}', [BannerController::class, 'delete_banner'])->name('delete_banner');
+    Route::get('/cap-nhat-banner/{slug}', [BannerController::class, 'view_update'])->name('view_update_banner');
+    Route::post('/cap-nhat-banner/{slug}', [BannerController::class, 'update_banner'])->name('update_banner');
 
 });
