@@ -17,8 +17,8 @@
                                 class="user-avtar wid-45 rounded-circle" />
                         </div>
                         <div class="flex-grow-1 ms-3 me-2">
-{{--                            <h6 class="mb-0">{{ Auth::guard('admin')->user()->fullName }}</h6>--}}
-{{--                            <small>{{ Auth::guard('admin')->user()->email }}</small>--}}
+                            {{--                            <h6 class="mb-0">{{ Auth::guard('admin')->user()->fullName }}</h6> --}}
+                            {{--                            <small>{{ Auth::guard('admin')->user()->email }}</small> --}}
                             <h6 class="mb-0">Demo</h6>
                             <small>Email Demo</small>
                         </div>
@@ -90,9 +90,9 @@
                     <a class="pc-link">
                         <span class="pc-micon">
                             <svg class="pc-icon">
-                              <use xlink:href="#custom-kanban"></use>
+                                <use xlink:href="#custom-kanban"></use>
                             </svg>
-                          </span>
+                        </span>
                         <span class="pc-mtext">Banner</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
@@ -126,7 +126,7 @@
                     <a class="pc-link">
                         <span class="pc-micon">
                             <svg class="pc-icon">
-                                <use xlink:href="#custom-document-upload"></use>
+                                <use xlink:href="#custom-airplane"></use>
                             </svg>
                         </span>
                         <span class="pc-mtext">Tour</span><span class="pc-arrow"><i

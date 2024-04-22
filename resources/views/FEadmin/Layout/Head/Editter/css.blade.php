@@ -11,3 +11,5 @@
 <!-- [Template CSS Files] -->
 <link rel="stylesheet" href="{{ url('assets') }}/css/style.css" id="main-style-link">
 <link rel="stylesheet" href="{{ url('assets') }}/css/style-preset.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">

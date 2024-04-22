@@ -11,7 +11,7 @@
         }
 
         .image-container img {
-            width: 30%;
+            /* width: 30%; */
         }
 
         #popoverButton:hover+.image-container,
