@@ -16,6 +16,7 @@ Route::post('/dang-nhap-quan-tri',[LoginController::class,'login'])->name('login
 Route::get('/dang-xuat-quan-tri',[LoginController::class,'logout'])->name('logout_admin');
 
 // Danh Sách Router Admin
+// Route::prefix('travel-admin')->group(function () {
 Route::prefix('travel-admin')->middleware('admin')->group(function () {
     // Route Trang Home
     Route::get('/', [HomeController::class, 'index'])->name('view_home_admin');

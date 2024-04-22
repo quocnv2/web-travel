@@ -17,8 +17,10 @@
                                 class="user-avtar wid-45 rounded-circle" />
                         </div>
                         <div class="flex-grow-1 ms-3 me-2">
-                            <h6 class="mb-0">{{ Auth::guard('admin')->user()->fullName }}</h6>
-                            <small>{{ Auth::guard('admin')->user()->email }}</small>
+                            {{-- <h6 class="mb-0">{{ Auth::guard('admin')->user()->fullName }}</h6>
+                            <small>{{ Auth::guard('admin')->user()->email }}</small> --}}
+                            <h6 class="mb-0">Demo</h6>
+                            <small>Email Demo</small>
                         </div>
                         <a class="btn btn-icon btn-link-secondary avtar" data-bs-toggle="collapse"
                             href="#pc_sidebar_userlink">
@@ -88,16 +90,16 @@
                     <a class="pc-link">
                         <span class="pc-micon">
                             <svg class="pc-icon">
-                                <use xlink:href="#custom-document-upload"></use>
+                              <use xlink:href="#custom-kanban"></use>
                             </svg>
-                        </span>
-                        <span class="pc-mtext">Tuyển Dụng</span><span class="pc-arrow"><i
+                          </span>
+                        <span class="pc-mtext">Banner</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="{{ route('view_list_recruitment') }}">Danh
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_list_banner') }}">Danh
                                 sách</a>
                         </li>
-                        <li class="pc-item"><a class="pc-link" href="{{ route('view_create_recruitment') }}">Thêm
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_create_banner') }}">Thêm
                                 mới</a>
                         </li>
                     </ul>
@@ -109,13 +111,13 @@
                                 <use xlink:href="#custom-document-upload"></use>
                             </svg>
                         </span>
-                        <span class="pc-mtext">Banner</span><span class="pc-arrow"><i
+                        <span class="pc-mtext">Tuyển Dụng</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="{{ route('view_list_banner') }}">Danh
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_list_recruitment') }}">Danh
                                 sách</a>
                         </li>
-                        <li class="pc-item"><a class="pc-link" href="{{ route('view_create_banner') }}">Thêm
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_create_recruitment') }}">Thêm
                                 mới</a>
                         </li>
                     </ul>

@@ -41,7 +41,7 @@
                             <thead>
                             <tr>
                                 <th>stt</th>
-                                <th>Tiêu đềc</th>
+                                <th>Tiêu đề</th>
                                 <th>Ngày tạo</th>
                                 <th>Trạng thái</th>
                                 <th>Chức năng</th>
