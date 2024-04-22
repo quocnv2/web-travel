@@ -17,10 +17,10 @@
                                 class="user-avtar wid-45 rounded-circle" />
                         </div>
                         <div class="flex-grow-1 ms-3 me-2">
-                            <h6 class="mb-0">{{ Auth::guard('admin')->user()->fullName }}</h6>
-                            <small>{{ Auth::guard('admin')->user()->email }}</small>
-                            {{-- <h6 class="mb-0">Demo</h6>
-                            <small>Email Demo</small> --}}
+{{--                            <h6 class="mb-0">{{ Auth::guard('admin')->user()->fullName }}</h6>--}}
+{{--                            <small>{{ Auth::guard('admin')->user()->email }}</small>--}}
+                            <h6 class="mb-0">Demo</h6>
+                            <small>Email Demo</small>
                         </div>
                         <a class="btn btn-icon btn-link-secondary avtar" data-bs-toggle="collapse"
                             href="#pc_sidebar_userlink">
@@ -118,6 +118,24 @@
                                 sách</a>
                         </li>
                         <li class="pc-item"><a class="pc-link" href="{{ route('view_create_recruitment') }}">Thêm
+                                mới</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pc-item pc-hasmenu">
+                    <a class="pc-link">
+                        <span class="pc-micon">
+                            <svg class="pc-icon">
+                                <use xlink:href="#custom-document-upload"></use>
+                            </svg>
+                        </span>
+                        <span class="pc-mtext">Tour</span><span class="pc-arrow"><i
+                                data-feather="chevron-right"></i></span></a>
+                    <ul class="pc-submenu">
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_list_tour') }}">Danh
+                                sách</a>
+                        </li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_create_tour') }}">Thêm
                                 mới</a>
                         </li>
                     </ul>

@@ -8,16 +8,17 @@ use App\Http\Controllers\AdminController\Profile\ProfileController;
 use App\Http\Controllers\AccountController\User\LoginController;
 use App\Http\Controllers\AdminController\Home\HomeController;
 use App\Http\Controllers\AdminController\Banner\BannerController;
+use App\Http\Controllers\AdminController\Tour\TourController;
 
 
 // // Router Đăng Nhập Admin
-Route::get('/dang-nhap-quan-tri',[LoginController::class,'view_login'])->name('view_login_account');
-Route::post('/dang-nhap-quan-tri',[LoginController::class,'login'])->name('login_admin');
-Route::get('/dang-xuat-quan-tri',[LoginController::class,'logout'])->name('logout_admin');
+Route::get('/dang-nhap-quan-tri', [LoginController::class, 'view_login'])->name('view_login_account');
+Route::post('/dang-nhap-quan-tri', [LoginController::class, 'login'])->name('login_admin');
+Route::get('/dang-xuat-quan-tri', [LoginController::class, 'logout'])->name('logout_admin');
 
 // Danh Sách Router Admin
-// Route::prefix('travel-admin')->group(function () {
-Route::prefix('travel-admin')->middleware('admin')->group(function () {
+Route::prefix('travel-admin')->group(function () {
+//Route::prefix('travel-admin')->middleware('admin')->group(function () {
     // Route Trang Home
     Route::get('/', [HomeController::class, 'index'])->name('view_home_admin');
 
@@ -60,5 +61,13 @@ Route::prefix('travel-admin')->middleware('admin')->group(function () {
     Route::get('/xoa-banner/{slug}', [BannerController::class, 'delete_banner'])->name('delete_banner');
     Route::get('/cap-nhat-banner/{slug}', [BannerController::class, 'view_update'])->name('view_update_banner');
     Route::post('/cap-nhat-banner/{slug}', [BannerController::class, 'update_banner'])->name('update_banner');
+
+
+    Route::get('/view-danh-sach-tour', [TourController::class, 'view_list'])->name('view_list_tour');
+    Route::get('/view-them-moi-tour', [TourController::class, 'view_create'])->name('view_create_tour');
+    Route::post('/them-moi-tour', [TourController::class, 'create_tour'])->name('create_tour');
+    Route::get('/xoa-tour/{slug}', [TourController::class, 'delete_tour'])->name('delete_tour');
+    Route::get('/cap-nhat-tour/{slug}', [TourController::class, 'view_update'])->name('view_update_tour');
+    Route::post('/cap-nhat-tour/{slug}', [TourController::class, 'update_tour'])->name('update_tour');
 
 });
