@@ -40,6 +40,7 @@ class Tour extends Model
         $currentTime = now();
         $creates = $this->Create([
             'name' => $req->name,
+            'code' => $req->code,
             'slug' => $req->slug,
             'imgBanner' => $req->imgBanner,
             'imageArray' => json_encode($req->imageArray),
@@ -55,6 +56,19 @@ class Tour extends Model
             'timeCreate' => $currentTime,
         ]);
         return $creates;
+    }
+
+    // Phương Thức lấy bản ghi theo slug
+    public function get_link_slug($slug)
+    {
+        $obj = DB::table('tour')->where('slug', $slug)->first();
+        return $obj;
+    }
+
+    public function delete_Tour($slug)
+    {
+        $obj = DB::table('tour')->where('slug', $slug)->delete();
+        return $obj;
     }
 
 }

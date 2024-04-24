@@ -59,9 +59,9 @@ class TourController extends Controller
 
         if ($req->hasFile('filesVideo')) {
             foreach ($req->file('filesVideo') as $video) {
-                $response = cloudinary()->uploadApi()->uploadLarge($video->getRealPath(), [
+                $response = cloudinary()->uploadApi()->upload($video->getRealPath(), [
                     'resource_type' => 'video',
-                    'chunk_size' => 6000000 // 6 MB per chunk
+                    'upload_large' => true
                 ]);
 
                 // Get secure URL
@@ -70,8 +70,6 @@ class TourController extends Controller
             }
         }
 
-        dd($videos);
-
         // Tạo Req
         $req->merge([
             'imgBanner' => $file,
@@ -79,17 +77,17 @@ class TourController extends Controller
             'videoArray' => $videos,
         ]);
 
-        dd($req);
+        // dd($req);
 
-//        //Thực hiện thêm mới
-//        $create = $tour->create_tour($req);
-//
-//
-//        if ($create) {
-//            return redirect()->route('view_create_tour')->with('success', 'Thêm Mới Thành Công!');
-//        } else {
-//            return redirect()->back()->with('Error', 'Thêm Mới Thất Bại!');
-//        }
+       //Thực hiện thêm mới
+       $create = $tour->create_tour($req);
+
+
+       if ($create) {
+           return redirect()->route('view_create_tour')->with('success', 'Thêm Mới Thành Công!');
+       } else {
+           return redirect()->back()->with('Error', 'Thêm Mới Thất Bại!');
+       }
     }
 
     //Phương thức xóa danh mục
@@ -104,7 +102,7 @@ class TourController extends Controller
             return view('FEadmin.Pages.Error.error404');
         }
 
-        if ($tour->deleteTour($slug) > 0) {
+        if ($tour->delete_Tour($slug) > 0) {
             return redirect()->route('view_list_tour')->with('success', 'Xóa Danh Mục Thành Công!');
         } else {
             return redirect()->route('view_list_tour')->with('err', 'Kiểm Tra Lại, Xóa Danh Mục Thất Bại!');
