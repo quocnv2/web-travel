@@ -142,7 +142,8 @@
                                     <i class="fas fa-cloud-upload-alt"></i>
                                 </label>
                                 <span id="filesel_1">Chọn Ảnh Banner...</span>
-                                <input type="file" id="imgUpload_1" name="file" accept="image/*" multiple="">
+                                <input type="file" id="imgUpload_1" name="file" accept="image/*"
+                                    multiple="false">
                             </div>
                             @error('file')
                             <small style="color: #f33923;">{{ $message }}</small>
@@ -238,10 +239,18 @@
     <script type="text/javascript">
         $("#imgUpload_1").change(function () {
             var numFiles = $(this)[0].files.length;
-            if (numFiles < 2) {
-                $('#filesel_1').text(numFiles + ' file selected');
+            if (numFiles > 1) {
+                swal(
+                    "Chỉ Được Chọn 1 Ảnh Banner", "Thông Báo Từ Hệ Thống!", 'error', {
+                        button: true,
+                        button: "OK",
+                        timer: 50000,
+                        dangerMode: true,
+                    })
+                $(this).val('');
+                $('#filesel_1').text("Chọn Ảnh Banner...");
             } else {
-                $('#filesel_1').text(numFiles + ' files selected');
+                $('#filesel_1').text(numFiles + ' file selected');
             }
         });
 
