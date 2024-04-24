@@ -51,7 +51,7 @@
                             @foreach ($list as $key => $value)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
-                                    <td>{{ $value->title }}</td>
+                                    <td>{{ $value->name }}</td>
                                     <td>{{ Carbon::parse($value->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY, H:mm:ss A') }}
                                     </td>
                                     <td>
@@ -70,12 +70,6 @@
                                                 aria-expanded="false">Lựa chọn
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item text-inverse pr-10 blog_detail"
-                                                   data-id="{{ $value->slug }}" data-toggle="tooltip" title="Edit">
-                                                        <span
-                                                            style="display: flex; justify-content: flex-start; color: #2686dc;"><i
-                                                                class="ti ti-eye me-1"></i> Xem</span>
-                                                </a>
                                                 <a class="dropdown-item"
                                                    href="{{route('delete_recruitment', $value->slug) }}" title="Delete"
                                                    onclick="return confirm('Bạn Có Chắc Muốn Bài Tuyển Dụng Không?')">
@@ -91,27 +85,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <div class="modal fade" id="customer-modal-{{$value->id}}"
-                                     data-bs-keyboard="false"
-                                     tabindex="-1"
-                                     aria-hidden="true">
-                                    <div
-                                        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                                        <div class="modal-content container-fluid">
-                                            <div class="modal-header border-0 pb-0"
-                                                 style="display: flex; justify-content: space-between;">
-                                                <h5 class="mb-0">Nội Dung Tuyển Dụng</h5>
-                                                <a href="#" class="avtar avtar-s btn-link-danger btn-pc-default"
-                                                   data-bs-dismiss="modal">
-                                                    <i class="ti ti-x f-20"></i>
-                                                </a>
-                                            </div>
-                                            <div class="modal-body">
-                                                {!! $value->content !!}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             @endforeach
                             </tbody>
                         </table>

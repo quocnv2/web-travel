@@ -24,7 +24,25 @@ class createRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required',
+            'slug' => 'unique:banner',
+            'status' => 'required',
+            'file' => 'required',
+            'price_adult' => 'required',
+            'price_child' => 'required',
+//            'info_details_blog' => 'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Trường không được để trống!',
+            'price_adult.required' => 'Trường không được để trống!',
+            'price_child.required' => 'Trường không được để trống!',
+//            'info_details_blog.required' => 'Trường không được để trống!',
+            'file.required' => 'Trường Ảnh Không Được Để Trống',
+            'slug.unique' => 'Bài viết đã tồn tại!',
+            'status.required' => 'Trạng thái là bắt buộc!',
         ];
     }
 }

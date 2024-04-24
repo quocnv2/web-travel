@@ -28,19 +28,6 @@
             background-color: #dfc8ca;
             padding: 4.5rem 1.25rem;
         }
-
-        .custom-file-1 {
-            font-size: 18px;
-            display: inline-block;
-            padding: 10px 7px;
-            cursor: pointer;
-            background-color: #d3394c;
-            font-weight: 600;
-            color: #fff;
-            width: 180px;
-            font-family: "Times New Roman", Times, serif;
-        }
-
         .custom-file-1:hover {
             background-color: #007bff;
         }
@@ -67,53 +54,24 @@
         }
 
         .custom-file-3 {
-            border: 1px solid #d3394c;
-            background-color: #f1e5e6;
-            padding: 0;
-            display: inline-flex;
-            max-width: 350px;
-        }
-
-        #filesel_3 {
-            width: 200px;
-            min-height: 2.5em;
             display: inline-block;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-            vertical-align: middle;
-            padding: 7px;
-            text-align: left;
-            font-size: 18px;
-            font-weight: 600;
+            padding: 15px 10px;
             cursor: pointer;
-        }
-
-        #filechoose_3 {
-            width: 160px;
-            min-height: 2.5em;
-            display: inline-block;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-            vertical-align: middle;
-            padding: 7px;
-            text-align: center;
             background-color: #d3394c;
             color: #fff;
-            font-weight: 700;
-            font-size: 18px;
-            cursor: pointer;
+            text-overflow: ellipsis;
+            border-radius: 50%;
             font-family: "Times New Roman", Times, serif;
         }
 
-        .custom-file-3:hover {
-            border-color: #007bff;
+        .custom-file-3 i {
+            font-size: 48px;
         }
 
-        .custom-file-3:hover #filechoose_3 {
-            background-color: #007bff;
-            border-color: #007bff;
+        #filesel_3 {
+            display: block;
+            color: #d3394c;
+            font-weight: 700;
         }
     </style>
 @stop
@@ -144,7 +102,7 @@
         <div class="row">
             <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
                 <!-- Basic Inputs -->
-                <form class="card" action="{{ route('create_recruitment') }}" method="POST" id="formReset">
+                <form class="card" action="{{ route('create_tour') }}" method="POST" id="formReset">
                     @csrf
                     <div class="card-header">
                         <h5>Thêm Mới Bài viết Tour</h5>
@@ -163,7 +121,7 @@
                             <input type="text" class="form-control form-control" placeholder="Tên"
                                 onkeyup="ChangeToSlug();" fdprocessedid="w3ptog" name="name" id="slug"
                                 value="{{ old('name') }}">
-                            @error('title')
+                            @error('name')
                                 <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                             @error('slug')
@@ -182,6 +140,9 @@
                                 <input type="file" class="form-control" id="inputGroupFile02" name="file">
                                 <label class="input-group-text" for="inputGroupFile02">Ảnh</label>
                             </div>
+                            @error('file')
+                            <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group col-12 col-md-3">
                             <label class="form-label" for="exampleSelect1">Vị Trí</label>
@@ -258,11 +219,11 @@
                         </div>
                         <div class="form-group col-12 col-md-6">
                             <div class="box-input-1">
-                                <label for="imgUpload_2" class="custom-file-2">
+                                <label for="imgUpload_3" class="custom-file-2">
                                     <i class="fas fa-cloud-upload-alt"></i>
                                 </label>
-                                <span id="filesel_2">Chọn Video Chi Tiết...</span>
-                                <input type="file" id="imgUpload_2" name="filesVideo[]" accept="image/*"
+                                <span id="filesel_3">Chọn Video Chi Tiết...</span>
+                                <input type="file" id="imgUpload_3" name="filesVideo[]" accept="video/*"
                                     multiple="">
                             </div>
                         </div>

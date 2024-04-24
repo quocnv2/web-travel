@@ -19,20 +19,18 @@ class TourController extends Controller
     }
 
     // Phương thức chi tiết bài viết|
-    public function detail_tour(Tour $tour, $slug){
-        $objBlog = $tour -> get_link_slug($slug);
+    public function detail_tour(Tour $tour, $slug)
+    {
+        $objBlog = $tour->get_link_slug($slug);
         return response()->json($objBlog);
     }
 
     // View thêm mới
-    public function view_create(Category $category)
+    public function view_create(Category $category, Tour $tour)
     {
-        // if(Auth::guard('admin')->user()->decentralization == 1){
-        //     return view('FEadmin.Pages.Error.error404');
-        // }
-//      Lấy danh sách danh muc
-        $list_Category = $category -> get_orderBy_ASC();
-        return view('FEadmin.Pages.Tour.view_create' , compact('list_Category'));
+        // Lấy danh sách danh muc
+        $list_Category = $category->get_orderBy_ASC();
+        return view('FEadmin.Pages.Tour.view_create', compact('list_Category'));
     }
 
     // Phương thức thêm mới
@@ -41,9 +39,15 @@ class TourController extends Controller
         // if(Auth::guard('admin')->user()->decentralization == 1){
         //     return view('FEadmin.Pages.Error.error404');
         // }
-
+        $file = '';
+        if ($req->file('file')) {
+            $response = cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath();
+            $file = $response;
+        }
+        $req->merge(['imgBanner' => $file]);
         //Thực hiện thêm mới
         $create = $tour->create_tour($req);
+
 
         if ($create) {
             return redirect()->route('view_create_tour')->with('success', 'Thêm Mới Thành Công!');

@@ -30,7 +30,7 @@
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html">Trang Chủ</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0)">Hệ Thống</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0)">Danh Mục Vị Trí</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0)">Tour</a></li>
                             <li class="breadcrumb-item" aria-current="page">Cập Nhật</li>
                         </ul>
                     </div>
@@ -50,7 +50,7 @@
                 <form class="card" method="POST" id="formReset">
                     @csrf
                     <div class="card-header">
-                        <h5>Cập Nhật Bài Tuyển Dụng: "{{ $obj->title }}"</h5>
+                        <h5>Cập Nhật Bài Tuyển Dụng: "{{ $obj->name }}"</h5>
                     </div>
                     <div class="card-body">
                         @error('status')
