@@ -71,4 +71,34 @@ class Tour extends Model
         return $obj;
     }
 
+    public function get_orderBy_ASC(){
+        return $this->orderBy('timeCreate','DESC')->get();
+    }
+
+    public function update_tour($req, $slug)
+    {
+        $obj = DB::table('tour')->where('slug', $slug)->update([
+            'name' => $req->name,
+            'code' => $req->code,
+            'slug' => $req->slug,
+            'imgBanner' => $req->imgBanner,
+            'imageArray' => json_encode($req->imageArray),
+            'videoArray' => json_encode($req->videoArray),
+            'info_details_blog' => $req->info_details_blog,
+            'price_adult' => $req->price_adult,
+            'price_child' => $req->price_child,
+            'idCategory' => $req->idCategory,
+            'province' => $req->province,
+            'district' => $req->district,
+            'wards' => $req->wards,
+            'status' => $req->status,
+        ]);
+        return $obj;
+    }
+    public function objCategory()
+    {
+        return $this-> belongsTo(Tour::class,'idCategory');
+    }
+
+
 }

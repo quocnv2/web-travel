@@ -50,7 +50,7 @@
                 <form class="card" method="POST" id="formReset">
                     @csrf
                     <div class="card-header">
-                        <h5>Cập Nhật Bài Tuyển Dụng: "{{ $obj->name }}"</h5>
+                        <h5>Cập Nhật Tour: "{{ $obj->name }}"</h5>
                     </div>
                     <div class="card-body">
                         @error('status')
@@ -65,7 +65,7 @@
                             <label class="form-label">Tiêu đề</label>
                             <input type="text" class="form-control form-control" placeholder="Tên danh mục"
                                 onkeyup="ChangeToSlug();" fdprocessedid="w3ptog" name="title" id="slug"
-                                value="{{ $obj->title }}">
+                                value="{{ $obj->name }}">
                             @error('title')
                                 <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
