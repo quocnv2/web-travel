@@ -64,6 +64,7 @@ Route::get('/dang-xuat-quan-tri', [LoginController::class, 'logout'])->name('log
 
 
     Route::get('/view-danh-sach-tour', [TourController::class, 'view_list'])->name('view_list_tour');
+    Route::get('/chi-tiet-tour/{slug}', [TourController::class, 'detail_tour'])->name('detail_tour');
     Route::get('/view-them-moi-tour', [TourController::class, 'view_create'])->name('view_create_tour');
     Route::post('/them-moi-tour', [TourController::class, 'create_tour'])->name('create_tour');
     Route::get('/xoa-tour/{slug}', [TourController::class, 'delete_tour'])->name('delete_tour');

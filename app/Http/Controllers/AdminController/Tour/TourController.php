@@ -34,7 +34,7 @@ class TourController extends Controller
     }
 
     // Phương thức thêm mới
-    public function create_tour(Request $req, Tour $tour)
+    public function create_tour(createRequest $req, Tour $tour)
     {
         // Xử Lý Ảnh Banner
         $file = '';
@@ -129,6 +129,47 @@ class TourController extends Controller
         if (!$obj) {
             return view('FEadmin.Pages.Error.error404');
         }
+
+        $file = '';
+        if ($req->file('file')) {
+            $response = $req->file('file') ?  cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->imgBanner;
+            $file = $response;
+        }
+
+        // Xử lý list ảnh
+        $images = []; // Danh sách đường dẫn ảnh
+
+        if ($req->hasFile('filesImage')) {
+            foreach ($req->file('filesImage') as $image) {
+                $response = cloudinary()->upload($image->getRealPath())->getSecurePath();
+                // Tạo một mảng chứa id và link ảnh và thêm vào danh sách
+                $images[] = ['id' => uniqid(), 'link' => $response];
+            }
+        }
+
+        // Xử Lý list video
+        $videos = []; // Danh sách đường dẫn video
+
+        if ($req->hasFile('filesVideo')) {
+            foreach ($req->file('filesVideo') as $video) {
+                $response = cloudinary()->uploadApi()->upload($video->getRealPath(), [
+                    'resource_type' => 'video',
+                    'upload_large' => true
+                ]);
+
+                // Get secure URL
+                $secureUrl = $response['secure_url'];
+                $videos[] = ['id' => uniqid(), 'link' => $secureUrl];
+            }
+        }
+
+        // Tạo Req
+        $req->merge([
+            'imgBanner' => $file,
+            'imageArray' => $images,
+            'videoArray' => $videos,
+        ]);
+
 
         if ($tour->update_tour($req, $slug) >= 0) {
             return redirect()->route('view_list_tour')->with('success', 'Cập Nhật Bài Viết Thành Công!');
