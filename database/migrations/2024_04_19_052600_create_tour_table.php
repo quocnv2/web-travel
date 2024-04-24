@@ -14,6 +14,7 @@ return new class extends Migration {
     {
         Schema::create('tour', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('code')->nullable(false);
             $table->string('name')->nullable(false);
             $table->string('slug')->nullable(false);
             $table->string('imgBanner')->nullable(false);

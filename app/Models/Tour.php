@@ -17,6 +17,7 @@ class Tour extends Model
 
     protected $fillable = [
         'id',
+        'code',
         'name',
         'slug',
         'imgBanner',
@@ -41,8 +42,8 @@ class Tour extends Model
             'name' => $req->name,
             'slug' => $req->slug,
             'imgBanner' => $req->imgBanner,
-            'imageArray' => $req->imageArray,
-            'videoArray' => $req->videoArray,
+            'imageArray' => json_encode($req->imageArray),
+            'videoArray' => json_encode($req->videoArray),
             'info_details_blog' => $req->info_details_blog,
             'price_adult' => $req->price_adult,
             'price_child' => $req->price_child,
@@ -56,40 +57,4 @@ class Tour extends Model
         return $creates;
     }
 
-    public function get_orderBy_ASC()
-    {
-        return $this->orderBy('timeCreate', 'DESC')->get();
-    }
-
-    public function get_link_slug($slug)
-    {
-        $obj = DB::table('tour')->where('slug', $slug)->first();
-        return $obj;
-    }
-
-    public function delete_tour($slug)
-    {
-        $obj = DB::table('tour')->where('slug', $slug)->delete();
-        return $obj;
-    }
-
-    public function update_tour($req, $slug)
-    {
-        $obj = DB::table('tour')->where('slug', $slug)->update([
-            'name' => $req->name,
-            'slug' => $req->slug,
-            'imgBanner' => $req->imgBanner,
-            'imageArray' => $req->imageArray,
-            'videoArray' => $req->videoArray,
-            'info_details_blog' => $req->info_details_blog,
-            'price_adult' => $req->price_adult,
-            'price_child' => $req->price_child,
-            'idCategory' => $req->idCategory,
-            'province' => $req->province,
-            'district' => $req->district,
-            'wards' => $req->wards,
-            'status' => $req->status,
-        ]);
-        return $obj;
-    }
 }

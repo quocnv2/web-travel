@@ -36,15 +36,43 @@ class TourController extends Controller
     // Phương thức thêm mới
     public function create_tour(createRequest $req, Tour $tour)
     {
-        // if(Auth::guard('admin')->user()->decentralization == 1){
-        //     return view('FEadmin.Pages.Error.error404');
-        // }
+        // Xử Lý Ảnh Banner
         $file = '';
         if ($req->file('file')) {
             $response = cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath();
             $file = $response;
         }
-        $req->merge(['imgBanner' => $file]);
+        // Xử lý list ảnh 
+        $images = []; // Danh sách đường dẫn ảnh
+
+        if ($req->hasFile('filesImage')) {
+            foreach ($req->file('filesImage') as $image) {
+                $response = cloudinary()->upload($image->getRealPath())->getSecurePath();
+                // Tạo một mảng chứa id và link ảnh và thêm vào danh sách
+                $images[] = ['id' => uniqid(), 'link' => $response];
+            }
+        }
+
+        // Xử Lý list video
+        $videos = []; // Danh sách đường dẫn video
+
+        if ($req->hasFile('filesVideo')) {
+            foreach ($req->file('filesVideo') as $video) {
+                $response = cloudinary()->upload($video->getRealPath())->getSecurePath();
+                // Tạo một mảng chứa id và link video và thêm vào danh sách
+                $videos[] = ['id' => uniqid(), 'link' => $response];
+            }
+        }
+
+        // Tạo Req
+        $req->merge([
+            'imgBanner' => $file,
+            'imageArray' => $images,
+            'videoArray' => $videos,
+        ]);
+
+        dd($req->all());
+        
         //Thực hiện thêm mới
         $create = $tour->create_tour($req);
 
@@ -89,12 +117,6 @@ class TourController extends Controller
 
     public function update_tour(updateRequest $req, Tour $tour, $slug)
     {
-        // if(Auth::guard('admin')->user()->decentralization == 1){
-        //     return view('FEadmin.Pages.Error.error404');
-        // }
-//        $validatedData = $req->validate([
-//            'slug' => [new CategoriesRule($slug)],
-//        ]);
 
         $obj = $tour->get_link_slug($slug);
 
