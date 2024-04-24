@@ -30,7 +30,6 @@ class createRequest extends FormRequest
             'slug' => 'unique:tour',
             'status' => 'required',
             'file' => 'required|nullable|image|mimes:jpeg,png,jpg,gif|max:10000',
-            'price_adult' => 'required|numeric',
             'price_child' => 'required|numeric',
             'filesImage.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10000', // Kiểm tra filesImage là hình ảnh
             'filesVideo.*' => 'nullable|mimetypes:video/avi,video/mpeg,video/quicktime|max:100000', // Kiểm tra filesVideo là video
@@ -57,6 +56,11 @@ class createRequest extends FormRequest
         'filesVideo.*.max' => 'Kích thước tệp video không được vượt quá 100 megabytes.',
         'slug.unique' => 'Tour đã tồn tại!',
         'status.required' => 'Trạng thái là bắt buộc!',
+        'file.required' => 'Ảnh Banner là bắt buộc!',
+        'file.nullable' => 'Trường ảnh không được để trống',
+        'file.image' => 'Trường phải là một hình ảnh.',
+        'file.mimes' => 'Chỉ chấp nhận các định dạng hình ảnh là jpeg, png, jpg, gif.',
+        'file.max' => 'Kích thước tệp hình ảnh không được vượt quá 10 megabytes.',
     ];
 }
 }

@@ -34,7 +34,7 @@ class TourController extends Controller
     }
 
     // Phương thức thêm mới
-    public function create_tour(createRequest $req, Tour $tour)
+    public function create_tour(Request $req, Tour $tour)
     {
         // Xử Lý Ảnh Banner
         $file = '';
@@ -42,7 +42,8 @@ class TourController extends Controller
             $response = cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath();
             $file = $response;
         }
-        // Xử lý list ảnh 
+
+        // Xử lý list ảnh
         $images = []; // Danh sách đường dẫn ảnh
 
         if ($req->hasFile('filesImage')) {
@@ -58,11 +59,18 @@ class TourController extends Controller
 
         if ($req->hasFile('filesVideo')) {
             foreach ($req->file('filesVideo') as $video) {
-                $response = cloudinary()->upload($video->getRealPath())->getSecurePath();
-                // Tạo một mảng chứa id và link video và thêm vào danh sách
-                $videos[] = ['id' => uniqid(), 'link' => $response];
+                $response = cloudinary()->uploadApi()->uploadLarge($video->getRealPath(), [
+                    'resource_type' => 'video',
+                    'chunk_size' => 6000000 // 6 MB per chunk
+                ]);
+
+                // Get secure URL
+                $secureUrl = $response['secure_url'];
+                $videos[] = ['id' => uniqid(), 'link' => $secureUrl];
             }
         }
+
+        dd($videos);
 
         // Tạo Req
         $req->merge([
@@ -71,17 +79,17 @@ class TourController extends Controller
             'videoArray' => $videos,
         ]);
 
-        dd($req->all());
-        
-        //Thực hiện thêm mới
-        $create = $tour->create_tour($req);
+        dd($req);
 
-
-        if ($create) {
-            return redirect()->route('view_create_tour')->with('success', 'Thêm Mới Thành Công!');
-        } else {
-            return redirect()->back()->with('Error', 'Thêm Mới Thất Bại!');
-        }
+//        //Thực hiện thêm mới
+//        $create = $tour->create_tour($req);
+//
+//
+//        if ($create) {
+//            return redirect()->route('view_create_tour')->with('success', 'Thêm Mới Thành Công!');
+//        } else {
+//            return redirect()->back()->with('Error', 'Thêm Mới Thất Bại!');
+//        }
     }
 
     //Phương thức xóa danh mục

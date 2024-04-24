@@ -144,6 +144,9 @@
                                 <span id="filesel_1">Chọn Ảnh Banner...</span>
                                 <input type="file" id="imgUpload_1" name="file" accept="image/*" multiple="">
                             </div>
+                            @error('file')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group col-12 col-md-4">
                             <div class="box-input-1">
@@ -154,6 +157,9 @@
                                 <input type="file" id="imgUpload_2" name="filesImage[]" accept="image/*"
                                     multiple="">
                             </div>
+                            @error('filesImage')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
                         </div>
                         <div class="form-group col-12 col-md-4">
                             <div class="box-input-1">
@@ -164,6 +170,9 @@
                                 <input type="file" id="imgUpload_3" name="filesVideo[]" accept="video/*"
                                     multiple="">
                             </div>
+                            @error('filesVideo')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
                         </div>
 
                         <div class="form-group col-12">
