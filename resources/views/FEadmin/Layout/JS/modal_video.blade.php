@@ -45,7 +45,7 @@
                         // Insert the HTML content into the modal body
                         $('#modal-body').html(html);
                         // Update the modal title
-                        $('#title-modal-tour').html('Video');
+                        $('#title-modal-tour').html('Danh Sách Video');
                         // Show the modal
                         $('#myModal_tour').modal('show');
 

@@ -22,7 +22,7 @@
 
 
                         $('#modal-body').html(html);
-                        $('#title-modal-tour').html('Chi tiết');
+                        $('#title-modal-tour').html('Chi tiết Tour');
                         $('#myModal_tour').modal('show');
 
                         var myCarousel = document.querySelector('#carouselExampleIndicators');

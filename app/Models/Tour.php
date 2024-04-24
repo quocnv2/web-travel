@@ -61,7 +61,7 @@ class Tour extends Model
     // Phương Thức lấy bản ghi theo slug
     public function get_link_slug($slug)
     {
-        $obj = DB::table('tour')->where('slug', $slug)->first();
+        $obj = Tour::with('objCategory')->where('slug', $slug)->first();
         return $obj;
     }
 
@@ -72,7 +72,7 @@ class Tour extends Model
     }
 
     public function get_orderBy_ASC(){
-        return $this->orderBy('timeCreate','DESC')->get();
+        return Tour::with('objCategory')->orderBy('timeCreate','DESC')->get();
     }
 
     public function update_tour($req, $slug)
@@ -95,10 +95,10 @@ class Tour extends Model
         ]);
         return $obj;
     }
+
     public function objCategory()
     {
-        return $this-> belongsTo(Tour::class,'idCategory');
+        return $this-> belongsTo(Category::class,'idCategory');
     }
-
 
 }

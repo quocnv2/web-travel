@@ -62,7 +62,7 @@ class Category extends Model
     }
 
     // Phương Thức Liên kết khóa ngoại
-    public function Group(){
-        return $this->hasMany('App\Models\Group', 'idCategory','id');
+    public function Tour(){
+        return $this->hasMany('App\Models\Tour', 'idCategory','id');
     }
 }

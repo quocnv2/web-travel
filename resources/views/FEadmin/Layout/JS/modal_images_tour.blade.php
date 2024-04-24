@@ -44,7 +44,7 @@
                         html += '</div>';
 
                         $('#modal-body').html(html);
-                        $('#title-modal-tour').html('Anhr');
+                        $('#title-modal-tour').html('Danh Sách Ảnh');
                         $('#myModal_tour').modal('show');
 
                         var myCarousel = document.querySelector('#carouselExampleIndicators');
