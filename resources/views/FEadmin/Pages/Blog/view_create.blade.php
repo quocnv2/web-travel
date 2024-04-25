@@ -65,7 +65,7 @@
                             <input type="text" class="form-control" name="slug" value="{{ old('slug') }}"
                                    id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
                         </div>
-                        <div class="form-group col-12 col-md-3">
+                        <div class="form-group col-12 col-md-12">
                             <label class="form-label" for="exampleSelect1">Vị Trí</label>
                             <select class="form-select" id="exampleSelect1" name="idCategory">
                                 @foreach ($list_Category->sortBy('name') as $value)
@@ -78,33 +78,6 @@
                                 @endforeach
                             </select>
                             @error('idCategory')
-                            <small style="color: #f33923;">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-12 col-md-3">
-                            <label class="form-label">Tỉnh Thành</label>
-                            <select class="form-select" id="city" name="province">
-                                <option value="" selected>Chọn Tỉnh Thành/ Thành Phố</option>
-                            </select>
-                            @error('province')
-                            <small style="color: #f33923;">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-12 col-md-3">
-                            <label class="form-label">Quận/Huyện</label>
-                            <select class="form-select" id="district" name="district">
-                                <option value="" selected>Chọn Quận/Huyện</option>
-                            </select>
-                            @error('district')
-                            <small style="color: #f33923;">{{ $message }}</small>
-                            @enderror
-                        </div>
-                        <div class="form-group col-12 col-md-3">
-                            <label class="form-label">Phường/Xã</label>
-                            <select class="form-select" id="ward" name="wards">
-                                <option value="" selected>Chọn Phường/Xã</option>
-                            </select>
-                            @error('wards')
                             <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
