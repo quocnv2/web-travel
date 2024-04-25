@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Home Five || Trevlo || HTML Template For Tours & Travel</title>
+    <title>Du Lịch Trả Sau</title>
     @include('Home.Layout.meta_header')
     @include('Home.Layout.icon_header')
     @include('Home.Layout.font_head')
@@ -35,7 +35,7 @@
                                 <a href="/">Trang chủ</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#">Danh muc</a>
+                                <a href="#">Danh Mục</a>
                                 <ul class="sub-menu">
                                     <li class="dropdown">
                                         <a href="#">Products</a>
@@ -77,10 +77,6 @@
                     <a href="#" class="search-toggler main-header__search">
                         <i class="trevlo-one-icon-search" aria-hidden="true"></i>
                         <span class="sr-only">Search</span>
-                    </a><!-- /.search-toggler -->
-                    <a href="cart.html" class="main-header__cart">
-                        <i class="trevlo-one-icon-cart" aria-hidden="true"></i>
-                        <span class="sr-only">Shopping Cart</span>
                     </a><!-- /.search-toggler -->
                     <a href="tour-listing-side-filter-right.html"
                        class="main-header__button trevlo-btn trevlo-btn--two trevlo-btn--base">
@@ -1236,17 +1232,6 @@
                                 <a href="tel:+1234567890">+123 456 7890</a>
                             </li>
                         </ul><!-- /.footer-three__contact__list -->
-                        <div class="footer-three__newsletter">
-                            <form action="#" data-url="MAILCHIMP_FORM_URL"
-                                  class="footer-three__newsletter__form mc-form">
-                                <input type="email" name="EMAIL" id="footer-three__newsletter__input"
-                                       placeholder="Enter Email" class="footer-three__newsletter__input">
-                                <button type="submit"
-                                        class="footer-three__newsletter__btn trevlo-btn trevlo-btn--two trevlo-btn--base">
-                                    <span>Subscribe</span></button>
-                            </form><!-- /.footer-widget__newsletter-form -->
-                            <div class="mc-form__response"></div><!-- /.mc-form__response -->
-                        </div><!-- /.footer-three__newsletter -->
                     </div><!-- /.footer-three__contact -->
                 </div><!-- /.footer-three__top -->
                 <div class="row gutter-y-40">

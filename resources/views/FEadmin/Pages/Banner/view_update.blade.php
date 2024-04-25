@@ -7,11 +7,11 @@
             display: none;
             position: absolute;
             bottom: 120%;
-            transform: translateX(70%);
+            transform: translateX(0%);
         }
 
         .image-container img {
-            /* width: 30%; */
+            width: 60%;
         }
 
         #popoverButton:hover+.image-container,

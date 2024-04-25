@@ -11,15 +11,21 @@ use App\Http\Controllers\AdminController\Banner\BannerController;
 use App\Http\Controllers\AdminController\Tour\TourController;
 use App\Http\Controllers\AdminController\Blog\BlogController;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+// Controller User
+use App\Http\Controllers\UserController\Home\HomeUserController;
+
+Route::prefix('')->group(function () {
+    Route::get('/', [HomeUserController::class, 'index'])->name('home');
+});
+
 // // Router Đăng Nhập Admin
 Route::get('/dang-nhap-quan-tri', [LoginController::class, 'view_login'])->name('view_login_account');
 Route::post('/dang-nhap-quan-tri', [LoginController::class, 'login'])->name('login_admin');
 Route::get('/dang-xuat-quan-tri', [LoginController::class, 'logout'])->name('logout_admin');
 
 // Danh Sách Router Admin
- Route::prefix('travel-admin')->group(function () {
-//Route::prefix('travel-admin')->middleware('admin')->group(function () {
+// Route::prefix('travel-admin')->group(function () {
+Route::prefix('travel-admin')->middleware('admin')->group(function () {
     // Route Trang Home
     Route::get('/', [HomeController::class, 'index'])->name('view_home_admin');
 
