@@ -14,9 +14,16 @@ return new class extends Migration {
     {
         Schema::create('blog', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name')->nullable(false);
             $table->string('slug')->nullable(false);
-            $table->string('title')->nullable(false);
-            $table->string('content')->nullable(false);
+            $table->string('imgBanner')->nullable(false);
+            $table->json('imageArray')->nullable(); //Danh sách ảnh
+            $table->json('videoArray')->nullable(); //Danh sách video
+            $table->string('info_details_blog')->nullable(); //chi tiết
+            $table->unsignedBigInteger('idCategory'); // danh mục vị trí
+            $table->foreign('idCategory')->references('id')->on('categories')->onDelete('cascade');
+            $table->string('codeTour')->nullable();
+            $table->string('nameTour')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->string('timeCreate');
             $table->timestamps();

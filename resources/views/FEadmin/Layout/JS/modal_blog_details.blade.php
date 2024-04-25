@@ -1,13 +1,13 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        var links = document.querySelectorAll('.tour_detail');
+        var links = document.querySelectorAll('.blogs_detail');
 
         links.forEach(function (link) {
             link.addEventListener('click', function (event) {
                 event.preventDefault();
                 var id = this.dataset.id;
                 $.ajax({
-                    url: 'chi-tiet-tour/' + id,
+                    url: 'chi-tiet-blog/' + id,
                     type: 'GET',
                     success: function (response) {
                         // Parse the image array
@@ -22,8 +22,8 @@
 
 
                         $('#modal-body').html(html);
-                        $('#title-modal-tour').html('Chi tiết tour Tour');
-                        $('#myModal_tour').modal('show');
+                        $('#title-modal-tour').html('Chi tiết bài viết');
+                        $('#modal_blogs').modal('show');
 
                         var myCarousel = document.querySelector('#carouselExampleIndicators');
                         var carousel = new bootstrap.Carousel(myCarousel, {

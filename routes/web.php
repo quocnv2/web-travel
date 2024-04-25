@@ -9,8 +9,9 @@ use App\Http\Controllers\AccountController\User\LoginController;
 use App\Http\Controllers\AdminController\Home\HomeController;
 use App\Http\Controllers\AdminController\Banner\BannerController;
 use App\Http\Controllers\AdminController\Tour\TourController;
+use App\Http\Controllers\AdminController\Blog\BlogController;
 
-
+Route::get('/', [HomeController::class, 'index'])->name('home');
 // // Router Đăng Nhập Admin
 Route::get('/dang-nhap-quan-tri', [LoginController::class, 'view_login'])->name('view_login_account');
 Route::post('/dang-nhap-quan-tri', [LoginController::class, 'login'])->name('login_admin');
@@ -71,4 +72,12 @@ Route::get('/dang-xuat-quan-tri', [LoginController::class, 'logout'])->name('log
     Route::get('/cap-nhat-tour/{slug}', [TourController::class, 'view_update'])->name('view_update_tour');
     Route::post('/cap-nhat-tour/{slug}', [TourController::class, 'update_tour'])->name('update_tour');
 
+
+     Route::get('/view-danh-sach-blog', [BlogController::class, 'view_list'])->name('view_list_blog');
+     Route::get('/chi-tiet-blog/{slug}', [BlogController::class, 'detail_blog'])->name('detail_blog');
+     Route::get('/view-them-moi-blog', [BlogController::class, 'view_create'])->name('view_create_blog');
+     Route::post('/them-moi-blog', [BlogController::class, 'create_blog'])->name('create_blog');
+     Route::get('/xoa-blog/{slug}', [BlogController::class, 'delete_blog'])->name('delete_blog');
+     Route::get('/cap-nhat-blog/{slug}', [BlogController::class, 'view_update'])->name('view_update_blog');
+     Route::post('/cap-nhat-blog/{slug}', [BlogController::class, 'update_blog'])->name('update_blog');
 });

@@ -4,7 +4,7 @@
             <a href="{{ route('view_home_admin') }}" class="b-brand text-primary">
                 <!-- ========   Change your logo from here   ============ -->
                 <img style="max-width: 70%;" src="{{ url('assets') }}/images/logo_white_background.png"
-                    class="img-fluid logo-lg" alt="logo">
+                     class="img-fluid logo-lg" alt="logo">
                 <span class="badge bg-light-success rounded-pill ms-2 theme-version">v9.0</span>
             </a>
         </div>
@@ -14,7 +14,7 @@
                     <div class="d-flex align-items-center">
                         <div class="flex-shrink-0">
                             <img src="{{ url('assets') }}/images/user/avatar-1.jpg" alt="user-image"
-                                class="user-avtar wid-45 rounded-circle" />
+                                 class="user-avtar wid-45 rounded-circle"/>
                         </div>
                         <div class="flex-grow-1 ms-3 me-2">
                             {{--                            <h6 class="mb-0">{{ Auth::guard('admin')->user()->fullName }}</h6> --}}
@@ -23,7 +23,7 @@
                             <small>Email Demo</small>
                         </div>
                         <a class="btn btn-icon btn-link-secondary avtar" data-bs-toggle="collapse"
-                            href="#pc_sidebar_userlink">
+                           href="#pc_sidebar_userlink">
                             <svg class="pc-icon">
                                 <use xlink:href="#custom-sort-outline"></use>
                             </svg>
@@ -150,10 +150,10 @@
                         <span class="pc-mtext">Bài Viết</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="">Danh
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_list_blog') }}">Danh
                                 sách</a>
                         </li>
-                        <li class="pc-item"><a class="pc-link" href="">Thêm
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_create_blog') }}">Thêm
                                 mới</a>
                         </li>
                     </ul>
