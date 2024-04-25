@@ -7,6 +7,7 @@ use App\Http\Requests\Blog\createRequest;
 use App\Http\Requests\Blog\updateRequest;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Tour;
 
 class BlogController extends Controller
 {
@@ -24,11 +25,12 @@ class BlogController extends Controller
     }
 
     // View thêm mới
-    public function view_create(Category $category, Blog $blog)
+    public function view_create(Category $category, Blog $blog, Tour $tour)
     {
         // Lấy danh sách danh muc
         $list_Category = $category->get_orderBy_ASC();
-        return view('FEadmin.Pages.Blog.view_create', compact('list_Category'));
+        $list_Tour = $tour->get_orderBy_ASC();
+        return view('FEadmin.Pages.Blog.view_create', compact('list_Category','list_Tour'));
     }
 
     // Phương thức thêm mới

@@ -65,10 +65,26 @@
                             <input type="text" class="form-control" name="slug" value="{{ old('slug') }}"
                                    id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
                         </div>
-                        <div class="form-group col-12 col-md-12">
+                        <div class="form-group col-12 col-md-5">
                             <label class="form-label" for="exampleSelect1">Vị Trí</label>
                             <select class="form-select" id="exampleSelect1" name="idCategory">
                                 @foreach ($list_Category->sortBy('name') as $value)
+                                    @if ($value->status == 0)
+                                        <option value="{{ $value->id }}"
+                                                @if ($value->id == old('idCategory')) selected @endif>
+                                            {{ $value->name }}
+                                        </option>
+                                    @endif
+                                @endforeach
+                            </select>
+                            @error('idCategory')
+                            <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
+                        </div>
+                        <div class="form-group col-12 col-md-7">
+                            <label class="form-label" for="exampleSelect1">Tour</label>
+                            <select class="form-select" id="exampleSelect1" name="nameTour">
+                                @foreach ($list_Tour->sortBy('name') as $value)
                                     @if ($value->status == 0)
                                         <option value="{{ $value->id }}"
                                                 @if ($value->id == old('idCategory')) selected @endif>
