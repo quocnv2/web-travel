@@ -99,6 +99,16 @@
   --trevlo-shadow-two: 0px 4px 30px 0px rgba(0, 0, 0, 0.08);
 }
 
+.main-header--five .main-menu .main-menu__list > li > span {
+    color: var(--trevlo-white, #ffffff);
+}
+
+.sticky-header--cloned.sticky-header--five .main-menu .main-menu__list > li > span,
+.sticky-header--cloned.sticky-header--five .main-header__search,
+.sticky-header--cloned.sticky-header--five .main-header__cart {
+    color: var(--trevlo-primary, #2D2330);
+}
+
 /*--------------------------------------------------------------
 # Utility
 --------------------------------------------------------------*/
@@ -4635,13 +4645,13 @@ path {
   padding-right: 0;
 }
 .banner-form--two .banner-form__col--1 {
-  width: 16.873%;
+  width: 33%;
 }
 .banner-form--two .banner-form__col--2 {
-  width: 26.772%;
+  width: 33%;
 }
 .banner-form--two .banner-form__col--3 {
-  width: 25.085%;
+  width: 33%;
 }
 .banner-form--two .banner-form__col--4 {
   width: 16.423%;
@@ -9976,7 +9986,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 /*-----------------------------------------
-# Offer Two 
+# Offer Two
 -----------------------------------------*/
 .offer-two {
   background-color: var(--trevlo-white, #ffffff);
@@ -10087,7 +10097,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 /*-----------------------------------------
-# Offer Three 
+# Offer Three
 -----------------------------------------*/
 .offer-three {
   position: relative;
