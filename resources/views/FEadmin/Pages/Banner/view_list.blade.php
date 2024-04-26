@@ -65,7 +65,7 @@
                                           <div class="btn-group-dropdown">
                                             <button class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lựa chọn</button>
                                             <div class="dropdown-menu">
-                                              <a class="dropdown-item" href="{{route('delete_banner', $value->slug) }}" title="Delete" onclick="return confirm('Bạn Có Chắc Muốn Xóa Danh Mục {{ $value->name }} Không?')">
+                                              <a class="dropdown-item" href="{{route('delete_banner', $value->slug) }}" title="Delete" onclick="return confirm('Bạn Có Chắc Muốn Xóa Banner {{ $value->name }} Không?')">
                                                 <span style="display: flex; justify-content: flex-start; color: #dc2626;"><i class="ti ti-trash me-1"></i> Xóa</span>
                                               </a>
                                               <a class="dropdown-item" href="{{route('view_update_banner', $value->slug) }}"><span style="display: flex; justify-content: flex-start; color: #2ca87f;"><i class="ti ti-pencil me-1"></i> Cập Nhật</span></a>

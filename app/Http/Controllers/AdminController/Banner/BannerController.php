@@ -90,9 +90,10 @@ class BannerController extends Controller
         // if(Auth::guard('admin')->user()->decentralization == 1){
         //     return view('FEadmin.Pages.Error.error404');
         // }
-//        $validatedData = $req->validate([
-//            'slug' => [new CategoriesRule($slug)],
-//        ]);
+
+        $validatedData = $req->validate([
+            'slug' => [new BannerRule($slug)],
+        ]);
 
         $obj = $banner->get_link_slug($slug);
 

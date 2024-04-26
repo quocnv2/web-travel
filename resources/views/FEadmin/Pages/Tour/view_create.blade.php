@@ -29,7 +29,7 @@
         <!-- [ breadcrumb ] end -->
         <!-- [ Main Content ] start -->
         <div class="row">
-            <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
+            <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1">
                 <!-- Basic Inputs -->
                 <form class="card" action="{{ route('create_tour') }}" method="POST" id="formReset"
                       enctype="multipart/form-data">

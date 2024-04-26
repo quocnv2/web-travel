@@ -30,6 +30,11 @@ class Blog extends Model
         'timeCreate',
     ];
 
+    public function get_orderBy_ASC_status_page()
+    {
+        return $this->orderBy('timeCreate', 'DESC')->where('status', 0)->paginate(3);
+    }
+
     // phương thức thêm mới
     public function create_blog($req)
     {

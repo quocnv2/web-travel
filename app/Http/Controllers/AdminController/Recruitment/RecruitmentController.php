@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Recruitment\createRequest;
 use App\Http\Requests\Recruitment\updateRequest;
 use App\Models\Recruitment;
+use App\Rules\Recruitment\RecruitmentRequest;
 
 class RecruitmentController extends Controller
 {
@@ -84,9 +85,10 @@ class RecruitmentController extends Controller
         // if(Auth::guard('admin')->user()->decentralization == 1){
         //     return view('FEadmin.Pages.Error.error404');
         // }
-//        $validatedData = $req->validate([
-//            'slug' => [new CategoriesRule($slug)],
-//        ]);
+
+        $validatedData = $req->validate([
+            'slug' => [new RecruitmentRequest($slug)],
+        ]);
 
         $obj = $recruitment->get_link_slug($slug);
 

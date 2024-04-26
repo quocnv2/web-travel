@@ -37,18 +37,11 @@
                             <li class="dropdown">
                                 <a href="#">Danh Mục</a>
                                 <ul class="sub-menu">
-                                    <li class="dropdown">
-                                        <a href="#">Products</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="products.html">No sidebar</a></li>
-                                            <li><a href="products-left.html">Left sidebar</a></li>
-                                            <li><a href="products-right.html">Right sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="products-carousel.html">Products carousel</a></li>
-                                    <li><a href="product-details.html">Product details</a></li>
-                                    <li><a href="cart.html">Cart</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    @foreach ($categories as $category)
+                                        <li>
+                                            <a href="{{ url('/' . $category->slug) }}">{{ $category->name }}</a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </li>
 
@@ -465,53 +458,75 @@
                             }
                         }
                         }'>
-                            <div class="item">
-                                <div class="tour-listing-five__card">
-                                    <div class="tour-listing-five__card__bg"
-                                         style="background-image: url({{ url('assets') }}/trevlo/images/shapes/tour-shape-bg-5-1.png);"></div>
-                                    <!-- /.tour-listing-five__card__bg -->
-                                    <div class="tour-listing-five__card__inner">
-                                        <a href="tour-listing-details-right.html"
-                                           class="tour-listing-five__card__image">
-                                            <img src="{{ url('assets') }}/trevlo/images/tours/tour-7-1.jpg" alt="tour">
-                                            <div class="tour-listing-five__card__featured">featured</div>
-                                            <div class="tour-listing-five__card__overlay">
-                                                    <span class="tour-listing-five__card__plus">
-                                                        <i class="icon-plus"></i>
-                                                    </span>
-                                            </div><!-- /.tour-listing-five__card__overlay -->
-                                        </a><!-- /.tour-listing-five__card__image -->
-                                        <div class="tour-listing-five__card__content">
-                                            <div class="tour-listing-five__card__ratings">
-                                                <div class="trevlo-ratings">
-                                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                        class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                        class="fa fa-star"></i>
-                                                </div>
-                                                <p class="tour-listing-five__card__ratings__text">4.9 (5)</p>
-                                            </div><!-- /.tour-listing-five__card__ratings -->
-                                            <h3 class="tour-listing-five__card__title">
-                                                <a href="tour-listing-details-right.html">Discovery Island Kayak
-                                                    Tour</a>
-                                            </h3><!-- /.tour-listing-five__card__title -->
-                                            <div class="tour-listing-five__card__location">
+                            @foreach($tour_list as $valueTour)
+                                <div class="item">
+                                    <div class="tour-listing-five__card">
+                                        <div class="tour-listing-five__card__bg"
+                                             style="background-image: url({{ url('assets') }}/trevlo/images/shapes/tour-shape-bg-5-1.png);"></div>
+                                        <!-- /.tour-listing-five__card__bg -->
+                                        <div class="tour-listing-five__card__inner">
+                                            <a href=""
+                                               class="tour-listing-five__card__image">
+                                                <img src="{{ $valueTour -> imgBanner }}" alt="tour">
+                                                <div
+                                                    class="tour-listing-five__card__featured">{{$valueTour->objCategory->name}}</div>
+{{--                                                <div class="tour-listing-five__card__overlay">--}}
+{{--                                                    <span class="tour-listing-five__card__plus">--}}
+{{--                                                        <i class="icon-plus"></i>--}}
+{{--                                                    </span>--}}
+{{--                                                </div><!-- /.tour-listing-five__card__overlay -->--}}
+                                            </a><!-- /.tour-listing-five__card__image -->
+                                            <div class="tour-listing-five__card__content">
+                                                <div class="tour-listing-five__card__ratings">
+                                                    <div class="trevlo-ratings">
+                                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                                            class="fa fa-star"></i><i class="fa fa-star"></i><i
+                                                            class="fa fa-star"></i>
+                                                    </div>
+                                                    <p class="tour-listing-five__card__ratings__text">4.9 (5)</p>
+                                                </div><!-- /.tour-listing-five__card__ratings -->
+                                                <h3 class="tour-listing-five__card__title">
+                                                    <a href="">{{$valueTour->name}}</a>
+                                                </h3><!-- /.tour-listing-five__card__title -->
+                                                <div class="tour-listing-five__card__location">
                                                     <span class="tour-listing-five__card__location__icon">
                                                         <i class="trevlo-one-icon-maps-and-flags"></i>
                                                     </span><!-- /.tour-listing-five__card__location__icon -->
-                                                <p class="tour-listing-five__card__location__text">Main Street Brooklyn,
-                                                    2569 003 NY</p><!-- /.tour-listing-five__card__location__text -->
-                                            </div><!-- /.tour-listing-five__card__location -->
-                                            <div class="tour-listing-five__card__bottom">
-                                                <div class="tour-listing-five__card__price-box">
-                                                    <p class="tour-listing-five__card__price-title">form</p>
-                                                    <!-- /.tour-listing-five__card__price-title -->
-                                                    <h4 class="tour-listing-five__card__price">$169</h4>
-                                                    <!-- /.tour-listing-five__card__price -->
-                                                </div><!-- /.tour-listing-five__card__price-box -->
-                                                <div class="tour-listing-five__card__btn-group">
-                                                    <a href="javascript:void(0);"
-                                                       class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
-                                                       data-gallery-options='{
+                                                    @php
+                                                        $address = "";
+                                                        if(isset($valueTour->province)){
+                                                            $address .= $valueTour->province;
+                                                        }
+                                                        if (isset($valueTour->district)) {
+                                                            if ($address !== '') {
+                                                                $address .= ' - ';
+                                                            }
+                                                            $address .= $valueTour->district;
+                                                        }
+
+                                                        // Kiểm tra và thêm thông tin phường xã
+                                                        if (isset($valueTour->wards)) {
+                                                            if ($address !== '') {
+                                                                $address .= ' - ';
+                                                            }
+                                                            $address .= $valueTour->wards;
+                                                        }
+                                                    @endphp
+                                                    <p class="tour-listing-five__card__location__text">{{ $address }}</p>
+                                                    <!-- /.tour-listing-five__card__location__text -->
+                                                </div><!-- /.tour-listing-five__card__location -->
+                                                <div class="tour-listing-five__card__bottom">
+                                                    <div class="tour-listing-five__card__price-box">
+                                                        <p class="tour-listing-five__card__price-title">Giá Tour</p>
+                                                        <!-- /.tour-listing-five__card__price-title -->
+                                                        <h4 class="tour-listing-five__card__price">{{ number_format($valueTour->price_child, 0, ',', '.') }}vnđ - {{ number_format($valueTour->price_adult, 0, ',', '.') }}
+                                                            vnđ</h4>
+                                                        <!-- /.tour-listing-five__card__price -->
+                                                    </div><!-- /.tour-listing-five__card__price-box -->
+                                                    <div class="tour-listing-five__card__btn-group">
+                                                        <a href="javascript:void(0);"
+                                                           class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
+                                                           data-gallery-options='{
                                                     "items": [
                                                       {
                                                         "src": "{{ url('assets') }}/trevlo/images/tours/tour-7-1.jpg"
@@ -528,243 +543,19 @@
                                                     },
                                                     "type": "image"
                                                 }'>
-                                                        <span class="icon-photo-camera-1"></span>
-                                                    </a>
-                                                    <a href="https://www.youtube.com/watch?v=h9MbznbxlLc"
-                                                       class="tour-listing-five__card__popup-btn video-popup">
-                                                        <span class="icon-video-camera-1-1"></span>
-                                                    </a>
-                                                </div><!-- /.tour-listing-five__card__btn-group -->
-                                            </div><!-- /.tour-listing-five__card__bottom -->
-                                        </div><!-- /.tour-listing-five__card__content -->
-                                    </div><!-- /.tour-listing-five__card__inner -->
-                                </div><!-- /.tour-listing-five__card -->
-                            </div><!-- /.item -->
-                            <div class="item">
-                                <div class="tour-listing-five__card">
-                                    <div class="tour-listing-five__card__bg"
-                                         style="background-image: url({{ url('assets') }}/trevlo/images/shapes/tour-shape-bg-5-1.png);"></div>
-                                    <!-- /.tour-listing-five__card__bg -->
-                                    <div class="tour-listing-five__card__inner">
-                                        <a href="tour-listing-details-right.html"
-                                           class="tour-listing-five__card__image">
-                                            <img src="{{ url('assets') }}/trevlo/images/tours/tour-7-2.jpg" alt="tour">
-                                            <div class="tour-listing-five__card__discount">30% off</div>
-                                            <div class="tour-listing-five__card__overlay">
-                                                    <span class="tour-listing-five__card__plus">
-                                                        <i class="icon-plus"></i>
-                                                    </span>
-                                            </div><!-- /.tour-listing-five__card__overlay -->
-                                        </a><!-- /.tour-listing-five__card__image -->
-                                        <div class="tour-listing-five__card__content">
-                                            <div class="tour-listing-five__card__ratings">
-                                                <div class="trevlo-ratings">
-                                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                        class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                        class="fa fa-star"></i>
-                                                </div>
-                                                <p class="tour-listing-five__card__ratings__text">4.9 (5)</p>
-                                            </div><!-- /.tour-listing-five__card__ratings -->
-                                            <h3 class="tour-listing-five__card__title">
-                                                <a href="tour-listing-details-right.html">Beautiful Floating Villa</a>
-                                            </h3><!-- /.tour-listing-five__card__title -->
-                                            <div class="tour-listing-five__card__location">
-                                                    <span class="tour-listing-five__card__location__icon">
-                                                        <i class="trevlo-one-icon-maps-and-flags"></i>
-                                                    </span><!-- /.tour-listing-five__card__location__icon -->
-                                                <p class="tour-listing-five__card__location__text">6391 Elgin St.
-                                                    Celina, Delaware</p>
-                                                <!-- /.tour-listing-five__card__location__text -->
-                                            </div><!-- /.tour-listing-five__card__location -->
-                                            <div class="tour-listing-five__card__bottom">
-                                                <div class="tour-listing-five__card__price-box">
-                                                    <p class="tour-listing-five__card__price-title">form</p>
-                                                    <!-- /.tour-listing-five__card__price-title -->
-                                                    <h4 class="tour-listing-five__card__price">$180</h4>
-                                                    <!-- /.tour-listing-five__card__price -->
-                                                </div><!-- /.tour-listing-five__card__price-box -->
-                                                <div class="tour-listing-five__card__btn-group">
-                                                    <a href="javascript:void(0);"
-                                                       class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
-                                                       data-gallery-options='{
-                                                    "items": [
-                                                      {
-                                                        "src": "{{ url('assets') }}/trevlo/images/tours/tour-7-2.jpg"
-                                                      },
-                                                      {
-                                                        "src": "{{ url('assets') }}/trevlo/images/tours/tour-7-3.jpg"
-                                                      },
-                                                      {
-                                                        "src": "{{ url('assets') }}/trevlo/images/tours/tour-7-4.jpg"
-                                                      }
-                                                    ],
-                                                    "gallery": {
-                                                      "enabled": true
-                                                    },
-                                                    "type": "image"
-                                                }'>
-                                                        <span class="icon-photo-camera-1"></span>
-                                                    </a>
-                                                    <a href="https://www.youtube.com/watch?v=h9MbznbxlLc"
-                                                       class="tour-listing-five__card__popup-btn video-popup">
-                                                        <span class="icon-video-camera-1-1"></span>
-                                                    </a>
-                                                </div><!-- /.tour-listing-five__card__btn-group -->
-                                            </div><!-- /.tour-listing-five__card__bottom -->
-                                        </div><!-- /.tour-listing-five__card__content -->
-                                    </div><!-- /.tour-listing-five__card__inner -->
-                                </div><!-- /.tour-listing-five__card -->
-                            </div><!-- /.item -->
-                            <div class="item">
-                                <div class="tour-listing-five__card">
-                                    <div class="tour-listing-five__card__bg"
-                                         style="background-image: url({{ url('assets') }}/trevlo/images/shapes/tour-shape-bg-5-1.png);"></div>
-                                    <!-- /.tour-listing-five__card__bg -->
-                                    <div class="tour-listing-five__card__inner">
-                                        <a href="tour-listing-details-right.html"
-                                           class="tour-listing-five__card__image">
-                                            <img src="{{ url('assets') }}/trevlo/images/tours/tour-7-3.jpg" alt="tour">
-                                            <div class="tour-listing-five__card__featured">featured</div>
-                                            <div class="tour-listing-five__card__overlay">
-                                                    <span class="tour-listing-five__card__plus">
-                                                        <i class="icon-plus"></i>
-                                                    </span>
-                                            </div><!-- /.tour-listing-five__card__overlay -->
-                                        </a><!-- /.tour-listing-five__card__image -->
-                                        <div class="tour-listing-five__card__content">
-                                            <div class="tour-listing-five__card__ratings">
-                                                <div class="trevlo-ratings">
-                                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                        class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                        class="fa fa-star"></i>
-                                                </div>
-                                                <p class="tour-listing-five__card__ratings__text">4.9 (5)</p>
-                                            </div><!-- /.tour-listing-five__card__ratings -->
-                                            <h3 class="tour-listing-five__card__title">
-                                                <a href="tour-listing-details-right.html">Visit The Maldives. Topping
-                                                    the</a>
-                                            </h3><!-- /.tour-listing-five__card__title -->
-                                            <div class="tour-listing-five__card__location">
-                                                    <span class="tour-listing-five__card__location__icon">
-                                                        <i class="trevlo-one-icon-maps-and-flags"></i>
-                                                    </span><!-- /.tour-listing-five__card__location__icon -->
-                                                <p class="tour-listing-five__card__location__text">New York. USA, 2569
-                                                    003 NY</p><!-- /.tour-listing-five__card__location__text -->
-                                            </div><!-- /.tour-listing-five__card__location -->
-                                            <div class="tour-listing-five__card__bottom">
-                                                <div class="tour-listing-five__card__price-box">
-                                                    <p class="tour-listing-five__card__price-title">form</p>
-                                                    <!-- /.tour-listing-five__card__price-title -->
-                                                    <h4 class="tour-listing-five__card__price">$120</h4>
-                                                    <!-- /.tour-listing-five__card__price -->
-                                                </div><!-- /.tour-listing-five__card__price-box -->
-                                                <div class="tour-listing-five__card__btn-group">
-                                                    <a href="javascript:void(0);"
-                                                       class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
-                                                       data-gallery-options='{
-                                                    "items": [
-                                                      {
-                                                        "src": "{{ url('assets') }}/trevlo/images/tours/tour-7-3.jpg"
-                                                      },
-                                                      {
-                                                        "src": "{{ url('assets') }}/trevlo/images/tours/tour-7-4.jpg"
-                                                      },
-                                                      {
-                                                        "src": "{{ url('assets') }}/trevlo/images/tours/tour-7-1.jpg"
-                                                      }
-                                                    ],
-                                                    "gallery": {
-                                                      "enabled": true
-                                                    },
-                                                    "type": "image"
-                                                }'>
-                                                        <span class="icon-photo-camera-1"></span>
-                                                    </a>
-                                                    <a href="https://www.youtube.com/watch?v=h9MbznbxlLc"
-                                                       class="tour-listing-five__card__popup-btn video-popup">
-                                                        <span class="icon-video-camera-1-1"></span>
-                                                    </a>
-                                                </div><!-- /.tour-listing-five__card__btn-group -->
-                                            </div><!-- /.tour-listing-five__card__bottom -->
-                                        </div><!-- /.tour-listing-five__card__content -->
-                                    </div><!-- /.tour-listing-five__card__inner -->
-                                </div><!-- /.tour-listing-five__card -->
-                            </div><!-- /.item -->
-                            <div class="item">
-                                <div class="tour-listing-five__card">
-                                    <div class="tour-listing-five__card__bg"
-                                         style="background-image: url({{ url('assets') }}/trevlo/images/shapes/tour-shape-bg-5-1.png);"></div>
-                                    <!-- /.tour-listing-five__card__bg -->
-                                    <div class="tour-listing-five__card__inner">
-                                        <a href="tour-listing-details-right.html"
-                                           class="tour-listing-five__card__image">
-                                            <img src="{{ url('assets') }}/trevlo/images/tours/tour-7-4.jpg" alt="tour">
-                                            <div class="tour-listing-five__card__featured">featured</div>
-                                            <div class="tour-listing-five__card__overlay">
-                                                    <span class="tour-listing-five__card__plus">
-                                                        <i class="icon-plus"></i>
-                                                    </span>
-                                            </div><!-- /.tour-listing-five__card__overlay -->
-                                        </a><!-- /.tour-listing-five__card__image -->
-                                        <div class="tour-listing-five__card__content">
-                                            <div class="tour-listing-five__card__ratings">
-                                                <div class="trevlo-ratings">
-                                                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                        class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                        class="fa fa-star"></i>
-                                                </div>
-                                                <p class="tour-listing-five__card__ratings__text">4.9 (5)</p>
-                                            </div><!-- /.tour-listing-five__card__ratings -->
-                                            <h3 class="tour-listing-five__card__title">
-                                                <a href="tour-listing-details-right.html">Barcelona, Spain. With
-                                                    incredible</a>
-                                            </h3><!-- /.tour-listing-five__card__title -->
-                                            <div class="tour-listing-five__card__location">
-                                                    <span class="tour-listing-five__card__location__icon">
-                                                        <i class="trevlo-one-icon-maps-and-flags"></i>
-                                                    </span><!-- /.tour-listing-five__card__location__icon -->
-                                                <p class="tour-listing-five__card__location__text">30 Commercial Road,
-                                                    Australia</p><!-- /.tour-listing-five__card__location__text -->
-                                            </div><!-- /.tour-listing-five__card__location -->
-                                            <div class="tour-listing-five__card__bottom">
-                                                <div class="tour-listing-five__card__price-box">
-                                                    <p class="tour-listing-five__card__price-title">form</p>
-                                                    <!-- /.tour-listing-five__card__price-title -->
-                                                    <h4 class="tour-listing-five__card__price">$140</h4>
-                                                    <!-- /.tour-listing-five__card__price -->
-                                                </div><!-- /.tour-listing-five__card__price-box -->
-                                                <div class="tour-listing-five__card__btn-group">
-                                                    <a href="javascript:void(0);"
-                                                       class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
-                                                       data-gallery-options='{
-                                                    "items": [
-                                                      {
-                                                        "src": "{{ url('assets') }}/trevlo/images/tours/tour-7-4.jpg"
-                                                      },
-                                                      {
-                                                        "src": "{{ url('assets') }}/trevlo/images/tours/tour-7-1.jpg"
-                                                      },
-                                                      {
-                                                        "src": "{{ url('assets') }}/trevlo/images/tours/tour-7-2.jpg"
-                                                      }
-                                                    ],
-                                                    "gallery": {
-                                                      "enabled": true
-                                                    },
-                                                    "type": "image"
-                                                }'>
-                                                        <span class="icon-photo-camera-1"></span>
-                                                    </a>
-                                                    <a href="https://www.youtube.com/watch?v=h9MbznbxlLc"
-                                                       class="tour-listing-five__card__popup-btn video-popup">
-                                                        <span class="icon-video-camera-1-1"></span>
-                                                    </a>
-                                                </div><!-- /.tour-listing-five__card__btn-group -->
-                                            </div><!-- /.tour-listing-five__card__bottom -->
-                                        </div><!-- /.tour-listing-five__card__content -->
-                                    </div><!-- /.tour-listing-five__card__inner -->
-                                </div><!-- /.tour-listing-five__card -->
-                            </div><!-- /.item -->
+                                                            <span class="icon-photo-camera-1"></span>
+                                                        </a>
+                                                        <a href="https://www.youtube.com/watch?v=h9MbznbxlLc"
+                                                           class="tour-listing-five__card__popup-btn video-popup">
+                                                            <span class="icon-video-camera-1-1"></span>
+                                                        </a>
+                                                    </div><!-- /.tour-listing-five__card__btn-group -->
+                                                </div><!-- /.tour-listing-five__card__bottom -->
+                                            </div><!-- /.tour-listing-five__card__content -->
+                                        </div><!-- /.tour-listing-five__card__inner -->
+                                    </div><!-- /.tour-listing-five__card -->
+                                </div><!-- /.item -->
+                            @endforeach
                         </div><!-- /.tour-listing-five__carousel -->
                     </div><!-- /.trevlo-stretch-element-inside-column -->
                 </div><!-- /.col-lg-12 -->
@@ -1087,120 +878,38 @@
                 </div><!-- /.row -->
             </div><!-- /.blog-four__top -->
             <div class="row gutter-y-30">
+                @foreach($blog_list as $valueBlog)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
                     <div class="blog-four__card">
-                        <a href="blog-details-right.html" class="blog-four__card__image-link"
-                           style="background-image: url({{ url('assets') }}/trevlo/images/blog/blog-5-1.jpg);">
-                            <div class="blog-four__card__date">
-                                <span class="blog-four__card__date__day">25</span>
-                                <span class="blog-four__card__date__month">june</span>
-                            </div>
-                            <div class="blog-four__card__overlay">
-                                    <span class="blog-four__card__plus">
-                                        <i class="icon-plus"></i>
-                                    </span>
-                            </div><!-- /.blog-four__card__overlay -->
+                        <a href="#" class="blog-four__card__image-link"
+                           style="background-image: url({{$valueBlog-> imgBanner}});">
+{{--                            <div class="blog-four__card__date">--}}
+{{--                                <span class="blog-four__card__date__day">25</span>--}}
+{{--                                <span class="blog-four__card__date__month">june</span>--}}
+{{--                            </div>--}}
+{{--                            <div class="blog-four__card__overlay">--}}
+{{--                                    <span class="blog-four__card__plus">--}}
+{{--                                        <i class="icon-plus"></i>--}}
+{{--                                    </span>--}}
+{{--                            </div><!-- /.blog-four__card__overlay -->--}}
                         </a><!-- /.blog-four__card__image-link -->
                         <div class="blog-four__card__content">
-                            <h3 class="blog-four__card__title"><a href="blog-details-right.html">are produced by
-                                    world-class creators</a></h3><!-- /.blog-four__card__title -->
+                            <h3 class="blog-four__card__title"><a href="#">{{$valueBlog->name}}</a></h3><!-- /.blog-four__card__title -->
                             <ul class="list-unstyled blog-four__card__meta">
                                 <li>
                                     <a href="#">
                                             <span class="blog-four__card__meta__icon">
                                                 <i class="trevlo-one-icon-user"></i>
                                             </span>
-                                        by Admin
+                                        {{$valueBlog->objCategory->name}}
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="#">
-                                            <span class="blog-four__card__meta__icon">
-                                                <i class="trevlo-one-icon-comment"></i>
-                                            </span>
-                                        2 Comments
-                                    </a>
-                                </li>
+
                             </ul>
                         </div><!-- /.blog-four__card__content -->
                     </div><!-- /.blog-four__card -->
                 </div><!-- /.col-lg-4 col-md-6 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-                    <div class="blog-four__card">
-                        <a href="blog-details-right.html" class="blog-four__card__image-link"
-                           style="background-image: url({{ url('assets') }}/trevlo/images/blog/blog-5-2.jpg);">
-                            <div class="blog-four__card__date">
-                                <span class="blog-four__card__date__day">20</span>
-                                <span class="blog-four__card__date__month">june</span>
-                            </div>
-                            <div class="blog-four__card__overlay">
-                                    <span class="blog-four__card__plus">
-                                        <i class="icon-plus"></i>
-                                    </span>
-                            </div><!-- /.blog-four__card__overlay -->
-                        </a><!-- /.blog-four__card__image-link -->
-                        <div class="blog-four__card__content">
-                            <h3 class="blog-four__card__title"><a href="blog-details-right.html">Nail Jelly To The
-                                    Hothouse Wall Pixel</a></h3><!-- /.blog-four__card__title -->
-                            <ul class="list-unstyled blog-four__card__meta">
-                                <li>
-                                    <a href="#">
-                                            <span class="blog-four__card__meta__icon">
-                                                <i class="trevlo-one-icon-user"></i>
-                                            </span>
-                                        by Admin
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                            <span class="blog-four__card__meta__icon">
-                                                <i class="trevlo-one-icon-comment"></i>
-                                            </span>
-                                        2 Comments
-                                    </a>
-                                </li>
-                            </ul>
-                        </div><!-- /.blog-four__card__content -->
-                    </div><!-- /.blog-four__card -->
-                </div><!-- /.col-lg-4 col-md-6 -->
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
-                    <div class="blog-four__card">
-                        <a href="blog-details-right.html" class="blog-four__card__image-link"
-                           style="background-image: url({{ url('assets') }}/trevlo/images/blog/blog-5-3.jpg);">
-                            <div class="blog-four__card__date">
-                                <span class="blog-four__card__date__day">15</span>
-                                <span class="blog-four__card__date__month">june</span>
-                            </div>
-                            <div class="blog-four__card__overlay">
-                                    <span class="blog-four__card__plus">
-                                        <i class="icon-plus"></i>
-                                    </span>
-                            </div><!-- /.blog-four__card__overlay -->
-                        </a><!-- /.blog-four__card__image-link -->
-                        <div class="blog-four__card__content">
-                            <h3 class="blog-four__card__title"><a href="blog-details-right.html">Collaboratively
-                                    Pontificate Bleeding</a></h3><!-- /.blog-four__card__title -->
-                            <ul class="list-unstyled blog-four__card__meta">
-                                <li>
-                                    <a href="#">
-                                            <span class="blog-four__card__meta__icon">
-                                                <i class="trevlo-one-icon-user"></i>
-                                            </span>
-                                        by Admin
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                            <span class="blog-four__card__meta__icon">
-                                                <i class="trevlo-one-icon-comment"></i>
-                                            </span>
-                                        2 Comments
-                                    </a>
-                                </li>
-                            </ul>
-                        </div><!-- /.blog-four__card__content -->
-                    </div><!-- /.blog-four__card -->
-                </div><!-- /.col-lg-4 col-md-6 -->
+                @endforeach
             </div><!-- /.row -->
         </div><!-- /.container -->
     </div><!-- /.blog-four section-space -->

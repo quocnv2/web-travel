@@ -34,7 +34,7 @@ class BlogController extends Controller
     }
 
     // Phương thức thêm mới
-    public function create_blog(createRequest $req, Blog $blog)
+    public function create_blog(createRequest $req, Blog $blog, Tour $tour)
     {
         // Xử Lý Ảnh Banner
         $file = '';
@@ -70,11 +70,13 @@ class BlogController extends Controller
             }
         }
 
-        // Tạo Req
+        $tourObj = $tour->get_link_code($req->codeTour);
+
         $req->merge([
             'imgBanner' => $file,
             'imageArray' => $images,
             'videoArray' => $videos,
+            'nameTour' => $tourObj->name,
         ]);
 
         // dd($req);

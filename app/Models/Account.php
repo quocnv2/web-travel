@@ -32,17 +32,17 @@ class Account extends Model
     //Phương thức lấy thông tin theo id
     public function get_by_id($id){
         return DB::table('users')->where('id', $id)->first();
-    } 
+    }
 
     //Phương thức lấy danh sách
     public function getAll(){
         return DB::table('users')->where('email', '!=', 'admin@gmail.com')->orderBy('timeCreate','ASC')->get();
-    } 
+    }
 
     //Phương thức lấy danh sách không có quản trị
     public function get_orderBy_ASC(){
-        return DB::table('users')->where('email', '!=', 'admin@group.com.vn')->where('email', '!=', 'admin@gmail.com')->orderBy('timeCreate','DESC')->get();
-    } 
+        return DB::table('users')->where('email', '!=', 'admin@travel.com.vn')->where('email', '!=', 'admin@gmail.com')->orderBy('timeCreate','DESC')->get();
+    }
 
     // phương thức lấy nhân sự theo slug
     public function get_link_slug($slug){

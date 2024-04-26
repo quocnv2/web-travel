@@ -77,7 +77,7 @@
                                 <use xlink:href="#custom-row-vertical"></use>
                             </svg>
                         </span>
-                        <span class="pc-mtext">Danh Mục</span><span class="pc-arrow"><i
+                        <span class="pc-mtext">Danh Mục Vị Trí</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
                         <li class="pc-item"><a class="pc-link" href="{{ route('view_list_category') }}">Danh sách</a>

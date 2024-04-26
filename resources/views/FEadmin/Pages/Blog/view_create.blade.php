@@ -83,17 +83,17 @@
                         </div>
                         <div class="form-group col-12 col-md-7">
                             <label class="form-label" for="exampleSelect1">Tour</label>
-                            <select class="form-select" id="exampleSelect1" name="nameTour">
+                            <select class="form-select" id="exampleSelect1" name="codeTour">
                                 @foreach ($list_Tour->sortBy('name') as $value)
                                     @if ($value->status == 0)
-                                        <option value="{{ $value->id }}"
-                                                @if ($value->id == old('idCategory')) selected @endif>
+                                        <option value="{{ $value->code }}"
+                                                @if ($value->code == old('codeTour')) selected @endif>
                                             {{ $value->name }}
                                         </option>
                                     @endif
                                 @endforeach
                             </select>
-                            @error('idCategory')
+                            @error('codeTour')
                             <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
