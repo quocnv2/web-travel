@@ -54,8 +54,7 @@
                                     <th>Mã tour</th>
                                     <th>Tên Tour</th>
                                     <th>Danh Mục Tour</th>
-                                    <th>Giá người lớn</th>
-                                    <th>Giá trẻ em</th>
+                                    <th>Giá Tour</th>
                                     <th>Ngày tạo</th>
                                     <th>Trạng thái</th>
                                     <th>Ảnh/Video</th>
@@ -69,8 +68,7 @@
                                         <td>{{ $value->code }}</td>
                                         <td>{{ $value->name }}</td>
                                         <td>{{ $value->objCategory->name }}</td>
-                                        <td>{{ number_format($value->price_adult, 0, ',', '.') }}</td>
-                                        <td>{{ number_format($value->price_child, 0, ',', '.') }}</td>
+                                        <td>{{ number_format($value->price, 0, ',', '.') }} vnđ</td>
                                         <td>{{ Carbon::parse($value->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY, H:mm:ss A') }}
                                         </td>
                                         <td>

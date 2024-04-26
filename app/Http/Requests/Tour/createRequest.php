@@ -30,10 +30,9 @@ class createRequest extends FormRequest
             'slug' => 'unique:tour',
             'status' => 'required',
 //            'file' => 'required|nullable|image|mimes:jpeg,png,jpg,gif|max:10000',
-            'price_child' => 'required|numeric',
+            'price' => 'required|numeric',
 //            'filesImage.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10000', // Kiểm tra filesImage là hình ảnh
 //            'filesVideo.*' => 'nullable|mimetypes:video/quicktime', // Kiểm tra filesVideo là video
-            'price_adult' => 'required|numeric',
         ];
     }
 
@@ -44,10 +43,8 @@ class createRequest extends FormRequest
             'code.unique' => 'Mã đã tồn tại!',
             'name.required' => 'Trường không được để trống!',
             'idCategory.required' => 'Trường không được để trống!',
-            'price_adult.required' => 'Trường không được để trống!',
-            'price_child.required' => 'Trường không được để trống!',
-            'price_adult.numeric' => 'Trường Mặc Định Là Số!',
-            'price_child.numeric' => 'Trường Mặc Định Là Số!',
+            'price.required' => 'Trường không được để trống!',
+            'price.numeric' => 'Trường Mặc Định Là Số!',
             /*'filesImage.*.nullable' => 'Trường ảnh không được để trống',
             'filesImage.*.image' => 'Trường phải là một hình ảnh.',
             'filesImage.*.mimes' => 'Chỉ chấp nhận các định dạng hình ảnh là jpeg, png, jpg, gif.',

@@ -119,23 +119,17 @@
 
 
                         <div class="form-group col-12 col-md-6">
-                            <label class="form-label">Giá người lớn</label>
+                            <label class="form-label">Giá Tour</label>
                             <input type="text" class="form-control form-control" placeholder="Giá người lớn"
-                                   name="price_adult" value="{{ old('price_adult') }}" id="price_adult">
-                            @error('price_adult')
+                                   name="price" value="{{ old('price') }}" id="price">
+                            @error('price')
                             <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
-                            <small id="rent_price_adult" style="display: none;"></small>
+                            <small id="rent_price" style="display: none;"></small>
                         </div>
                         <div class="form-group col-12 col-md-6">
-                            <label class="form-label">Giá trẻ em</label>
-                            <input type="text" class="form-control form-control" placeholder="Giá trẻ em"
-                                   name="price_child" value="{{ old('price_child') }}" id="price_child">
-                            @error('price_child')
-                            <small style="color: #f33923;">{{ $message }}</small>
-                            @enderror
-                            <small id="rent_price_child" style="display: none;"></small>
                         </div>
+
                         <div class="form-group col-12 col-md-4">
                             <div class="box-input-1">
                                 <label for="imgUpload_1" class="custom-file-2">
@@ -288,12 +282,9 @@
             }
         }
 
-        const rentCostInput = document.getElementById('price_child');
-        const rentCostOutput = document.getElementById('rent_price_child');
+        const rentCostInput = document.getElementById('price');
+        const rentCostOutput = document.getElementById('rent_price');
         rentCostInput.addEventListener('input', () => formatCurrency(rentCostInput, rentCostOutput));
 
-        const priceInput = document.getElementById('price_adult');
-        const priceOutput = document.getElementById('rent_price_adult');
-        priceInput.addEventListener('input', () => formatCurrency(priceInput, priceOutput));
     </script>
 @stop

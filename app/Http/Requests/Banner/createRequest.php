@@ -41,7 +41,7 @@ class createRequest extends FormRequest
             'file.mimes' => 'Chỉ chấp nhận các định dạng hình ảnh là jpeg, png, jpg, gif.',
             'file.max' => 'Kích thước tệp hình ảnh không được vượt quá 10 megabytes.',
             'linkCourses.required' => 'Trường không được để trống!',
-            'slug.unique' => 'Bài viết đã tồn tại!',
+            'slug.unique' => 'Tiêu đề đã tồn tại!',
             'status.required' => 'Trạng thái là bắt buộc!',
         ];
     }

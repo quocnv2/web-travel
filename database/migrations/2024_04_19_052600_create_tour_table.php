@@ -21,8 +21,7 @@ return new class extends Migration {
             $table->json('imageArray')->nullable(); //Danh sách ảnh
             $table->json('videoArray')->nullable(); //Danh sách video
             $table->string('info_details_blog')->nullable(); //chi tiết
-            $table->double('price_adult')->default(0)->nullable();
-            $table->double('price_child')->default(0)->nullable();
+            $table->double('price')->default(0)->nullable();
             $table->unsignedBigInteger('idCategory'); // danh mục vị trí
             $table->foreign('idCategory')->references('id')->on('categories')->onDelete('cascade');
             $table->string('province')->nullable(); // tỉnh thành

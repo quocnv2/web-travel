@@ -65,4 +65,9 @@ class Category extends Model
     public function Tour(){
         return $this->hasMany('App\Models\Tour', 'idCategory','id');
     }
+
+    // Phương Thức Liên kết khóa ngoại
+    public function Blog(){
+        return $this->hasMany('App\Models\Blog', 'idCategory','id');
+    }
 }

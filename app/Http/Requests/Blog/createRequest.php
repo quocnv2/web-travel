@@ -19,7 +19,7 @@ class createRequest extends FormRequest
         return [
             'name' => 'required',
             'idCategory' => 'required',
-            'slug' => 'unique:tour',
+            'slug' => 'unique:blog',
             'status' => 'required',
 //            'file' => 'required|nullable|image|mimes:jpeg,png,jpg,gif|max:10000',
 //            'filesImage.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:10000', // Kiểm tra filesImage là hình ảnh
@@ -32,6 +32,8 @@ class createRequest extends FormRequest
         return [
             'name.required' => 'Trường không được để trống!',
             'idCategory.required' => 'Trường không được để trống!',
+            'slug.unique' => 'Bài viết đã tồn tại!',
+            'status.required' => 'Trạng thái là bắt buộc!',
             /*'filesImage.*.nullable' => 'Trường ảnh không được để trống',
             'filesImage.*.image' => 'Trường phải là một hình ảnh.',
             'filesImage.*.mimes' => 'Chỉ chấp nhận các định dạng hình ảnh là jpeg, png, jpg, gif.',

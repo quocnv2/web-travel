@@ -8,6 +8,7 @@ use App\Http\Requests\Blog\updateRequest;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Tour;
+use App\Rules\Blog\BlogRule;
 
 class BlogController extends Controller
 {
@@ -125,6 +126,9 @@ class BlogController extends Controller
 
     public function update_blog(updateRequest $req, Blog $blog, $slug)
     {
+        $validatedData = $req->validate([
+            'slug' => [new BlogRule($slug)],
+        ]);
 
         $obj = $blog->get_link_slug($slug);
 

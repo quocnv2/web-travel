@@ -30,9 +30,9 @@ class Blog extends Model
         'timeCreate',
     ];
 
-    public function get_orderBy_ASC_status_page()
-    {
-        return $this->orderBy('timeCreate', 'DESC')->where('status', 0)->paginate(3);
+    public function get_orderBy_ASC_status_page(){
+        $obj = Blog::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(3);
+        return $obj;
     }
 
     // phương thức thêm mới
@@ -92,6 +92,6 @@ class Blog extends Model
 
     public function objCategory()
     {
-        return $this->belongsTo(Tour::class, 'idCategory');
+        return $this->belongsTo(Category::class, 'idCategory');
     }
 }
