@@ -24,7 +24,7 @@
         <div class="container">
             <div class="main-header__inner">
                 <div class="main-header__logo">
-                    <a href="index.html">
+                    <a href="">
                         <img src="{{ url('assets') }}/trevlo/images/logo-light-2.png" alt="Trevlo HTML"
                              width="187" class="main-header__logo__1">
                         <img src="{{ url('assets') }}/trevlo/images/logo-light-4.png" alt="Trevlo HTML"
@@ -50,22 +50,22 @@
                             </li>
 
                             <li>
-                                <a href="/">Tour</a>
+                                <a href="">Tour</a>
                             </li>
                             <li>
-                                <a href="/">Phòng</a>
+                                <a href="">Phòng</a>
                             </li>
                             <li>
-                                <a href="/">Bài viết</a>
+                                <a href="">Bài viết</a>
                             </li>
                             <li>
-                                <a href="/">Facebook</a>
+                                <a href="">Facebook</a>
                             </li>
                             <li>
-                                <a href="/">Youtube</a>
+                                <a href="">Youtube</a>
                             </li>
                             <li>
-                                <a href="/">Liên hệ</a>
+                                <a href="">Liên hệ</a>
                             </li>
                         </ul>
                     </nav><!-- /.main-header__nav -->
@@ -74,7 +74,7 @@
                         <span></span>
                         <span></span>
                     </div><!-- /.mobile-nav__toggler -->
-                    <a href="#" class="search-toggler main-header__search">
+                    <a href="" class="search-toggler main-header__search">
                         <i class="trevlo-one-icon-search" aria-hidden="true"></i>
                         <span class="sr-only">Search</span>
                     </a><!-- /.search-toggler -->
@@ -281,7 +281,8 @@
                                     <div class="about-six__phone__text">
                                         <p class="about-six__phone__title">Liên Hệ Chúng Tôi Ngay</p>
                                         <h4 class="about-six__phone__number"><a
-                                                href="tel:+208-555-0112">Phone/Zalo 0888.92.00.92</a>
+                                                {{-- href="tel:+208-555-0112">Phone/Zalo 0888.92.00.92</a> --}}
+                                                href="">Phone/Zalo 0888.92.00.92</a>
                                         </h4>
                                     </div>
                                 </div><!-- /.about-six__phone -->
@@ -783,7 +784,7 @@
                     </div><!-- /.col-lg-8 -->
                     <div class="col-lg-4">
                         <div class="blog-four__button">
-                            <a href="blog-details-right.html" class="trevlo-btn trevlo-btn--border">
+                            <a href="" class="trevlo-btn trevlo-btn--border">
                                 <span>Xem Tất Cả Blog</span>
                                 <i class="trevlo-one-icon-up-right-arrow"></i>
                             </a><!-- /.trevlo-btn -->
@@ -837,7 +838,7 @@
             <div class="container">
                 <div class="footer-three__top">
                     <div class="footer-three__logo">
-                        <a href="index.html">
+                        <a href="">
                             <img src="{{ url('assets') }}/trevlo/images/logo-light-2.png" alt="logo"
                                  width="187">
                         </a>
@@ -854,7 +855,8 @@
                                     <span class="footer-three__contact__list__icon">
                                         <i class="trevlo-one-icon-telephone"></i>
                                     </span><!-- /.footer-three__contact__list__icon -->
-                                <a href="tel:+1234567890">Phone/Zalo 0888.92.00.92</a>
+                                {{-- <a href="tel:+1234567890">Phone/Zalo 0888.92.00.92</a> --}}
+                                <a href="">Phone/Zalo 0888.92.00.92</a>
                             </li>
                         </ul><!-- /.footer-three__contact__list -->
                     </div><!-- /.footer-three__contact -->
@@ -921,7 +923,7 @@
                                             <i class="icon-plus"></i>
                                         </span>
                                 </a><!-- /.footer-widget__gallery__link -->
-                                <a href="gallery.html" class="footer-widget__gallery__link">
+                                <a href="" class="footer-widget__gallery__link">
                                     <img src="{{ url('assets') }}/trevlo/images/gallery/footer-widget-gallery-3.jpg"
                                          alt="footer-widget-gallery">
                                     <span class="footer-widget__gallery__icon">
@@ -978,7 +980,7 @@
         <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
         <div class="logo-box">
-            <a href="index.html" aria-label="logo image"><img
+            <a href="" aria-label="logo image"><img
                     src="{{ url('assets') }}/trevlo/images/logo-light-2.png" width="187"
                     alt=""/></a>
         </div>
@@ -989,18 +991,16 @@
         <ul class="mobile-nav__contact list-unstyled">
             <li>
                 <i class="fa fa-envelope"></i>
-                <a href="mailto:needhelp@trevlo.com">needhelp@trevlo.com</a>
+                {{-- <a href="mailto:needhelp@trevlo.com">needhelp@trevlo.com</a> --}}
+                <a href="mailto:Vadustra@gmail.com">Vadustra@gmail.com</a>
             </li>
             <li>
                 <i class="fa fa-phone-alt"></i>
-                <a href="tel:(303)5550105">(303) 555-0105</a>
+                {{-- <a href="tel:(303)5550105">(303) 555-0105</a> --}}
+                <a href="">Phone/Zalo 0888.92.00.92</a>
             </li>
         </ul><!-- /.mobile-nav__contact -->
         <div class="mobile-nav__social">
-            <a href="https://twitter.com/">
-                <i class="fab fa-twitter" aria-hidden="true"></i>
-                <span class="sr-only">Twitter</span>
-            </a>
             <a href="https://facebook.com/">
                 <i class="fab fa-facebook" aria-hidden="true"></i>
                 <span class="sr-only">Facebook</span>
@@ -1008,10 +1008,6 @@
             <a href="https://pinterest.com/">
                 <i class="fab fa-pinterest-p" aria-hidden="true"></i>
                 <span class="sr-only">Pinterest</span>
-            </a>
-            <a href="https://instagram.com/">
-                <i class="fab fa-instagram" aria-hidden="true"></i>
-                <span class="sr-only">Instagram</span>
             </a>
         </div><!-- /.mobile-nav__social -->
     </div>
