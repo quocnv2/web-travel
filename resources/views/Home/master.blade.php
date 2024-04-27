@@ -50,22 +50,22 @@
                             </li>
 
                             <li>
-                                <a href="">Tour</a>
+                                <a href="https://dulichtrasau.vn/">Tour</a>
                             </li>
                             <li>
-                                <a href="">Phòng</a>
+                                <a href="https://dulichtrasau.vn/">Phòng</a>
                             </li>
                             <li>
-                                <a href="">Bài viết</a>
+                                <a href="https://dulichtrasau.vn/">Bài viết</a>
                             </li>
                             <li>
-                                <a href="">Facebook</a>
+                                <a href="https://dulichtrasau.vn/">Facebook</a>
                             </li>
                             <li>
-                                <a href="">Youtube</a>
+                                <a href="https://dulichtrasau.vn/">Youtube</a>
                             </li>
                             <li>
-                                <a href="">Liên hệ</a>
+                                <a href="https://dulichtrasau.vn/">Liên hệ</a>
                             </li>
                         </ul>
                     </nav><!-- /.main-header__nav -->
