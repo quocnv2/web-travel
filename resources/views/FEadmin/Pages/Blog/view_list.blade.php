@@ -99,7 +99,7 @@
                                                             class="ti ti-trash me-1"></i> Xóa</span>
                                                 </a>
                                                 <a class="dropdown-item"
-                                                   href=""><span
+                                                   href="{{route('update_blog', $value->slug)}}"><span
                                                         style="display: flex; justify-content: flex-start; color: #2ca87f;"><i
                                                             class="ti ti-pencil me-1"></i> Cập Nhật</span></a>
                                             </div>

@@ -79,15 +79,15 @@ class TourController extends Controller
 
         // dd($req);
 
-       //Thực hiện thêm mới
-       $create = $tour->create_tour($req);
+        //Thực hiện thêm mới
+        $create = $tour->create_tour($req);
 
 
-       if ($create) {
-           return redirect()->route('view_create_tour')->with('success', 'Thêm Mới Thành Công!');
-       } else {
-           return redirect()->back()->with('Error', 'Thêm Mới Thất Bại!');
-       }
+        if ($create) {
+            return redirect()->route('view_create_tour')->with('success', 'Thêm Mới Thành Công!');
+        } else {
+            return redirect()->back()->with('Error', 'Thêm Mới Thất Bại!');
+        }
     }
 
     //Phương thức xóa danh mục
@@ -109,7 +109,7 @@ class TourController extends Controller
         }
     }
 
-    public function view_update(Tour $tour, $slug)
+    public function view_update(Tour $tour, Category $category, $slug)
     {
         // if(Auth::guard('admin')->user()->decentralization == 1){
         //     return view('FEadmin.Pages.Error.error404');
@@ -118,7 +118,11 @@ class TourController extends Controller
         if (!$obj) {
             return view('FEadmin.Pages.Error.error404');
         }
-        return view('FEadmin.Pages.Tour.view_update', compact('obj'));
+
+        // Lấy danh sách danh muc
+        $list_Category = $category->get_orderBy_ASC();
+
+        return view('FEadmin.Pages.Tour.view_update', compact('obj', 'list_Category'));
     }
 
     public function update_tour(updateRequest $req, Tour $tour, $slug)
@@ -132,9 +136,12 @@ class TourController extends Controller
 
         $file = '';
         if ($req->file('file')) {
-            $response = $req->file('file') ?  cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->imgBanner;
+            $response = $req->file('file') ? cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->imgBanner;
             $file = $response;
+        } elseif ($tour->imgBanner) {
+            $file = $obj->imgBanner;
         }
+
 
         // Xử lý list ảnh
         $images = []; // Danh sách đường dẫn ảnh
@@ -145,10 +152,13 @@ class TourController extends Controller
                 // Tạo một mảng chứa id và link ảnh và thêm vào danh sách
                 $images[] = ['id' => uniqid(), 'link' => $response];
             }
+        } elseif ($tour->imgArray) {
+            $images[] = $obj->imgArray;
         }
 
         // Xử Lý list video
         $videos = []; // Danh sách đường dẫn video
+        $videoUpdated = false; // Biến kiểm tra có cập nhật video mới không
 
         if ($req->hasFile('filesVideo')) {
             foreach ($req->file('filesVideo') as $video) {
@@ -156,12 +166,15 @@ class TourController extends Controller
                     'resource_type' => 'video',
                     'upload_large' => true
                 ]);
-
-                // Get secure URL
                 $secureUrl = $response['secure_url'];
                 $videos[] = ['id' => uniqid(), 'link' => $secureUrl];
             }
+            $videoUpdated = true; // Đánh dấu là có cập nhật video mới
+        } elseif (!$tour->videoArray) {
+            // Nếu không có file video được upload và không có video cũ, thông báo lỗi
+            $videos[] = $obj->videoArray;
         }
+
 
         // Tạo Req
         $req->merge([
@@ -169,7 +182,7 @@ class TourController extends Controller
             'imageArray' => $images,
             'videoArray' => $videos,
         ]);
-
+//        dd($req->all());
 
         if ($tour->update_tour($req, $slug) >= 0) {
             return redirect()->route('view_list_tour')->with('success', 'Cập Nhật Bài Viết Thành Công!');

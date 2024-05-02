@@ -112,7 +112,7 @@ class BlogController extends Controller
         }
     }
 
-    public function view_update(Blog $blog, $slug)
+    public function view_update(Blog $blog, Category $category,Tour $tour,$slug)
     {
         // if(Auth::guard('admin')->user()->decentralization == 1){
         //     return view('FEadmin.Pages.Error.error404');
@@ -120,8 +120,11 @@ class BlogController extends Controller
         $obj = $blog->get_link_slug($slug);
         if (!$obj) {
             return view('FEadmin.Pages.Error.error404');
+
         }
-        return view('FEadmin.Pages.Blog.view_update', compact('obj'));
+        $list_Category = $category->get_orderBy_ASC();
+        $list_Tour = $tour->get_orderBy_ASC();
+        return view('FEadmin.Pages.Blog.view_update', compact('obj','list_Category','list_Tour'));
     }
 
     public function update_blog(updateRequest $req, Blog $blog, $slug)
@@ -141,6 +144,9 @@ class BlogController extends Controller
             $response = $req->file('file') ? cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->imgBanner;
             $file = $response;
         }
+        elseif ($blog->imgBanner || count($blog->imgBanner) == 0) {
+            $file = $obj->imgBanner;
+        }
 
         // Xử lý list ảnh
         $images = []; // Danh sách đường dẫn ảnh
@@ -151,6 +157,9 @@ class BlogController extends Controller
                 // Tạo một mảng chứa id và link ảnh và thêm vào danh sách
                 $images[] = ['id' => uniqid(), 'link' => $response];
             }
+        }
+        elseif ($blog->imgArray || count($blog->imgArray) == 0) {
+            $images[] = $obj->imgArray;
         }
 
         // Xử Lý list video
@@ -167,6 +176,10 @@ class BlogController extends Controller
                 $secureUrl = $response['secure_url'];
                 $videos[] = ['id' => uniqid(), 'link' => $secureUrl];
             }
+        }
+        elseif (!$blog->videoArray || count($blog->videoArray) == 0) {
+            // Nếu không có file video được upload và không có video cũ, thông báo lỗi
+            $videos[] = $obj->videoArray;
         }
 
         // Tạo Req

@@ -21,10 +21,18 @@ class updateRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
-            //
+            'name' => 'required',
+            'status' => 'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Trường không được để trống!',
+            'status.required' => 'Trạng thái là bắt buộc!',
         ];
     }
 }

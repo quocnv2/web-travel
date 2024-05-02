@@ -90,7 +90,7 @@ class Tour extends Model
             'imageArray' => json_encode($req->imageArray),
             'videoArray' => json_encode($req->videoArray),
             'info_details_blog' => $req->info_details_blog,
-            'price' => $req->price_adult,
+            'price' => $req->price,
             'idCategory' => $req->idCategory,
             'province' => $req->province,
             'district' => $req->district,

@@ -15,7 +15,7 @@
                             <li class="breadcrumb-item"><a href="index.html">Trang Chủ</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0)">Hệ Thống</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0)">Tour</a></li>
-                            <li class="breadcrumb-item" aria-current="page">Danh Sách</li>
+                            <li class="breadcrumb-item" aria-current="page">Thêm Mới</li>
                         </ul>
                     </div>
                     <div class="col-md-12">
@@ -35,7 +35,7 @@
                       enctype="multipart/form-data">
                     @csrf
                     <div class="card-header">
-                        <h5>Thêm Mới Bài viết Tour</h5>
+                        <h5>Thêm Mới Tour</h5>
                     </div>
                     <div class="card-body row">
                         @error('status')
