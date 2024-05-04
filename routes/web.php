@@ -14,9 +14,13 @@ use App\Http\Controllers\AdminController\Room\RoomController;
 
 // Controller User
 use App\Http\Controllers\UserController\Home\HomeUserController;
+use App\Http\Controllers\UserController\Blog\blogController as blogUserController;
 
 Route::prefix('')->group(function () {
     Route::get('/', [HomeUserController::class, 'index'])->name('home');
+    // Bài Viết
+    Route::get('/danh-sach-bai-viet', [blogUserController::class, 'listBlog'])->name('listBlog');
+    Route::get('/danh-sach-bai-viet/danh-muc/{slug}', [blogUserController::class, 'listBlog_Category'])->name('listBlog_Category');
 });
 
 // // Router Đăng Nhập Admin

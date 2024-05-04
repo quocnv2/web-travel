@@ -30,6 +30,16 @@ class Blog extends Model
         'timeCreate',
     ];
 
+    public function get_orderBy_ASC_status_where_category_page_8($idCategory){
+        $obj = Blog::with('objCategory')->where('status', 0)->where('idCategory', $idCategory)->orderBy('timeCreate', 'DESC')->paginate(8);
+        return $obj;
+    }
+
+    public function get_orderBy_ASC_status_page_8(){
+        $obj = Blog::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(8);
+        return $obj;
+    }
+
     public function get_orderBy_ASC_status_page(){
         $obj = Blog::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(3);
         return $obj;
