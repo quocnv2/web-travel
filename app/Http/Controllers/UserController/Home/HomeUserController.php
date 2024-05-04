@@ -16,6 +16,8 @@ class HomeUserController extends Controller
         $tour_list = $tour->get_orderBy_ASC();
         $blog_list = $blog->get_orderBy_ASC_status_page();
         $banner_list = $banner ->get_orderBy_ASC();
-        return view('Home.master', compact('categories','tour_list','blog_list','banner_list'));
+        return view('Home.Layout.Pages.Home.index', compact('categories','tour_list','blog_list','banner_list'));
     }
+
+
 }
