@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminController\Home\HomeController;
 use App\Http\Controllers\AdminController\Banner\BannerController;
 use App\Http\Controllers\AdminController\Tour\TourController;
 use App\Http\Controllers\AdminController\Blog\BlogController;
+use App\Http\Controllers\AdminController\Room\RoomController;
 
 // Controller User
 use App\Http\Controllers\UserController\Home\HomeUserController;
@@ -86,4 +87,13 @@ Route::get('/dang-xuat-quan-tri', [LoginController::class, 'logout'])->name('log
      Route::get('/xoa-blog/{slug}', [BlogController::class, 'delete_blog'])->name('delete_blog');
      Route::get('/cap-nhat-blog/{slug}', [BlogController::class, 'view_update'])->name('view_update_blog');
      Route::post('/cap-nhat-blog/{slug}', [BlogController::class, 'update_blog'])->name('update_blog');
+
+
+     Route::get('/view-danh-sach-room', [RoomController::class, 'view_list'])->name('view_list_room');
+     Route::get('/chi-tiet-room/{slug}', [RoomController::class, 'detail_room'])->name('detail_room');
+     Route::get('/view-them-moi-room', [RoomController::class, 'view_create'])->name('view_create_room');
+     Route::post('/them-moi-room', [RoomController::class, 'create_room'])->name('create_room');
+     Route::get('/xoa-room/{slug}', [RoomController::class, 'delete_room'])->name('delete_room');
+     Route::get('/cap-nhat-room/{slug}', [RoomController::class, 'view_update'])->name('view_update_room');
+     Route::post('/cap-nhat-room/{slug}', [RoomController::class, 'update_room'])->name('update_room');
 });

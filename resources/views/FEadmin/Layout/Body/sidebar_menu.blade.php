@@ -158,6 +158,24 @@
                         </li>
                     </ul>
                 </li>
+                <li class="pc-item pc-hasmenu">
+                    <a class="pc-link">
+                        <span class="pc-micon">
+                            <svg class="pc-icon">
+                                <use xlink:href="#custom-text-block"></use>
+                            </svg>
+                        </span>
+                        <span class="pc-mtext">Phòng</span><span class="pc-arrow"><i
+                                data-feather="chevron-right"></i></span></a>
+                    <ul class="pc-submenu">
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_list_room') }}">Danh
+                                sách</a>
+                        </li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('view_create_room') }}">Thêm
+                                mới</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
