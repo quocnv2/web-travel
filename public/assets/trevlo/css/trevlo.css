@@ -69,8 +69,8 @@
     --trevlo-size-sm: 11px;
     --trevlo-body-size: 16px;
     --trevlo-body-line-height: 1.875;
-    /* --trevlo-sec-space: 120px; */
-    --trevlo-sec-space: 60px;
+    --trevlo-sec-space: 120px;
+    --trevlo-sec-spaces: 60px;
     --trevlo-base: #FF5956;
     --trevlo-base-rgb: 255, 89, 86;
     --trevlo-primary: #2D2330;

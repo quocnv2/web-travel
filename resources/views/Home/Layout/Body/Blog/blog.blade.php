@@ -1,4 +1,4 @@
-<div class="blog-four section-space">
+<div class="blog-four section-space" style="padding-top: 60px;">
 
     <div class="container">
         <div class="blog-four__top">
