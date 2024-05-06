@@ -3,18 +3,18 @@
     <!-- main-slider-start -->
     <section class="main-slider-five">
         <div class="main-slider-five__carousel trevlo-owl__carousel owl-carousel owl-theme"
-             data-owl-options='{
-    "items": 1,
-    "margin": 0,
-    "loop": true,
-    "smartSpeed": 700,
-    "animateOut": "fadeOut",
-    "autoplayTimeout": 5000,
-    "nav": true,
-    "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"],
-    "dots": false,
-    "autoplay": true
-    }'>
+            data-owl-options='{
+            "items": 1,
+            "margin": 0,
+            "loop": true,
+            "smartSpeed": 700,
+            "animateOut": "fadeOut",
+            "autoplayTimeout": 5000,
+            "nav": true,
+            "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"],
+            "dots": false,
+            "autoplay": true
+            }'>
             @foreach ($banner_list as $bannerValue)
                 <div class="item">
                     <div class="main-slider-five__image" style="background-image: url({{ $bannerValue->imgBanner }});">
@@ -50,67 +50,42 @@
                         </div><!-- /.row -->
                     </div>
                     <img src="{{ url('assets') }}/trevlo/images/shapes/slider-cloud-5-1.png" alt="cloud"
-                         class="main-slider-five__cloud">
+                        class="main-slider-five__cloud">
                     <div class="main-slider-five__shape">
                         <img src="{{ url('assets') }}/trevlo/images/shapes/slider-shape-5-2.png" alt="shape"
-                             class="main-slider-five__shape__one">
+                            class="main-slider-five__shape__one">
                         <img src="{{ url('assets') }}/trevlo/images/shapes/slider-shape-5-3.png" alt="shape"
-                             class="main-slider-five__shape__two">
+                            class="main-slider-five__shape__two">
                     </div><!-- /.main-slider-five__shape -->
                 </div><!-- item -->
             @endforeach
         </div><!-- banner-slider -->
         <div class="banner-form banner-form--two banner-form--three wow fadeInUp" data-wow-delay="300ms">
             <div class="container">
-                <form class="banner-form__wrapper"
-                      action="https://bracketweb.com/trevlo-html/tour-listing-top-search.html">
+                <div class="counter-two__bg" style="background-image: url(assets/images/shapes/counter-bg-2.png);"></div>
+            <div class="counter-two__shape"></div>
+                <div class="banner-form__wrapper">
                     <div class="row">
-                        <div class="banner-form__col banner-form__col--1">
-                            <div class="banner-form__control banner-form__control--location">
-                                <div class="banner-form__icon">
-                                    <span class="trevlo-one-icon-location"></span>
-                                </div><!-- /.banner-form__icon -->
-                                <label for="location">Location</label>
-                                <select name="location" class="selectpicker" id="location">
-                                    <option value="select">Australia</option>
-                                    <option value="spain">Spain</option>
-                                    <option value="africa">Africa</option>
-                                    <option value="europe">Europe</option>
-                                    <option value="thailand">Thailand</option>
-                                    <option value="dubai">Dubai</option>
-                                    <option value="swizerlan">Swizerlan</option>
-                                </select>
-                            </div>
-                        </div>
                         <div class="banner-form__col banner-form__col--2">
-                            <div class="banner-form__control banner-form__control--type">
-                                <div class="banner-form__icon">
-                                    <span class="trevlo-one-icon-bag"></span>
-                                </div><!-- /.banner-form__icon -->
-                                <label for="type">Activities Type</label>
-                                <select name="type" class="selectpicker" id="type">
-                                    <option value="select">Adventure</option>
-                                    <option value="africa">Beach</option>
-                                    <option value="europe">Discovery</option>
-                                    <option value="thailand">Mountain</option>
-                                    <option value="dubai">Hills</option>
-                                    <option value="australia">Couple</option>
-                                </select>
-                            </div>
+                            <div class="feature-one__box" style="display: flex;align-items: center;">
+                                <div class="feature-one__box__icon"><span class="icon-Booking"></span></div>
+                                <h3 class="feature-one__box__title">Đặt Chỗ Dễ Dàng & Nhanh Chóng</h3>
+                            </div><!-- feature-item -->
                         </div>
                         <div class="banner-form__col banner-form__col--3">
-                            <div class="banner-form__control">
-                                <div class="banner-form__icon">
-                                    <span class="trevlo-one-icon-clock"></span>
-                                </div><!-- /.banner-form__icon -->
-                                <label for="date">Activate Day</label>
-                                <input class="trevlo-multi-datepicker" id="date" type="text" name="date"
-                                       placeholder="Select Date">
-                                <span class="trevlo-one-icon-chevron-down banner-form__datepicker-icon"></span>
-                            </div>
+                            <div class="feature-one__box" style="display: flex;align-items: center;">
+                                <div class="feature-one__box__icon"><span class="icon-Group"></span></div>
+                                <h3 class="feature-one__box__title">Lựa Chọn Chuyến Tham Quan Tốt Nhất</h3>
+                            </div><!-- feature-item -->
+                        </div>
+                        <div class="banner-form__col banner-form__col--1">
+                            <div class="feature-one__box" style="display: flex;align-items: center;">
+                                <div class="feature-one__box__icon"><span class="icon-lowest-price-1-1"></span></div>
+                                <h3 class="feature-one__box__title">Tiết Kiệm Chi Phí</h3>
+                            </div><!-- feature-item -->
                         </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
         <!-- banner-form -->
@@ -140,8 +115,7 @@
             <div class="row g-0">
                 <div class="col-lg-12">
                     <div class="trevlo-stretch-element-inside-column">
-                        <div
-                            class="tour-listing-five__carousel trevlo-owl__carousel trevlo-owl__carousel--basic-nav trevlo-owl__carousel--with-shadow owl-theme owl-carousel"
+                        <div class="tour-listing-five__carousel trevlo-owl__carousel trevlo-owl__carousel--basic-nav trevlo-owl__carousel--with-shadow owl-theme owl-carousel"
                             data-owl-options='{
                     "items": 3,
                     "margin": 30,
@@ -180,7 +154,7 @@
                                 <div class="item">
                                     <div class="tour-listing-five__card">
                                         <div class="tour-listing-five__card__bg"
-                                             style="background-image: url({{ url('assets') }}/trevlo/images/shapes/tour-shape-bg-5-1.png);">
+                                            style="background-image: url({{ url('assets') }}/trevlo/images/shapes/tour-shape-bg-5-1.png);">
                                         </div>
                                         <!-- /.tour-listing-five__card__bg -->
                                         <div class="tour-listing-five__card__inner">
@@ -230,8 +204,8 @@
                                                             $address .= $valueTour->wards;
                                                         }
 
-                                                        $imageArray= json_decode($valueTour->imageArray, true);
-                                                        $videoArray= json_decode($valueTour->videoArray, true);
+                                                        $imageArray = json_decode($valueTour->imageArray, true);
+                                                        $videoArray = json_decode($valueTour->videoArray, true);
                                                     @endphp
                                                     <p class="tour-listing-five__card__location__text">
                                                         {{ $address }}</p>
@@ -248,14 +222,13 @@
                                                     </div><!-- /.tour-listing-five__card__price-box -->
                                                     <div class="tour-listing-five__card__btn-group">
                                                         <a href="javascript:void(0);"
-                                                           class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
-                                                           data-gallery-options='{
+                                                            class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
+                                                            data-gallery-options='{
                                                             "items": [
-                                                                   @foreach($imageArray as $index => $imgs)
-                                                                        @if(isset($imgs['link']) && $imgs['link'] != '')
-                                                                             { "src": "{{ $imgs['link'] }}" }@if(!$loop->last),@endif
-                                                                        @endif
-                                                                    @endforeach
+                                                                   @foreach ($imageArray as $index => $imgs)
+                                                                        @if (isset($imgs['link']) && $imgs['link'] != '')
+                                                                             { "src": "{{ $imgs['link'] }}" }@if (!$loop->last),@endif
+                                                                        @endif @endforeach
                                                             ],
                                                             "gallery": {
                                                               "enabled": true
@@ -265,14 +238,13 @@
                                                             <span class="icon-photo-camera-1"></span>
                                                         </a>
                                                         <a href="javascript:void(0);"
-                                                           class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
-                                                           data-gallery-options='{
+                                                            class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
+                                                            data-gallery-options='{
                                                             "items": [
-                                                                   @foreach($videoArray as $index => $videos)
-                                                                        @if(isset($videos['link']) && $videos['link'] != '')
-                                                                            {"src": "{{ $videos['link'] }}", "style": "width: 100%;"}@if(!$loop->last),@endif
-                                                                        @endif
-                                                                    @endforeach
+                                                                   @foreach ($videoArray as $index => $videos)
+                                                                        @if (isset($videos['link']) && $videos['link'] != '')
+                                                                            {"src": "{{ $videos['link'] }}", "style": "width: 100%;"}@if (!$loop->last),@endif
+                                                                        @endif @endforeach
                                                             ],
                                                             "gallery": {
                                                               "enabled": true
@@ -294,14 +266,11 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
         <img src="{{ url('assets') }}/trevlo/images/shapes/tour-shape-5-1.png" alt="shape"
-             class="tour-listing-five__shape">
+            class="tour-listing-five__shape">
     </section><!-- /.tour-listing-five section-space -->
 
     @include('Home.Layout.Body.WhyChoose.whychoose')
     <!-- /.why-choose-five section-space -->
-
-    @include('Home.Layout.Body.Offer.offer')
-    <!-- /.offer-three section-space -->
 
     @include('Home.Layout.Body.Feedback.feedback')
 
