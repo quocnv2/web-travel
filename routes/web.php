@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController\Tour\TourControllerUser;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController\Category\CategoryController;
 use App\Http\Controllers\AdminController\Account\AccountController;
@@ -20,7 +21,9 @@ Route::prefix('')->group(function () {
     Route::get('/', [HomeUserController::class, 'index'])->name('home');
     // Bài Viết
     Route::get('/danh-sach-bai-viet', [blogUserController::class, 'listBlog'])->name('listBlog');
+    Route::get('/danh-sach-tour', [TourControllerUser::class, 'listTour'])->name('listTour');
     Route::get('/chi-tiet-bai-viet/{slug}', [BlogUserController::class, 'detailBlog'])->name('detailBlog');
+    Route::get('/chi-tiet-tour/{slug}', [TourControllerUser::class, 'detailTour'])->name('detailTour');
     Route::get('/danh-sach-bai-viet/danh-muc/{slug}', [blogUserController::class, 'listBlog_Category'])->name('listBlog_Category');
 });
 

@@ -105,4 +105,13 @@ class Tour extends Model
         return $this-> belongsTo(Category::class,'idCategory');
     }
 
+    public function get_orderBy_ASC_status_page(){
+        $obj = Tour::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(3);
+        return $obj;
+    }
+    public function get_orderBy_ASC_status_page_8(){
+        $obj = Tour::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(8);
+        return $obj;
+    }
+
 }
