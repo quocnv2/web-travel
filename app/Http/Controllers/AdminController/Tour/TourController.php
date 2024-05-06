@@ -5,9 +5,10 @@ namespace App\Http\Controllers\AdminController\Tour;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Tour\createRequest;
 use App\Http\Requests\Tour\updateRequest;
-use App\Models\Tour;
 use App\Models\Category;
-use Illuminate\Http\Request;
+use App\Models\Tour;
+use App\Rules\Tour\RoomRequest;
+use App\Rules\Tour\TourRequest;
 
 class TourController extends Controller
 {
@@ -127,6 +128,9 @@ class TourController extends Controller
 
     public function update_tour(updateRequest $req, Tour $tour, $slug)
     {
+        $validatedData = $req->validate([
+            'slug' => [new TourRequest($slug)],
+        ]);
 
         $obj = $tour->get_link_slug($slug);
 
@@ -143,8 +147,7 @@ class TourController extends Controller
         }
 
 
-        // Xử lý list ảnh
-        $images = []; // Danh sách đường dẫn ảnh
+        $images = [];
 
         if ($req->hasFile('filesImage')) {
             foreach ($req->file('filesImage') as $image) {
@@ -155,9 +158,8 @@ class TourController extends Controller
             $images = is_array($obj->imageArray) ? $obj->imageArray : json_decode($obj->imageArray, true);
         }
 
-// Xử Lý list video
-        $videos = []; // Danh sách đường dẫn video
-        $videoUpdated = false; // Biến kiểm tra có cập nhật video mới không
+        $videos = [];
+        $videoUpdated = false;
 
         if ($req->hasFile('filesVideo')) {
             foreach ($req->file('filesVideo') as $video) {
@@ -174,7 +176,6 @@ class TourController extends Controller
         }
 
 // Sau khi có đầy đủ dữ liệu, hãy kiểm tra lại phía frontend để đảm bảo rằng ảnh và video được hiển thị chính xác.
-
 
 
         // Tạo Req

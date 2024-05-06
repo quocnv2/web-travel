@@ -7,6 +7,7 @@ use App\Http\Requests\Room\createRequest;
 use App\Http\Requests\Room\updateRequest;
 use App\Models\Category;
 use App\Models\Room;
+use App\Rules\Room\RoomRequest;
 
 class RoomController extends Controller
 {
@@ -184,6 +185,9 @@ class RoomController extends Controller
     //
     public function update_room(updateRequest $req, Room $room, $slug)
     {
+        $validatedData = $req->validate([
+            'slug' => [new RoomRequest($slug)],
+        ]);
         $obj = $room->get_link_slug($slug);
         if (!$obj) {
             return view('FEadmin.Pages.Error.error404');
