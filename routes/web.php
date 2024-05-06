@@ -20,6 +20,7 @@ Route::prefix('')->group(function () {
     Route::get('/', [HomeUserController::class, 'index'])->name('home');
     // Bài Viết
     Route::get('/danh-sach-bai-viet', [blogUserController::class, 'listBlog'])->name('listBlog');
+    Route::get('/chi-tiet-bai-viet/{slug}', [BlogUserController::class, 'detailBlog'])->name('detailBlog');
     Route::get('/danh-sach-bai-viet/danh-muc/{slug}', [blogUserController::class, 'listBlog_Category'])->name('listBlog_Category');
 });
 

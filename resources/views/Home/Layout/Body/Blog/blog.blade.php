@@ -38,7 +38,7 @@
                             {{--                            </div><!-- /.blog-four__card__overlay --> --}}
                         </a><!-- /.blog-four__card__image-link -->
                         <div class="blog-four__card__content">
-                            <h3 class="blog-four__card__title"><a href="#">{{ $valueBlog->name }}</a>
+                            <h3 class="blog-four__card__title"><a href="{{route('detailBlog', $valueBlog->slug)}}">{{ $valueBlog->name }}</a>
                             </h3><!-- /.blog-four__card__title -->
                             <ul class="list-unstyled blog-four__card__meta">
                                 <li>

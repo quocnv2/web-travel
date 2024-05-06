@@ -30,4 +30,16 @@ class blogController extends Controller
         $blog_list = $blog->get_orderBy_ASC_status_where_category_page_8($objCategory->id);
         return view('Home.Layout.Pages.Blog.list_blog', compact('categories', 'blog_new', 'blog_list', 'objCategory'));
     }
+
+    public function detailBlog(Category $category, Blog $blog, $slug){
+        $objBlog = $blog->get_link_slug($slug);
+        if (!$objBlog) {
+            return view('FEadmin.Pages.Error.error404');
+        }
+
+        $categories  = $category ->get_orderBy_ASC();
+        $blog_new = $blog->get_orderBy_ASC_status_page();
+        return view('Home.Layout.Pages.Blog.blog_details', compact('categories', 'blog_new', 'objBlog'));
+    }
+
 }

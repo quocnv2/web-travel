@@ -265,7 +265,7 @@
                                                             <span class="icon-photo-camera-1"></span>
                                                         </a>
                                                         <a href="javascript:void(0);"
-                                                           class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
+                                                           class="tour-listing-five__card__popup-btn trevlo-image-popup"
                                                            data-gallery-options='{
                                                             "items": [
                                                                    @foreach($videoArray as $index => $videos)
