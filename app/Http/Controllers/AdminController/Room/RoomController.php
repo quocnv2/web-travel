@@ -193,24 +193,33 @@ class RoomController extends Controller
         $file = $req->hasFile('file') ? cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->imgRoom;
 
         // Cập nhật mảng hình ảnh
-        $images = $req->hasFile('filesImage') ? [] : $obj->imageArray;
+        $images = []; // Danh sách đường dẫn ảnh
+
         if ($req->hasFile('filesImage')) {
             foreach ($req->file('filesImage') as $image) {
                 $response = cloudinary()->upload($image->getRealPath())->getSecurePath();
                 $images[] = ['id' => uniqid(), 'link' => $response];
             }
+        } else {
+            $images = is_array($obj->imageArray) ? $obj->imageArray : json_decode($obj->imageArray, true);
         }
 
-        // Cập nhật mảng video
-        $videos = $req->hasFile('filesVideo') ? [] : $obj->videoArray;
+// Xử Lý list video
+        $videos = []; // Danh sách đường dẫn video
+        $videoUpdated = false; // Biến kiểm tra có cập nhật video mới không
+
         if ($req->hasFile('filesVideo')) {
             foreach ($req->file('filesVideo') as $video) {
                 $response = cloudinary()->uploadApi()->upload($video->getRealPath(), [
                     'resource_type' => 'video',
                     'upload_large' => true
                 ]);
-                $videos[] = ['id' => uniqid(), 'link' => $response['secure_url']];
+                $secureUrl = $response['secure_url'];
+                $videos[] = ['id' => uniqid(), 'link' => $secureUrl];
+                $videoUpdated = true; // Đánh dấu là có cập nhật video mới
             }
+        } else {
+            $videos = is_array($obj->videoArray) ? $obj->videoArray : json_decode($obj->videoArray, true);
         }
 
         // Gộp dữ liệu đã cập nhật vào yêu cầu

@@ -14,7 +14,7 @@
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0)">Hệ Thống</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0)">Bài Viết</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0)">Phòng</a></li>
                             <li class="breadcrumb-item" aria-current="page">Cập Nhật</li>
                         </ul>
                     </div>

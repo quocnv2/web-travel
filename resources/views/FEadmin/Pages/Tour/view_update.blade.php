@@ -131,10 +131,13 @@
                         </div>
 
                         <div class="form-group col-12 col-md-4">
-                            <div class="row" style="display: flex;align-content: center;align-items: center; margin-bottom: 10px;" >
+                            <div class="row"
+                                 style="display: flex;align-content: center;align-items: center; margin-bottom: 10px;">
                                 <label class="form-label col-6">Ảnh Banner</label>
                                 <div class="col-6" style="display: flex; justify-content: flex-end;">
-                                    <button type="button" class="btn btn-shadow btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#myModal-Banner">Xem</button>
+                                    <button type="button" class="btn btn-shadow btn-success btn-sm"
+                                            data-bs-toggle="modal" data-bs-target="#myModal-Banner">Xem
+                                    </button>
                                 </div>
                                 <div class="modal" id="myModal-Banner">
                                     <div class="modal-dialog modal-md">
@@ -142,12 +145,14 @@
 
                                             <!-- Modal Header -->
                                             <div class="modal-header">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                <button type="button" class="btn-close"
+                                                        data-bs-dismiss="modal"></button>
                                             </div>
 
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                <img src="{{$obj->imgBanner}}" style="width: 100%;" class="rounded" alt="Cinque Terre">
+                                                <img src="{{$obj->imgBanner}}" style="width: 100%;" class="rounded"
+                                                     alt="Cinque Terre">
                                             </div>
                                         </div>
                                     </div>
@@ -166,10 +171,13 @@
                             @enderror
                         </div>
                         <div class="form-group col-12 col-md-4">
-                            <div class="row" style="display: flex;align-content: center;align-items: center; margin-bottom: 10px;" >
+                            <div class="row"
+                                 style="display: flex;align-content: center;align-items: center; margin-bottom: 10px;">
                                 <label class="form-label col-6">Ảnh Chi Tiết</label>
                                 <div class="col-6" style="display: flex; justify-content: flex-end;">
-                                    <button type="button" class="btn btn-shadow btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#myModal-list">Xem</button>
+                                    <button type="button" class="btn btn-shadow btn-success btn-sm"
+                                            data-bs-toggle="modal" data-bs-target="#myModal-list">Xem
+                                    </button>
                                 </div>
                                 <div class="modal" id="myModal-list">
                                     <div class="modal-dialog modal-lg">
@@ -177,7 +185,8 @@
 
                                             <!-- Modal Header -->
                                             <div class="modal-header">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                <button type="button" class="btn-close"
+                                                        data-bs-dismiss="modal"></button>
                                             </div>
 
                                             <!-- Modal body -->
@@ -186,35 +195,50 @@
 
                                                     <!-- Indicators/dots -->
                                                     <div class="carousel-indicators">
-                                                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                                                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                                                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                                                        <button type="button" data-bs-target="#demo"
+                                                                data-bs-slide-to="0" class="active"></button>
+                                                        <button type="button" data-bs-target="#demo"
+                                                                data-bs-slide-to="1"></button>
+                                                        <button type="button" data-bs-target="#demo"
+                                                                data-bs-slide-to="2"></button>
                                                     </div>
+                                                    <input type="hidden" name="imageArray" value="{{ old('imageArray', json_encode($imageArray)) }}">
+
 
                                                     <!-- The slideshow/carousel -->
                                                     @php
                                                         $imageArray= json_decode($obj->imageArray, true);
                                                     @endphp
 
-                                                        <!-- The slideshow/carousel -->
-                                                    <div class="carousel-inner">
-                                                        @foreach($imageArray as $index => $image)
-                                                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                                                @if(isset($image['link']) && !empty($image['link']))
-                                                                    <img src="{{ $image['link'] }}" alt="{{ $image['description'] ?? 'Image' }}" class="d-block w-100">
-                                                                @else
-                                                                    <p>Thông tin hình ảnh không đầy đủ hoặc không hợp lệ.</p>
-                                                                @endif
-                                                            </div>
-                                                        @endforeach
-                                                    </div>
+                                                            <!-- The slideshow/carousel -->
+                                                    @if(is_array($imageArray) && count($imageArray) > 0)
+                                                        <div class="carousel-inner">
+                                                            @foreach($imageArray as $index => $image)
+                                                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                                                    @if(isset($image['link']) && !empty($image['link']))
+                                                                        <img src="{{ $image['link'] }}"
+                                                                             alt="{{ $image['description'] ?? 'Image' }}"
+                                                                             class="d-block w-100">
+                                                                    @else
+                                                                        <p>Thông tin hình ảnh không đầy đủ hoặc không
+                                                                            hợp lệ.</p>
+                                                                    @endif
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    @else
+                                                        <p>Không có hình ảnh để hiển thị.</p>
+                                                    @endif
+
 
 
                                                     <!-- Left and right controls/icons -->
-                                                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                                                    <button class="carousel-control-prev" type="button"
+                                                            data-bs-target="#demo" data-bs-slide="prev">
                                                         <span class="carousel-control-prev-icon"></span>
                                                     </button>
-                                                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                                                    <button class="carousel-control-next" type="button"
+                                                            data-bs-target="#demo" data-bs-slide="next">
                                                         <span class="carousel-control-next-icon"></span>
                                                     </button>
                                                 </div>
@@ -236,17 +260,21 @@
                             @enderror
                         </div>
                         <div class="form-group col-12 col-md-4">
-                            <div class="row" style="display: flex;align-content: center;align-items: center; margin-bottom: 10px;" >
+                            <div class="row"
+                                 style="display: flex;align-content: center;align-items: center; margin-bottom: 10px;">
                                 <label class="form-label col-6">Video Chi Tiết</label>
                                 <div class="col-6" style="display: flex; justify-content: flex-end;">
-                                    <button type="button" class="btn btn-shadow btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#myModal-video">Xem</button>
+                                    <button type="button" class="btn btn-shadow btn-success btn-sm"
+                                            data-bs-toggle="modal" data-bs-target="#myModal-video">Xem
+                                    </button>
                                 </div>
                                 <div class="modal" id="myModal-video">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <!-- Modal Header -->
                                             <div class="modal-header">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                <button type="button" class="btn-close"
+                                                        data-bs-dismiss="modal"></button>
                                             </div>
 
                                             <!-- Modal body -->
@@ -254,9 +282,12 @@
                                                 <div id="demovideo" class="carousel slide" data-bs-ride="carousel">
                                                     <!-- Indicators/dots -->
                                                     <div class="carousel-indicators">
-                                                        <button type="button" data-bs-target="#demovideo" data-bs-slide-to="0" class="active"></button>
-                                                        <button type="button" data-bs-target="#demovideo" data-bs-slide-to="1"></button>
-                                                        <button type="button" data-bs-target="#demovideo" data-bs-slide-to="2"></button>
+                                                        <button type="button" data-bs-target="#demovideo"
+                                                                data-bs-slide-to="0" class="active"></button>
+                                                        <button type="button" data-bs-target="#demovideo"
+                                                                data-bs-slide-to="1"></button>
+                                                        <button type="button" data-bs-target="#demovideo"
+                                                                data-bs-slide-to="2"></button>
                                                     </div>
                                                     @php
                                                         $videoArray = json_decode($obj->videoArray, true);
@@ -269,7 +300,8 @@
                                                             @foreach($videoArray as $index => $video)
                                                                 <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                                                                     @if(isset($video['link']) && $video['link'] != '')
-                                                                        <video src="{{ $video['link'] }}" class="d-block w-100" controls></video>
+                                                                        <video src="{{ $video['link'] }}"
+                                                                               class="d-block w-100" controls></video>
                                                                     @else
                                                                         <p>Link video không hợp lệ hoặc bị thiếu.</p>
                                                                     @endif
@@ -280,10 +312,12 @@
 
 
                                                     <!-- Left and right controls/icons -->
-                                                    <button class="carousel-control-prev" type="button" data-bs-target="#demovideo" data-bs-slide="prev">
+                                                    <button class="carousel-control-prev" type="button"
+                                                            data-bs-target="#demovideo" data-bs-slide="prev">
                                                         <span class="carousel-control-prev-icon"></span>
                                                     </button>
-                                                    <button class="carousel-control-next" type="button" data-bs-target="#demovideo" data-bs-slide="next">
+                                                    <button class="carousel-control-next" type="button"
+                                                            data-bs-target="#demovideo" data-bs-slide="next">
                                                         <span class="carousel-control-next-icon"></span>
                                                     </button>
                                                 </div>

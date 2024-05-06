@@ -144,7 +144,7 @@ class BlogController extends Controller
             $response = $req->file('file') ? cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->imgBanner;
             $file = $response;
         }
-        elseif ($blog->imgBanner || count($blog->imgBanner) == 0) {
+        else {
             $file = $obj->imgBanner;
         }
 
@@ -154,16 +154,15 @@ class BlogController extends Controller
         if ($req->hasFile('filesImage')) {
             foreach ($req->file('filesImage') as $image) {
                 $response = cloudinary()->upload($image->getRealPath())->getSecurePath();
-                // Tạo một mảng chứa id và link ảnh và thêm vào danh sách
                 $images[] = ['id' => uniqid(), 'link' => $response];
             }
-        }
-        elseif ($blog->imgArray || count($blog->imgArray) == 0) {
-            $images[] = $obj->imgArray;
+        } else {
+            $images = is_array($obj->imageArray) ? $obj->imageArray : json_decode($obj->imageArray, true);
         }
 
-        // Xử Lý list video
+// Xử Lý list video
         $videos = []; // Danh sách đường dẫn video
+        $videoUpdated = false; // Biến kiểm tra có cập nhật video mới không
 
         if ($req->hasFile('filesVideo')) {
             foreach ($req->file('filesVideo') as $video) {
@@ -171,17 +170,13 @@ class BlogController extends Controller
                     'resource_type' => 'video',
                     'upload_large' => true
                 ]);
-
-                // Get secure URL
                 $secureUrl = $response['secure_url'];
                 $videos[] = ['id' => uniqid(), 'link' => $secureUrl];
+                $videoUpdated = true; // Đánh dấu là có cập nhật video mới
             }
+        } else {
+            $videos = is_array($obj->videoArray) ? $obj->videoArray : json_decode($obj->videoArray, true);
         }
-        elseif (!$blog->videoArray || count($blog->videoArray) == 0) {
-            // Nếu không có file video được upload và không có video cũ, thông báo lỗi
-            $videos[] = $obj->videoArray;
-        }
-
         // Tạo Req
         $req->merge([
             'imgBanner' => $file,

@@ -26,13 +26,12 @@
                         html += '<div class="carousel-inner">';
                         videos.forEach(function (video, index) {
                             html += `<div class="carousel-item ${index === 0 ? 'active' : ''}">`;
-                            html += '<video class="img-fluid" style="width: 100%;" muted autoplay loop >'
+                            html += '<video class="img-fluid" style="width: 100%;" autoplay loop muted>'
                             html += `<source src="${video.link}" type="video/mp4"/>`
                             html += '</video>'
                             html += '</div>';
                         });
                         html += '</div>';
-
                         html += '<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">';
                         html += '<span class="carousel-control-prev-icon" aria-hidden="true"></span>';
                         html += '<span class="visually-hidden">Previous</span>';
@@ -72,4 +71,5 @@
             });
         });
     });
+
 </script>

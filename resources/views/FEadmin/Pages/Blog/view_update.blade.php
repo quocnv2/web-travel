@@ -175,14 +175,25 @@
                                                         $imageArray= json_decode($obj->imageArray, true);
                                                     @endphp
 
-                                                            <!-- The slideshow/carousel -->
-                                                    <div class="carousel-inner">
-                                                        @foreach($imageArray as $index => $image)
-                                                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                                                <img src="{{ $image['link'] }}" class="d-block w-100">
-                                                            </div>
-                                                        @endforeach
-                                                    </div>
+                                                        <!-- The slideshow/carousel -->
+                                                    @if(is_array($imageArray) && count($imageArray) > 0)
+                                                        <div class="carousel-inner">
+                                                            @foreach($imageArray as $index => $image)
+                                                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                                                    @if(isset($image['link']) && !empty($image['link']))
+                                                                        <img src="{{ $image['link'] }}"
+                                                                             alt="{{ $image['description'] ?? 'Image' }}"
+                                                                             class="d-block w-100">
+                                                                    @else
+                                                                        <p>Thông tin hình ảnh không đầy đủ hoặc không
+                                                                            hợp lệ.</p>
+                                                                    @endif
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    @else
+                                                        <p>Không có hình ảnh để hiển thị.</p>
+                                                    @endif
 
                                                     <!-- Left and right controls/icons -->
                                                     <button class="carousel-control-prev" type="button"
@@ -245,16 +256,22 @@
                                                         $videoArray = json_decode($obj->videoArray, true);
                                                     @endphp
 
-                                                            <!-- The slideshow/carousel -->
-                                                    <div class="carousel-inner">
-                                                        @foreach($videoArray as $index => $video)
-                                                            <div
-                                                                    class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                                                <video src="{{ $video['link'] }}" class="d-block w-100"
-                                                                       controls></video>
-                                                            </div>
-                                                        @endforeach
-                                                    </div>
+                                                    @if(empty($videoArray))
+                                                        <p>Không có video nào để hiển thị.</p>
+                                                    @else
+                                                        <div class="carousel-inner">
+                                                            @foreach($videoArray as $index => $video)
+                                                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                                                    @if(isset($video['link']) && $video['link'] != '')
+                                                                        <video src="{{ $video['link'] }}"
+                                                                               class="d-block w-100" controls></video>
+                                                                    @else
+                                                                        <p>Link video không hợp lệ hoặc bị thiếu.</p>
+                                                                    @endif
+                                                                </div>
+                                                            @endforeach
+                                                        </div>
+                                                    @endif
 
                                                     <!-- Left and right controls/icons -->
                                                     <button class="carousel-control-prev" type="button"
@@ -296,7 +313,7 @@
                             <div class="form-group">
                                 <label class="form-label">Chi Tiết</label>
                                 <textarea name="info_details_blog" id="editor">
-                                        {{ old('info_details_blog') ?? 'Nội Dung Bài Viết' }}
+                                        {{ $obj->info_details_blog ?? 'Nội Dung Bài Viết' }}
                                     </textarea>
                             </div>
                         </div>
@@ -305,13 +322,13 @@
                             <div class="col-sm-12">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="status" value="0"
-                                           id="customCheckinlhstate1" {{ old('status') == '0' ? 'checked' : '' }}
+                                           id="customCheckinlhstate1" {{ $obj->status == 0 ? 'checked' : '' }}
                                            data-gtm-form-interact-field-id="2">
                                     <label class="form-check-label" for="customCheckinlhstate1"> Hiện </label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="status" value="1"
-                                           id="customCheckinlhstate2" {{ old('status') == '1' ? 'checked' : '' }}
+                                           id="customCheckinlhstate2" {{ $obj->status == 1 ? 'checked' : '' }}
                                            data-gtm-form-interact-field-id="1">
                                     <label class="form-check-label" for="customCheckinlhstate2"> Ẩn </label>
                                 </div>
@@ -319,8 +336,8 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-primary me-2" type="submit">Thêm Mới</button>
-                        <button type="reset" class="btn btn-light" id="resetBtn">Đặt Lại</button>
+                        <button class="btn btn-primary me-2" type="submit">Cập Nhật</button>
+                        <a href="{{ url()->previous() }}" class="btn btn-light">Quay Lại</a>
                     </div>
                 </form>
             </div>

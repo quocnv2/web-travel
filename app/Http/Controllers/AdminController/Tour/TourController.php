@@ -138,7 +138,7 @@ class TourController extends Controller
         if ($req->file('file')) {
             $response = $req->file('file') ? cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->imgBanner;
             $file = $response;
-        } elseif ($tour->imgBanner) {
+        } else {
             $file = $obj->imgBanner;
         }
 
@@ -149,14 +149,13 @@ class TourController extends Controller
         if ($req->hasFile('filesImage')) {
             foreach ($req->file('filesImage') as $image) {
                 $response = cloudinary()->upload($image->getRealPath())->getSecurePath();
-                // Tạo một mảng chứa id và link ảnh và thêm vào danh sách
                 $images[] = ['id' => uniqid(), 'link' => $response];
             }
-        } elseif ($tour->imgArray) {
-            $images[] = $obj->imgArray;
+        } else {
+            $images = is_array($obj->imageArray) ? $obj->imageArray : json_decode($obj->imageArray, true);
         }
 
-        // Xử Lý list video
+// Xử Lý list video
         $videos = []; // Danh sách đường dẫn video
         $videoUpdated = false; // Biến kiểm tra có cập nhật video mới không
 
@@ -168,12 +167,14 @@ class TourController extends Controller
                 ]);
                 $secureUrl = $response['secure_url'];
                 $videos[] = ['id' => uniqid(), 'link' => $secureUrl];
+                $videoUpdated = true; // Đánh dấu là có cập nhật video mới
             }
-            $videoUpdated = true; // Đánh dấu là có cập nhật video mới
-        } elseif (!$tour->videoArray) {
-            // Nếu không có file video được upload và không có video cũ, thông báo lỗi
-            $videos[] = $obj->videoArray;
+        } else {
+            $videos = is_array($obj->videoArray) ? $obj->videoArray : json_decode($obj->videoArray, true);
         }
+
+// Sau khi có đầy đủ dữ liệu, hãy kiểm tra lại phía frontend để đảm bảo rằng ảnh và video được hiển thị chính xác.
+
 
 
         // Tạo Req
@@ -182,7 +183,6 @@ class TourController extends Controller
             'imageArray' => $images,
             'videoArray' => $videos,
         ]);
-//        dd($req->all());
 
         if ($tour->update_tour($req, $slug) >= 0) {
             return redirect()->route('view_list_tour')->with('success', 'Cập Nhật Bài Viết Thành Công!');

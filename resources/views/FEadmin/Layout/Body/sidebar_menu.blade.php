@@ -162,8 +162,9 @@
                     <a class="pc-link">
                         <span class="pc-micon">
                             <svg class="pc-icon">
-                                <use xlink:href="#custom-text-block"></use>
+                                <use xlink:href="#custom-home"></use>
                             </svg>
+
                         </span>
                         <span class="pc-mtext">Phòng</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
