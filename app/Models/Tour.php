@@ -33,6 +33,16 @@ class Tour extends Model
         'timeCreate',
     ];
 
+    public function get_orderBy_ASC_status_page_12(){
+        $obj = Tour::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(12);
+        return $obj;
+    }
+
+    public function get_orderBy_ASC_status_page(){
+        $obj = Tour::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(6);
+        return $obj;
+    }
+
     // phương thức thêm mới
     public function create_tour($req)
     {

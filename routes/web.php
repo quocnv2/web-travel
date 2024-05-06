@@ -15,12 +15,17 @@ use App\Http\Controllers\AdminController\Room\RoomController;
 // Controller User
 use App\Http\Controllers\UserController\Home\HomeUserController;
 use App\Http\Controllers\UserController\Blog\blogController as blogUserController;
+use App\Http\Controllers\UserController\Tour\tourController as tourUserController;
 
 Route::prefix('')->group(function () {
     Route::get('/', [HomeUserController::class, 'index'])->name('home');
     // Bài Viết
     Route::get('/danh-sach-bai-viet', [blogUserController::class, 'listBlog'])->name('listBlog');
     Route::get('/danh-sach-bai-viet/danh-muc/{slug}', [blogUserController::class, 'listBlog_Category'])->name('listBlog_Category');
+    // Tour
+    Route::get('/danh-sach-tour', [tourUserController::class, 'listTour'])->name('listTour');
+    Route::get('/danh-sach-tuor/danh-muc/{slug}', [tourUserController::class, 'listTour_Category'])->name('listTour_Category');
+
 });
 
 // // Router Đăng Nhập Admin

@@ -28,7 +28,7 @@
                         </li>
 
                         <li>
-                            <a href="https://dulichtrasau.vn/">Tour</a>
+                            <a href="{{route('listTour')}}">Tour</a>
                         </li>
                         <li>
                             <a href="https://dulichtrasau.vn/">Phòng</a>
