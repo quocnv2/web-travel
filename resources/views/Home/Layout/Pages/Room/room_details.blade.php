@@ -35,7 +35,7 @@
                         <aside class="widget-area">
                             <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp"
                                  data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                <h4 class="sidebar-blog__title">Bài Viết Mới Nhất</h4><!-- /.sidebar-blog__title -->
+                                <h4 class="sidebar-blog__title">Phòng mới nhất</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__posts ">
                                     @foreach ($room_new as $valNew)
                                         <li class="sidebar-blog__posts-item">
