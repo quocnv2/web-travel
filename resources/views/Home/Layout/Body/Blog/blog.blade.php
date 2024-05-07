@@ -1,3 +1,7 @@
+@php
+    use Carbon\Carbon;
+@endphp
+
 <div class="blog-four section-space" style="padding-top: 60px;">
 
     <div class="container">
@@ -25,27 +29,30 @@
             @foreach ($blog_list as $valueBlog)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
                     <div class="blog-four__card">
-                        <a href="#" class="blog-four__card__image-link"
-                           style="background-image: url({{ $valueBlog->imgBanner }});">
-                            {{--                            <div class="blog-four__card__date"> --}}
-                            {{--                                <span class="blog-four__card__date__day">25</span> --}}
-                            {{--                                <span class="blog-four__card__date__month">june</span> --}}
-                            {{--                            </div> --}}
-                            {{--                            <div class="blog-four__card__overlay"> --}}
-                            {{--                                    <span class="blog-four__card__plus"> --}}
-                            {{--                                        <i class="icon-plus"></i> --}}
-                            {{--                                    </span> --}}
-                            {{--                            </div><!-- /.blog-four__card__overlay --> --}}
+                        <a href="{{ route('detailBlog', $valueBlog->slug) }}" class="blog-four__card__image-link"
+                            style="background-image: url({{ $valueBlog->imgBanner }});">
+                            <div class="blog-four__card__date">
+                                <span
+                                    class="blog-four__card__date__day">{{ Carbon::parse($valueBlog->timeCreate)->locale('vi')->isoFormat('Do') }}</span>
+                                <span
+                                    class="blog-four__card__date__month">{{ Carbon::parse($valueBlog->timeCreate)->locale('vi')->isoFormat('[tháng] M') }}</span>
+                            </div>
+                            <div class="blog-four__card__overlay">
+                                <span class="blog-four__card__plus">
+                                    <i class="icon-plus"></i>
+                                </span>
+                            </div><!-- /.blog-four__card__overlay -->
                         </a><!-- /.blog-four__card__image-link -->
                         <div class="blog-four__card__content">
-                            <h3 class="blog-four__card__title"><a href="{{route('detailBlog', $valueBlog->slug)}}">{{ $valueBlog->name }}</a>
+                            <h3 class="blog-four__card__title"><a
+                                    href="{{ route('detailBlog', $valueBlog->slug) }}">{{ $valueBlog->name }}</a>
                             </h3><!-- /.blog-four__card__title -->
                             <ul class="list-unstyled blog-four__card__meta">
                                 <li>
-                                    <a href="#">
-                                            <span class="blog-four__card__meta__icon">
-                                                <i class="trevlo-one-icon-user"></i>
-                                            </span>
+                                    <a href="{{ route('detailBlog', $valueBlog->slug) }}">
+                                        <span class="blog-four__card__meta__icon">
+                                            <i class="trevlo-one-icon-user"></i>
+                                        </span>
                                         {{ $valueBlog->objCategory->name }}
                                     </a>
                                 </li>
