@@ -5327,6 +5327,11 @@ path {
     }
 }
 
+.banner-form--two .banner-form__col {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 @media (max-width: 991px) {
     .banner-form--two .banner-form__col {
         width: 50%;

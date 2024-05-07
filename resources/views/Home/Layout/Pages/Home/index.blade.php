@@ -20,15 +20,10 @@
                     <div class="main-slider-five__image" style="background-image: url({{ $bannerValue->imgBanner }});">
                     </div>
                     <div class="social-links">
-                        <a href="">
+                        <a href="https://www.facebook.com/profile.php?id=100069226627675" target="black">
                             <i class="fab fa-facebook-f" aria-hidden="true"></i>
                             <span class="sr-only">Facebook</span>
                         </a>
-                        <a href="">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                            <span class="sr-only">Youtube</span>
-                        </a>
-
                     </div><!-- /.social-links -->
                     <div class="container">
                         <div class="row gutter-y-50">

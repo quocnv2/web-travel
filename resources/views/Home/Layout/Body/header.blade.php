@@ -2,7 +2,7 @@
     <div class="container">
         <div class="main-header__inner">
             <div class="main-header__logo">
-                <a href="">
+                <a href="{{route('home')}}">
                     <img src="{{ url('assets') }}/trevlo/images/logo-light-2.png" alt="Trevlo HTML"
                          width="187" class="main-header__logo__1">
                     <img src="{{ url('assets') }}/trevlo/images/logo-light-4.png" alt="Trevlo HTML"

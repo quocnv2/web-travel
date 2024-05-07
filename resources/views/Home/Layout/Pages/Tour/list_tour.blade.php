@@ -79,7 +79,7 @@
                                             <p class="tour-listing-sidebar-post__price">
                                                 {{ number_format($valueNewtour->price, 0, ',', '.') }}vnđ</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
-                                                    href="{{route('detailTour', $valueNewtour->slug)}}">{{ $valueNewtour->name }}</a>
+                                                    href="">{{ $valueNewtour->name }}</a>
                                             </h5>
                                             <div class="tour-listing-sidebar-post__location">
                                                 <span class="icon-location-1"></span>
@@ -126,7 +126,7 @@
                                             <p class="tour-listing-sidebar-post__price">
                                                 {{ number_format($valueHistory['price'], 0, ',', '.') }}vnđ</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
-                                                    href="{{route('detailTour', $valueNewtour->slug)}}">{{ $valueHistory['name'] }}</a>
+                                                    href="">{{ $valueHistory['name'] }}</a>
                                             </h5>
                                             <div class="tour-listing-sidebar-post__location">
                                                 <span class="icon-location-1"></span>
@@ -181,7 +181,7 @@
                             @endphp
                             <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <div class="tour-listing-three__card tour-listing__card">
-                                    <a href="{{route('detailTour', $valueNewtour->slug)}}"
+                                    <a href=""
                                         class="tour-listing-three__card-image-box tour-listing__card-image-box">
                                         <img src="{{ $valueTour->imgBanner }}" alt="{{ $valueTour->name }}"
                                             class="tour-listing-three__card-image tour-listing__card-image">
@@ -194,7 +194,7 @@
                                             class="icon-heart"></span></a>
                                     <div class="tour-listing-three__card-content tour-listing__card-content">
                                         <h3 class="tour-listing-three__card-title tour-listing__card-title"><a
-                                                href="{{route('detailTour', $valueNewtour->slug)}}">{{ $valueTour->name }}</a></h3>
+                                                href="">{{ $valueTour->name }}</a></h3>
                                         <div
                                             class="tour-listing-three__card-inner-content tour-listing__card-inner-content">
                                             <div class="tour-listing__card-camera-group">
