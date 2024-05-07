@@ -19,5 +19,8 @@ class HomeUserController extends Controller
         return view('Home.Layout.Pages.Home.index', compact('categories','tour_list','blog_list','banner_list'));
     }
 
-
+    public function error404(Category $category){
+        $categories  = $category ->get_orderBy_ASC();
+        return view('Home.Layout.Pages.404.index', compact('categories'));
+    }
 }

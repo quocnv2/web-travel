@@ -22,7 +22,7 @@ class blogController extends Controller
         $objCategory = $category->get_link_slug($slug);
         $slugCate = $slug;
         if (!$objCategory) {
-            return view('FEadmin.Pages.Error.error404');
+            return redirect()->route('error404');
         }
 
         $categories  = $category ->get_orderBy_ASC();
@@ -34,7 +34,7 @@ class blogController extends Controller
     public function detailBlog(Category $category, Blog $blog, $slug){
         $objBlog = $blog->get_link_slug($slug);
         if (!$objBlog) {
-            return view('FEadmin.Pages.Error.error404');
+            return redirect()->route('error404');
         }
 
         $categories  = $category ->get_orderBy_ASC();

@@ -27,7 +27,7 @@ class tourController extends Controller
         $objCategory = $category->get_link_slug($slug);
         $slugCate = $slug;
         if (!$objCategory) {
-            return view('FEadmin.Pages.Error.error404');
+            return redirect()->route('error404');
         }
         $categories  = $category ->get_orderBy_ASC();
         // Danh sách tour mới nhất
@@ -43,7 +43,7 @@ class tourController extends Controller
     {
         $objTour = $tour->get_link_slug($slug);
         if (!$objTour) {
-            return view('FEadmin.Pages.Error.error404');
+            return redirect()->route('error404');
         }
 
         $categories = $category->get_orderBy_ASC();

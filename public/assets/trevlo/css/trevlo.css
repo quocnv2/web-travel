@@ -13992,7 +13992,7 @@ body.megamenu-popup-active .mobile-nav__content {
     height: auto;
     position: absolute;
     left: 0;
-    bottom: 160px;
+    bottom: 0px;
     animation: leftToRight 2500ms linear infinite;
 }
 

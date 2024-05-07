@@ -24,6 +24,7 @@ Route::prefix('')->group(function () {
     Route::get('/danh-sach-bai-viet', [blogUserController::class, 'listBlog'])->name('listBlog');
     Route::get('/chi-tiet-bai-viet/{slug}', [BlogUserController::class, 'detailBlog'])->name('detailBlog');
     Route::get('/danh-sach-bai-viet/danh-muc/{slug}', [blogUserController::class, 'listBlog_Category'])->name('listBlog_Category');
+
     // Tour
     Route::get('/danh-sach-tour', [tourUserController::class, 'listTour'])->name('listTour');
     Route::get('/danh-sach-tour/danh-muc/{slug}', [tourUserController::class, 'listTour_Category'])->name('listTour_Category');
@@ -35,8 +36,11 @@ Route::prefix('')->group(function () {
     Route::get('/danh-sach-phong/danh-muc/{slug}', [roomUserController::class, 'listRoom_Category'])->name('listRoom_Category');
     Route::get('/chi-tiet-phong/{slug}', [roomUserController::class, 'detailRoom'])->name('detailRoom');
 
+    // Liên Hệ
     Route::get('/lien-he', [contactController::class, 'contact_web'])->name('contact_web');
 
+    // Lỗi 404
+    Route::get('/error-404', [HomeUserController::class, 'error404'])->name('error404');
 });
 
 // // Router Đăng Nhập Admin
