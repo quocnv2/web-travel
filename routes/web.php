@@ -16,6 +16,7 @@ use App\Http\Controllers\UserController\Home\HomeUserController;
 use App\Http\Controllers\UserController\Blog\blogController as blogUserController;
 use App\Http\Controllers\UserController\Tour\tourController as tourUserController;
 use App\Http\Controllers\UserController\Room\roomController as roomUserController;
+use App\Http\Controllers\UserController\Contact\contactController;
 
 Route::prefix('')->group(function () {
     Route::get('/', [HomeUserController::class, 'index'])->name('home');
@@ -28,10 +29,13 @@ Route::prefix('')->group(function () {
     Route::get('/danh-sach-tour/danh-muc/{slug}', [tourUserController::class, 'listTour_Category'])->name('listTour_Category');
     Route::get('/chi-tiet-tour/{slug}', [tourUserController::class, 'detailTour'])->name('detailTour');
 
+
     // Room
     Route::get('/danh-sach-phong', [roomUserController::class, 'listRoom'])->name('listRoom');
     Route::get('/danh-sach-phong/danh-muc/{slug}', [roomUserController::class, 'listRoom_Category'])->name('listRoom_Category');
     Route::get('/chi-tiet-phong/{slug}', [roomUserController::class, 'detailRoom'])->name('detailRoom');
+
+    Route::get('/lien-he', [contactController::class, 'contact_web'])->name('contact_web');
 
 });
 

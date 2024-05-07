@@ -43,7 +43,7 @@
                             <a href="">Youtube</a>
                         </li> --}}
                         <li>
-                            <a href="">Liên hệ</a>
+                            <a href="{{route('contact_web')}}">Liên hệ</a>
                         </li>
                     </ul>
                 </nav><!-- /.main-header__nav -->

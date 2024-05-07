@@ -203,7 +203,7 @@
                                                         $videoArray = json_decode($valueTour->videoArray, true);
                                                     @endphp
                                                     <p class="tour-listing-five__card__location__text">
-                                                        {{ $address }}</p>
+                                                        {{ $valueTour->objCategory->name }}</p>
                                                     <!-- /.tour-listing-five__card__location__text -->
                                                 </div><!-- /.tour-listing-five__card__location -->
                                                 <div class="tour-listing-five__card__bottom">
@@ -268,6 +268,6 @@
 
     @include('Home.Layout.Body.WhyChoose.whychoose')
     <!-- /.why-choose-five section-space -->
-    
+
     @include('Home.Layout.Body.Blog.blog')
 @stop

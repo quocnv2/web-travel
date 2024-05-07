@@ -202,7 +202,7 @@
                                                         <button type="button" data-bs-target="#demo"
                                                                 data-bs-slide-to="2"></button>
                                                     </div>
-                                                    <input type="hidden" name="imageArray" value="{{ old('imageArray', json_encode($imageArray)) }}">
+{{--                                                    <input type="hidden" name="imageArray" value="{{ old('imageArray', json_encode($imageArray)) }}">--}}
 
 
                                                     <!-- The slideshow/carousel -->

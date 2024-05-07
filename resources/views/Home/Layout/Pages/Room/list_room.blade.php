@@ -47,8 +47,8 @@
                                                     <i class="far fa-clock"></i>
                                                     {{ Carbon::parse($valNew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
                                                 </p><!-- /.sidebar__posts-date -->
-                                                <h4 class="sidebar-blog__posts-title"><a
-                                                        href="{{route('detailRoom', $valNew->slug)}}">{{ $valNew->name }}</a></h4>
+                                                <h5 class="sidebar-blog__posts-title"><a
+                                                        href="{{route('detailRoom', $valNew->slug)}}">{{ $valNew->name }}</a></h5>
                                                 <!-- /.sidebar-blog__posts-title -->
                                             </div><!-- /.sidebar-blog__posts-content -->
                                         </li>
