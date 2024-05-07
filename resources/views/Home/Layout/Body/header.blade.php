@@ -20,7 +20,7 @@
                             <ul class="sub-menu">
                                 @foreach ($categories as $category)
                                     <li>
-                                        <a href="">{{ $category->name }}</a>
+                                        <a href="{{ route('listTour_Category', $category->slug) }}">{{ $category->name }}</a>
                                         {{--                                                <a href="{{ url('/' . $category->slug) }}">{{ $category->name }}</a>--}}
                                     </li>
                                 @endforeach
@@ -31,19 +31,19 @@
                             <a href="{{route('listTour')}}">Tour</a>
                         </li>
                         <li>
-                            <a href="https://dulichtrasau.vn/">Phòng</a>
+                            <a href="">Phòng</a>
                         </li>
                         <li>
                             <a href="{{route('listBlog')}}">Bài viết</a>
                         </li>
                         <li>
-                            <a href="https://dulichtrasau.vn/">Facebook</a>
+                            <a href="">Facebook</a>
                         </li>
                         <li>
-                            <a href="https://dulichtrasau.vn/">Youtube</a>
+                            <a href="">Youtube</a>
                         </li>
                         <li>
-                            <a href="https://dulichtrasau.vn/">Liên hệ</a>
+                            <a href="">Liên hệ</a>
                         </li>
                     </ul>
                 </nav><!-- /.main-header__nav -->
