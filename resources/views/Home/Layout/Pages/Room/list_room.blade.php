@@ -9,8 +9,7 @@
         <div class="page-header__bg"></div>
         <!-- /.page-header__bg -->
         <div class="container">
-            <h2 class="page-header__title wow animated fadeInLeft" data-wow-delay="0s" data-wow-duration="1500ms">Bài
-                Viết</h2>
+            <h2 class="page-header__title wow animated fadeInLeft" data-wow-delay="0s" data-wow-duration="1500ms">Danh sách phòng</h2>
             <div class="page-header__breadcrumb-box">
                 <ul class="trevlo-breadcrumb">
                     <li><a href="{{ route('home') }}">Trang Chủ</a></li>
