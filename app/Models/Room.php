@@ -32,8 +32,9 @@ class Room extends Model
         'timeCreate',
     ];
 
-    public function get_orderBy_ASC_status_page(){
-        $obj = Blog::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(3);
+    public function get_orderBy_ASC_status_page()
+    {
+        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(3);
         return $obj;
     }
 
@@ -92,5 +93,17 @@ class Room extends Model
     public function objCategory()
     {
         return $this->belongsTo(Category::class, 'idCategory');
+    }
+
+    public function get_orderBy_ASC_status_page_8()
+    {
+        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(12);
+        return $obj;
+    }
+
+    public function get_orderBy_ASC_status_where_category_page_8($idCategory)
+    {
+        $obj = Room::with('objCategory')->where('status', 0)->where('idCategory', $idCategory)->orderBy('timeCreate', 'DESC')->paginate(8);
+        return $obj;
     }
 }

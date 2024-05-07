@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminController\Room\RoomController;
 use App\Http\Controllers\UserController\Home\HomeUserController;
 use App\Http\Controllers\UserController\Blog\blogController as blogUserController;
 use App\Http\Controllers\UserController\Tour\tourController as tourUserController;
+use App\Http\Controllers\UserController\Room\roomController as roomUserController;
 
 Route::prefix('')->group(function () {
     Route::get('/', [HomeUserController::class, 'index'])->name('home');
@@ -24,7 +25,11 @@ Route::prefix('')->group(function () {
     Route::get('/danh-sach-bai-viet/danh-muc/{slug}', [blogUserController::class, 'listBlog_Category'])->name('listBlog_Category');
     // Tour
     Route::get('/danh-sach-tour', [tourUserController::class, 'listTour'])->name('listTour');
-    Route::get('/danh-sach-tuor/danh-muc/{slug}', [tourUserController::class, 'listTour_Category'])->name('listTour_Category');
+    Route::get('/danh-sach-tour/danh-muc/{slug}', [tourUserController::class, 'listTour_Category'])->name('listTour_Category');
+    // Room
+    Route::get('/danh-sach-phong', [roomUserController::class, 'listRoom'])->name('listRoom');
+    Route::get('/danh-sach-phong/danh-muc/{slug}', [roomUserController::class, 'listRoom_Category'])->name('listRoom_Category');
+    Route::get('/chi-tiet-phong/{slug}', [roomUserController::class, 'detailRoom'])->name('detailRoom');
 
 });
 
