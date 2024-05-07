@@ -69,13 +69,13 @@
                         <div class="banner-form__col banner-form__col--2">
                             <div class="feature-one__box" style="display: flex;align-items: center;">
                                 <div class="feature-one__box__icon"><span class="icon-Booking"></span></div>
-                                <h3 class="feature-one__box__title">Đặt Chỗ Dễ Dàng & Nhanh Chóng</h3>
+                                <h3 class="feature-one__box__title">Đặt Chỗ Dễ Dàng</h3>
                             </div><!-- feature-item -->
                         </div>
                         <div class="banner-form__col banner-form__col--3">
                             <div class="feature-one__box" style="display: flex;align-items: center;">
                                 <div class="feature-one__box__icon"><span class="icon-Group"></span></div>
-                                <h3 class="feature-one__box__title">Lựa Chọn Chuyến Tham Quan Tốt Nhất</h3>
+                                <h3 class="feature-one__box__title">Lựa Chọn Tốt Nhất</h3>
                             </div><!-- feature-item -->
                         </div>
                         <div class="banner-form__col banner-form__col--1">
