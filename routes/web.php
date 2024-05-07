@@ -26,6 +26,8 @@ Route::prefix('')->group(function () {
     // Tour
     Route::get('/danh-sach-tour', [tourUserController::class, 'listTour'])->name('listTour');
     Route::get('/danh-sach-tour/danh-muc/{slug}', [tourUserController::class, 'listTour_Category'])->name('listTour_Category');
+    Route::get('/chi-tiet-tour/{slug}', [tourUserController::class, 'detailTour'])->name('detailTour');
+
     // Room
     Route::get('/danh-sach-phong', [roomUserController::class, 'listRoom'])->name('listRoom');
     Route::get('/danh-sach-phong/danh-muc/{slug}', [roomUserController::class, 'listRoom_Category'])->name('listRoom_Category');
