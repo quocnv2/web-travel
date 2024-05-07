@@ -111,7 +111,7 @@
                                 <div class="why-choose-five__item__icon">
                                     <span class="trevlo-one-icon-check"></span>
                                 </div><!-- /.why-choose-five__item__icon -->
-                                <h3 class="why-choose-five__item__title">Tiết Kiệm Chi Phí</h3>
+                                <h3 class="why-choose-five__item__title">Tiết Kiệm</h3>
                                 <!-- /.why-choose-five__item__title -->
                             </div><!-- /.why-choose-five__item__left -->
                             <div class="why-choose-five__item__right">

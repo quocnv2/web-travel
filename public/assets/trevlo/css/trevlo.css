@@ -43,6 +43,7 @@
 # Video
 # Tour Type
 --------------------------------------------------------------*/
+
 :root {
     --trevlo-font: "DM Sans", sans-serif;
     --trevlo-font2: "Urbanist", sans-serif;
@@ -69,6 +70,10 @@
     --trevlo-body-size: 16px;
     --trevlo-body-line-height: 1.875;
     --trevlo-sec-space: 120px;
+<<<<<<< HEAD
+=======
+    --trevlo-sec-spaces: 60px;
+>>>>>>> dat
     --trevlo-base: #FF5956;
     --trevlo-base-rgb: 255, 89, 86;
     --trevlo-primary: #2D2330;
@@ -109,14 +114,15 @@
     color: var(--trevlo-primary, #2D2330);
 }
 
-
 #video-popup {
     width: 100% !important;
 }
 
+
 /*--------------------------------------------------------------
 # Utility
 --------------------------------------------------------------*/
+
 .mt-20 {
     margin-top: 20px;
 }
@@ -352,9 +358,11 @@
     text-transform: capitalize;
 }
 
+
 /*--------------------------------------------------------------
 # Common
 --------------------------------------------------------------*/
+
 body {
     font-family: var(--trevlo-font, "DM Sans", sans-serif);
     color: var(--trevlo-secondary, #736D75);
@@ -422,7 +430,10 @@ h6 {
 }
 
 @media (max-width: 575px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     h1 br,
     h2 br,
     h3 br,
@@ -476,7 +487,11 @@ path {
 }
 
 @media (max-width: 575px) {
+<<<<<<< HEAD
     :root {
+=======
+     :root {
+>>>>>>> dat
         --trevlo-sec-space: 80px;
     }
 }
@@ -824,7 +839,10 @@ path {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         -webkit-transform: scale(2.5);
         transform: scale(2.5);
@@ -1247,7 +1265,9 @@ path {
     height: 100%;
 }
 
+
 /* scroll to top */
+
 .scroll-to-top {
     display: flex;
     align-items: center;
@@ -1264,6 +1284,43 @@ path {
     transform: rotate(-90deg);
     cursor: pointer;
     transition: all 0.2s ease;
+<<<<<<< HEAD
+}
+
+.scroll-to-top__text {
+    display: inline;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+.scroll-to-top__wrapper {
+    display: inline-block;
+    width: 30px;
+    height: 4px;
+    background-color: var(--trevlo-base, #FF5956);
+    position: relative;
+    overflow: hidden;
+    top: -1px;
+}
+
+.scroll-to-top__inner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--trevlo-black, #000000);
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    bottom: 70px;
+=======
+>>>>>>> dat
 }
 
 .scroll-to-top__text {
@@ -1300,7 +1357,9 @@ path {
     bottom: 70px;
 }
 
+
 /* post paginations */
+
 .post-pagination {
     margin: 0;
     padding: 0;
@@ -1540,6 +1599,7 @@ path {
     top: 50%;
     right: 6px;
     transform: translateY(-50%);
+<<<<<<< HEAD
 }
 
 .ui-datepicker .ui-datepicker-next:hover {
@@ -1558,6 +1618,28 @@ path {
     margin: 19px 0 0;
 }
 
+=======
+}
+
+.ui-datepicker .ui-datepicker-next:hover {
+    right: 6px;
+}
+
+
+/*-- daterangepicker --*/
+
+.daterangepicker {
+    border: 1px solid var(--trevlo-white3, #EBE6DE);
+    font-family: var(--trevlo-font, "DM Sans", sans-serif);
+    color: var(--trevlo-primary, #2D2330);
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 5px 8px 3px;
+    margin: 19px 0 0;
+}
+
+>>>>>>> dat
 .daterangepicker::after,
 .daterangepicker::before {
     display: none;
@@ -1673,25 +1755,41 @@ path {
 }
 
 @media (max-width: 1399px) {
+<<<<<<< HEAD
     :root {
+=======
+     :root {
+>>>>>>> dat
         --trevlo-size-14xl: 70px;
     }
 }
 
 @media (max-width: 991px) {
+<<<<<<< HEAD
     :root {
+=======
+     :root {
+>>>>>>> dat
         --trevlo-size-14xl: 65px;
     }
 }
 
 @media (max-width: 767px) {
+<<<<<<< HEAD
     :root {
+=======
+     :root {
+>>>>>>> dat
         --trevlo-size-14xl: 50px;
     }
 }
 
 @media (max-width: 575px) {
+<<<<<<< HEAD
     :root {
+=======
+     :root {
+>>>>>>> dat
         --trevlo-size-14xl: 45px;
         --trevlo-size-10xl: 40px;
         --trevlo-size-8xl: 35px;
@@ -1702,7 +1800,11 @@ path {
 }
 
 @media (max-width: 425px) {
+<<<<<<< HEAD
     :root {
+=======
+     :root {
+>>>>>>> dat
         --trevlo-size-10xl: 35px;
         --trevlo-size-7xl: 26px;
         --trevlo-size-4xl: 18px;
@@ -1710,22 +1812,35 @@ path {
 }
 
 @media (max-width: 393px) {
+<<<<<<< HEAD
     :root {
+=======
+     :root {
+>>>>>>> dat
         --trevlo-size-8xl: 33px;
         --trevlo-size-5xl: 19px;
     }
 }
 
 @media (max-width: 375px) {
+<<<<<<< HEAD
     :root {
+=======
+     :root {
+>>>>>>> dat
         --trevlo-size-14xl: 40px;
         --trevlo-size-8xl: 33px;
     }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dat
 /*--------------------------------------------------------------
 # Cards
 --------------------------------------------------------------*/
+
 .guide-single {
     position: relative;
     overflow: hidden;
@@ -1915,7 +2030,11 @@ path {
     position: relative;
     background-color: var(--trevlo-white2, #FAF5EE);
     overflow: hidden;
+<<<<<<< HEAD
     padding: 120px 0 155px;
+=======
+    padding: 10px 0 155px 0px;
+>>>>>>> dat
 }
 
 @media (max-width: 767px) {
@@ -4558,9 +4677,11 @@ path {
     text-transform: capitalize;
 }
 
+
 /*--------------------------------------------------------------
 # Form
 --------------------------------------------------------------*/
+
 .form-one__input {
     border: none;
     outline: none;
@@ -5609,9 +5730,11 @@ path {
     margin-right: auto;
 }
 
+
 /*--------------------------------------------------------------
 # Custom Cursor
 --------------------------------------------------------------*/
+
 .custom-cursor__cursor {
     width: 25px;
     height: 25px;
@@ -5654,9 +5777,11 @@ path {
     opacity: 0.4;
 }
 
+
 /*--------------------------------------------------------------
 # Topbar
 --------------------------------------------------------------*/
+
 .topbar-one {
     position: relative;
     background-color: var(--trevlo-base, #FF5956);
@@ -5866,9 +5991,11 @@ path {
     color: var(--trevlo-base, #FF5956);
 }
 
+
 /*--------------------------------------------------------------
 # Navigations
 --------------------------------------------------------------*/
+
 .main-header {
     background-color: var(--trevlo-white, #ffffff);
     position: relative;
@@ -6170,7 +6297,10 @@ path {
 }
 
 @media (max-width: 1399px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .main-header__user,
     .main-header__search {
         color: var(--trevlo-primary, #2D2330);
@@ -6183,7 +6313,10 @@ path {
 }
 
 @media (max-width: 1399px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .main-header__user:hover,
     .main-header__search:hover {
         color: var(--trevlo-base, #FF5956);
@@ -6223,7 +6356,10 @@ path {
 }
 
 @media (min-width: 1200px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .main-header--three .main-header__user,
     .main-header--three .main-header__search {
         color: var(--trevlo-white, #ffffff);
@@ -6300,17 +6436,26 @@ path {
         display: block;
         margin-right: 15px;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .main-header--three .mobile-nav__btn span {
         display: block;
         background-color: var(--trevlo-white, #ffffff);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .main-header--three .main-header__right-right {
         padding-left: 15px;
         border-left: 1px solid RGBA(var(--trevlo-white-rgb, 255, 255, 255), 0.2);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .main-header--three .main-header__inner {
         padding: 20px 0;
     }
@@ -6424,7 +6569,10 @@ path {
 }
 
 @media (max-width: 1199px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .main-header--four .main-header__right::before,
     .main-header--four .main-header__right::after {
         display: none;
@@ -6503,7 +6651,10 @@ path {
 }
 
 @media (max-width: 1199px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .main-header--four .main-header__search,
     .main-header--four .main-header__cart {
         color: var(--trevlo-primary, #2D2330);
@@ -6516,7 +6667,10 @@ path {
 }
 
 @media (max-width: 1199px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .main-header--four .main-header__search:hover,
     .main-header--four .main-header__cart:hover {
         color: var(--trevlo-base);
@@ -6889,7 +7043,10 @@ path {
 }
 
 @media (min-width: 1200px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .main-menu .main-menu__list,
     .main-menu .main-menu__list ul {
         display: flex;
@@ -7033,7 +7190,10 @@ path {
 }
 
 @media (min-width: 1200px) and (max-width: 1400px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .main-menu__list li:nth-last-child(1) ul li>ul,
     .main-menu__list li:nth-last-child(2) ul li>ul {
         left: auto;
@@ -7041,9 +7201,17 @@ path {
     }
 }
 
+<<<<<<< HEAD
 /*--------------------------------------------------------------
 # Megamenu Popup
 --------------------------------------------------------------*/
+=======
+
+/*--------------------------------------------------------------
+# Megamenu Popup
+--------------------------------------------------------------*/
+
+>>>>>>> dat
 .mobile-nav__container .main-menu__list>.megamenu.megamenu-clickable>ul,
 .main-menu .main-menu__list>.megamenu.megamenu-clickable>ul,
 .stricky-header .main-menu__list>.megamenu.megamenu-clickable>ul {
@@ -7175,15 +7343,24 @@ body.megamenu-popup-active .mobile-nav__content {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
+<<<<<<< HEAD
+}
+
+.megamenu-popup .megamenu-clickable--close span::after {
+    transform: translate(-50%, -50%) rotate(45deg);
+=======
+>>>>>>> dat
 }
 
 .megamenu-popup .megamenu-clickable--close span::after {
     transform: translate(-50%, -50%) rotate(45deg);
 }
 
+
 /*--------------------------------------------------------------
 # Home Showcase
 --------------------------------------------------------------*/
+
 .demo-one {
     padding-top: 120px;
     padding-bottom: 120px;
@@ -7336,20 +7513,28 @@ body.megamenu-popup-active .mobile-nav__content {
     color: var(--trevlo-base, #FF5956);
 }
 
+
 /*--------------------------------------------------------------
 # Animations
 --------------------------------------------------------------*/
+
 @keyframes zumpTop {
     0% {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     50% {
         -webkit-transform: translate3d(0, -15px, 0);
         transform: translate3d(0, -15px, 0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
@@ -7361,13 +7546,19 @@ body.megamenu-popup-active .mobile-nav__content {
         -webkit-transform: translateX(100%);
         transform: translateX(100%);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     50% {
         opacity: 0;
         -webkit-transform: translateX(-100%);
         transform: translateX(-100%);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     51% {
         opacity: 1;
     }
@@ -7378,13 +7569,19 @@ body.megamenu-popup-active .mobile-nav__content {
         -webkit-transform: translateX(-100%);
         transform: translateX(-100%);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     50% {
         opacity: 0;
         -webkit-transform: translateX(100%);
         transform: translateX(100%);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     51% {
         opacity: 1;
     }
@@ -7394,7 +7591,10 @@ body.megamenu-popup-active .mobile-nav__content {
     0% {
         background-position: 100% -1000px;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         background-position: 100% 0;
     }
@@ -7405,12 +7605,18 @@ body.megamenu-popup-active .mobile-nav__content {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     50% {
         -webkit-transform: translate3d(0, -5px, 0);
         transform: translate3d(0, 15px, 0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
@@ -7421,11 +7627,17 @@ body.megamenu-popup-active .mobile-nav__content {
     0% {
         transform: translateX(0px);
     }
+<<<<<<< HEAD
 
     50% {
         transform: translateX(-10px);
     }
 
+=======
+    50% {
+        transform: translateX(-10px);
+    }
+>>>>>>> dat
     100% {
         transform: translateX(0px);
     }
@@ -7435,11 +7647,17 @@ body.megamenu-popup-active .mobile-nav__content {
     0% {
         transform: translateX(0px);
     }
+<<<<<<< HEAD
 
     50% {
         transform: translateX(10px);
     }
 
+=======
+    50% {
+        transform: translateX(10px);
+    }
+>>>>>>> dat
     100% {
         transform: translateX(0px);
     }
@@ -7449,7 +7667,10 @@ body.megamenu-popup-active .mobile-nav__content {
     0% {
         transform: rotate(0deg);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         transform: rotate(359deg);
     }
@@ -7459,7 +7680,10 @@ body.megamenu-popup-active .mobile-nav__content {
     0% {
         transform: translateY(0px);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         transform: translateY(8px);
     }
@@ -7469,7 +7693,10 @@ body.megamenu-popup-active .mobile-nav__content {
     0% {
         transform: translateY(0px);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         transform: translateY(-5px);
     }
@@ -7479,11 +7706,17 @@ body.megamenu-popup-active .mobile-nav__content {
     0% {
         transform: translateX(0px);
     }
+<<<<<<< HEAD
 
     50% {
         transform: translateX(-20px);
     }
 
+=======
+    50% {
+        transform: translateX(-20px);
+    }
+>>>>>>> dat
     100% {
         transform: translateX(0);
     }
@@ -7493,7 +7726,10 @@ body.megamenu-popup-active .mobile-nav__content {
     0% {
         transform: translateX(0px);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         transform: translateX(13px);
     }
@@ -7504,28 +7740,40 @@ body.megamenu-popup-active .mobile-nav__content {
         -webkit-transform: translateY(0px) translateX(0) rotate(0);
         transform: translateY(0px) translateX(0) rotate(0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     30% {
         -webkit-transform: translateY(30px) translateX(50px) rotate(15deg);
         transform: translateY(30px) translateX(50px) rotate(15deg);
         -webkit-transform-origin: center center;
         transform-origin: center center;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     50% {
         -webkit-transform: translateY(50px) translateX(100px) rotate(45deg);
         transform: translateY(50px) translateX(100px) rotate(45deg);
         -webkit-transform-origin: right bottom;
         transform-origin: right bottom;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     80% {
         -webkit-transform: translateY(30px) translateX(50px) rotate(15deg);
         transform: translateY(30px) translateX(50px) rotate(15deg);
         -webkit-transform-origin: left top;
         transform-origin: left top;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         -webkit-transform: translateY(0px) translateX(0) rotate(0);
         transform: translateY(0px) translateX(0) rotate(0);
@@ -7535,12 +7783,18 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @keyframes shapeMover {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     0%,
     100% {
         transform: perspective(400px) translateY(0) rotate(0deg) translateZ(0px) translateX(0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     50% {
         transform: perspective(400px) rotate(-45deg) translateZ(20px) translateY(20px) translateX(20px);
     }
@@ -7551,22 +7805,34 @@ body.megamenu-popup-active .mobile-nav__content {
         -webkit-transform: rotate3d(0, 1, 0, 0deg);
         transform: rotate3d(0, 1, 0, 0deg);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     30% {
         -webkit-transform: rotate3d(0, 0, 1, 5deg);
         transform: rotate3d(0, 0, 1, 5deg);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     60% {
         -webkit-transform: rotate3d(1, 0, 0, 0deg);
         transform: rotate3d(1, 0, 0, 0deg);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     80% {
         -webkit-transform: rotate3d(0, 0, 1, 5deg);
         transform: rotate3d(0, 0, 1, 5deg);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         -webkit-transform: rotate3d(0, 1, 0, 0deg);
         transform: rotate3d(0, 1, 0, 0deg);
@@ -7574,19 +7840,28 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @keyframes squareMover {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     0%,
     100% {
         -webkit-transform: translate(0, 0) rotate(0);
         transform: translate(0, 0) rotate(0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     20%,
     60% {
         -webkit-transform: translate(20px, 40px) rotate(180deg);
         transform: translate(20px, 40px) rotate(180deg);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     30%,
     80% {
         -webkit-transform: translate(40px, 60px) rotate(0deg);
@@ -7599,27 +7874,42 @@ body.megamenu-popup-active .mobile-nav__content {
         -webkit-transform: translate(0) rotate(0deg);
         transform: translate(0) rotate(0deg);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     20% {
         -webkit-transform: translate(73px, -1px) rotate(36deg);
         transform: translate(73px, -1px) rotate(36deg);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     40% {
         -webkit-transform: translate(141px, -20px) rotate(72deg);
         transform: translate(141px, -20px) rotate(72deg);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     60% {
         -webkit-transform: translate(83px, -60px) rotate(108deg);
         transform: translate(83px, -60px) rotate(108deg);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     80% {
         -webkit-transform: translate(-40px, 72px) rotate(144deg);
         transform: translate(-40px, 72px) rotate(144deg);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         -webkit-transform: translate(0) rotate(0deg);
         transform: translate(0) rotate(0deg);
@@ -7627,19 +7917,28 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @keyframes treeMove {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     0%,
     100% {
         -webkit-transform: rotate(0deg) translateX(0);
         transform: rotate(0deg) translateX(0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     25%,
     75% {
         -webkit-transform: rotate(5deg) translateX(15px);
         transform: rotate(5deg) translateX(15px);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     50% {
         -webkit-transform: rotate(10deg) translateX(30px);
         transform: rotate(10deg) translateX(30px);
@@ -7647,14 +7946,20 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @keyframes rectMove {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     0%,
     50%,
     100% {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     25%,
     75% {
         -webkit-transform: scale(0.5);
@@ -7662,9 +7967,14 @@ body.megamenu-popup-active .mobile-nav__content {
     }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dat
 /*--------------------------------------------------------------
 # Mobile Nav
 --------------------------------------------------------------*/
+
 .mobile-nav__wrapper {
     position: fixed;
     top: 0;
@@ -7896,9 +8206,11 @@ body.megamenu-popup-active .mobile-nav__content {
     display: none;
 }
 
+
 /*--------------------------------------------------------------
 # Search Popup
 --------------------------------------------------------------*/
+
 .search-popup {
     position: fixed;
     width: 100%;
@@ -8076,12 +8388,16 @@ body.megamenu-popup-active .mobile-nav__content {
     -webkit-transition-delay: 0.7s;
 }
 
+
 /*--------------------------------------------------------------
 # Page Header
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Page Header
 -----------------------------------------*/
+
 .page-header {
     background-color: var(--trevlo-primary, #2D2330);
     position: relative;
@@ -8176,9 +8492,11 @@ body.megamenu-popup-active .mobile-nav__content {
     color: var(--trevlo-base, #FF5956);
 }
 
+
 /*--------------------------------------------------------------
 # Google Map
 --------------------------------------------------------------*/
+
 .google-map {
     position: relative;
     background-color: var(--trevlo-white2, #FAF5EE);
@@ -8208,9 +8526,11 @@ body.megamenu-popup-active .mobile-nav__content {
     padding-right: 0;
 }
 
+
 /*--------------------------------------------------------------
 # Showing Result
 --------------------------------------------------------------*/
+
 .showing-result__info-top {
     position: relative;
     display: flex;
@@ -8314,12 +8634,16 @@ body.megamenu-popup-active .mobile-nav__content {
     border-color: var(--trevlo-base, #FF5956);
 }
 
+
 /*--------------------------------------------------------------
 # Tour Search
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Tour Search
 -----------------------------------------*/
+
 .tour-search {
     position: relative;
     z-index: 1;
@@ -8331,9 +8655,11 @@ body.megamenu-popup-active .mobile-nav__content {
     max-width: 1200px;
 }
 
+
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
+
 .about-one {
     position: relative;
     background-color: var(--trevlo-white, #ffffff);
@@ -8364,19 +8690,28 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @keyframes treeMove {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     0%,
     100% {
         -webkit-transform: rotate(0deg) translateX(0);
         transform: rotate(0deg) translateX(0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     25%,
     75% {
         -webkit-transform: rotate(5deg) translateX(15px);
         transform: rotate(5deg) translateX(15px);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     50% {
         -webkit-transform: rotate(10deg) translateX(30px);
         transform: rotate(10deg) translateX(30px);
@@ -8403,19 +8738,28 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @keyframes airTree {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     0%,
     100% {
         -webkit-transform: rotate(0deg) translateX(0);
         transform: rotate(0deg) translateX(0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     25%,
     75% {
         -webkit-transform: rotate(5deg) translateX(15px);
         transform: rotate(5deg) translateX(15px);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     50% {
         -webkit-transform: rotate(10deg) translateX(30px);
         transform: rotate(10deg) translateX(30px);
@@ -8434,7 +8778,10 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @media (max-width: 767px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .about-one__image .col-md-5,
     .about-one__image .col-md-7 {
         width: 50%;
@@ -8516,11 +8863,17 @@ body.megamenu-popup-active .mobile-nav__content {
     0% {
         transform: scale(1, 1);
     }
+<<<<<<< HEAD
 
     50% {
         transform: scale(0.8, 0.8);
     }
 
+=======
+    50% {
+        transform: scale(0.8, 0.8);
+    }
+>>>>>>> dat
     100% {
         transform: scale(1, 1);
     }
@@ -8779,17 +9132,26 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @keyframes zumpLeftBottom {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     0%,
     100% {
         transform: translateY(0) translateX(0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     25%,
     75% {
         transform: translateY(-5px) translateX(5px);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     50% {
         transform: translateY(-10px) translateX(10px);
     }
@@ -9137,9 +9499,11 @@ body.megamenu-popup-active .mobile-nav__content {
     color: var(--trevlo-primary, #2D2330);
 }
 
+
 /*-----------------------------------------
 # About Four
 -----------------------------------------*/
+
 .about-four {
     background-color: var(--trevlo-white, #ffffff);
     position: relative;
@@ -9619,15 +9983,141 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 .about-five__list li {
+<<<<<<< HEAD
     width: 38%;
+=======
+    width: 42%;
+>>>>>>> dat
     display: flex;
     align-items: center;
     gap: 5px;
     font-weight: 500;
+<<<<<<< HEAD
     font-size: 18px;
     color: var(--trevlo-black2);
     line-height: 1.78;
     text-transform: capitalize;
+}
+
+@media (max-width: 1199px) {
+    .about-five__list li {
+        width: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    .about-five__list li {
+        width: 38%;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-five__list li {
+        width: 100%;
+    }
+}
+
+.about-five__list li i {
+    flex-shrink: 0;
+    font-size: 24px;
+    color: var(--trevlo-base);
+}
+
+.about-five__bottom {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.about-five__phone {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.about-five__phone__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 26px;
+    color: var(--trevlo-white, #ffffff);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid var(--trevlo-base);
+}
+
+.about-five__phone__icon svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+.about-five__phone__icon span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 50%;
+    background-color: var(--trevlo-base);
+}
+
+.about-five__phone__title {
+    margin-bottom: 2px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.86;
+    color: rgba(var(--trevlo-black-rgb), 0.8);
+}
+
+.about-five__phone__number {
+    margin: 0;
+    font-size: 18px;
+    color: var(--trevlo-black);
+    line-height: 1.44;
+}
+
+.about-five__phone__number:hover {
+    color: var(--trevlo-base);
+}
+
+.about-five__phone__number a {
+    color: inherit;
+    background: linear-gradient(to right, currentcolor 0%, currentcolor 100%) 0px 95%/0px 1px no-repeat;
+    transition: all 500ms ease;
+}
+
+.about-five__phone__number a:hover {
+    background-size: 100% 1px;
+}
+
+.about-five__sun {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    left: 28px;
+    opacity: 0.3;
+    animation: rotate 10s infinite linear;
+}
+
+@media (max-width: 1799px) {
+    .about-five__sun {
+        max-width: 200px;
+=======
+    font-size: 14px;
+    color: var(--trevlo-black2);
+    line-height: 1.78;
+    text-transform: capitalize;
+}
+
+*,
+ ::after,
+ ::before {
+    box-sizing: border-box;
 }
 
 @media (max-width: 1199px) {
@@ -9788,6 +10278,58 @@ body.megamenu-popup-active .mobile-nav__content {
 @media (max-width: 1799px) {
     .about-five__shape {
         max-width: 300px;
+>>>>>>> dat
+    }
+}
+
+@media (max-width: 1599px) {
+<<<<<<< HEAD
+    .about-five__sun {
+        max-width: 180px;
+    }
+}
+
+.about-five__parashoot {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    top: 213px;
+    left: 58px;
+    animation: zumpTop 2500ms infinite linear;
+}
+
+@media (max-width: 1799px) {
+    .about-five__parashoot {
+        max-width: 200px;
+        left: 40px;
+    }
+}
+
+@media (max-width: 1599px) {
+    .about-five__parashoot {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .about-five__parashoot {
+        display: none;
+    }
+}
+
+.about-five__shape {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    bottom: 26px;
+    opacity: 0.25;
+    animation: zumpTop 2500ms infinite linear;
+}
+
+@media (max-width: 1799px) {
+    .about-five__shape {
+        max-width: 300px;
     }
 }
 
@@ -9797,6 +10339,13 @@ body.megamenu-popup-active .mobile-nav__content {
     }
 }
 
+=======
+    .about-five__shape {
+        max-width: 220px;
+    }
+}
+
+>>>>>>> dat
 @media (max-width: 1399px) {
     .about-five__shape {
         max-width: 200px;
@@ -10164,12 +10713,16 @@ body.megamenu-popup-active .mobile-nav__content {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Why Choose
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Why Choose One
 -----------------------------------------*/
+
 .why-choose-one {
     position: relative;
     background-color: var(--trevlo-primary, #2D2330);
@@ -10308,6 +10861,7 @@ body.megamenu-popup-active .mobile-nav__content {
     16.65% {
         transform: translateX(5px);
     }
+<<<<<<< HEAD
 
     33.3% {
         transform: translateX(-3px);
@@ -10325,14 +10879,30 @@ body.megamenu-popup-active .mobile-nav__content {
         transform: translateX(1px);
     }
 
+=======
+    33.3% {
+        transform: translateX(-3px);
+    }
+    49.95% {
+        transform: translateX(4px);
+    }
+    66.6% {
+        transform: translateX(-2px);
+    }
+    83.25% {
+        transform: translateX(1px);
+    }
+>>>>>>> dat
     100% {
         transform: translateX(0);
     }
 }
 
+
 /*-----------------------------------------
 # Why Choose Two
 -----------------------------------------*/
+
 .why-choose-two {
     position: relative;
     padding: 120px 0;
@@ -10507,9 +11077,11 @@ body.megamenu-popup-active .mobile-nav__content {
     border-radius: 20px;
 }
 
+
 /*-----------------------------------------
 # Why Choose Three
 -----------------------------------------*/
+
 .why-choose-three {
     position: relative;
     background-color: var(--trevlo-white2, #FAF5EE);
@@ -10524,6 +11096,183 @@ body.megamenu-popup-active .mobile-nav__content {
     background-position: left bottom;
     background-repeat: no-repeat;
     animation: zumpRight 3s infinite linear;
+<<<<<<< HEAD
+}
+
+.why-choose-three__content {
+    position: relative;
+    z-index: 1;
+    padding: 89px 0 120px;
+}
+
+@media (max-width: 991px) {
+    .why-choose-three__content {
+        padding: 89px 0 90px;
+    }
+}
+
+@media (max-width: 767px) {
+    .why-choose-three__content {
+        padding: 49px 0 50px;
+    }
+}
+
+.why-choose-three__content .sec-title {
+    margin-bottom: 20px;
+}
+
+.why-choose-three__content__text {
+    font-weight: 700;
+    color: var(--trevlo-primary, #2D2330);
+    opacity: 0.6;
+    max-width: 505px;
+    margin: 0 0 30px;
+}
+
+.why-choose-three__box-wrapper {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-right: -300px;
+    gap: 30px;
+}
+
+@media (max-width: 1199px) {
+    .why-choose-three__box-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .why-choose-three__box-wrapper {
+        display: block;
+    }
+}
+
+.why-choose-three__box {
+    position: relative;
+    border-radius: 13px;
+    border: 1px solid var(--trevlo-white3, #EBE6DE);
+    background: var(--trevlo-white, #ffffff);
+    box-shadow: 0px 16px 30px 0px rgba(0, 0, 0, 0.05);
+    padding: 15px 17px 29px 28px;
+    margin-top: 30px;
+}
+
+@media (max-width: 767px) {
+    .why-choose-three__box {
+        margin-top: 50px;
+    }
+}
+
+.why-choose-three__box__icon {
+    width: 82px;
+    height: 82px;
+    background-color: var(--trevlo-base, #FF5956);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    margin: -45px 0 16px;
+    overflow: hidden;
+    font-size: 40px;
+    color: var(--trevlo-white, #ffffff);
+}
+
+.why-choose-three__box__icon::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 150%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: var(--trevlo-base, #FF5956);
+    transition: 700ms cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.why-choose-three__box__icon::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 150%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: var(--trevlo-primary, #2D2330);
+    transition-duration: 700ms;
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.why-choose-three__box__icon span {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    transition: all 500ms linear;
+    transition-delay: 0s;
+    transition-delay: 0s;
+    transition-delay: 0.1s;
+    transform: scale(1);
+}
+
+.why-choose-three__box:hover .why-choose-three__box__icon span {
+    transform: scale(0.95);
+}
+
+.why-choose-three__box:hover .why-choose-three__box__icon::before {
+    top: 100%;
+}
+
+.why-choose-three__box:hover .why-choose-three__box__icon::after {
+    bottom: -50%;
+}
+
+.why-choose-three__box__title {
+    font-size: 20px;
+    margin: 0 0 9px;
+}
+
+.why-choose-three__box__text {
+    font-weight: 700;
+    margin: 0;
+}
+
+.why-choose-three__image {
+    position: relative;
+    text-align: right;
+    margin-top: -105px;
+}
+
+@media (max-width: 1199px) {
+    .why-choose-three__image {
+        margin: 0;
+        text-align: left;
+    }
+}
+
+.why-choose-three__image img {
+    border-radius: 50px 0px 0px 0px;
+    max-width: 100%;
+    height: auto;
+    min-height: 800px;
+    object-fit: cover;
+}
+
+@media (max-width: 1199px) {
+    .why-choose-three__image img {
+        border-radius: 0;
+        width: 100%;
+        min-height: auto;
+    }
+=======
+>>>>>>> dat
 }
 
 .why-choose-three__content {
@@ -10700,9 +11449,11 @@ body.megamenu-popup-active .mobile-nav__content {
     }
 }
 
+
 /*-----------------------------------------
 # Why Choose Four
 -----------------------------------------*/
+
 .why-choose-four {
     position: relative;
     padding: 148px 0;
@@ -11197,12 +11948,16 @@ body.megamenu-popup-active .mobile-nav__content {
     line-height: 1.75;
 }
 
+
 /*--------------------------------------------------------------
 # Offer
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Offer One
 -----------------------------------------*/
+
 .offer-one {
     position: relative;
     z-index: 1;
@@ -11498,19 +12253,27 @@ body.megamenu-popup-active .mobile-nav__content {
     0% {
         transform: translateX(0px);
     }
+<<<<<<< HEAD
 
     50% {
         transform: translateX(-10px);
     }
 
+=======
+    50% {
+        transform: translateX(-10px);
+    }
+>>>>>>> dat
     100% {
         transform: translateX(0px);
     }
 }
 
+
 /*-----------------------------------------
 # Offer Two
 -----------------------------------------*/
+
 .offer-two {
     background-color: var(--trevlo-white, #ffffff);
 }
@@ -11638,9 +12401,11 @@ body.megamenu-popup-active .mobile-nav__content {
     }
 }
 
+
 /*-----------------------------------------
 # Offer Three
 -----------------------------------------*/
+
 .offer-three {
     position: relative;
 }
@@ -11795,6 +12560,43 @@ body.megamenu-popup-active .mobile-nav__content {
     .offer-three__border-one {
         top: -80px;
     }
+<<<<<<< HEAD
+}
+
+.offer-three__border-two {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    bottom: 63px;
+    animation: rightToLeft 2500ms linear infinite;
+}
+
+@media (max-width: 1350px) {
+    .offer-three__border-two {
+        bottom: -10px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .offer-three__border-two {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 991px) {
+    .offer-three__border-two {
+        max-width: 300px;
+        bottom: -50px;
+    }
+}
+
+@media (max-width: 575px) {
+    .offer-three__border-two {
+        bottom: -80px;
+    }
+=======
+>>>>>>> dat
 }
 
 .offer-three__border-two {
@@ -11831,12 +12633,16 @@ body.megamenu-popup-active .mobile-nav__content {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Counter
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Counter One
 -----------------------------------------*/
+
 .counter-box {
     text-align: center;
     position: relative;
@@ -11961,9 +12767,11 @@ body.megamenu-popup-active .mobile-nav__content {
     }
 }
 
+
 /*-----------------------------------------
 # Counter Two
 -----------------------------------------*/
+
 .counter-two {
     position: relative;
     padding: 120px 0;
@@ -12010,7 +12818,10 @@ body.megamenu-popup-active .mobile-nav__content {
     0% {
         background-position: 1920px 100%;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         background-position: 0 100%;
     }
@@ -12066,9 +12877,11 @@ body.megamenu-popup-active .mobile-nav__content {
     display: flex;
 }
 
+
 /*-----------------------------------------
 # Counter Three
 -----------------------------------------*/
+
 .counter-three {
     position: relative;
     padding: 150px 0 120px;
@@ -12250,12 +13063,16 @@ body.megamenu-popup-active .mobile-nav__content {
     margin: 0;
 }
 
+
 /*--------------------------------------------------------------
 # Guide
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Guide One
 -----------------------------------------*/
+
 .guide-one {
     padding-top: 13px;
     background-color: var(--trevlo-white, #ffffff);
@@ -12271,9 +13088,11 @@ body.megamenu-popup-active .mobile-nav__content {
     }
 }
 
+
 /*-----------------------------------------
 # Guide Page
 -----------------------------------------*/
+
 .guide-page {
     background-color: var(--trevlo-white, #ffffff);
 }
@@ -12309,9 +13128,11 @@ body.megamenu-popup-active .mobile-nav__content {
     opacity: 1;
 }
 
+
 /*--------------------------------------------------------------
 # Gallery
 --------------------------------------------------------------*/
+
 .gallery-single {
     position: relative;
 }
@@ -12510,12 +13331,18 @@ body.megamenu-popup-active .mobile-nav__content {
     background-color: var(--trevlo-white, #ffffff);
 }
 
+
 /*--------------------------------------------------------------
 # CTA
 --------------------------------------------------------------*/
+
 .cta-one {
     position: relative;
     padding-bottom: 10px;
+<<<<<<< HEAD
+=======
+    padding-top: 80px;
+>>>>>>> dat
 }
 
 .cta-one::after {
@@ -12523,7 +13350,11 @@ body.megamenu-popup-active .mobile-nav__content {
     left: 0;
     bottom: 0;
     width: 100%;
+<<<<<<< HEAD
     background-color: #382b3c;
+=======
+    /* background-color: #382b3c; */
+>>>>>>> dat
     height: 50px;
     content: "";
 }
@@ -12600,17 +13431,26 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @keyframes carMove {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     0%,
     100% {
         transform: rotate(0deg) translateX(0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     25%,
     75% {
         transform: rotate(-5deg) translateX(-20px);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     50% {
         transform: rotate(-15deg) translateX(-40px);
     }
@@ -12630,17 +13470,26 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @keyframes carMove2 {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     0%,
     100% {
         transform: rotate(0deg) translateX(0);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     25%,
     75% {
         transform: rotate(-5deg) translateX(-10px);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     50% {
         transform: rotate(-10deg) translateX(-20px);
     }
@@ -12912,12 +13761,16 @@ body.megamenu-popup-active .mobile-nav__content {
     }
 }
 
+
 /*--------------------------------------------------------------
 # FAQS
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # FAQ Page
 -----------------------------------------*/
+
 .faq-page {
     position: relative;
     background-color: var(--trevlo-white, #ffffff);
@@ -13098,12 +13951,16 @@ body.megamenu-popup-active .mobile-nav__content {
     margin-bottom: 0;
 }
 
+
 /*--------------------------------------------------------------
 # Login
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Login Page
 -----------------------------------------*/
+
 .login-page {
     background-color: var(--trevlo-white, #ffffff);
 }
@@ -13248,12 +14105,16 @@ body.megamenu-popup-active .mobile-nav__content {
     margin-top: 14px;
 }
 
+
 /*--------------------------------------------------------------
 # Pricing
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Pricing Page
 -----------------------------------------*/
+
 .pricing-page {
     background-color: var(--trevlo-white, #ffffff);
     position: relative;
@@ -13282,7 +14143,10 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @media (max-width: 991px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .pricing-page__row>div:nth-child(1),
     .pricing-page__row>div:nth-child(2) {
         margin-bottom: 50px;
@@ -13353,12 +14217,16 @@ body.megamenu-popup-active .mobile-nav__content {
     /*! margin-top: 0px; */
 }
 
+
 /*--------------------------------------------------------------
 # Tour Listing
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Tour Listing One
 -----------------------------------------*/
+
 .tour-listing-one {
     background-color: var(--trevlo-white, #ffffff);
     position: relative;
@@ -13388,9 +14256,11 @@ body.megamenu-popup-active .mobile-nav__content {
     }
 }
 
+
 /*-----------------------------------------
 # Tour Listing Two
 -----------------------------------------*/
+
 .tour-listing-two {
     background-color: var(--trevlo-white, #ffffff);
     position: relative;
@@ -13412,9 +14282,11 @@ body.megamenu-popup-active .mobile-nav__content {
     max-width: 1600px;
 }
 
+
 /*-----------------------------------------
 # Tour Listing Four
 -----------------------------------------*/
+
 .tour-listing-four {
     position: relative;
     background-color: var(--trevlo-white, #ffffff);
@@ -13624,7 +14496,10 @@ body.megamenu-popup-active .mobile-nav__content {
         width: 50%;
         padding-right: 0;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .tour-listing-four__list::after {
         display: none;
     }
@@ -13791,9 +14666,11 @@ body.megamenu-popup-active .mobile-nav__content {
     }
 }
 
+
 /*-----------------------------------------
 # Tour Listing Five
 -----------------------------------------*/
+
 .tour-listing-five {
     position: relative;
     background-color: var(--trevlo-white, #ffffff);
@@ -14132,16 +15009,20 @@ body.megamenu-popup-active .mobile-nav__content {
     animation: leftToRight 2500ms linear infinite;
 }
 
+
 /*-----------------------------------------
 # Tour Listing Top Search
 -----------------------------------------*/
+
 .tour-listing-search {
     position: relative;
 }
 
+
 /*-----------------------------------------
 # Tour Listing Side Filter
 -----------------------------------------*/
+
 .tour-listing-filter {
     background-color: var(--trevlo-white, #ffffff);
 }
@@ -14158,9 +15039,11 @@ body.megamenu-popup-active .mobile-nav__content {
     justify-content: flex-start;
 }
 
+
 /*-----------------------------------------
 # Tour Listing List Style
 -----------------------------------------*/
+
 .tour-listing-style {
     background-color: var(--trevlo-white, #ffffff);
 }
@@ -14279,9 +15162,11 @@ body.megamenu-popup-active .mobile-nav__content {
     border-bottom: 1px solid var(--trevlo-base, #FF5956);
 }
 
+
 /*-----------------------------------------
 # Tour Listing Details
 -----------------------------------------*/
+
 .tour-listing-details {
     background-color: var(--trevlo-white, #ffffff);
     padding-bottom: 110px;
@@ -14724,7 +15609,10 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @media (max-width: 375px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .tour-listing-details__calender-box .ui-datepicker-calendar .ui-state-default,
     .tour-listing-details__calender-box .ui-datepicker-calendar .ui-widget-content .ui-state-default,
     .tour-listing-details__calender-box .ui-datepicker-calendar .ui-widget-header .ui-state-default {
@@ -15090,7 +15978,10 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @media (max-width: 991px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .tour-listing-details__amenities-content--two,
     .tour-listing-details__amenities-content--five {
         padding-left: 0;
@@ -15103,7 +15994,10 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 @media (max-width: 991px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .tour-listing-details__amenities-content--three,
     .tour-listing-details__amenities-content--six {
         padding-left: 0;
@@ -15573,7 +16467,11 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 .tour-listing-sidebar-post__image img {
+<<<<<<< HEAD
     width: 70px;
+=======
+    width: 100%;
+>>>>>>> dat
     display: block;
     border-radius: 6px;
 }
@@ -15628,12 +16526,16 @@ body.megamenu-popup-active .mobile-nav__content {
     margin-bottom: 0;
 }
 
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Contact Page
 -----------------------------------------*/
+
 .contact-page {
     background-color: var(--trevlo-white, #ffffff);
     position: relative;
@@ -15888,12 +16790,16 @@ body.megamenu-popup-active .mobile-nav__content {
     color: var(--trevlo-base, #FF5956);
 }
 
+
 /*--------------------------------------------------------------
 # Products
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Product Page
 -----------------------------------------*/
+
 .product-page__row {
     justify-content: center;
 }
@@ -15902,9 +16808,11 @@ body.megamenu-popup-active .mobile-nav__content {
     margin-bottom: 30px;
 }
 
+
 /*-----------------------------------------
 # Product Details Page
 -----------------------------------------*/
+
 .product-details {
     position: relative;
     background-color: var(--trevlo-white, #ffffff);
@@ -16352,9 +17260,11 @@ body.megamenu-popup-active .mobile-nav__content {
     height: 211px;
 }
 
+
 /*-----------------------------------------
 # Product Sidebar
 -----------------------------------------*/
+
 .product {
     position: relative;
 }
@@ -16646,9 +17556,11 @@ body.megamenu-popup-active .mobile-nav__content {
     text-transform: none;
 }
 
+
 /*--------------------------------------------------------------
 # Cart
 --------------------------------------------------------------*/
+
 .cart-page {
     position: relative;
     padding: 120px 0;
@@ -16881,12 +17793,16 @@ body.megamenu-popup-active .mobile-nav__content {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Checkout
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Checkout Page
 -----------------------------------------*/
+
 .checkout-page {
     position: relative;
     background-color: var(--trevlo-white, #ffffff);
@@ -17178,12 +18094,16 @@ body.megamenu-popup-active .mobile-nav__content {
     padding-right: 45px;
 }
 
+
 /*--------------------------------------------------------------
 # Destination
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Destination Page
 -----------------------------------------*/
+
 .destination-page {
     background-color: var(--trevlo-white, #ffffff);
 }
@@ -17828,9 +18748,11 @@ body.megamenu-popup-active .mobile-nav__content {
     border-color: var(--trevlo-base);
 }
 
+
 /*-----------------------------------------
 # Destination Details Page
 -----------------------------------------*/
+
 .destination-details__row {
     justify-content: center;
 }
@@ -18031,9 +18953,14 @@ body.megamenu-popup-active .mobile-nav__content {
     font-weight: 500;
 }
 
+
 /*-----------------------------------------
 # Destination Sidebar
 -----------------------------------------*/
+<<<<<<< HEAD
+=======
+
+>>>>>>> dat
 .destination-sidebar__single+.destination-sidebar__single {
     margin-top: 30px;
 }
@@ -18220,12 +19147,16 @@ body.megamenu-popup-active .mobile-nav__content {
     fill: var(--trevlo-white, #ffffff);
 }
 
+
 /*--------------------------------------------------------------
 # Blog
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Blog Three
 -----------------------------------------*/
+
 .blog-three {
     background-color: var(--trevlo-white, #ffffff);
 }
@@ -18453,9 +19384,11 @@ body.megamenu-popup-active .mobile-nav__content {
     background-size: 100% 1px;
 }
 
+
 /*-----------------------------------------
 # Blog Four
 -----------------------------------------*/
+
 .blog-four {
     background-color: var(--trevlo-white, #ffffff);
 }
@@ -18691,9 +19624,11 @@ body.megamenu-popup-active .mobile-nav__content {
     background-size: 100% 1px;
 }
 
+
 /*-----------------------------------------
 # Blog Page
 -----------------------------------------*/
+
 .blog-page {
     position: relative;
     padding: 120px 0;
@@ -18721,9 +19656,11 @@ body.megamenu-popup-active .mobile-nav__content {
     z-index: 1;
 }
 
+
 /*-----------------------------------------
 # Blog List Page
 -----------------------------------------*/
+
 .blog-list-page__inner-container {
     padding-left: 0;
     padding-right: 0;
@@ -18767,9 +19704,11 @@ body.megamenu-popup-active .mobile-nav__content {
     transform: scale(1.1);
 }
 
+
 /*-----------------------------------------
 # Blog Details
 -----------------------------------------*/
+
 .blog-details-page {
     padding-bottom: 110px;
     background-color: var(--trevlo-white, #ffffff);
@@ -18779,7 +19718,10 @@ body.megamenu-popup-active .mobile-nav__content {
     .blog-details-page {
         padding-bottom: 70px;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .blog-details-page.blog-details-page-right {
         padding-bottom: 80px;
     }
@@ -19012,9 +19954,11 @@ body.megamenu-popup-active .mobile-nav__content {
     text-transform: inherit;
 }
 
+
 /*-----------------------------------------
 # Blog Sidebar
 -----------------------------------------*/
+
 .sidebar-blog {
     position: relative;
 }
@@ -19023,7 +19967,10 @@ body.megamenu-popup-active .mobile-nav__content {
     .sidebar-blog {
         margin-top: 30px;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .sidebar-blog--left {
         margin-top: 0;
         margin-bottom: 30px;
@@ -19651,12 +20598,16 @@ body.megamenu-popup-active .mobile-nav__content {
     background-size: 100% 1px;
 }
 
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Main Footer
 -----------------------------------------*/
+
 .main-footer {
     position: relative;
     padding-top: 70px;
@@ -19682,7 +20633,10 @@ body.megamenu-popup-active .mobile-nav__content {
     0% {
         background-position: -1920px 100%;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         background-position: 0 100%;
     }
@@ -20558,6 +21512,7 @@ li:hover .footer-three__contact__list__icon {
     height: auto;
     position: absolute;
     opacity: 0.15;
+<<<<<<< HEAD
 }
 
 @media (max-width: 1799px) {
@@ -20602,14 +21557,60 @@ li:hover .footer-three__contact__list__icon {
     top: 30px;
     right: 0;
     animation: rightToLeft 2500ms linear infinite;
+=======
+>>>>>>> dat
 }
+
+@media (max-width: 1799px) {
+    .footer-three__shape-one,
+    .footer-three__shape-two {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 1599px) {
+    .footer-three__shape-one,
+    .footer-three__shape-two {
+        max-width: 105px;
+    }
+}
+
+@media (max-width: 1399px) {
+    .footer-three__shape-one,
+    .footer-three__shape-two {
+        max-width: 80px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .footer-three__shape-one,
+    .footer-three__shape-two {
+        display: none;
+    }
+}
+
+.footer-three__shape-one {
+    left: 0;
+    bottom: 21px;
+    animation: leftToRight 2500ms linear infinite;
+}
+
+.footer-three__shape-two {
+    top: 30px;
+    right: 0;
+    animation: rightToLeft 2500ms linear infinite;
+}
+
 
 /*--------------------------------------------------------------
 # 404 Error
 --------------------------------------------------------------*/
+
+
 /*-----------------------------------------
 # Error Page
 -----------------------------------------*/
+
 .error-page {
     background-color: var(--trevlo-white, #ffffff);
     padding-top: 63px;
@@ -20818,9 +21819,11 @@ li:hover .footer-three__contact__list__icon {
     text-transform: none;
 }
 
+
 /*--------------------------------------------------------------
 # Client Carousel
 --------------------------------------------------------------*/
+
 .client-carousel {
     position: relative;
     background-color: var(--trevlo-white, #ffffff);
@@ -20976,9 +21979,11 @@ li:hover .footer-three__contact__list__icon {
     opacity: 1;
 }
 
+
 /*--------------------------------------------------------------
 # Benefit
 --------------------------------------------------------------*/
+
 .benefit-one {
     position: relative;
     overflow: hidden;
@@ -21474,9 +22479,11 @@ li:hover .footer-three__contact__list__icon {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Hero Slider
 --------------------------------------------------------------*/
+
 .main-slider-one {
     position: relative;
 }
@@ -22540,7 +23547,10 @@ li:hover .footer-three__contact__list__icon {
 }
 
 @media (max-width: 1599px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     .main-slider-five__carousel .item::before,
     .main-slider-five__carousel .item::after {
         display: none;
@@ -22768,15 +23778,20 @@ li:hover .footer-three__contact__list__icon {
     0% {
         transform: translateX(-50%) rotate(0deg);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         transform: translateX(-50%) rotate(359deg);
     }
 }
 
+
 /*--------------------------------------------------------------
 # Boxed Home
 --------------------------------------------------------------*/
+
 body.boxed-wrapper {
     position: relative;
 }
@@ -22793,9 +23808,11 @@ body.boxed-wrapper .main-header__booking-btn {
     display: none;
 }
 
+
 /*--------------------------------------------------------------
 # Tab Section
 --------------------------------------------------------------*/
+
 .tab-one {
     position: relative;
     background-color: var(--trevlo-primary, #2D2330);
@@ -23023,9 +24040,11 @@ body.boxed-wrapper .main-header__booking-btn {
     background-color: var(--trevlo-primary, #2D2330);
 }
 
+
 /*--------------------------------------------------------------
 # Feature
 --------------------------------------------------------------*/
+
 .feature-one {
     position: relative;
     background-color: var(--trevlo-white2, #FAF5EE);
@@ -23047,13 +24066,22 @@ body.boxed-wrapper .main-header__booking-btn {
 
 .feature-one__box {
     position: relative;
+<<<<<<< HEAD
     padding: 0 0 0 102px;
+=======
+    padding: 0 0 0 70px;
+>>>>>>> dat
     min-height: 71px;
 }
 
 .feature-one__box__icon {
+<<<<<<< HEAD
     width: 71px;
     height: 71px;
+=======
+    width: 60px;
+    height: 60px;
+>>>>>>> dat
     background-color: var(--trevlo-base, #FF5956);
     display: flex;
     align-items: center;
@@ -23064,7 +24092,11 @@ body.boxed-wrapper .main-header__booking-btn {
     left: 0;
     top: 5px;
     overflow: hidden;
+<<<<<<< HEAD
     font-size: 38px;
+=======
+    font-size: 28px;
+>>>>>>> dat
     color: var(--trevlo-white, #ffffff);
 }
 
@@ -23121,7 +24153,11 @@ body.boxed-wrapper .main-header__booking-btn {
 }
 
 .feature-one__box__title {
+<<<<<<< HEAD
     font-size: 20px;
+=======
+    font-size: 16px;
+>>>>>>> dat
     margin: 0 0 7px;
 }
 
@@ -23428,9 +24464,11 @@ body.boxed-wrapper .main-header__booking-btn {
     display: block;
 }
 
+
 /*--------------------------------------------------------------
 # Video
 --------------------------------------------------------------*/
+
 .video-one {
     position: relative;
     background-color: var(--trevlo-primary, #2D2330);
@@ -23486,7 +24524,10 @@ body.boxed-wrapper .main-header__booking-btn {
     0% {
         box-shadow: 0 0 0 0 rgba(var(--trevlo-white-rgb, 255, 255, 255), 0.05), 0 0 0 30px rgba(var(--trevlo-white-rgb, 255, 255, 255), 0.05), 0 0 0 50px rgba(var(--trevlo-white-rgb, 255, 255, 255), 0.05);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dat
     100% {
         box-shadow: 0 0 0 30px rgba(var(--trevlo-white-rgb, 255, 255, 255), 0.05), 0 0 0 50px rgba(var(--trevlo-white-rgb, 255, 255, 255), 0.05), 0 0 0 70px rgba(var(--trevlo-white-rgb, 255, 255, 255), 0);
     }
@@ -23521,9 +24562,11 @@ body.boxed-wrapper .main-header__booking-btn {
     }
 }
 
+
 /*--------------------------------------------------------------
 # Tour Type
 --------------------------------------------------------------*/
+
 .tour-type {
     position: relative;
     background-color: var(--trevlo-white2, #FAF5EE);
@@ -23831,4 +24874,9 @@ body.boxed-wrapper .main-header__booking-btn {
     transform: rotateY(0deg);
 }
 
+<<<<<<< HEAD
 /*# sourceMappingURL=trevlo.css.map */
+=======
+
+/*# sourceMappingURL=trevlo.css.map */
+>>>>>>> dat
