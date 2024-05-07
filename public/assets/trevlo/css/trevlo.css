@@ -12731,6 +12731,7 @@ body.megamenu-popup-active .mobile-nav__content {
 .cta-one {
     position: relative;
     padding-bottom: 10px;
+    padding-top: 80px;
 }
 
 .cta-one::after {
@@ -12738,7 +12739,7 @@ body.megamenu-popup-active .mobile-nav__content {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #382b3c;
+    /* background-color: #382b3c; */
     height: 50px;
     content: "";
 }

@@ -63,7 +63,7 @@
         <div class="banner-form banner-form--two banner-form--three wow fadeInUp" data-wow-delay="300ms">
             <div class="container">
                 <div class="counter-two__bg" style="background-image: url(assets/images/shapes/counter-bg-2.png);"></div>
-            <div class="counter-two__shape"></div>
+                <div class="counter-two__shape"></div>
                 <div class="banner-form__wrapper">
                     <div class="row">
                         <div class="banner-form__col banner-form__col--2">
@@ -238,8 +238,7 @@
                                                             <span class="icon-photo-camera-1"></span>
                                                         </a>
                                                         <a href="javascript:void(0);"
-
-                     class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
+                                                            class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
                                                             data-gallery-options='{
                                                             "items": [
                                                                    @foreach ($videoArray as $index => $videos)
