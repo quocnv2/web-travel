@@ -1,6 +1,7 @@
 @extends ('Home.master')
 @php
     use Carbon\Carbon;
+    $slugCategory = isset($objCategory) ? $objCategory : ''
 @endphp
 @section('view')
     <section class="page-header">
