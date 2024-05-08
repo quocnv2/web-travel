@@ -48,11 +48,7 @@
                                                     {{ Carbon::parse($valNew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
                                                 </p><!-- /.sidebar__posts-date -->
                                                 <h4 class="sidebar-blog__posts-title"><a
-<<<<<<< HEAD
                                                         href="{{route('detailBlog', $valNew->slug)}}">{{ $valNew->name }}</a></h4>
-=======
-                                                        href="{{ route('detailBlog', $valNew->slug) }}">{{ $valNew->name }}</a></h4>
->>>>>>> dat
                                                 <!-- /.sidebar-blog__posts-title -->
                                             </div><!-- /.sidebar-blog__posts-content -->
                                         </li>
