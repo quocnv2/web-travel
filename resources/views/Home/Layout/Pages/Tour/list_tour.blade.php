@@ -50,7 +50,7 @@
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới Nhất</h3>
                             <ul class="tour-listing-sidebar-post">
-                                @foreach ($tourlist as $valueNewtour)
+                                @foreach ($tour as $valueNewtour)
                                     @php
                                         $address = '';
                                         if (isset($valueNewtour->province)) {
@@ -194,7 +194,7 @@
                                             class="icon-heart"></span></a>
                                     <div class="tour-listing-three__card-content tour-listing__card-content">
                                         <h3 class="tour-listing-three__card-title tour-listing__card-title"><a
-                                                href="">{{ $valueTour->name }}</a></h3>
+                                                href="{{route('detailTour', $valueTour->slug)}}">{{ $valueTour->name }}</a></h3>
                                         <div
                                             class="tour-listing-three__card-inner-content tour-listing__card-inner-content">
                                             <div class="tour-listing__card-camera-group">
