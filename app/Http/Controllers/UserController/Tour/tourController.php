@@ -39,15 +39,20 @@ class tourController extends Controller
 
         return view('Home.Layout.Pages.Tour.list_tour', compact('categories', 'tour', 'tourlist', 'historyTour', 'objCategory'));
     }
-    public function detailTour(Category $category, Tour $tour, $slug)
+    public function detailTour(Category $category, Tour $tourModel, $slug,storyTour $history)
     {
-        $objTour = $tour->get_link_slug($slug);
+        $objTour = $tourModel->get_link_slug($slug);
         if (!$objTour) {
             return redirect()->route('error404');
         }
+        $categories  = $category ->get_orderBy_ASC();
+        // Danh Sách tour
+        $tourlist = $tourModel->get_orderBy_ASC_status_page_12();
+        // Danh sách tour mới nhất
+        $tour = $tourModel->get_orderBy_ASC_status_page();
+        // Danh sách tour đã xem
+        $historyTour = $history->list_storyTour();
 
-        $categories = $category->get_orderBy_ASC();
-        $tour_new = $tour->get_orderBy_ASC_status_page();
-        return view('Home.Layout.Pages.Tour.tour_details', compact('categories', 'tour_new', 'objTour'));
+        return view('Home.Layout.Pages.Tour.tour_details', compact('categories', 'tour', 'objTour', 'historyTour', 'tourlist'));
     }
 }

@@ -72,6 +72,12 @@ class Tour extends Model
     }
 
     // Phương Thức lấy bản ghi theo slug
+    public function get_link_code_0($slug)
+    {
+        $obj = Tour::with('objCategory')->where('status = 0', $slug)->first();
+        return $obj;
+    }
+
     public function get_link_code($slug)
     {
         $obj = Tour::with('objCategory')->where('code', $slug)->first();
