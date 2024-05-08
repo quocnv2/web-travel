@@ -2102,8 +2102,19 @@ path {
 }
 
 .testimonials-card__quote {
-    margin-bottom: 0;
-    transition: all 0.4s ease-in-out;
+    position: relative;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    text-transform: capitalize;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 2em;
 }
 
 .testimonial-two {

@@ -17,10 +17,10 @@
                                  class="user-avtar wid-45 rounded-circle"/>
                         </div>
                         <div class="flex-grow-1 ms-3 me-2">
-                            {{--                            <h6 class="mb-0">{{ Auth::guard('admin')->user()->fullName }}</h6> --}}
-                            {{--                            <small>{{ Auth::guard('admin')->user()->email }}</small> --}}
-                            <h6 class="mb-0">Demo</h6>
-                            <small>Email Demo</small>
+                            <h6 class="mb-0">{{ Auth::guard('admin')->user()->fullName }}</h6>
+                            <small>{{ Auth::guard('admin')->user()->email }}</small>
+                            {{-- <h6 class="mb-0">Demo</h6>
+                            <small>Email Demo</small> --}}
                         </div>
                         <a class="btn btn-icon btn-link-secondary avtar" data-bs-toggle="collapse"
                            href="#pc_sidebar_userlink">
@@ -61,7 +61,7 @@
                         <span class="pc-mtext">Phản hồi</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="{{ route('contact_list') }}">Danh sách</a>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('contact_list') }}">Contact</a>
                         </li>
                     </ul>
                 </li>

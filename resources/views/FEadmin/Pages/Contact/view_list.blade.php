@@ -23,7 +23,7 @@
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0)">Kinh doanh</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0)">Phản hồi</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0)">Phản hồi contact</a></li>
                             <li class="breadcrumb-item" aria-current="page">Danh Sách</li>
                         </ul>
                     </div>

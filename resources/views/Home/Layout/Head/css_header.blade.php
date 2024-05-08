@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="{{ url('assets') }}/trevlo/vendors/daterangepicker-master/daterangepicker.css" />
 <link rel="stylesheet" href="{{ url('assets') }}/trevlo/vendors/owl-carousel/css/owl.carousel.min.css" />
 <link rel="stylesheet" href="{{ url('assets') }}/trevlo/vendors/owl-carousel/css/owl.theme.default.min.css" />
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- template styles -->
 <link rel="stylesheet" href="{{ url('assets') }}/trevlo/css/trevlo.css" />
 <link rel="stylesheet" href="{{ url('assets') }}/trevlo/css/color-1.css" />
