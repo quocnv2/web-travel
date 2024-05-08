@@ -30,7 +30,8 @@
 
     <!-- Blog Page Start -->
     <section class="contact-page section-space-top">
-        <div class="why-choose-three__bg" style="background-image: url({{ url('assets') }}/trevlo/images/shapes/why-choose-3-bg.png);"></div>
+        <div class="why-choose-three__bg"
+             style="background-image: url({{ url('assets') }}/trevlo/images/shapes/why-choose-3-bg.png);"></div>
         <div class="container">
             <div class="row ">
                 <div class="col-lg-5 wow fadeInLeft" data-wow-duration="1500ms">
@@ -46,7 +47,7 @@
                             </div><!-- /.about-five__image__two__inner -->
                             <div class="about-five__experience">
                                 <img src="{{ url('assets') }}/images/resources/about-icon-5-1.png" alt="about icon"
-                                    class="about-five__experience__icon">
+                                     class="about-five__experience__icon">
                                 <h4 class="about-five__experience__year">10+</h4><!-- /.about-five__experience__year -->
                                 <h4 class="about-five__experience__title">Năm kinh nghiệm</h4>
                                 <!-- /.about-five__experience__title -->
@@ -62,35 +63,45 @@
                         <h2 class="sec-title__title">Liên hệ bất cứ lúc nào</h2><!-- /.sec-title__title -->
                     </div><!-- /.sec-title -->
                     <!-- /.sec-title -->
-                    <form action="#" class="contact-page__form form-one row gutter-20 contact-form-validated">
+                    <form action="{{route('create_contact')}}" class="contact-page__form form-one row gutter-20"
+                          method="POST" id="formReset">
+                        @csrf
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="name" id="form-one-name-input" placeholder="Họ và tên"
-                                    class="form-one__input">
+                                       class="form-one__input" value="{{ old('name') }}">
+
+                                @error('name')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                                @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="email" name="email" id="form-one-email-input" placeholder="Email"
-                                    class="form-one__input">
+                                       class="form-one__input" value="{{ old('email') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="tel" name="phone" id="form-one-phone-input" placeholder="Số điện thoại"
-                                    class="form-one__input">
+                                       class="form-one__input" value="{{ old('phone') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="subject" id="form-one-subject-input" placeholder="Chủ đề"
-                                    class="form-one__input">
+                                <input type="text" name="titail" id="form-one-subject-input" placeholder="Chủ đề"
+                                       class="form-one__input" value="{{ old('titail') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <textarea name="message" id="form-one-message-input" cols="30" rows="10" placeholder="Viết tâm thư"
-                                    class="form-one__message form-one__input"></textarea>
+                                <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10"
+                                          placeholder="Viết tâm thư"
+                                          class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Bài Viết' }}</textarea>
+                                @error('commentUser')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                                @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-12-->
                         <div class="col-12 wow animated fadeInUp" data-wow-delay="0.2s" data-wow-duration="1500ms">
@@ -104,7 +115,7 @@
                 </div>
             </div>
             <img src="{{ url('assets') }}/trevlo/images/shapes/about-parashoot-6-1.png" alt="mountain"
-                class="about-six__parashoot">
+                 class="about-six__parashoot">
         </div><!-- /.container -->
     </section>
     <section class="faq-page section-space" style="padding: 80px;">
@@ -144,7 +155,7 @@
                         </div>
 
                         <div class="accrodion active wow animated fadeInUp" data-wow-delay="0.2s"
-                            data-wow-duration="1500ms">
+                             data-wow-duration="1500ms">
                             <div class="accrodion-title">
                                 <h4>Lựa chọn tốt nhất</h4>
                             </div>
@@ -212,8 +223,10 @@
                 </div><!-- /.col-xl-9 col-lg-8 -->
             </div><!-- /.row -->
         </div><!-- /.container -->
-        <img src="{{ url('assets') }}/trevlo/images/resources/tour-listing-airplane-4-1.png" alt="airplane" class="tour-listing-four__airplane">
-        <img src="{{ url('assets') }}/trevlo/images/resources/tour-listing-img-4-1.png" alt="girl" class="tour-listing-four__left-image">
+        <img src="{{ url('assets') }}/trevlo/images/resources/tour-listing-airplane-4-1.png" alt="airplane"
+             class="tour-listing-four__airplane">
+        <img src="{{ url('assets') }}/trevlo/images/resources/tour-listing-img-4-1.png" alt="girl"
+             class="tour-listing-four__left-image">
     </section>
 
     <div class="blog-four section-space" style="padding-top: 0px;">
@@ -243,7 +256,7 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
                         <div class="blog-four__card">
                             <a href="{{ route('detailBlog', $valueBlog->slug) }}" class="blog-four__card__image-link"
-                                style="background-image: url({{ $valueBlog->imgBanner }});">
+                               style="background-image: url({{ $valueBlog->imgBanner }});">
                                 <div class="blog-four__card__date">
                                     <span
                                         class="blog-four__card__date__day">{{ Carbon::parse($valueBlog->timeCreate)->locale('vi')->isoFormat('Do') }}</span>
@@ -278,4 +291,25 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
     </div><!-- /.blog-four section-space -->
+@stop
+@section('view_js')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    @include('FEadmin.Layout.JS.Account')
+    @include('FEadmin.Layout.JS.formTiny')
+    @include('FEadmin.Layout.Fooder.js_fooder')
+    @include('FEadmin.Layout.JS.Change_to_slug')
+    @include('FEadmin.Layout.JS.Reset_button')
+
+    <script src="{{ url('assets') }}/js/plugins/ckeditor/classic/ckeditor.js"></script>
+    <script>
+        (function () {
+            ClassicEditor.create(document.querySelector('#classic-editor')).catch((error) => {
+                console.error(error);
+            });
+        })();
+    </script>
+
+
+
 @stop

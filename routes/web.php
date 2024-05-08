@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController\Category\CategoryController;
 use App\Http\Controllers\AdminController\Account\AccountController;
@@ -10,13 +11,14 @@ use App\Http\Controllers\AdminController\Banner\BannerController;
 use App\Http\Controllers\AdminController\Tour\TourController;
 use App\Http\Controllers\AdminController\Blog\BlogController;
 use App\Http\Controllers\AdminController\Room\RoomController;
+use App\Http\Controllers\AdminController\Contact\ContactAdminController;
 
 // Controller User
 use App\Http\Controllers\UserController\Home\HomeUserController;
 use App\Http\Controllers\UserController\Blog\blogController as blogUserController;
 use App\Http\Controllers\UserController\Tour\tourController as tourUserController;
 use App\Http\Controllers\UserController\Room\roomController as roomUserController;
-use App\Http\Controllers\UserController\Contact\contactController;
+use App\Http\Controllers\UserController\Contact\contactController as contactUserController;
 
 Route::prefix('')->group(function () {
     Route::get('/', [HomeUserController::class, 'index'])->name('home');
@@ -37,7 +39,9 @@ Route::prefix('')->group(function () {
     Route::get('/chi-tiet-phong/{slug}', [roomUserController::class, 'detailRoom'])->name('detailRoom');
 
     // Liên Hệ
-    Route::get('/lien-he', [contactController::class, 'contact_web'])->name('contact_web');
+    Route::get('/lien-he', [contactUserController::class, 'contact_web'])->name('contact_web');
+    Route::post('/lien-he', [contactUserController::class, 'create_contact'])->name('create_contact');
+
 
     // Lỗi 404
     Route::get('/error-404', [HomeUserController::class, 'error404'])->name('error404');
@@ -104,20 +108,24 @@ Route::prefix('travel-admin')->middleware('admin')->group(function () {
     Route::post('/cap-nhat-tour/{slug}', [TourController::class, 'update_tour'])->name('update_tour');
 
 
-     Route::get('/view-danh-sach-blog', [BlogController::class, 'view_list'])->name('view_list_blog');
-     Route::get('/chi-tiet-blog/{slug}', [BlogController::class, 'detail_blog'])->name('detail_blog');
-     Route::get('/view-them-moi-blog', [BlogController::class, 'view_create'])->name('view_create_blog');
-     Route::post('/them-moi-blog', [BlogController::class, 'create_blog'])->name('create_blog');
-     Route::get('/xoa-blog/{slug}', [BlogController::class, 'delete_blog'])->name('delete_blog');
-     Route::get('/cap-nhat-blog/{slug}', [BlogController::class, 'view_update'])->name('view_update_blog');
-     Route::post('/cap-nhat-blog/{slug}', [BlogController::class, 'update_blog'])->name('update_blog');
+    Route::get('/view-danh-sach-blog', [BlogController::class, 'view_list'])->name('view_list_blog');
+    Route::get('/chi-tiet-blog/{slug}', [BlogController::class, 'detail_blog'])->name('detail_blog');
+    Route::get('/view-them-moi-blog', [BlogController::class, 'view_create'])->name('view_create_blog');
+    Route::post('/them-moi-blog', [BlogController::class, 'create_blog'])->name('create_blog');
+    Route::get('/xoa-blog/{slug}', [BlogController::class, 'delete_blog'])->name('delete_blog');
+    Route::get('/cap-nhat-blog/{slug}', [BlogController::class, 'view_update'])->name('view_update_blog');
+    Route::post('/cap-nhat-blog/{slug}', [BlogController::class, 'update_blog'])->name('update_blog');
 
 
-     Route::get('/view-danh-sach-room', [RoomController::class, 'view_list'])->name('view_list_room');
-     Route::get('/chi-tiet-room/{slug}', [RoomController::class, 'detail_room'])->name('detail_room');
-     Route::get('/view-them-moi-room', [RoomController::class, 'view_create'])->name('view_create_room');
-     Route::post('/them-moi-room', [RoomController::class, 'create_room'])->name('create_room');
-     Route::get('/xoa-room/{slug}', [RoomController::class, 'delete_room'])->name('delete_room');
-     Route::get('/cap-nhat-room/{slug}', [RoomController::class, 'view_update'])->name('view_update_room');
-     Route::post('/cap-nhat-room/{slug}', [RoomController::class, 'update_room'])->name('update_room');
+    Route::get('/view-danh-sach-room', [RoomController::class, 'view_list'])->name('view_list_room');
+    Route::get('/chi-tiet-room/{slug}', [RoomController::class, 'detail_room'])->name('detail_room');
+    Route::get('/view-them-moi-room', [RoomController::class, 'view_create'])->name('view_create_room');
+    Route::post('/them-moi-room', [RoomController::class, 'create_room'])->name('create_room');
+    Route::get('/xoa-room/{slug}', [RoomController::class, 'delete_room'])->name('delete_room');
+    Route::get('/cap-nhat-room/{slug}', [RoomController::class, 'view_update'])->name('view_update_room');
+    Route::post('/cap-nhat-room/{slug}', [RoomController::class, 'update_room'])->name('update_room');
+
+    Route::get('/danh-sach-lien-he', [ContactAdminController::class, 'contact_list'])->name('contact_list');
+    Route::get('/chi-tiet-lien-he/{id}', [ContactAdminController::class, 'detail_contact'])->name('detail_contact');
+    Route::get('/xoa-lien-he/{id}', [ContactAdminController::class, 'delete_contact'])->name('delete_contact');
 });

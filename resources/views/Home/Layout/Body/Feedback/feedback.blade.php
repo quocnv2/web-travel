@@ -33,14 +33,13 @@
                     }
                 }
             }'>
+            @foreach ($contact_list as $contactValue)
+
             <div class="item">
                 <div class="testimonials-card">
-                    <div class="testimonials-card__image">
-                        <img src="{{url('assets') }}/trevlo/images/testimonial/testimonial-1-1.jpg" alt="Jacob Jones">
-                    </div>
                     <div class="testimonials-card__meta">
-                        <h5 class="testimonials-card__meta__name">Jacob Jones</h5>
-                        <p class="testimonials-card__meta__designation">Tourist</p>
+                        <h5 class="testimonials-card__meta__name">{{$contactValue-> name}}</h5>
+                        <p class="testimonials-card__meta__designation">{{$contactValue-> phone}}</p>
                     </div><!-- /.testimonials-card__meta -->
                     <div class="testimonials-card__ratings">
                         <span class="icon-star"></span>
@@ -49,116 +48,10 @@
                         <span class="icon-star"></span>
                         <span class="icon-star"></span>
                     </div><!-- /.testimonials-card__ratings -->
-                    <div class="testimonials-card__quote">Flexible Classes refers to the process of acquiring is
-                        knowledge free or skills through the use of process the digital technologies and the internet.
-                        Flexible Classes</div><!-- /.testimonials-card__quote -->
+                    <div class="testimonials-card__quote">{{$contactValue-> commentUser}}</div><!-- /.testimonials-card__quote -->
                 </div><!-- /.testimonials-card -->
             </div><!-- /.owl-slide-item-->
-            <div class="item">
-                <div class="testimonials-card">
-                    <div class="testimonials-card__image">
-                        <img src="{{url('assets') }}/trevlo/images/testimonial/testimonial-1-2.jpg" alt="Robert Fox">
-                    </div>
-                    <div class="testimonials-card__meta">
-                        <h5 class="testimonials-card__meta__name">Robert Fox</h5>
-                        <p class="testimonials-card__meta__designation">Tourist</p>
-                    </div><!-- /.testimonials-card__meta -->
-                    <div class="testimonials-card__ratings">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div><!-- /.testimonials-card__ratings -->
-                    <div class="testimonials-card__quote">Flexible Classes refers to the process of acquiring is
-                        knowledge free or skills through the use of process the digital technologies and the internet.
-                        Flexible Classes</div><!-- /.testimonials-card__quote -->
-                </div><!-- /.testimonials-card -->
-            </div><!-- /.owl-slide-item-->
-            <div class="item">
-                <div class="testimonials-card">
-                    <div class="testimonials-card__image">
-                        <img src="{{url('assets') }}/trevlo/images/testimonial/testimonial-1-3.jpg" alt="Guy Hawkins">
-                    </div>
-                    <div class="testimonials-card__meta">
-                        <h5 class="testimonials-card__meta__name">Guy Hawkins</h5>
-                        <p class="testimonials-card__meta__designation">Tourist</p>
-                    </div><!-- /.testimonials-card__meta -->
-                    <div class="testimonials-card__ratings">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div><!-- /.testimonials-card__ratings -->
-                    <div class="testimonials-card__quote">Flexible Classes refers to the process of acquiring is
-                        knowledge free or skills through the use of process the digital technologies and the internet.
-                        Flexible Classes</div><!-- /.testimonials-card__quote -->
-                </div><!-- /.testimonials-card -->
-            </div><!-- /.owl-slide-item-->
-            <div class="item">
-                <div class="testimonials-card">
-                    <div class="testimonials-card__image">
-                        <img src="{{url('assets') }}/trevlo/images/testimonial/testimonial-1-1.jpg" alt="Jacob Jones">
-                    </div>
-                    <div class="testimonials-card__meta">
-                        <h5 class="testimonials-card__meta__name">Jacob Jones</h5>
-                        <p class="testimonials-card__meta__designation">Tourist</p>
-                    </div><!-- /.testimonials-card__meta -->
-                    <div class="testimonials-card__ratings">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div><!-- /.testimonials-card__ratings -->
-                    <div class="testimonials-card__quote">Flexible Classes refers to the process of acquiring is
-                        knowledge free or skills through the use of process the digital technologies and the internet.
-                        Flexible Classes</div><!-- /.testimonials-card__quote -->
-                </div><!-- /.testimonials-card -->
-            </div><!-- /.owl-slide-item-->
-            <div class="item">
-                <div class="testimonials-card">
-                    <div class="testimonials-card__image">
-                        <img src="{{url('assets') }}/trevlo/images/testimonial/testimonial-1-2.jpg" alt="Robert Fox">
-                    </div>
-                    <div class="testimonials-card__meta">
-                        <h5 class="testimonials-card__meta__name">Robert Fox</h5>
-                        <p class="testimonials-card__meta__designation">Tourist</p>
-                    </div><!-- /.testimonials-card__meta -->
-                    <div class="testimonials-card__ratings">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div><!-- /.testimonials-card__ratings -->
-                    <div class="testimonials-card__quote">Flexible Classes refers to the process of acquiring is
-                        knowledge free or skills through the use of process the digital technologies and the internet.
-                        Flexible Classes</div><!-- /.testimonials-card__quote -->
-                </div><!-- /.testimonials-card -->
-            </div><!-- /.owl-slide-item-->
-            <div class="item">
-                <div class="testimonials-card">
-                    <div class="testimonials-card__image">
-                        <img src="{{url('assets') }}/trevlo/images/testimonial/testimonial-1-3.jpg" alt="Guy Hawkins">
-                    </div>
-                    <div class="testimonials-card__meta">
-                        <h5 class="testimonials-card__meta__name">Guy Hawkins</h5>
-                        <p class="testimonials-card__meta__designation">Tourist</p>
-                    </div><!-- /.testimonials-card__meta -->
-                    <div class="testimonials-card__ratings">
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                        <span class="icon-star"></span>
-                    </div><!-- /.testimonials-card__ratings -->
-                    <div class="testimonials-card__quote">Flexible Classes refers to the process of acquiring is
-                        knowledge free or skills through the use of process the digital technologies and the internet.
-                        Flexible Classes</div><!-- /.testimonials-card__quote -->
-                </div><!-- /.testimonials-card -->
-            </div><!-- /.owl-slide-item-->
+            @endforeach
         </div><!-- /.thm-owl__slider -->
     </div><!-- /.container -->
 </section>
