@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('commen_blog', function (Blueprint $table) {
+        Schema::create('commen_room', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->nullable(false);
             $table->string('phone')->nullable();
@@ -23,6 +23,8 @@ return new class extends Migration
             $table->tinyInteger('commentAdmin')->default(null);
             $table->unsignedBigInteger('idBlog');
             $table->foreign('idBlog')->references('id')->on('blog')->onDelete('cascade');
+            $table->unsignedBigInteger('idRoom');
+            $table->foreign('idRoom')->references('id')->on('room')->onDelete('cascade');
         });
     }
 
@@ -33,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commen_blog');
+        Schema::dropIfExists('commen_room');
     }
 };

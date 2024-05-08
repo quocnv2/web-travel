@@ -13,16 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('commen_blog', function (Blueprint $table) {
+        Schema::create('contact', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->nullable(false);
             $table->string('phone')->nullable();
+            $table->string('titail')->nullable();
             $table->string('email')->nullable()->validate(['email' => 'email']);
             $table->tinyInteger('commentUser')->default(null);
             $table->tinyInteger('status')->default(0);
-            $table->tinyInteger('commentAdmin')->default(null);
-            $table->unsignedBigInteger('idBlog');
-            $table->foreign('idBlog')->references('id')->on('blog')->onDelete('cascade');
         });
     }
 
@@ -33,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commen_blog');
+        Schema::dropIfExists('contact');
     }
 };

@@ -14,8 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('commen_tour', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->bigIncrements('id');
+            $table->string('name')->nullable(false);
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable()->validate(['email' => 'email']);
+            $table->tinyInteger('commentUser')->default(null);
+            $table->tinyInteger('status')->default(0);
+            $table->tinyInteger('commentAdmin')->default(null);
+            $table->unsignedBigInteger('idTour');
+            $table->foreign('idTour')->references('id')->on('tour')->onDelete('cascade');
         });
     }
 
