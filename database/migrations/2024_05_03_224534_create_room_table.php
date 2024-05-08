@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('imgRoom')->nullable(false);
             $table->json('imageArray')->nullable(); //Danh sách ảnh
             $table->json('videoArray')->nullable(); //Danh sách video
-            $table->text('content')->nullable(); //chi tiết
+            $table->longtext('content')->nullable(); //chi tiết
             $table->double('price')->default(0)->nullable();
             $table->unsignedBigInteger('idCategory'); // danh mục vị trí
             $table->foreign('idCategory')->references('id')->on('categories')->onDelete('cascade');

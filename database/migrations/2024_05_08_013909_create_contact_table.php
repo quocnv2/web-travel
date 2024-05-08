@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('titail')->nullable();
             $table->string('email')->nullable()->validate(['email' => 'email']);
-            $table->text('commentUser')->default(null);
+            $table->longtext('commentUser')->default(null);
             $table->tinyInteger('status')->default(0);
         });
     }
