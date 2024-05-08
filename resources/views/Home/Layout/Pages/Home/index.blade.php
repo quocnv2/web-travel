@@ -33,7 +33,7 @@
                                     <h5 class="main-slider-five__sub-title">Đối Tác Phiêu Lưu Tốt Nhất Của Bạn</h5>
                                     <h3 class="main-slider-five__title">{{ $bannerValue->name }}</h3>
                                     <div class="main-slider-five__button">
-                                        <a href="" class="trevlo-btn trevlo-btn--two trevlo-btn--base">
+                                        <a href="{{ $bannerValue->linkCourses }}" class="trevlo-btn trevlo-btn--two trevlo-btn--base">
                                             <span>Xem Chi Tiết</span>
                                             <i class="trevlo-one-icon-up-right-arrow"></i>
                                         </a><!-- /.trevlo-btn -->

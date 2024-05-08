@@ -15,11 +15,11 @@
                 <ul class="trevlo-breadcrumb">
                     <li><a href="{{ route('home') }}">Trang Chủ</a></li>
                     @if($slugCategory)
-                        <li>Bài Viết</li>
-                        <li>Danh Mục</li>
-                        <li>{{$slugCategory->name}}</li>
+                        <li><a href="{{ route('listBlog') }}">Bài Viết</a></li>
+                        <li><a href="{{ route('detailBlog', $slugCategory->slug) }}">Danh Mục</a></li>
+                    <li>{{$slugCategory->name}}</li>
                     @else
-                        <li>Bài Viết</li>
+                        <li><a href="{{ route('listBlog') }}">Bài Viết</a></li>
                     @endif
 
                 </ul><!-- /.trevlo-breadcrumb -->

@@ -14,13 +14,12 @@
                 <ul class="trevlo-breadcrumb">
                     <li><a href="{{ route('home') }}">Trang Chủ</a></li>
                     @if ($slugCategory)
-                        <li>Bài Viết</li>
-                        <li>Danh Mục</li>
+                        <li><a href="{{ route('listBlog') }}">Bài Viết</a></li>
+                        <li><a href="{{ route('detailBlog', $slugCategory->slug) }}">Danh Mục</a></li>
                         <li>{{ $slugCategory->name }}</li>
                     @else
-                        <li>Bài Viết</li>
+                        <li><a href="{{ route('listBlog') }}">Bài Viết</a></li>
                     @endif
-
                 </ul><!-- /.trevlo-breadcrumb -->
             </div><!-- /.page-header__breadcrumb-box -->
         </div><!-- /.container -->
@@ -48,7 +47,8 @@
                                                     {{ Carbon::parse($valNew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
                                                 </p><!-- /.sidebar__posts-date -->
                                                 <h4 class="sidebar-blog__posts-title"><a
-                                                        href="{{route('detailBlog', $valNew->slug)}}">{{ $valNew->name }}</a></h4>
+                                                        href="{{ route('detailBlog', $valNew->slug) }}">{{ $valNew->name }}</a>
+                                                </h4>
                                                 <!-- /.sidebar-blog__posts-title -->
                                             </div><!-- /.sidebar-blog__posts-content -->
                                         </li>

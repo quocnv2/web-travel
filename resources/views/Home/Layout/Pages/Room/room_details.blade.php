@@ -14,8 +14,8 @@
                 <ul class="trevlo-breadcrumb">
                     <li><a href="{{ route('home') }}">Trang Chủ</a></li>
                     @if($slugCategory)
-                        <li>Phòng</li>
-                        <li>Danh Mục</li>
+                        <li><a href="{{ route('listRoom') }}">Phòng</a></li>
+                        <li><a href="{{ route('listRoom_Category', $slugCategory->slug) }}">Danh Mục</a></li>
                         <li>{{$slugCategory->name}}</li>
                     @else
                         <li>Phòng</li>
