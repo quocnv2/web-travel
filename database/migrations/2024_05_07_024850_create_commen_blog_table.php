@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('name')->nullable(false);
             $table->string('phone')->nullable();
             $table->string('email')->nullable()->validate(['email' => 'email']);
-            $table->tinyInteger('commentUser')->default(null);
+            $table->text('commentUser')->default(null);
             $table->tinyInteger('status')->default(0);
-            $table->tinyInteger('commentAdmin')->default(null);
+            $table->text('commentAdmin')->default(null);
             $table->unsignedBigInteger('idBlog');
             $table->foreign('idBlog')->references('id')->on('blog')->onDelete('cascade');
         });

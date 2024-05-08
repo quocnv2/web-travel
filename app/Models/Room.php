@@ -17,6 +17,7 @@ class Room extends Model
 
     protected $fillable = [
         'id',
+        'code',
         'name',
         'slug',
         'imgRoom',
@@ -43,6 +44,7 @@ class Room extends Model
     {
         $currentTime = now();
         $creates = $this->Create([
+            'code' => $req->code,
             'name' => $req->name,
             'slug' => $req->slug,
             'imgRoom' => $req->imgRoom,
@@ -77,6 +79,7 @@ class Room extends Model
     public function update_room($req, $slug)
     {
         $obj = DB::table('room')->where('slug', $slug)->update([
+            'code' => $req->code,
             'name' => $req->name,
             'slug' => $req->slug,
             'imgRoom' => $req->imgRoom,

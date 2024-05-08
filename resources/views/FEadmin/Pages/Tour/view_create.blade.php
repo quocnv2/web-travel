@@ -32,46 +32,46 @@
             <div class="col-sm-12 col-md-12 col-lg-10 offset-lg-1">
                 <!-- Basic Inputs -->
                 <form class="card" action="{{ route('create_tour') }}" method="POST" id="formReset"
-                      enctype="multipart/form-data">
+                    enctype="multipart/form-data">
                     @csrf
                     <div class="card-header">
                         <h5>Thêm Mới Tour</h5>
                     </div>
                     <div class="card-body row">
                         @error('status')
-                        <div class="alert alert-primary">
-                            <div class="media align-items-center">
-                                <i class="ti ti-info-circle h2 f-w-400 mb-0"></i>
-                                <div class="media-body ms-3">{{ $message }}.</div>
+                            <div class="alert alert-primary">
+                                <div class="media align-items-center">
+                                    <i class="ti ti-info-circle h2 f-w-400 mb-0"></i>
+                                    <div class="media-body ms-3">{{ $message }}.</div>
+                                </div>
                             </div>
-                        </div>
                         @enderror
                         <div class="form-group col-12 col-md-2">
                             <label class="form-label">Mã Tour</label>
                             <input type="text" class="form-control form-control" placeholder="Mã Tour" name="code"
-                                   value="{{ old('code') }}">
+                                value="{{ old('code') }}">
                             @error('code')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
 
                         <div class="form-group col-12 col-md-5">
                             <label class="form-label">Tên Tour</label>
                             <input type="text" class="form-control form-control" placeholder="Tên"
-                                   onkeyup="ChangeToSlug();" fdprocessedid="w3ptog" name="name" id="slug"
-                                   value="{{ old('name') }}">
+                                onkeyup="ChangeToSlug();" fdprocessedid="w3ptog" name="name" id="slug"
+                                value="{{ old('name') }}">
                             @error('name')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                             @error('slug')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
 
                         <div class="form-group col-12 col-md-5">
                             <label class="form-label">Đường dẫn sạch</label>
                             <input type="text" class="form-control" name="slug" value="{{ old('slug') }}"
-                                   id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
+                                id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
                         </div>
                         <div class="form-group col-12 col-md-3">
                             <label class="form-label" for="exampleSelect1">Vị Trí</label>
@@ -79,14 +79,14 @@
                                 @foreach ($list_Category->sortBy('name') as $value)
                                     @if ($value->status == 0)
                                         <option value="{{ $value->id }}"
-                                                @if ($value->id == old('idCategory')) selected @endif>
+                                            @if ($value->id == old('idCategory')) selected @endif>
                                             {{ $value->name }}
                                         </option>
                                     @endif
                                 @endforeach
                             </select>
                             @error('idCategory')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="form-group col-12 col-md-3">
@@ -95,7 +95,7 @@
                                 <option value="" selected>Chọn Tỉnh Thành/ Thành Phố</option>
                             </select>
                             @error('province')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="form-group col-12 col-md-3">
@@ -104,7 +104,7 @@
                                 <option value="" selected>Chọn Quận/Huyện</option>
                             </select>
                             @error('district')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="form-group col-12 col-md-3">
@@ -113,7 +113,7 @@
                                 <option value="" selected>Chọn Phường/Xã</option>
                             </select>
                             @error('wards')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
 
@@ -121,9 +121,9 @@
                         <div class="form-group col-12 col-md-6">
                             <label class="form-label">Giá Tour</label>
                             <input type="text" class="form-control form-control" placeholder="Giá người lớn"
-                                   name="price" value="{{ old('price') }}" id="price">
+                                name="price" value="{{ old('price') }}" id="price">
                             @error('price')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                             <small id="rent_price" style="display: none;"></small>
                         </div>
@@ -140,7 +140,7 @@
                                     multiple="false">
                             </div>
                             @error('file')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="form-group col-12 col-md-4">
@@ -150,10 +150,10 @@
                                 </label>
                                 <span id="filesel_2">Chọn Ảnh Chi Tiết...</span>
                                 <input type="file" id="imgUpload_2" name="filesImage[]" accept="image/*"
-                                       multiple="">
+                                    multiple="">
                             </div>
                             @error('filesImage')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="form-group col-12 col-md-4">
@@ -163,20 +163,20 @@
                                 </label>
                                 <span id="filesel_3">Chọn Video Chi Tiết...</span>
                                 <input type="file" id="imgUpload_3" name="filesVideo[]" accept="video/*"
-                                       multiple="">
+                                    multiple="">
                             </div>
                             @error('filesVideo')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
 
                         <div class="form-group col-12">
                             @error('blogDetails')
-                            <div class="form-group">
-                                <div class="alert alert-danger">
-                                    <strong>Cảnh Báo!</strong> Nội Dung Bài Viết Không Được Để Trống!
+                                <div class="form-group">
+                                    <div class="alert alert-danger">
+                                        <strong>Cảnh Báo!</strong> Nội Dung Bài Viết Không Được Để Trống!
+                                    </div>
                                 </div>
-                            </div>
                             @enderror
                             <div class="form-group">
                                 <label class="form-label">Chi Tiết</label>
@@ -190,14 +190,14 @@
                             <div class="col-sm-12">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="status" value="0"
-                                           id="customCheckinlhstate1" {{ old('status') == '0' ? 'checked' : '' }}
-                                           data-gtm-form-interact-field-id="2">
+                                        id="customCheckinlhstate1" {{ old('status') == '0' ? 'checked' : '' }}
+                                        data-gtm-form-interact-field-id="2">
                                     <label class="form-check-label" for="customCheckinlhstate1"> Hiện </label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="status" value="1"
-                                           id="customCheckinlhstate2" {{ old('status') == '1' ? 'checked' : '' }}
-                                           data-gtm-form-interact-field-id="1">
+                                        id="customCheckinlhstate2" {{ old('status') == '1' ? 'checked' : '' }}
+                                        data-gtm-form-interact-field-id="1">
                                     <label class="form-check-label" for="customCheckinlhstate2"> Ẩn </label>
                                 </div>
                             </div>
@@ -223,7 +223,7 @@
 
     <script src="{{ url('assets') }}/js/plugins/ckeditor/classic/ckeditor.js"></script>
     <script>
-        (function () {
+        (function() {
             ClassicEditor.create(document.querySelector('#classic-editor')).catch((error) => {
                 console.error(error);
             });
@@ -231,7 +231,7 @@
     </script>
 
     <script type="text/javascript">
-        $("#imgUpload_1").change(function () {
+        $("#imgUpload_1").change(function() {
             var numFiles = $(this)[0].files.length;
             if (numFiles > 1) {
                 swal(
@@ -248,7 +248,7 @@
             }
         });
 
-        $("#imgUpload_2").change(function () {
+        $("#imgUpload_2").change(function() {
             var numFiles = $(this)[0].files.length;
             if (numFiles < 2) {
                 $('#filesel_2').text(numFiles + ' file selected');
@@ -257,7 +257,7 @@
             }
         });
 
-        $("#imgUpload_3").change(function () {
+        $("#imgUpload_3").change(function() {
             var numFiles = $(this)[0].files.length;
             if (numFiles < 2) {
                 $('#filesel_3').text(numFiles + ' file selected');
@@ -285,6 +285,5 @@
         const rentCostInput = document.getElementById('price');
         const rentCostOutput = document.getElementById('rent_price');
         rentCostInput.addEventListener('input', () => formatCurrency(rentCostInput, rentCostOutput));
-
     </script>
 @stop

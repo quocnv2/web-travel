@@ -7,8 +7,8 @@ use App\Http\Requests\Tour\createRequest;
 use App\Http\Requests\Tour\updateRequest;
 use App\Models\Category;
 use App\Models\Tour;
-use App\Rules\Tour\RoomRequest;
 use App\Rules\Tour\TourRequest;
+use App\Rules\Tour\codeRule;
 
 class TourController extends Controller
 {
@@ -131,6 +131,11 @@ class TourController extends Controller
         $validatedData = $req->validate([
             'slug' => [new TourRequest($slug)],
         ]);
+
+        $validatedData = $req->validate([
+            'code' => [new codeRule($slug)],
+        ]);
+
 
         $obj = $tour->get_link_slug($slug);
 
