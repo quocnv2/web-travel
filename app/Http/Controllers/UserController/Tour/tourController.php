@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Tour;
 use App\Helper\storyTour;
+use App\Models\Blog;
+use App\Models\Room;
 
 class tourController extends Controller
 {
@@ -39,7 +41,7 @@ class tourController extends Controller
 
         return view('Home.Layout.Pages.Tour.list_tour', compact('categories', 'tour', 'tourlist', 'historyTour', 'objCategory'));
     }
-    public function detailTour(Category $category, Tour $tourModel, $slug,storyTour $history)
+    public function detailTour(Category $category, Tour $tourModel, $slug,storyTour $history,Room $room, Blog $blogs)
     {
         $objTour = $tourModel->get_link_slug($slug);
         if (!$objTour) {
@@ -52,7 +54,11 @@ class tourController extends Controller
         $tour = $tourModel->get_orderBy_ASC_status_page();
         // Danh sách tour đã xem
         $historyTour = $history->list_storyTour();
+        // Phòng
+        $roomsiml = $room->get_orderBy_ASC_status_page();
+        // Bài Viết
+         $blogsiml = $blogs->get_orderBy_ASC_status_page();
 
-        return view('Home.Layout.Pages.Tour.tour_details', compact('categories', 'tour', 'objTour', 'historyTour', 'tourlist'));
+        return view('Home.Layout.Pages.Tour.tour_details', compact('categories', 'tour', 'objTour', 'historyTour', 'tourlist','blogsiml','roomsiml' ));
     }
 }

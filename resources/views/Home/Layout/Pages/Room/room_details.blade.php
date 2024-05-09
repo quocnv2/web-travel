@@ -138,7 +138,7 @@
 
                     <div class="comment-wrapper">
                         <div class="comment-wrapper__title-box">
-                            <h3 class="comment-wrapper__title"><span>2</span> Comments</h3>
+                            <h3 class="comment-wrapper__title"> Comments</h3>
                         </div><!-- /.comment-wrapper__title-box -->
                         <div class="comment-box comment-box-one">
                             <div class="comment-box__image wow animated fadeInUp" data-wow-delay="0s"
@@ -169,7 +169,7 @@
                     </div><!-- /.comment-wrapper -->
                     <div class="comment-form">
                         <div class="comment-form__inner-container container-fluid">
-                            <h3 class="comment-form__title">Leave a Comment</h3>
+                            <h3 class="comment-form__title">Hãy Để Lại Comment Của Bạn</h3>
                             <form class="form-one row gutter-20">
                                 <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s"
                                      data-wow-duration="1500ms">
@@ -196,7 +196,7 @@
                                 <div class="col-12 wow animated fadeInUp" data-wow-delay="0.2s"
                                      data-wow-duration="1500ms">
                                     <div class="form-one__btn-box">
-                                        <button type="submit" class="form-one__btn trevlo-btn trevlo-btn--base"><span>Leave a Comment</span>
+                                        <button type="submit" class="form-one__btn trevlo-btn trevlo-btn--base"><span>Gửi</span>
                                         </button>
                                     </div><!-- /.form-one__btn-box -->
                                 </div><!-- /.col-12-->
