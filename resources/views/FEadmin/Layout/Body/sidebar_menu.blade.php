@@ -63,6 +63,12 @@
                     <ul class="pc-submenu">
                         <li class="pc-item"><a class="pc-link" href="{{ route('contact_list') }}">Contact</a>
                         </li>
+                        <li class="pc-item"><a class="pc-link" href="#">Tour</a>
+                        </li>
+                        <li class="pc-item"><a class="pc-link" href="#">Bài viết</a>
+                        </li>
+                        <li class="pc-item"><a class="pc-link" href="#">Phòng</a>
+                        </li>
                     </ul>
                 </li>
                 <li class="pc-item pc-caption">

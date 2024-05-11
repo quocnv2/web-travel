@@ -31,6 +31,7 @@ Route::prefix('')->group(function () {
     Route::get('/danh-sach-tour', [tourUserController::class, 'listTour'])->name('listTour');
     Route::get('/danh-sach-tour/danh-muc/{slug}', [tourUserController::class, 'listTour_Category'])->name('listTour_Category');
     Route::get('/chi-tiet-tour/{slug}', [tourUserController::class, 'detailTour'])->name('detailTour');
+    Route::post('/chi-tiet-tour/{slug}', [tourUserController::class, 'create_comment_tour'])->name('create_comment_tour');
 
 
     // Room
