@@ -9,9 +9,12 @@ use App\Http\Controllers\AccountController\User\LoginController;
 use App\Http\Controllers\AdminController\Home\HomeController;
 use App\Http\Controllers\AdminController\Banner\BannerController;
 use App\Http\Controllers\AdminController\Tour\TourController;
+use App\Http\Controllers\AdminController\Tour\TourCommentController;
 use App\Http\Controllers\AdminController\Blog\BlogController;
+use App\Http\Controllers\AdminController\Blog\BlogCommentController;
 use App\Http\Controllers\AdminController\Room\RoomController;
 use App\Http\Controllers\AdminController\Contact\ContactAdminController;
+use App\Http\Controllers\AdminController\Room\RoomCommentController;
 
 // Controller User
 use App\Http\Controllers\UserController\Home\HomeUserController;
@@ -131,4 +134,17 @@ Route::prefix('travel-admin')->middleware('admin')->group(function () {
     Route::get('/danh-sach-lien-he', [ContactAdminController::class, 'contact_list'])->name('contact_list');
     Route::get('/chi-tiet-lien-he/{id}', [ContactAdminController::class, 'detail_contact'])->name('detail_contact');
     Route::get('/xoa-lien-he/{id}', [ContactAdminController::class, 'delete_contact'])->name('delete_contact');
+
+    Route::get('/danh-sach-phan-hoi-tour', [TourCommentController::class, 'comment_tour_list'])->name('comment_tour_list');
+    Route::get('/chi-tiet-phan-hoi-tour/{id}', [TourCommentController::class, 'detail_comment_tour'])->name('detail_comment_tour');
+    Route::get('/xoa-phan-hoi-tour/{id}', [TourCommentController::class, 'delete_comment_tour'])->name('delete_comment_tour');
+
+
+    Route::get('/danh-sach-phan-hoi-room', [RoomCommentController::class, 'comment_room_list'])->name('comment_room_list');
+    Route::get('/chi-tiet-phan-hoi-room/{id}', [RoomCommentController::class, 'detail_comment_room'])->name('detail_comment_room');
+    Route::get('/xoa-phan-hoi-room/{id}', [RoomCommentController::class, 'delete_comment_room'])->name('delete_comment_room');
+
+    Route::get('/danh-sach-phan-hoi-blog', [BlogCommentController::class, 'comment_blog_list'])->name('comment_blog_list');
+    Route::get('/chi-tiet-phan-hoi-blog/{id}', [BlogCommentController::class, 'detail_comment_blog'])->name('detail_comment_blog');
+    Route::get('/xoa-phan-hoi-blog/{id}', [BlogCommentController::class, 'delete_comment_blog'])->name('delete_comment_blog');
 });

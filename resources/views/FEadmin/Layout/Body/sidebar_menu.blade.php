@@ -63,11 +63,11 @@
                     <ul class="pc-submenu">
                         <li class="pc-item"><a class="pc-link" href="{{ route('contact_list') }}">Contact</a>
                         </li>
-                        <li class="pc-item"><a class="pc-link" href="#">Tour</a>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('comment_tour_list') }}">Tour</a>
                         </li>
-                        <li class="pc-item"><a class="pc-link" href="#">Bài viết</a>
+                        <li class="pc-item"><a class="pc-link" href="{{route('comment_blog_list')}}">Bài viết</a>
                         </li>
-                        <li class="pc-item"><a class="pc-link" href="#">Phòng</a>
+                        <li class="pc-item"><a class="pc-link" href="{{route('comment_room_list')}}">Phòng</a>
                         </li>
                     </ul>
                 </li>
