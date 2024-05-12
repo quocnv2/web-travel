@@ -15,8 +15,9 @@ use function Sodium\compare;
 
 class tourController extends Controller
 {
-    public function listTour(Category $category, Tour $tourModel, storyTour $history,CommentTour $commentTour){
-        $categories  = $category ->get_orderBy_ASC();
+    public function listTour(Category $category, Tour $tourModel, storyTour $history, CommentTour $commentTour)
+    {
+        $categories = $category->get_orderBy_ASC();
         // Danh Sách tour
         $tourlist = $tourModel->get_orderBy_ASC_status_page_12();
         // Danh sách tour mới nhất
@@ -29,14 +30,15 @@ class tourController extends Controller
         return view('Home.Layout.Pages.Tour.list_tour', compact('categories', 'tour', 'tourlist', 'historyTour', 'listCommentTour'));
     }
 
-    public function listTour_Category(Category $category, Tour $tourModel, $slug, storyTour $history){
+    public function listTour_Category(Category $category, Tour $tourModel, $slug, storyTour $history)
+    {
         // lấy danh mục theo slug
         $objCategory = $category->get_link_slug($slug);
         $slugCate = $slug;
         if (!$objCategory) {
             return redirect()->route('error404');
         }
-        $categories  = $category ->get_orderBy_ASC();
+        $categories = $category->get_orderBy_ASC();
         // Danh sách tour mới nhất
         $tour = $tourModel->get_orderBy_ASC_status_page();
         // Danh sách tour đã xem
@@ -46,13 +48,14 @@ class tourController extends Controller
 
         return view('Home.Layout.Pages.Tour.list_tour', compact('categories', 'tour', 'tourlist', 'historyTour', 'objCategory'));
     }
-    public function detailTour(Category $category, Tour $tourModel, $slug,storyTour $history,Room $room, Blog $blogs,CommentTour $commentTour)
+
+    public function detailTour(Category $category, Tour $tourModel, $slug, storyTour $history, Room $room, Blog $blogs, CommentTour $commentTour)
     {
         $objTour = $tourModel->get_link_slug($slug);
         if (!$objTour) {
             return redirect()->route('error404');
         }
-        $categories  = $category ->get_orderBy_ASC();
+        $categories = $category->get_orderBy_ASC();
         // Danh Sách tour
         $tourlist = $tourModel->get_orderBy_ASC_status_page_12();
         // Danh sách tour mới nhất
@@ -62,13 +65,14 @@ class tourController extends Controller
         // Phòng
         $roomsiml = $room->get_orderBy_ASC_status_page();
         // Bài Viết
-         $blogsiml = $blogs->get_orderBy_ASC_status_page();
-        $listCommentTour = $commentTour->get_orderBy_ASC_status_page();
+        $blogsiml = $blogs->get_orderBy_ASC_status_page();
+        $listCommentTour = $commentTour->where('idTour', $objTour->id)->orderBy('id', 'DESC')->get();
 
 
-        return view('Home.Layout.Pages.Tour.tour_details', compact('categories', 'tour', 'objTour', 'historyTour', 'tourlist','blogsiml','roomsiml','listCommentTour' ));
+        return view('Home.Layout.Pages.Tour.tour_details', compact('categories', 'tour', 'objTour', 'historyTour', 'tourlist', 'blogsiml', 'roomsiml', 'listCommentTour'));
     }
-    public function create_comment_tour(Request $req, CommentTour $commentTour,Tour $tourModel, $slug)
+
+    public function create_comment_tour(Request $req, CommentTour $commentTour, Tour $tourModel, $slug)
     {
         $create = $commentTour->create_comment_tour($req);
         $objTour = $tourModel->get_link_slug($slug);
@@ -76,7 +80,7 @@ class tourController extends Controller
 
 
         if ($create) {
-            return redirect()->route('create_comment_tour',['slug' => $slug, 'tour'=> $objTour])->with('success', 'Thêm Mới Thành Công!');
+            return redirect()->route('create_comment_tour', ['slug' => $slug, 'tour' => $objTour])->with('success', 'Thêm Mới Thành Công!');
         } else {
             return redirect()->back()->with('Error', 'Thêm Mới Thất Bại!');
         }

@@ -25,19 +25,21 @@ Route::prefix('')->group(function () {
     // Bài Viết
     Route::get('/danh-sach-bai-viet', [blogUserController::class, 'listBlog'])->name('listBlog');
     Route::get('/chi-tiet-bai-viet/{slug}', [BlogUserController::class, 'detailBlog'])->name('detailBlog');
+    Route::post('/chi-tiet-bai-viet/{slug}', [BlogUserController::class, 'create_comment_blog'])->name('create_comment_blog');
     Route::get('/danh-sach-bai-viet/danh-muc/{slug}', [blogUserController::class, 'listBlog_Category'])->name('listBlog_Category');
 
     // Tour
     Route::get('/danh-sach-tour', [tourUserController::class, 'listTour'])->name('listTour');
-    Route::get('/danh-sach-tour/danh-muc/{slug}', [tourUserController::class, 'listTour_Category'])->name('listTour_Category');
     Route::get('/chi-tiet-tour/{slug}', [tourUserController::class, 'detailTour'])->name('detailTour');
     Route::post('/chi-tiet-tour/{slug}', [tourUserController::class, 'create_comment_tour'])->name('create_comment_tour');
+    Route::get('/danh-sach-tour/danh-muc/{slug}', [tourUserController::class, 'listTour_Category'])->name('listTour_Category');
 
 
     // Room
     Route::get('/danh-sach-phong', [roomUserController::class, 'listRoom'])->name('listRoom');
-    Route::get('/danh-sach-phong/danh-muc/{slug}', [roomUserController::class, 'listRoom_Category'])->name('listRoom_Category');
     Route::get('/chi-tiet-phong/{slug}', [roomUserController::class, 'detailRoom'])->name('detailRoom');
+    Route::post('/chi-tiet-phong/{slug}', [roomUserController::class, 'create_comment_room'])->name('create_comment_room');
+    Route::get('/danh-sach-phong/danh-muc/{slug}', [roomUserController::class, 'listRoom_Category'])->name('listRoom_Category');
 
     // Liên Hệ
     Route::get('/lien-he', [contactUserController::class, 'contact_web'])->name('contact_web');

@@ -153,7 +153,7 @@
                                         </div>
                                         <!-- /.tour-listing-five__card__bg -->
                                         <div class="tour-listing-five__card__inner">
-                                            <a href="" class="tour-listing-five__card__image">
+                                            <a href="{{route('detailTour', $valueTour->slug)}}" class="tour-listing-five__card__image">
                                                 <img src="{{ $valueTour->imgBanner }}" alt="tour">
                                                 <div class="tour-listing-five__card__featured">
                                                     {{ $valueTour->objCategory->name }}</div>
@@ -173,7 +173,7 @@
                                                     <p class="tour-listing-five__card__ratings__text">4.9 (5)</p>
                                                 </div><!-- /.tour-listing-five__card__ratings -->
                                                 <h3 class="tour-listing-five__card__title">
-                                                    <a href="">{{ $valueTour->name }}</a>
+                                                    <a href="{{route('detailTour', $valueTour->slug)}}">{{ $valueTour->name }}</a>
                                                 </h3><!-- /.tour-listing-five__card__title -->
                                                 <div class="tour-listing-five__card__location">
                                                     <span class="tour-listing-five__card__location__icon">

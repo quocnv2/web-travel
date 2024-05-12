@@ -17,7 +17,7 @@
                     @if($slugCategory)
                         <li><a href="{{ route('listBlog') }}">Bài Viết</a></li>
                         <li><a href="{{ route('detailBlog', $slugCategory->slug) }}">Danh Mục</a></li>
-                    <li>{{$slugCategory->name}}</li>
+                        <li>{{$slugCategory->name}}</li>
                     @else
                         <li><a href="{{ route('listBlog') }}">Bài Viết</a></li>
                     @endif
@@ -49,7 +49,8 @@
                                                     {{ Carbon::parse($valNew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
                                                 </p><!-- /.sidebar__posts-date -->
                                                 <h4 class="sidebar-blog__posts-title"><a
-                                                        href="{{route('detailBlog', $valNew->slug)}}">{{ $valNew->name }}</a></h4>
+                                                        href="{{route('detailBlog', $valNew->slug)}}">{{ $valNew->name }}</a>
+                                                </h4>
                                                 <!-- /.sidebar-blog__posts-title -->
                                             </div><!-- /.sidebar-blog__posts-content -->
                                         </li>
@@ -143,58 +144,55 @@
                             <h3 class="comment-wrapper__title">Bình Luận</h3>
                         </div><!-- /.comment-wrapper__title-box -->
                         <div class="comment-box comment-box-one">
-                            <div class="comment-box__image wow animated fadeInUp" data-wow-delay="0s"
-                                 data-wow-duration="1500ms">
-                                <img src="assets/images/blog/blog-comment-1-1.jpg" alt="David Shon">
-                            </div><!-- /.comment-box__image -->
-                            <div class="comment-box__content wow animated fadeInUp" data-wow-delay="0.3s"
-                                 data-wow-duration="1500ms">
-                                <h3 class="comment-box__name">David Shon</h3>
-                                <p class="comment-box__text">Nam vel lacus eu nisl bibendum accumsan vitae vitae nibh.
-                                    Nam nec eros id magna
-                                    hendrerit sagittis. Nullam sed mi non odio feugiat volutpat sit amet nec elit.</p>
-                            </div><!-- /.comment-box__content -->
+                            @foreach($listCommentBlog as $valueCommentBlog)
+                                <div class="comment-box__image wow animated fadeInUp" data-wow-delay="0s"
+                                     data-wow-duration="1500ms">
+                                    <img src="{{$valueCommentBlog->objBlog->imgBanner}}" alt="David Shon">
+                                </div><!-- /.comment-box__image -->
+                                <div class="comment-box__content wow animated fadeInUp" data-wow-delay="0.3s"
+                                     data-wow-duration="1500ms">
+                                    <h3 class="comment-box__name">{{$valueCommentBlog-> name}}</h3>
+                                    <p class="comment-box__text">{{$valueCommentBlog->commentUser}}</p>
+                                </div><!-- /.comment-box__content -->
+                            @endforeach
                         </div><!-- /.comment-box -->
-                        <div class="comment-box comment-box-two">
-                            <div class="comment-box__image wow animated fadeInUp" data-wow-delay="0s"
-                                 data-wow-duration="1500ms">
-                                <img src="assets/images/blog/blog-comment-1-2.jpg" alt="Jhon Watchson">
-                            </div><!-- /.comment-box__image -->
-                            <div class="comment-box__content wow animated fadeInUp" data-wow-delay="0.3s"
-                                 data-wow-duration="1500ms">
-                                <h3 class="comment-box__name">Jhon Watchson</h3>
-                                <p class="comment-box__text">Nam vel lacus eu nisl bibendum accumsan vitae vitae nibh.
-                                    Nam nec eros id magna
-                                    hendrerit sagittis. Nullam sed mi non odio feugiat volutpat sit amet nec elit.</p>
-                            </div><!-- /.comment-box__content -->
-                        </div><!-- /.comment-box -->
+
                     </div><!-- /.comment-wrapper -->
                     <div class="comment-form">
                         <div class="comment-form__inner-container container-fluid">
                             <h3 class="comment-form__title">Để Lại Bình Luận Của Bạn</h3>
-                            <form class="form-one row gutter-20">
+                            <form class="form-one row gutter-20" method="POST"
+                                  action="{{ route('create_comment_blog',['slug' => $objBlog->slug]) }}">
+                                @csrf
                                 <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s"
                                      data-wow-duration="1500ms">
                                     <div class="form-one__group">
-                                        <input type="text" name="form-box-name-input" id="form-one-name-input"
-                                               placeholder="Tên Của Bạn" class="form-one__input">
+                                        <input type="text" name="name" id="form-one-name-input"
+                                               placeholder="Tên Của Bạn" class="form-one__input"
+                                               value="{{ old('name') }}">
+                                        @error('name')
+                                        <small style="color: #f33923;">{{ $message }}</small>
+                                        @enderror
                                     </div><!-- /.form-one__group -->
                                 </div><!-- /.col-md-6 -->
                                 <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s"
                                      data-wow-duration="1500ms">
                                     <div class="form-one__group">
-                                        <input type="email" name="form-box-email-input" id="form-one-email-input"
-                                               placeholder="Email" class="form-one__input">
+                                        <input type="email" name="email" id="form-one-email-input"
+                                               placeholder="Email" class="form-one__input" value="{{ old('email') }}">
                                     </div><!-- /.form-one__group -->
                                 </div><!-- /.col-md-6 -->
                                 <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s"
                                      data-wow-duration="1500ms">
                                     <div class="form-one__group">
-                                        <textarea name="form-one-message-input" id="form-one-message-input" cols="30"
+                                        <textarea name="commentUser" id="form-one-message-input" cols="30"
                                                   rows="10" placeholder="Comment Của Bạn"
-                                                  class="form-one__message form-one__input"></textarea>
+                                                  class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Bài Viết' }}</textarea>
                                     </div><!-- /.form-one__group -->
                                 </div><!-- /.col-12-->
+                                <input type="hidden" name="idBlog" value="{{ $objBlog->id }}">
+                                <input type="hidden" name="status" value="{{ $objBlog->status??0 }}">
+                                <input type="hidden" name="commentAdmin" value="{{ $objBlog->commentAdmin??"Admin" }}">
                                 <div class="col-12 wow animated fadeInUp" data-wow-delay="0.2s"
                                      data-wow-duration="1500ms">
                                     <div class="form-one__btn-box">

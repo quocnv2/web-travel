@@ -531,12 +531,7 @@
                                             <div class="tour-listing-details__reviews-inner-content">
                                                 <div class="tour-listing-details__reviews-info">
                                                     <h3 class="tour-listing-details__reviews-name">{{$listComment->name}}</h3>
-                                                    <div class="tour-listing-details__reviews-date">
-                                                        <p class="tour-listing-details__reviews-date-text">20 Mar, 2023 .
-                                                            4:00
-                                                            Pm
-                                                        </p>
-                                                    </div>
+
                                                 </div><!-- /.tour-listing-details__reviews-info -->
 
                                             </div><!-- /.tour-listing-details__reviews-inner-content -->
