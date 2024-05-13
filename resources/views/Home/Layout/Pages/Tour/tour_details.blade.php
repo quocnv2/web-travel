@@ -312,7 +312,7 @@
                     </div><!-- /.col-xl-4 -->
 
                     <div class="col-xl-8">
-                        <div class="post-info">
+                        <div class="post-info" style="margin-bottom: 0px;">
                             <div class="post-category">
                                 <h3 class="post-category__title">Ảnh / Video </h3>
                                 <div class="post-category__btn-group">
@@ -402,8 +402,7 @@
                         </div><!-- /.tour-listing-details__included -->
 
                         <div class="tour-listing-details__similar container-fluid">
-                            <h3 class="tour-listing-details__title tour-listing-details__similar-title">Tour Gần
-                                Đây</h3>
+                            <h3 class="tour-listing-details__title tour-listing-details__similar-title">Tour Liên Quan</h3>
                             <div class="row">
                                 @foreach ($tourlist as $valueTour)
                                     @php

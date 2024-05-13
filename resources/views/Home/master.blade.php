@@ -75,8 +75,8 @@
         <div class="search-popup__overlay search-toggler"></div>
         <!-- /.search-popup__overlay -->
         <div class="search-popup__content">
-            <form role="search" method="get" class="search-popup__form" action="#">
-                <input type="text" id="search" placeholder="Search Here..." />
+            <form role="search" method="get" class="search-popup__form" action="{{route("search")}}">
+                <input type="text" id="search" placeholder="Tìm Kiếm ..." name="search"/>
                 <button type="submit" aria-label="search submit" class="search-popup__btn trevlo-btn trevlo-btn--base">
                     <span class="icon-search"></span>
                 </button>

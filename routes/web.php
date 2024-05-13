@@ -51,6 +51,9 @@ Route::prefix('')->group(function () {
 
     // Lỗi 404
     Route::get('/error-404', [HomeUserController::class, 'error404'])->name('error404');
+
+    // tìm kiếm
+    Route::get('/tim-kiem', [HomeUserController::class, 'search'])->name('search');
 });
 
 // // Router Đăng Nhập Admin
