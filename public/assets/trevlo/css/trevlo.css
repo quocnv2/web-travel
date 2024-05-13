@@ -15385,9 +15385,7 @@ body.megamenu-popup-active .mobile-nav__content {
     margin-bottom: 0;
 }
 
-.tour-listing-details__reviews {
-    margin-bottom: 40px;
-}
+.tour-listing-details__reviews {}
 
 .tour-listing-details__reviews-title {
     margin-bottom: 30px;
@@ -15395,10 +15393,8 @@ body.megamenu-popup-active .mobile-nav__content {
 
 .tour-listing-details__reviews-comment-box {
     display: grid;
-    grid-template-columns: 168px auto;
     align-items: start;
     gap: 30px;
-    padding-bottom: 45px;
     border-bottom: 1px solid var(--trevlo-white3, #EBE6DE);
 }
 
@@ -15536,6 +15532,7 @@ body.megamenu-popup-active .mobile-nav__content {
 
 .tour-listing-details__reviews-text {
     margin-bottom: 20px;
+    padding-left: 20px;
 }
 
 @media (min-width: 1200px) {
@@ -24213,6 +24210,9 @@ body.boxed-wrapper .main-header__booking-btn {
 .tour-type-two__box:hover .tour-type-two__box__back {
     transform: rotateY(0deg);
 }
+
+
+/*# sourceMappingURL=trevlo.css.map */
 
 
 /*# sourceMappingURL=trevlo.css.map */
