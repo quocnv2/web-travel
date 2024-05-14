@@ -49,7 +49,7 @@
                 <div class="tour-listing-details__destination-row row">
                     <div class="col-xl-4 wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">
                         <div class="tour-listing-details__destination-left">
-                            <h3 class="tour-listing-details__dastination-title">{{ $objTour->name }}</h3>
+                            <h3 class="tour-listing-details__dastination-title">Tour: {{ $objTour->name }}</h3>
                             <h4 class="tour-listing-details__dastination-price">
                                 <span>{{ number_format($objTour->price, 0, ',', '.') }}vnđ</span><span
                                     class="tour-listing-details__dastination-person">/ Người </span>
@@ -58,39 +58,40 @@
                     </div><!-- /.col-xl-4 -->
                     <div class="col-xl-8">
                         <div class="tour-listing-details__destination-right">
-                            <div class="tour-listing-details__destination-info wow animated fadeInUp" data-wow-delay="0.1s"
-                                data-wow-duration="1500ms">
-                                <span class="icon-clock-1"></span>
-                                <div class="tour-listing-details__destination-info-title">
-                                    <h4 class="tour-listing-details__destination-info-top">Ngày Đăng</h4>
-                                    <h4 class="tour-listing-details__destination-info-bottom">
-                                        {{ Carbon::parse($objTour->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
-                                    </h4>
-                                </div>
-                            </div><!-- /.tour-listing-details__destination-info -->
-                            <div class="tour-listing-details__destination-info wow animated fadeInUp" data-wow-delay="0.3s"
-                                data-wow-duration="1500ms">
-                                <span class="icon-Duration"></span>
-                                <div class="tour-listing-details__destination-info-title">
-                                    <h4 class="tour-listing-details__destination-info-top">Min Age</h4>
-                                    <h4 class="tour-listing-details__destination-info-bottom">12+</h4>
-                                </div>
-                            </div><!-- /.tour-listing-details__destination-info -->
                             <div class="tour-listing-details__destination-info wow animated fadeInUp" data-wow-delay="0.5s"
                                 data-wow-duration="1500ms">
                                 <span class="icon-plane"></span>
                                 <div class="tour-listing-details__destination-info-title">
-                                    <h4 class="tour-listing-details__destination-info-top">Tour Type</h4>
-                                    <h4 class="tour-listing-details__destination-info-bottom">Adventure. Fun</h4>
+                                    <h4 class="tour-listing-details__destination-info-top">Mã Tour</h4>
+                                    <h4 class="tour-listing-details__destination-info-bottom">"{{ $objTour->code }}"</h4>
+                                </div>
+                            </div><!-- /.tour-listing-details__destination-info -->
+                            <div class="tour-listing-details__destination-info wow animated fadeInUp" data-wow-delay="0.1s"
+                                data-wow-duration="1500ms">
+                                <span class="icon-clock-1"></span>
+                                <div class="tour-listing-details__destination-info-title">
+                                    <h4 class="tour-listing-details__destination-info-top">thời Gian</h4>
+                                    <h4 class="tour-listing-details__destination-info-bottom">
+                                        Hàng Ngày
+                                    </h4>
                                 </div>
                             </div><!-- /.tour-listing-details__destination-info -->
                             <div class="tour-listing-details__destination-info wow animated fadeInUp" data-wow-delay="0.7s"
                                 data-wow-duration="1500ms">
                                 <span class="icon-location-1"></span>
                                 <div class="tour-listing-details__destination-info-title">
-                                    <h4 class="tour-listing-details__destination-info-top">{{ $addresssss }}</h4>
+                                    <h4 class="tour-listing-details__destination-info-top">Tour
+                                        {{ $objTour->objCategory->name }}</h4>
                                     <h4 class="tour-listing-details__destination-info-bottom">
-                                        Tour {{ $objTour->objCategory->name }}</h4>
+                                        {{ $addresssss }}</h4>
+                                </div>
+                            </div><!-- /.tour-listing-details__destination-info -->
+                            <div class="tour-listing-details__destination-info wow animated fadeInUp" data-wow-delay="0.3s"
+                                data-wow-duration="1500ms">
+                                <span class="icon-Duration"></span>
+                                <div class="tour-listing-details__destination-info-title">
+                                    <h4 class="tour-listing-details__destination-info-top">Khách Hàng Đã Trải Nhiệm</h4>
+                                    <h4 class="tour-listing-details__destination-info-bottom">89,9% Hài Lòng</h4>
                                 </div>
                             </div><!-- /.tour-listing-details__destination-info -->
                         </div><!-- /.tour-listing-details__destination-right -->
@@ -119,14 +120,6 @@
                             <a href="https://facebook.com/">
                                 <i class="fab fa-facebook" aria-hidden="true"></i>
                                 <span class="sr-only">Facebook</span>
-                            </a>
-                            <a href="https://pinterest.com/">
-                                <i class="fab fa-pinterest-p" aria-hidden="true"></i>
-                                <span class="sr-only">Pinterest</span>
-                            </a>
-                            <a href="https://instagram.com/">
-                                <i class="fab fa-instagram" aria-hidden="true"></i>
-                                <span class="sr-only">Instagram</span>
                             </a>
                         </div>
                     </div><!-- /.tour-listing-details__info-right -->
