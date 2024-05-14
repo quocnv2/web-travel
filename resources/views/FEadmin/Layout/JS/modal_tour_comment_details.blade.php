@@ -14,14 +14,14 @@
                             html += '<div class="comment-block">' +
                                 '<div class="comment" style="padding: 20px;">' +
                                 '<div class="d-flex align-items-start">' +
-                                '<div class="chat-avtar flex-shrink-0"><img class="rounded-circle img-fluid wid-40" src="../assets/images/user/avatar-1.jpg" alt="User image">' +
+                                '<div class="chat-avtar flex-shrink-0"><img class="rounded-circle img-fluid wid-40" src="../assets/images/user/avatar-2.jpg" alt="User image">' +
                                 '<div class="bg-success chat-badge"></div>' +
                                 '</div>' +
-                                '<div class="flex-grow-1 ms-3"><h5 class="mb-0">John Doe</h5>' +
+                                '<div class="flex-grow-1 ms-3"><h5 class="mb-0">'+response.name+'</h5>' +
                                 '<span class="text-sm text-muted">Khách Hàng</span></div>' +
                                 '</div>' +
                                 '<div class="comment-content">' +
-                                '<p class="mb-2 mt-3">' + response.commentAdmin +
+                                '<p class="mb-2 mt-3">' + response.commentUser +
                                 '</p>' +
                                 '</div>' +
                                 '</div>' +
@@ -38,8 +38,12 @@
                                 '<div class="comment-content">' +
                                 '<div class="card mt-3 mb-0">' +
                                 '<div class="card-body">' +
-                                '<p class="mb-2">' + response.commentAdmin + '</p>' +
+                                '<textarea id="commentAdmin" class="form-control" name="commentAdmin" rows="3" cols="50">' +
+                                response.commentAdmin + '</textarea>' +
                                 '</div>' +
+                                '</div>' +
+                                '<div style="margin-top: 20px; display: flex; justify-content: flex-end; padding: 0px 12px;">' +
+                                '<button id="updateButton" class="btn btn-primary">Phản Hồi</button>' +
                                 '</div>' +
                                 '</div>' +
                                 '</div>' +
@@ -48,7 +52,7 @@
                             html += '<div class="card-body">' +
                                 '<div class="comment" style="padding: 20px; background: aliceblue; border-radius: 20px;">' +
                                 '<div class="d-flex align-items-center mb-3">' +
-                                '<div class="chat-avtar"><img class="rounded-circle img-fluid wid-40" src="../assets/images/user/avatar-1.jpg" alt="User image">' +
+                                '<div class="chat-avtar"><img class="rounded-circle img-fluid wid-40" src="../assets/images/user/avatar-2.jpg" alt="User image">' +
                                 '<div class="bg-success chat-badge"></div>' +
                                 '</div>' +
                                 '<div class="flex-grow-1 mx-2">' +
