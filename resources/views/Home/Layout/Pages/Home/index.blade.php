@@ -164,14 +164,14 @@
                                                 {{--                                                </div><!-- /.tour-listing-five__card__overlay --> --}}
                                             </a><!-- /.tour-listing-five__card__image -->
                                             <div class="tour-listing-five__card__content">
-                                                <div class="tour-listing-five__card__ratings">
+                                                {{-- <div class="tour-listing-five__card__ratings">
                                                     <div class="trevlo-ratings">
                                                         <i class="fa fa-star"></i><i class="fa fa-star"></i><i
                                                             class="fa fa-star"></i><i class="fa fa-star"></i><i
                                                             class="fa fa-star"></i>
                                                     </div>
                                                     <p class="tour-listing-five__card__ratings__text">4.9 (5)</p>
-                                                </div><!-- /.tour-listing-five__card__ratings -->
+                                                </div><!-- /.tour-listing-five__card__ratings --> --}}
                                                 <h3 class="tour-listing-five__card__title">
                                                     <a href="{{route('detailTour', $valueTour->slug)}}">{{ $valueTour->name }}</a>
                                                 </h3><!-- /.tour-listing-five__card__title -->

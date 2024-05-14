@@ -58,9 +58,9 @@
                 <div class="col-lg-7">
                     <div class="sec-title text-center">
 
-                        <p class="sec-title__tagline">Liên hệ chúng tôi</p><!-- /.sec-title__tagline -->
+                        <p class="sec-title__tagline">Khách Hàng</p><!-- /.sec-title__tagline -->
 
-                        <h2 class="sec-title__title">Liên hệ bất cứ lúc nào</h2><!-- /.sec-title__title -->
+                        <h2 class="sec-title__title">Sự Hài Lòng Của Bạn Với Chúng Tôi</h2><!-- /.sec-title__title -->
                     </div><!-- /.sec-title -->
                     <!-- /.sec-title -->
                     <form action="{{route('create_contact')}}" class="contact-page__form form-one row gutter-20"
@@ -98,7 +98,7 @@
                             <div class="form-one__group">
                                 <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10"
                                           placeholder="Viết tâm thư"
-                                          class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Bài Viết' }}</textarea>
+                                          class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung' }}</textarea>
                                 @error('commentUser')
                                 <small style="color: #f33923;">{{ $message }}</small>
                                 @enderror
@@ -124,7 +124,7 @@
 
                 <p class="sec-title__tagline">ƯU ĐIỂM</p><!-- /.sec-title__tagline -->
 
-                <h2 class="sec-title__title">Mục Tiêu Hướng Tới</h2><!-- /.sec-title__title -->
+                <h2 class="sec-title__title">CHẤT LƯỢNG DỊCH VỤ</h2><!-- /.sec-title__title -->
             </div><!-- /.sec-title --><!-- /.sec-title -->
             <div class="row">
                 <div class="col-xl-4 col-lg-4 wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">
