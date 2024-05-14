@@ -18,7 +18,7 @@
                                 '<div class="bg-success chat-badge"></div>' +
                                 '</div>' +
                                 '<div class="flex-grow-1 ms-3"><h5 class="mb-0">'+response.name+'</h5>' +
-                                '<span class="text-sm text-muted">Khách Hàng</span></div>' +
+                                '<span class="text-sm text-muted">'+response.email+'</span></div>' +
                                 '</div>' +
                                 '<div class="comment-content">' +
                                 '<p class="mb-2 mt-3">' + response.commentUser +
@@ -88,15 +88,16 @@
                                     commentAdmin: updatedComment,
                                     _token: '{{ csrf_token() }}'
                                 },
-                                success: function(response) {
+                                success: function (response) {
                                     swal("Cập Nhật Phản Hồi Thành Công!",
                                         "Thông Báo Từ Hệ Thống!",
                                         "success", {
                                             button: "OK",
                                             timer: 5000,
-                                        });
-                                    $('#modal_blogs').modal(
-                                        'hide');
+                                        }).then(() => {
+                                        location.reload();
+                                    });
+                                    $('#modal_blogs').modal('hide');
                                 },
                                 error: function(xhr) {
                                     swal("Cập Nhật Phản Hồi Thất Bại!",

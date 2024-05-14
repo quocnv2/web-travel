@@ -53,6 +53,7 @@
                                     <th>stt</th>
                                     <th>Họ và tên</th>
                                     <th>Email</th>
+                                    <th>Phản hồi</th>
                                     <th>Trạng thái</th>
                                     <th>Chức năng</th>
                                 </tr>
@@ -63,7 +64,7 @@
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $value->name }}</td>
                                         <td>{{ $value->email }}</td>
-
+                                        <td>{{$value->commentAdmin}}</td>
                                         <td>
                                             @if (intval($value->status == 0))
                                                 <span class="badge rounded-pill text-bg-success">Hiện</span>
@@ -107,7 +108,7 @@
         </div>
     </div>
 
-    
+
     @include('FEadmin.Layout.Body.modal_blog')
 @stop
 @section('view_js')

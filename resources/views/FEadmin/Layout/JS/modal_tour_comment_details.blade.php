@@ -1,14 +1,14 @@
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         var links = document.querySelectorAll('.comment_tour_detail');
-        links.forEach(function(link) {
-            link.addEventListener('click', function(event) {
+        links.forEach(function (link) {
+            link.addEventListener('click', function (event) {
                 event.preventDefault();
                 var id = this.dataset.id;
                 $.ajax({
                     url: 'chi-tiet-phan-hoi-tour/' + id,
                     type: 'GET',
-                    success: function(response) {
+                    success: function (response) {
                         var html = '';
                         if (response.commentAdmin && response.commentAdmin.trim() !== '') {
                             html += '<div class="comment-block">' +
@@ -17,8 +17,8 @@
                                 '<div class="chat-avtar flex-shrink-0"><img class="rounded-circle img-fluid wid-40" src="../assets/images/user/avatar-3.jpg" alt="User image">' +
                                 '<div class="bg-success chat-badge"></div>' +
                                 '</div>' +
-                                '<div class="flex-grow-1 ms-3"><h5 class="mb-0">'+response.name+'</h5>' +
-                                '<span class="text-sm text-muted">Khách Hàng</span></div>' +
+                                '<div class="flex-grow-1 ms-3"><h5 class="mb-0">' + response.name + '</h5>' +
+                                '<span class="text-sm text-muted">'+response.email+'</span></div>' +
                                 '</div>' +
                                 '<div class="comment-content">' +
                                 '<p class="mb-2 mt-3">' + response.commentUser +
@@ -79,7 +79,7 @@
                         $('#title-modal-tour').html('Phản hồi');
                         $('#modal_blogs').modal('show');
 
-                        $('#updateButton').on('click', function() {
+                        $('#updateButton').on('click', function () {
                             var updatedComment = $('#commentAdmin').val();
                             $.ajax({
                                 url: 'cap-nhat-phan-hoi-tour/' + id,
@@ -88,17 +88,18 @@
                                     commentAdmin: updatedComment,
                                     _token: '{{ csrf_token() }}'
                                 },
-                                success: function(response) {
+                                success: function (response) {
                                     swal("Cập Nhật Phản Hồi Thành Công!",
                                         "Thông Báo Từ Hệ Thống!",
                                         "success", {
                                             button: "OK",
                                             timer: 5000,
-                                        });
-                                    $('#modal_blogs').modal(
-                                        'hide');
+                                        }).then(() => {
+                                        location.reload();
+                                    });
+                                    $('#modal_blogs').modal('hide');
                                 },
-                                error: function(xhr) {
+                                error: function (xhr) {
                                     swal("Cập Nhật Phản Hồi Thất Bại!",
                                         "Thông Báo Từ Hệ Thống!",
                                         "error", {
@@ -108,7 +109,7 @@
                             });
                         });
                     },
-                    error: function(xhr) {
+                    error: function (xhr) {
                         console.log("Lỗi AJAX: " + xhr.responseText);
                     }
                 });

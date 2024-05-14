@@ -51,6 +51,7 @@
                                 <th>stt</th>
                                 <th>Họ và tên</th>
                                 <th>Email</th>
+                                <th>Phản hồi</th>
                                 <th>Trạng thái</th>
                                 <th>Chức năng</th>
                             </tr>
@@ -61,7 +62,7 @@
                                     <td>{{ $key + 1 }}</td>
                                     <td>{{ $value->name }}</td>
                                     <td>{{ $value->email }}</td>
-
+                                    <td>{{$value->commentAdmin}}</td>
                                     <td>
                                         @if (intval($value->status == 0))
                                             <span class="badge rounded-pill text-bg-success">Hiện</span>
@@ -73,55 +74,29 @@
 
                                         <div class="btn-group-dropdown">
                                             <button
-                                                class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left"
-                                                type="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">Lựa chọn
+                                                    class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left"
+                                                    type="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">Lựa chọn
                                             </button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item text-inverse pr-10 comment_blog_detail"
                                                    data-id="{{ $value->id }}" data-toggle="tooltip" title="Edit">
                                                         <span
-                                                            style="display: flex; justify-content: flex-start; color: #2686dc;"><i
-                                                                class="ti ti-eye me-1"></i>Xem Comment User</span>
+                                                                style="display: flex; justify-content: flex-start; color: #2686dc;"><i
+                                                                    class="ti ti-eye me-1"></i>Xem Comment User</span>
                                                 </a>
                                                 <a class="dropdown-item"
                                                    href="{{route('delete_comment_blog', $value->id) }}" title="Delete"
                                                    onclick="return confirm('Bạn Có Chắc Xóa Phản Hồi Này Không?')">
                                                     <span
-                                                        style="display: flex; justify-content: flex-start; color: #dc2626;"><i
-                                                            class="ti ti-trash me-1"></i> Xóa</span>
+                                                            style="display: flex; justify-content: flex-start; color: #dc2626;"><i
+                                                                class="ti ti-trash me-1"></i> Xóa</span>
                                                 </a>
 
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <div class="modal fade" id="customer-modal-{{$value->id}}"
-                                     data-bs-keyboard="false"
-                                     tabindex="-1"
-                                     aria-hidden="true">
-                                    <div
-                                        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                                        <div class="modal-content container-fluid">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="modal fade" id="customer-modal-{{$value->id}}" tabindex="-1"
-                                     aria-labelledby="videoModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="videoModalLabel">Tiêu đề Video</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
                             @endforeach
                             </tbody>

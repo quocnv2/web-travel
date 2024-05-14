@@ -11,13 +11,25 @@
                     success: function (response) {
                         // Parse the image array
 
-
+                        var html = '';
                         // Start building the HTML content for the blog details
-                        var html = '<div class="col-md-12 blog_details">';
-                        html += '<h5 style="text-align: center;">' + response.name + '</h5>';
-                        html += '<br/>';
-                        html += response.commentUser;
-                        html += '</div>';
+                        html += '<div class="card-body">' +
+                            '<div class="comment" style="padding: 20px; background: aliceblue; border-radius: 20px;">' +
+                            '<div class="d-flex align-items-center mb-3">' +
+                            '<div class="chat-avtar"><img class="rounded-circle img-fluid wid-40" src="../assets/images/user/avatar-2.jpg" alt="User image">' +
+                            '<div class="bg-success chat-badge"></div>' +
+                            '</div>' +
+                            '<div class="flex-grow-1 mx-2">' +
+                            '<h5 class="mb-0">' + response.name + '</h5><span class="text-sm text-muted">' + response.email + '</span>' +
+                            '</div>' +
+                            '</div>' +
+                            '<p class="my-4">' + response.commentUser + '</p>' +
+                            '</div>' +
+
+                            '</div>' +
+                            '</div>' +
+
+                            '</div>';
 
 
                         $('#modal-body').html(html);

@@ -51,8 +51,8 @@
                                 <th>stt</th>
                                 <th>Họ và tên</th>
                                 <th>Email</th>
+                                <th>Số điện thoại</th>
                                 <th>Chủ đề</th>
-                                <th>Nội dung</th>
                                 <th>Trạng thái</th>
                                 <th>Chức năng</th>
                             </tr>
