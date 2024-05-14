@@ -6,11 +6,13 @@
     @include('FEadmin.Layout.Head.css_dataTable')
     <style>
         .carousel-item img {
-            max-height: 500px; /* Đặt chiều cao tối đa cho hình ảnh */
-            width: auto; /* Chiều rộng tự động để giữ tỷ lệ */
-            object-fit: cover; /* Điều này sẽ bảo đảm hình ảnh phủ kín không gian mà không bị méo */
+            max-height: 500px;
+            /* Đặt chiều cao tối đa cho hình ảnh */
+            width: auto;
+            /* Chiều rộng tự động để giữ tỷ lệ */
+            object-fit: cover;
+            /* Điều này sẽ bảo đảm hình ảnh phủ kín không gian mà không bị méo */
         }
-
     </style>
 @stop
 @section('view')
@@ -45,60 +47,58 @@
                     </div>
                     <div class="card-body">
                         <table id="res-config" class="display table table-striped table-hover dt-responsive nowrap"
-                               style="width: 100%">
+                            style="width: 100%">
                             <thead>
-                            <tr>
-                                <th>stt</th>
-                                <th>Họ và tên</th>
-                                <th>Email</th>
-                                <th>Trạng thái</th>
-                                <th>Chức năng</th>
-                            </tr>
+                                <tr>
+                                    <th>stt</th>
+                                    <th>Họ và tên</th>
+                                    <th>Email</th>
+                                    <th>Trạng thái</th>
+                                    <th>Chức năng</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            @foreach ($list as $key => $value)
-                                <tr>
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>{{ $value->name }}</td>
-                                    <td>{{ $value->email }}</td>
+                                @foreach ($list as $key => $value)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $value->name }}</td>
+                                        <td>{{ $value->email }}</td>
 
-                                    <td>
-                                        @if (intval($value->status == 0))
-                                            <span class="badge rounded-pill text-bg-success">Hiện</span>
-                                        @else
-                                            <span class="badge rounded-pill text-bg-warning text-dark">Ẩn</span>
-                                        @endif
-                                    </td>
-                                    <td class="action">
+                                        <td>
+                                            @if (intval($value->status == 0))
+                                                <span class="badge rounded-pill text-bg-success">Hiện</span>
+                                            @else
+                                                <span class="badge rounded-pill text-bg-warning text-dark">Ẩn</span>
+                                            @endif
+                                        </td>
+                                        <td class="action">
 
-                                        <div class="btn-group-dropdown">
-                                            <button
-                                                class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left"
-                                                type="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">Lựa chọn
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item text-inverse pr-10 comment_tour_detail"
-                                                   data-id="{{ $value->id }}" data-toggle="tooltip" title="Edit">
+                                            <div class="btn-group-dropdown">
+                                                <button
+                                                    class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left"
+                                                    type="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">Lựa chọn
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item text-inverse pr-10 comment_tour_detail"
+                                                        data-id="{{ $value->id }}" data-toggle="tooltip" title="Edit">
                                                         <span
                                                             style="display: flex; justify-content: flex-start; color: #2686dc;"><i
                                                                 class="ti ti-eye me-1"></i>Comment User</span>
-                                                </a>
-                                                <a class="dropdown-item"
-                                                   href="{{route('delete_comment_room', $value->id) }}" title="Delete"
-                                                   onclick="return confirm('Bạn Có Chắc Xóa Phản Hồi Này Không?')">
-                                                    <span
-                                                        style="display: flex; justify-content: flex-start; color: #dc2626;"><i
-                                                            class="ti ti-trash me-1"></i> Xóa</span>
-                                                </a>
+                                                    </a>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('delete_comment_room', $value->id) }}" title="Delete"
+                                                        onclick="return confirm('Bạn Có Chắc Xóa Phản Hồi Này Không?')">
+                                                        <span
+                                                            style="display: flex; justify-content: flex-start; color: #dc2626;"><i
+                                                                class="ti ti-trash me-1"></i> Xóa</span>
+                                                    </a>
 
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-
-
-                            @endforeach
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -106,6 +106,8 @@
             </div>
         </div>
     </div>
+
+    
     @include('FEadmin.Layout.Body.modal_blog')
 @stop
 @section('view_js')
