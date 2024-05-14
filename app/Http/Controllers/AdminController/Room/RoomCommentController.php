@@ -40,83 +40,17 @@ class RoomCommentController extends Controller
             return redirect()->route('comment_room_list')->with('err', 'Kiểm Tra Lại, Xóa Thất Bại!');
         }
     }
+    public function update_room_comment(Request $req, CommentRoom $room, $slug)
+    {
+        // if(Auth::guard('admin')->user()->decentralization == 1){
+        //     return view('FEadmin.Pages.Error.error404');
+        // }
 
-//    public function view_update(Room $room, Category $category, $slug)
-//    {
-//        // if(Auth::guard('admin')->user()->decentralization == 1){
-//        //     return view('FEadmin.Pages.Error.error404');
-//        // }
-//        $obj = $room->get_link_slug($slug);
-//        if (!$obj) {
-//            return view('FEadmin.Pages.Error.error404');
-//        }
-//
-//        // Lấy danh sách danh muc
-//        $list_Category = $category->get_orderBy_ASC();
-//
-//        return view('FEadmin.Pages.Room.view_update', compact('obj', 'list_Category'));
-//    }
+        if ($room->update_comment_room($req, $slug) >= 0) {
+            return redirect()->route('comment_room_list')->with('success', 'Cập Nhật Phản Hồi Thành Công!');
+        } else {
+            return redirect()->back()->with('error', 'Cập Nhật Phản Hồi Thất Bại!');
+        }
+    }
 
-//    public function update_room(updateRequest $req, Room $room, $slug)
-//    {
-//        $validatedData = $req->validate([
-//            'slug' => [new RoomRequest($slug)],
-//        ]);
-//
-//        $validatedData = $req->validate([
-//            'code' => [new codeRule($slug)],
-//        ]);
-//
-//
-//        $obj = $room->get_link_slug($slug);
-//        if (!$obj) {
-//            return view('FEadmin.Pages.Error.error404');
-//        }
-//
-//        // Cập nhật hình ảnh chính
-//        $file = $req->hasFile('file') ? cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->imgRoom;
-//
-//        // Cập nhật mảng hình ảnh
-//        $images = []; // Danh sách đường dẫn ảnh
-//
-//        if ($req->hasFile('filesImage')) {
-//            foreach ($req->file('filesImage') as $image) {
-//                $response = cloudinary()->upload($image->getRealPath())->getSecurePath();
-//                $images[] = ['id' => uniqid(), 'link' => $response];
-//            }
-//        } else {
-//            $images = is_array($obj->imageArray) ? $obj->imageArray : json_decode($obj->imageArray, true);
-//        }
-//
-//        // Xử Lý list video
-//        $videos = []; // Danh sách đường dẫn video
-//        $videoUpdated = false; // Biến kiểm tra có cập nhật video mới không
-//
-//        if ($req->hasFile('filesVideo')) {
-//            foreach ($req->file('filesVideo') as $video) {
-//                $response = cloudinary()->uploadApi()->upload($video->getRealPath(), [
-//                    'resource_type' => 'video',
-//                    'upload_large' => true
-//                ]);
-//                $secureUrl = $response['secure_url'];
-//                $videos[] = ['id' => uniqid(), 'link' => $secureUrl];
-//                $videoUpdated = true; // Đánh dấu là có cập nhật video mới
-//            }
-//        } else {
-//            $videos = is_array($obj->videoArray) ? $obj->videoArray : json_decode($obj->videoArray, true);
-//        }
-//
-//        // Gộp dữ liệu đã cập nhật vào yêu cầu
-//        $req->merge([
-//            'imgRoom' => $file,
-//            'imageArray' => $images,
-//            'videoArray' => $videos,
-//        ]);
-//
-//        if ($room->update_room($req, $slug) >= 0) {
-//            return redirect()->route('view_list_room')->with('success', 'Cập Nhật Bài Viết Thành Công!');
-//        } else {
-//            return redirect()->back()->with('error', 'Cập Nhật Bài Viết Thất Bại!');
-//        }
-//    }
 }

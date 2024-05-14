@@ -67,4 +67,12 @@ class CommentBlog extends Model
     {
         return $this->belongsTo(Blog::class, 'idBlog');
     }
+
+    public function update_comment_blog($req, $slug)
+    {
+        $obj = DB::table('commen_blog')->where('id', $slug)->update([
+            'commentAdmin' => $req->commentAdmin,
+        ]);
+        return $obj;
+    }
 }

@@ -91,38 +91,10 @@
                                                         style="display: flex; justify-content: flex-start; color: #dc2626;"><i
                                                             class="ti ti-trash me-1"></i> Xóa</span>
                                                 </a>
-
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <div class="modal fade" id="customer-modal-{{$value->id}}"
-                                     data-bs-keyboard="false"
-                                     tabindex="-1"
-                                     aria-hidden="true">
-                                    <div
-                                        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                                        <div class="modal-content container-fluid">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="modal fade" id="customer-modal-{{$value->id}}" tabindex="-1"
-                                     aria-labelledby="videoModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="videoModalLabel">Tiêu đề Video</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             @endforeach
                             </tbody>
                         </table>

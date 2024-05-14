@@ -40,4 +40,17 @@ class BlogCommentController extends Controller
             return redirect()->route('comment_blog_list')->with('err', 'Kiểm Tra Lại, Xóa Thất Bại!');
         }
     }
+
+    public function update_blog_comment(Request $req, CommentBlog $commentBlog, $slug)
+    {
+        // if(Auth::guard('admin')->user()->decentralization == 1){
+        //     return view('FEadmin.Pages.Error.error404');
+        // }
+
+        if ($commentBlog->update_comment_blog($req, $slug) >= 0) {
+            return redirect()->route('comment_blog_list')->with('success', 'Cập Nhật Phản Hồi Thành Công!');
+        } else {
+            return redirect()->back()->with('error', 'Cập Nhật Phản Hồi Thất Bại!');
+        }
+    }
 }

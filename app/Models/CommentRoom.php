@@ -67,4 +67,12 @@ class CommentRoom extends Model
     {
         return $this->belongsTo(Room::class, 'idRoom');
     }
+    public function update_comment_room($req, $slug)
+    {
+        $obj = DB::table('commen_room')->where('id', $slug)->update([
+            'commentAdmin' => $req->commentAdmin,
+        ]);
+        return $obj;
+    }
+
 }

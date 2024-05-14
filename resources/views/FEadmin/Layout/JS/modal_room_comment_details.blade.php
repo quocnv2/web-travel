@@ -9,33 +9,49 @@
                     url: 'chi-tiet-phan-hoi-room/' + id,
                     type: 'GET',
                     success: function (response) {
-                        // Parse the image array
-
-
-                        // Start building the HTML content for the blog details
                         var html = '<div class="col-md-12 blog_details">';
-                        html += '<h5 style="text-align: center;">' + response.name + '</h5>';
                         html += '<br/>';
-                        html += response.commentUser;
+                        html += "Nội dung comment của User : " + response.commentUser;
+                        html += '<br/>';
+                        html += "Nội dung phản hồi của Admin";
+                        html += '<br/>';
+                        html += '<textarea id="commentAdmin" class="form-control" name="commentAdmin" rows="4" cols="50">' + response.commentAdmin + '</textarea>';
+                        html += '<br/>';
+                        html += '<button id="updateButton" class="btn btn-primary">Cập nhật</button>';
                         html += '</div>';
-
-
                         $('#modal-body').html(html);
-                        $('#title-modal-tour').html('Chi tiết phản hồi');
+                        $('#title-modal-tour').html('Phản hồi');
                         $('#modal_blogs').modal('show');
 
-                        var myCarousel = document.querySelector('#carouselExampleIndicators');
-                        var carousel = new bootstrap.Carousel(myCarousel, {
-                            interval: 2000,
-                            wrap: true
+                        $('#updateButton').on('click', function () {
+                            var updatedComment = $('#commentAdmin').val();
+                            $.ajax({
+                                url: 'cap-nhat-phan-hoi-room/' + id,
+                                type: 'POST',
+                                data: {
+                                    commentAdmin: updatedComment,
+                                    _token: '{{ csrf_token() }}'
+                                },
+                                success: function (response) {
+                                    swal("Cập Nhật Phản Hồi Thành Công!", "Thông Báo Từ Hệ Thống!", "success", {
+                                        button: "OK",
+                                        timer: 5000,
+                                    });
+                                    $('#modal_blogs').modal('hide');
+                                },
+                                error: function (xhr) {
+                                    swal("Cập Nhật Phản Hồi Thất Bại!", "Thông Báo Từ Hệ Thống!", "error", {
+                                        button: "OK",
+                                    });
+                                }
+                            });
                         });
                     },
                     error: function (xhr) {
-                        console.log(xhr.responseText);
+                        console.log("Lỗi AJAX: " + xhr.responseText);
                     }
                 });
             });
         });
     });
-
 </script>

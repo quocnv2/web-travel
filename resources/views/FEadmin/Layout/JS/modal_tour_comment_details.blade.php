@@ -24,13 +24,13 @@
                         $('#modal_blogs').modal('show');
 
                         $('#updateButton').on('click', function () {
-                            var updatedComment = $('#commentAdmin').val(); // Sửa ở đây để lấy đúng giá trị từ textarea
+                            var updatedComment = $('#commentAdmin').val();
                             $.ajax({
                                 url: 'cap-nhat-phan-hoi-tour/' + id,
                                 type: 'POST',
                                 data: {
                                     commentAdmin: updatedComment,
-                                    _token: '{{ csrf_token() }}' // Đảm bảo CSRF token được đưa vào đúng
+                                    _token: '{{ csrf_token() }}'
                                 },
                                 success: function (response) {
                                     swal("Cập Nhật Phản Hồi Thành Công!", "Thông Báo Từ Hệ Thống!", "success", {
@@ -48,7 +48,7 @@
                         });
                     },
                     error: function (xhr) {
-                        console.log("Lỗi AJAX: " + xhr.responseText); // Chi tiết hơn về lỗi
+                        console.log("Lỗi AJAX: " + xhr.responseText);
                     }
                 });
             });

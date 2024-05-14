@@ -146,9 +146,11 @@ Route::prefix('travel-admin')->middleware('admin')->group(function () {
 
     Route::get('/danh-sach-phan-hoi-room', [RoomCommentController::class, 'comment_room_list'])->name('comment_room_list');
     Route::get('/chi-tiet-phan-hoi-room/{id}', [RoomCommentController::class, 'detail_comment_room'])->name('detail_comment_room');
+    Route::post('/cap-nhat-phan-hoi-room/{id}', [RoomCommentController::class, 'update_room_comment'])->name('update_room_comment');
     Route::get('/xoa-phan-hoi-room/{id}', [RoomCommentController::class, 'delete_comment_room'])->name('delete_comment_room');
 
     Route::get('/danh-sach-phan-hoi-blog', [BlogCommentController::class, 'comment_blog_list'])->name('comment_blog_list');
     Route::get('/chi-tiet-phan-hoi-blog/{id}', [BlogCommentController::class, 'detail_comment_blog'])->name('detail_comment_blog');
+    Route::post('/cap-nhat-phan-hoi-blog/{id}', [BlogCommentController::class, 'update_blog_comment'])->name('update_blog_comment');
     Route::get('/xoa-phan-hoi-blog/{id}', [BlogCommentController::class, 'delete_comment_blog'])->name('delete_comment_blog');
 });
