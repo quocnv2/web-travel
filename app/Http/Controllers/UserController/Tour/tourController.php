@@ -11,6 +11,7 @@ use App\Models\Tour;
 use App\Helper\storyTour;
 use App\Models\Blog;
 use App\Models\Room;
+use function Sodium\compare;
 
 class tourController extends Controller
 {
@@ -60,7 +61,6 @@ class tourController extends Controller
         // Danh sách tour mới nhất
         $tour = $tourModel->get_orderBy_ASC_status_page();
         // Danh sách tour đã xem
-        $history->add_storyTour($objTour);
         $historyTour = $history->list_storyTour();
         // Phòng
         $roomsiml = $room->get_orderBy_ASC_status_page();

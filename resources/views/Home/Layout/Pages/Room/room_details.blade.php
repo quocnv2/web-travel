@@ -2,7 +2,7 @@
 @php
     use Carbon\Carbon;
 
-    $slugCategory = isset($objCategory) ? $objCategory : '';
+    $slugCategory = isset($objCategory) ? $objCategory : ''
 @endphp
 @section('view')
     <section class="page-header">
@@ -14,10 +14,10 @@
             <div class="page-header__breadcrumb-box">
                 <ul class="trevlo-breadcrumb">
                     <li><a href="{{ route('home') }}">Trang Chủ</a></li>
-                    @if ($slugCategory)
+                    @if($slugCategory)
                         <li><a href="{{ route('listRoom') }}">Phòng</a></li>
                         <li><a href="{{ route('listRoom_Category', $slugCategory->slug) }}">Danh Mục</a></li>
-                        <li>{{ $slugCategory->name }}</li>
+                        <li>{{$slugCategory->name}}</li>
                     @else
                         <li>Phòng</li>
                     @endif
@@ -35,7 +35,7 @@
                     <div class="sidebar-blog sidebar-blog--left">
                         <aside class="widget-area">
                             <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp"
-                                data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Phòng mới nhất</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__posts ">
                                     @foreach ($room_new as $valNew)
@@ -49,7 +49,7 @@
                                                     {{ Carbon::parse($valNew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
                                                 </p><!-- /.sidebar__posts-date -->
                                                 <h4 class="sidebar-blog__posts-title"><a
-                                                        href="{{ route('detailRoom', $valNew->slug) }}">{{ $valNew->name }}</a>
+                                                        href="{{route('detailRoom', $valNew->slug)}}">{{ $valNew->name }}</a>
                                                 </h4>
                                             </div><!-- /.sidebar-blog__posts-content -->
                                         </li>
@@ -57,7 +57,7 @@
                                 </ul><!-- /.sidebar-blog__posts  -->
                             </div><!-- /.sidebar-blog__single -->
                             <div class="sidebar-blog__single sidebar-blog__single--categories wow animated fadeInUp"
-                                data-wow-delay="0.2s" data-wow-duration="1500ms">
+                                 data-wow-delay="0.2s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Danh Mục</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__categories ">
                                     @foreach ($categories as $cat)
@@ -81,9 +81,9 @@
                         <div class="blog-card-three">
                             <div class="blog__card">
                                 <div class="blog__card-content wow animated fadeInUp" data-wow-delay="0.1s"
-                                    data-wow-duration="1500ms">
-                                    <h3 class="blog__card-title">{{ $objRoom->name }}</h3>
-                                    <p class="blog__card-text">{!! $objRoom->content !!}</p>
+                                     data-wow-duration="1500ms">
+                                    <h3 class="blog__card-title">{{$objRoom->name}}</h3>
+                                    <p class="blog__card-text">{!!$objRoom->content!!}</p>
 
                                 </div><!-- /.blog-details__card-content -->
                             </div><!-- /.blog-details__card -->
@@ -94,17 +94,18 @@
                                 <div class="post-category__btn-group">
                                     <div class="tour-listing-five__card__btn-group">
                                         @php
-                                            $imageArray = json_decode($objRoom->imageArray, true);
-                                            $videoArray = json_decode($objRoom->videoArray, true);
+                                            $imageArray= json_decode($objRoom->imageArray, true);
+                                            $videoArray= json_decode($objRoom->videoArray, true);
                                         @endphp
                                         <a href="javascript:void(0);"
-                                            class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
-                                            data-gallery-options='{
+                                           class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
+                                           data-gallery-options='{
                                                             "items": [
-                                                                   @foreach ($imageArray as $index => $imgs)
-                                                                        @if (isset($imgs['link']) && $imgs['link'] != '')
-                                                                             { "src": "{{ $imgs['link'] }}" }@if (!$loop->last),@endif
-                                                                        @endif @endforeach
+                                                                   @foreach($imageArray as $index => $imgs)
+                                                                        @if(isset($imgs['link']) && $imgs['link'] != '')
+                                                                             { "src": "{{ $imgs['link'] }}" }@if(!$loop->last),@endif
+                                                                        @endif
+                                                                    @endforeach
                                                             ],
                                                             "gallery": {
                                                               "enabled": true
@@ -114,13 +115,14 @@
                                             <span class="icon-photo-camera-1"></span>
                                         </a>
                                         <a href="javascript:void(0);"
-                                            class="tour-listing-five__card__popup-btn trevlo-image-popup"
-                                            data-gallery-options='{
+                                           class="tour-listing-five__card__popup-btn trevlo-image-popup"
+                                           data-gallery-options='{
                                                             "items": [
-                                                                   @foreach ($videoArray as $index => $videos)
-                                                                        @if (isset($videos['link']) && $videos['link'] != '')
-                                                                            {"src": "{{ $videos['link'] }}", "style": "width: 100%;"}@if (!$loop->last),@endif
-                                                                        @endif @endforeach
+                                                                   @foreach($videoArray as $index => $videos)
+                                                                        @if(isset($videos['link']) && $videos['link'] != '')
+                                                                            {"src": "{{ $videos['link'] }}", "style": "width: 100%;"}@if(!$loop->last),@endif
+                                                                        @endif
+                                                                    @endforeach
                                                             ],
                                                             "gallery": {
                                                               "enabled": true
@@ -137,72 +139,70 @@
                     </div><!-- /.blog-details -->
 
                     <div class="comment-wrapper">
-                        @if ($listCommentRoom && count($listCommentRoom) > 0)
-                            <div class="comment-wrapper__title-box">
-                                <h3 class="comment-wrapper__title"> Đánh Giá Của Khách Hàng</h3>
-                            </div><!-- /.comment-wrapper__title-box -->
-                            @foreach ($listCommentRoom as $listComment)
-                                <div class="tour-listing-details__reviews-comment-box">
-                                    <div class="tour-listing-details__reviews-content wow animated fadeInUp"
-                                        data-wow-delay="0.3s" data-wow-duration="1500ms">
-                                        <div class="tour-listing-details__reviews-inner-content">
-                                            <div class="tour-listing-details__reviews-info">
-                                                <h4 class="tour-listing-details__reviews-name">{{ $listComment->name }}
-                                                </h4>
-                                            </div><!-- /.tour-listing-details__reviews-info -->
+                        <div class="comment-wrapper__title-box">
+                            <h3 class="comment-wrapper__title"> Comments</h3>
+                        </div><!-- /.comment-wrapper__title-box -->
+                        @foreach($listCommentRoom as $listComment)
+                            <div class="comment-box comment-box-one">
+                                <div class="comment-box__image wow animated fadeInUp" data-wow-delay="0s"
+                                     data-wow-duration="1500ms">
+                                    <img src="{{url('assets')}}/images/blog/blog-comment-1-1.jpg" alt="David Shon">
+                                </div><!-- /.comment-box__image -->
+                                <div class="comment-box__content wow animated fadeInUp" data-wow-delay="0.3s"
+                                     data-wow-duration="1500ms">
+                                    <h3 class="comment-box__name">{{$listComment->name}}</h3>
+                                    <p class="comment-box__text">{{$listComment->commentUser}}</p>
+                                </div><!-- /.comment-box__content -->
+                            </div><!-- /.comment-box -->
 
-                                        </div><!-- /.tour-listing-details__reviews-inner-content -->
-                                        <p class="tour-listing-details__reviews-text">
-                                            {{ $listComment->commentUser }}
-                                        </p>
-                                    </div><!-- /.tour-listing-details__reviews-content -->
-                                </div>
-                            @endforeach
-                        @endif
+                        @endforeach
+
+
                     </div><!-- /.comment-wrapper -->
                     <div class="comment-form">
                         <div class="comment-form__inner-container container-fluid">
                             <h3 class="comment-form__title">Hãy Để Lại Comment Của Bạn</h3>
                             <form class="form-one row gutter-20" method="POST"
-                                action="{{ route('create_comment_room', ['slug' => $objRoom->slug]) }}">
+                                  action="{{ route('create_comment_room',['slug' => $objRoom->slug]) }}">
                                 @csrf
-                                <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s" data-wow-duration="1500ms">
+                                <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s"
+                                     data-wow-duration="1500ms">
                                     <div class="form-one__group">
-                                        <input type="text" name="name" id="form-one-name-input"
-                                            placeholder="Họ và tên" class="form-one__input" value="{{ old('name') }}">
+                                        <input type="text" name="name" id="form-one-name-input" placeholder="Họ và tên"
+                                               class="form-one__input" value="{{ old('name') }}">
 
                                         @error('name')
-                                            <small style="color: #f33923;">{{ $message }}</small>
+                                        <small style="color: #f33923;">{{ $message }}</small>
                                         @enderror
                                     </div><!-- /.form-one__group -->
                                 </div><!-- /.col-md-6 -->
                                 <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s"
-                                    data-wow-duration="1500ms">
+                                     data-wow-duration="1500ms">
                                     <div class="form-one__group">
                                         <input type="email" name="email" id="form-one-email-input" placeholder="Email"
-                                            class="form-one__input" value="{{ old('email') }}">
+                                               class="form-one__input" value="{{ old('email') }}">
                                     </div><!-- /.form-one__group -->
                                 </div><!-- /.col-md-6 -->
-                                <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s"
+                                     data-wow-duration="1500ms">
                                     <div class="form-one__group">
                                         <div class="form-one__group">
-                                            <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10" placeholder="Viết tâm thư"
-                                                class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Tin Nhắn' }}</textarea>
+                                            <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10"
+                                          placeholder="Viết tâm thư"
+                                          class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Tin Nhắn' }}</textarea>
                                             @error('commentUser')
-                                                <small style="color: #f33923;">{{ $message }}</small>
+                                            <small style="color: #f33923;">{{ $message }}</small>
                                             @enderror
                                         </div><!-- /.form-one__group -->
                                     </div><!-- /.form-one__group -->
                                 </div><!-- /.col-12-->
                                 <input type="hidden" name="idRoom" value="{{ $objRoom->id }}">
-                                <input type="hidden" name="status" value="{{ $objRoom->status ?? 0 }}">
-                                <input type="hidden" name="commentAdmin"
-                                    value="{{ $objRoom->commentAdmin ?? 'Admin' }}">
+                                <input type="hidden" name="status" value="{{ $objRoom->status??0 }}">
+                                <input type="hidden" name="commentAdmin" value="{{ $objRoom->commentAdmin??"Admin" }}">
                                 <div class="col-12 wow animated fadeInUp" data-wow-delay="0.2s"
-                                    data-wow-duration="1500ms">
+                                     data-wow-duration="1500ms">
                                     <div class="form-one__btn-box">
-                                        <button type="submit"
-                                            class="form-one__btn trevlo-btn trevlo-btn--base"><span>Gửi</span>
+                                        <button type="submit" class="form-one__btn trevlo-btn trevlo-btn--base"><span>Gửi</span>
                                         </button>
                                     </div><!-- /.form-one__btn-box -->
                                 </div><!-- /.col-12-->

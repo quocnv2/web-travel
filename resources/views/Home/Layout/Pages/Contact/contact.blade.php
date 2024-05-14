@@ -98,7 +98,7 @@
                             <div class="form-one__group">
                                 <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10"
                                           placeholder="Viết tâm thư"
-                                          class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung' }}</textarea>
+                                          class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Bài Viết' }}</textarea>
                                 @error('commentUser')
                                 <small style="color: #f33923;">{{ $message }}</small>
                                 @enderror
