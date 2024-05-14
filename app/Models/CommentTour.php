@@ -67,4 +67,12 @@ class CommentTour extends Model
     {
         return $this->belongsTo(Tour::class, 'idTour');
     }
+
+    public function update_comment_tour($req, $slug)
+    {
+        $obj = DB::table('commen_tour')->where('id', $slug)->update([
+            'commentAdmin' => $req->commentAdmin,
+        ]);
+        return $obj;
+    }
 }

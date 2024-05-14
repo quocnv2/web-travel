@@ -40,4 +40,17 @@ class TourCommentController extends Controller
             return redirect()->route('comment_tour_list')->with('err', 'Kiểm Tra Lại, Xóa Thất Bại!');
         }
     }
+
+    public function update_tour_comment(Request $req, CommentTour $commentTour, $slug)
+    {
+        // if(Auth::guard('admin')->user()->decentralization == 1){
+        //     return view('FEadmin.Pages.Error.error404');
+        // }
+
+        if ($commentTour->update_comment_tour($req, $slug) >= 0) {
+            return redirect()->route('comment_tour_list')->with('success', 'Cập Nhật Phản Hồi Thành Công!');
+        } else {
+            return redirect()->back()->with('error', 'Cập Nhật Phản Hồi Thất Bại!');
+        }
+    }
 }

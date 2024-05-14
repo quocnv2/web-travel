@@ -140,6 +140,7 @@ Route::prefix('travel-admin')->middleware('admin')->group(function () {
 
     Route::get('/danh-sach-phan-hoi-tour', [TourCommentController::class, 'comment_tour_list'])->name('comment_tour_list');
     Route::get('/chi-tiet-phan-hoi-tour/{id}', [TourCommentController::class, 'detail_comment_tour'])->name('detail_comment_tour');
+    Route::post('/cap-nhat-phan-hoi-tour/{id}', [TourCommentController::class, 'update_tour_comment'])->name('update_tour_comment');
     Route::get('/xoa-phan-hoi-tour/{id}', [TourCommentController::class, 'delete_comment_tour'])->name('delete_comment_tour');
 
 
