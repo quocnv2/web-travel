@@ -124,7 +124,7 @@
         <div class="container">
             <div class="footer-three__bottom__inner">
                 <p class="footer-three__copyright">
-                    &copy; Copyright <span class="dynamic-year"></span> by Trevlo HTML Template.
+                    &copy; Độc Lạ Tây Bắc <span class="dynamic-year"></span>.
                 </p>
             </div><!-- /.footer-three__inner -->
         </div><!-- /.container -->
