@@ -14,7 +14,7 @@
                             html += '<div class="comment-block">' +
                                 '<div class="comment" style="padding: 20px;">' +
                                 '<div class="d-flex align-items-start">' +
-                                '<div class="chat-avtar flex-shrink-0"><img class="rounded-circle img-fluid wid-40" src="../assets/images/user/avatar-2.jpg" alt="User image">' +
+                                '<div class="chat-avtar flex-shrink-0"><img class="rounded-circle img-fluid wid-40" src="../assets/images/user/avatar-3.jpg" alt="User image">' +
                                 '<div class="bg-success chat-badge"></div>' +
                                 '</div>' +
                                 '<div class="flex-grow-1 ms-3"><h5 class="mb-0">'+response.name+'</h5>' +
