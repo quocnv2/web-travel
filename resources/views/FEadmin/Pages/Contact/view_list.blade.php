@@ -65,7 +65,6 @@
                                     <td>{{ $value->email }}</td>
                                     <td>{{ $value->phone }}</td>
                                     <td>{{ $value->titail }}</td>
-
                                     <td>
                                         @if (intval($value->status == 0))
                                             <span class="badge rounded-pill text-bg-success">Hiện</span>

@@ -53,7 +53,7 @@
                                     <th>stt</th>
                                     <th>Họ và tên</th>
                                     <th>Email</th>
-                                    <th>Phản hồi</th>
+                                    <th>Phản hồi Khách Hàng</th>
                                     <th>Trạng thái</th>
                                     <th>Chức năng</th>
                                 </tr>
@@ -64,7 +64,9 @@
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $value->name }}</td>
                                         <td>{{ $value->email }}</td>
-                                        <td>{{$value->commentAdmin}}</td>
+                                        <td>
+                                            <textarea class="form-control" rows="3" style="max-width: 400px;" readonly>{{$value->commentUser}}</textarea>
+                                        </td>
                                         <td>
                                             @if (intval($value->status == 0))
                                                 <span class="badge rounded-pill text-bg-success">Hiện</span>
