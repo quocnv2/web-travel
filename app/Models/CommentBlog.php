@@ -72,6 +72,7 @@ class CommentBlog extends Model
     {
         $obj = DB::table('commen_blog')->where('id', $slug)->update([
             'commentAdmin' => $req->commentAdmin,
+            'status' => $req->status
         ]);
         return $obj;
     }

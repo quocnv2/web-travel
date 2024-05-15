@@ -63,36 +63,38 @@
                                     <td>{{ $value->name }}</td>
                                     <td>{{ $value->email }}</td>
                                     <td>
-                                        <textarea class="form-control" rows="3" style="max-width: 400px;" readonly>{{$value->commentUser}}</textarea>
+                                        <textarea class="form-control" rows="3" style="max-width: 400px;"
+                                                  readonly>{{$value->commentUser}}</textarea>
                                     </td>
                                     <td>
-                                        @if (intval($value->status == 0))
-                                            <span class="badge rounded-pill text-bg-success">Hiện</span>
+                                        @if ($value->status == 0)
+                                            <span class="badge rounded-pill text-bg-success">Chưa phản hồi</span>
                                         @else
-                                            <span class="badge rounded-pill text-bg-warning text-dark">Ẩn</span>
+                                            <span
+                                                class="badge rounded-pill text-bg-warning text-dark">Đã phản hồi</span>
                                         @endif
                                     </td>
                                     <td class="action">
 
                                         <div class="btn-group-dropdown">
                                             <button
-                                                    class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left"
-                                                    type="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                    aria-expanded="false">Lựa chọn
+                                                class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left"
+                                                type="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">Lựa chọn
                                             </button>
                                             <div class="dropdown-menu">
                                                 <a class="dropdown-item text-inverse pr-10 comment_blog_detail"
                                                    data-id="{{ $value->id }}" data-toggle="tooltip" title="Edit">
                                                         <span
-                                                                style="display: flex; justify-content: flex-start; color: #2686dc;"><i
-                                                                    class="ti ti-eye me-1"></i>Xem Comment User</span>
+                                                            style="display: flex; justify-content: flex-start; color: #2686dc;"><i
+                                                                class="ti ti-eye me-1"></i>Xem Comment User</span>
                                                 </a>
                                                 <a class="dropdown-item"
                                                    href="{{route('delete_comment_blog', $value->id) }}" title="Delete"
                                                    onclick="return confirm('Bạn Có Chắc Xóa Phản Hồi Này Không?')">
                                                     <span
-                                                            style="display: flex; justify-content: flex-start; color: #dc2626;"><i
-                                                                class="ti ti-trash me-1"></i> Xóa</span>
+                                                        style="display: flex; justify-content: flex-start; color: #dc2626;"><i
+                                                            class="ti ti-trash me-1"></i> Xóa</span>
                                                 </a>
 
                                             </div>

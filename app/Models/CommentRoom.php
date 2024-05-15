@@ -71,6 +71,7 @@ class CommentRoom extends Model
     {
         $obj = DB::table('commen_room')->where('id', $slug)->update([
             'commentAdmin' => $req->commentAdmin,
+            'status' => $req->status
         ]);
         return $obj;
     }

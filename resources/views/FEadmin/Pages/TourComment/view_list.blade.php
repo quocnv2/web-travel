@@ -68,10 +68,10 @@
                                             <textarea class="form-control" rows="3" style="max-width: 400px;" readonly>{{$value->commentUser}}</textarea>
                                         </td>
                                         <td>
-                                            @if (intval($value->status == 0))
-                                                <span class="badge rounded-pill text-bg-success">Hiện</span>
+                                            @if ($value->status == 0)
+                                                <span class="badge rounded-pill text-bg-success">Chưa phản hồi</span>
                                             @else
-                                                <span class="badge rounded-pill text-bg-warning text-dark">Ẩn</span>
+                                                <span class="badge rounded-pill text-bg-warning text-dark">Đã phản hồi</span>
                                             @endif
                                         </td>
                                         <td class="action">

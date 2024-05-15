@@ -86,6 +86,7 @@
                                 type: 'POST',
                                 data: {
                                     commentAdmin: updatedComment,
+                                    status:1,
                                     _token: '{{ csrf_token() }}'
                                 },
                                 success: function (response) {

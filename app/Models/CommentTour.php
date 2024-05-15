@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
@@ -68,11 +69,13 @@ class CommentTour extends Model
         return $this->belongsTo(Tour::class, 'idTour');
     }
 
-    public function update_comment_tour($req, $slug)
+    public function update_comment_tour(Request $req, $slug)
     {
         $obj = DB::table('commen_tour')->where('id', $slug)->update([
             'commentAdmin' => $req->commentAdmin,
+            'status' => $req->status
         ]);
         return $obj;
     }
+
 }
