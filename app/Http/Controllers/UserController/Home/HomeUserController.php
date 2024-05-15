@@ -11,6 +11,7 @@ use App\Models\Room;
 use App\Models\Tour;
 use App\Helper\storyTour;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeUserController extends Controller
 {
@@ -22,16 +23,21 @@ class HomeUserController extends Controller
         $contact_list = $contact->get_orderBy_ASC_status_page();
         return view('Home.Layout.Pages.Home.index', compact('categories','tour_list','blog_list','banner_list','contact_list'));
     }
-    public function search(Category $category,  Tour $tourModel, storyTour $history){
-        
-        // $objCategory = $category->get_link_slug($slug);
-        // $slugCate = $slug;
-        // $objTour = $tourModel->get_link_slug($slug);
-        // $objRoom = $room->get_link_slug($slug);
+    public function search(Category $category, Tour $tourModel, storyTour $history, Request $request)
+    {
+        // lấy danh mục theo key
+        $key = $request->input('key');
+        $tour_search = $tourModel-> get_orderBy_ASC_status_pagess($key);
+
+        $categories = $category->get_orderBy_ASC();
+        // Danh sách tour mới nhất
+        $tour = $tourModel->get_orderBy_ASC_status_page();
+        // Danh sách tour đã xem
         $historyTour = $history->list_storyTour();
-        $categories  = $category ->get_orderBy_ASC();
-        $tour_list = $tourModel->get_orderBy_ASC_status_page();
-        return view('Home.Layout.Pages.Search.search', compact('categories','tour_list','historyTour'));
+        // Danh Sách tour
+        $tour_list = $tourModel->get_orderBy_ASC_status_page_12();
+
+        return view('Home.Layout.Pages.Search.search', compact('categories', 'tour', 'tour_list', 'historyTour','tour_search'));
     }
 
     public function error404(Category $category){

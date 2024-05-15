@@ -30,6 +30,7 @@
     <section class="tour-listing-style tour-listing section-space">
         <div class="container">
             <div class="row">
+
                 <div class="col-xl-4">
                     <aside class="tour-listing-sidebar">
                         <form action="#"
@@ -155,7 +156,7 @@
                                 </div>
                             </div><!-- /.showing-result -->
                         </div><!-- /.col-12 -->
-                        @foreach ($tour_list as $valueTour)
+                        @foreach ( $tour_search as $valueTour)
                             @php
                                 $addresssss = '';
                                 if (isset($valueTour->province)) {
@@ -260,6 +261,7 @@
 
                             </div><!-- /.col-12 -->
                         @endforeach
+
                     </div><!-- /.row -->
                 </div><!-- /.col-xl-8 -->
             </div><!-- /.row -->

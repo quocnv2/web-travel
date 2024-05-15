@@ -32,7 +32,10 @@ class Tour extends Model
         'status',
         'timeCreate',
     ];
-
+    public function get_orderBy_ASC_status_pagess($key){
+        $obj = Tour::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->where('name', 'like', '%' . $key . '%')->get();
+        return $obj;
+    }
     public function get_orderBy_ASC_status_page_12(){
         $obj = Tour::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(12);
         return $obj;

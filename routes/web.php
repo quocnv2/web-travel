@@ -54,6 +54,7 @@ Route::prefix('')->group(function () {
 
     // tìm kiếm
     Route::get('/tim-kiem', [HomeUserController::class, 'search'])->name('search');
+
 });
 
 // // Router Đăng Nhập Admin

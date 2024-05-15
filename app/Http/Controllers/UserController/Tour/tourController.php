@@ -48,6 +48,8 @@ class tourController extends Controller
         return view('Home.Layout.Pages.Tour.list_tour', compact('categories', 'tour', 'tourlist', 'historyTour', 'objCategory'));
     }
 
+
+
     public function detailTour(Category $category, Tour $tourModel, $slug, storyTour $history, Room $room, Blog $blogs, CommentTour $commentTour)
     {
         $objTour = $tourModel->get_link_slug($slug);
