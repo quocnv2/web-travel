@@ -63,14 +63,14 @@
                                 <span class="icon-plane"></span>
                                 <div class="tour-listing-details__destination-info-title">
                                     <h4 class="tour-listing-details__destination-info-top">Mã Tour</h4>
-                                    <h4 class="tour-listing-details__destination-info-bottom">"{{ $objTour->code }}"</h4>
+                                    <h4 class="tour-listing-details__destination-info-bottom">{{ $objTour->code }}</h4>
                                 </div>
                             </div><!-- /.tour-listing-details__destination-info -->
                             <div class="tour-listing-details__destination-info wow animated fadeInUp" data-wow-delay="0.1s"
                                 data-wow-duration="1500ms">
                                 <span class="icon-clock-1"></span>
                                 <div class="tour-listing-details__destination-info-title">
-                                    <h4 class="tour-listing-details__destination-info-top">thời Gian</h4>
+                                    <h4 class="tour-listing-details__destination-info-top">Thời Gian</h4>
                                     <h4 class="tour-listing-details__destination-info-bottom">
                                         Hàng Ngày
                                     </h4>
@@ -115,12 +115,8 @@
                     <div class="tour-listing-details__info-right">
                         <a href="javascript:void(0);"
                             class="tour-listing-details__share-btn trevlo-btn trevlo-btn--white-two"><span
-                                class="icon-share"></span> <span>Chia Sẻ</span></a>
+                                class="icon-share"></span> <span>Đăng Ký Liện Hệ</span></a>
                         <div class="tour-listing-details__social__list">
-                            <a href="https://facebook.com/">
-                                <i class="fab fa-facebook" aria-hidden="true"></i>
-                                <span class="sr-only">Facebook</span>
-                            </a>
                         </div>
                     </div><!-- /.tour-listing-details__info-right -->
                 </div><!-- /.tour-listing-details__info -->

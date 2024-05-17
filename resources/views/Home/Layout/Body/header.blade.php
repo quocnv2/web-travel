@@ -56,7 +56,7 @@
                     <i class="trevlo-one-icon-search" aria-hidden="true"></i>
                     <span class="sr-only">Search</span>
                 </a><!-- /.search-toggler -->
-                <a href=""
+                <a href="{{route("register_counsel")}}"
                    class="main-header__button trevlo-btn trevlo-btn--two trevlo-btn--base">
                     <span>Đăng Ký Tư Vấn</span>
                     <i class="trevlo-one-icon-up-right-arrow"></i>

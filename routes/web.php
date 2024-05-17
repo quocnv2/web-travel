@@ -15,13 +15,13 @@ use App\Http\Controllers\AdminController\Blog\BlogCommentController;
 use App\Http\Controllers\AdminController\Room\RoomController;
 use App\Http\Controllers\AdminController\Contact\ContactAdminController;
 use App\Http\Controllers\AdminController\Room\RoomCommentController;
-
 // Controller User
 use App\Http\Controllers\UserController\Home\HomeUserController;
 use App\Http\Controllers\UserController\Blog\blogController as blogUserController;
 use App\Http\Controllers\UserController\Tour\tourController as tourUserController;
 use App\Http\Controllers\UserController\Room\roomController as roomUserController;
 use App\Http\Controllers\UserController\Contact\contactController as contactUserController;
+use App\Http\Controllers\UserController\Counsel\CounselController as CounselUserController;
 
 Route::prefix('')->group(function () {
     Route::get('/', [HomeUserController::class, 'index'])->name('home');
@@ -55,7 +55,8 @@ Route::prefix('')->group(function () {
     // tìm kiếm
     Route::get('/tim-kiem', [HomeUserController::class, 'search'])->name('search');
     // Đăng Ký nhận Tư vấn
-    Route::get('/dang-ky-nhan-tu-van', [HomeUserController::class, 'register'])->name('register');
+    Route::get('/dang-ky-nhan-tu-van', [CounselUserController::class, 'register_counsel'])->name('register_counsel');
+    Route::post('/dang-ky-nhan-tu-van', [CounselUserController::class, 'create_counsel'])->name('create_counsel');
 
 });
 

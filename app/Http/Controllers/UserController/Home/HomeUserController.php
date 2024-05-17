@@ -39,6 +39,7 @@ class HomeUserController extends Controller
 
         return view('Home.Layout.Pages.Search.search', compact('categories', 'tour', 'tour_list', 'historyTour','tour_search'));
     }
+  
 
     public function error404(Category $category){
         $categories  = $category ->get_orderBy_ASC();
