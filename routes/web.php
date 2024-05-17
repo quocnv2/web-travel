@@ -54,6 +54,8 @@ Route::prefix('')->group(function () {
 
     // tìm kiếm
     Route::get('/tim-kiem', [HomeUserController::class, 'search'])->name('search');
+    // Đăng Ký nhận Tư vấn
+    Route::get('/dang-ky-nhan-tu-van', [HomeUserController::class, 'register'])->name('register');
 
 });
 
