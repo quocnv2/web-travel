@@ -45,14 +45,9 @@ class Customer extends Model
             'travel_date' => $req->travel_date,
             'tour_code' => $req->tour_code,
             'tour_name' => $req->tour_name,
-            'tour_price' => $req->tour_price,
             'hotel_name' => $req->hotel_name,
             'room_code' => $req->room_code,
-            'room_name' => $req->room_name,
-            'room_price' => $req->room_price,
-            'total_price' => $req->total_price,
-            'note' => $req->note,
-            'feedback' => $req->feedback
+            'note' => $req->note
         ]);
         return $creates;
     }

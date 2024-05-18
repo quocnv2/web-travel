@@ -270,8 +270,8 @@
                                     <div class="form-one__group">
                                         <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10"
                                                   placeholder="Ghi Chú"
-                                                  class="form-one__message form-one__input">{{ old('commentUser') ?? 'Ghi Chú' }}</textarea>
-                                        @error('commentUser')
+                                                  class="form-one__message form-one__input">{{ old('note') ?? 'Ghi Chú' }}</textarea>
+                                        @error('note')
                                         <small style="color: #f33923;">{{ $message }}</small>
                                         @enderror
                                     </div><!-- /.form-one__group -->

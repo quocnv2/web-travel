@@ -15,6 +15,7 @@ use App\Http\Controllers\AdminController\Blog\BlogCommentController;
 use App\Http\Controllers\AdminController\Room\RoomController;
 use App\Http\Controllers\AdminController\Contact\ContactAdminController;
 use App\Http\Controllers\AdminController\Room\RoomCommentController;
+use App\Http\Controllers\AdminController\Customer\CustomerAdviseController;
 // Controller User
 use App\Http\Controllers\UserController\Home\HomeUserController;
 use App\Http\Controllers\UserController\Blog\blogController as blogUserController;
@@ -157,4 +158,11 @@ Route::prefix('travel-admin')->middleware('admin')->group(function () {
     Route::get('/chi-tiet-phan-hoi-blog/{id}', [BlogCommentController::class, 'detail_comment_blog'])->name('detail_comment_blog');
     Route::post('/cap-nhat-phan-hoi-blog/{id}', [BlogCommentController::class, 'update_blog_comment'])->name('update_blog_comment');
     Route::get('/xoa-phan-hoi-blog/{id}', [BlogCommentController::class, 'delete_comment_blog'])->name('delete_comment_blog');
+
+    // Khách Hàng
+    Route::get('/danh-sach-khach-hang', [CustomerAdviseController::class, 'customer_list'])->name('customer_list');
+    Route::get('/chi-tiet-khach-hang/{id}', [CustomerAdviseController::class, 'detail_customer'])->name('detail_customer');
+    Route::post('/cap-nhat-khach-hang/{id}', [CustomerAdviseController::class, 'update_customer'])->name('update_customer');
+    Route::get('/xoa-khach-hang/{id}', [CustomerAdviseController::class, 'delete_customer'])->name('delete');
+    
 });

@@ -71,6 +71,20 @@
                         </li>
                     </ul>
                 </li>
+                <li class="pc-item pc-hasmenu">
+                    <a class="pc-link">
+                        <span class="pc-micon">
+                            <svg class="pc-icon">
+                                <use xlink:href="#custom-user-square"></use>
+                            </svg>
+                        </span>
+                        <span class="pc-mtext">Khách Hàng</span><span class="pc-arrow"><i
+                                data-feather="chevron-right"></i></span></a>
+                    <ul class="pc-submenu">
+                        <li class="pc-item"><a class="pc-link" href="{{ route('customer_list') }}">Danh Sách</a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="pc-item pc-caption">
                     <label>Hệ Thống</label>
                 </li>
