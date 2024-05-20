@@ -41,7 +41,7 @@
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Danh Sách Bài Viết</h5>
+                        <h5>Danh Sách Phòng</h5>
                     </div>
                     <div class="card-body">
                         <table id="res-config" class="display table table-striped table-hover dt-responsive nowrap"
