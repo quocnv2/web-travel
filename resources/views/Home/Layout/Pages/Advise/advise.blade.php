@@ -121,7 +121,7 @@
                                         </div>
                                         <div class="tour-listing-sidebar-post__content">
                                             <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valueNewtour->tour_price, 0, ',', '.') }}vnđ</p>
+                                                {{ number_format($valueNewtour->price, 0, ',', '.') }}vnđ</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
                                                     href="">{{ $valueNewtour->name }}</a>
                                             </h5>
@@ -248,38 +248,38 @@
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="tour_code" id="form-one-subject-input" placeholder="Mã Tour"
+                                <input type="text" name="tour_code" id="tour_code" placeholder="Mã Tour"
                                        class="form-one__input" value="{{ old('tour_code') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="tour_name" id="form-one-subject-input"
+                                <input type="text" name="tour_name" id="tour_name"
                                        placeholder="Tên Tour" class="form-one__input" value="{{ old('tour_name') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="tour_price" id="form-one-subject-input"
+                                <input type="text" name="tour_price" id="tour_price"
                                        placeholder="Giá Tour" class="form-one__input" value="{{ old('tour_price') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="room_code" id="form-one-subject-input"
+                                <input type="text" name="room_code" id="room_code"
                                        placeholder="Mã Phòng" class="form-one__input" value="{{ old('room_code') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="hotel_name" id="form-one-subject-input"
+                                <input type="text" name="hotel_name" id="hotel_name"
                                        placeholder="Tên Khách Sạn" class="form-one__input"
                                        value="{{ old('hotel_name') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="room_price" id="form-one-subject-input"
+                                <input type="text" name="room_price" id="room_price"
                                        placeholder="Giá Phòng" class="form-one__input" value="{{ old('room_price') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
@@ -313,7 +313,7 @@
                             <div class="col-xl-12 col-lg-12">
                                 <div class="trevlo-accrodion faq-page__faq" data-grp-name="faq-page__faq">
                                     <div class="accrodion wow animated fadeInUp" data-wow-delay="0.1s"
-                                        data-wow-duration="1500ms">
+                                         data-wow-duration="1500ms">
                                         <div class="accrodion-title">
                                             <h4>Đặt chỗ dễ dàng</h4>
                                         </div>
@@ -330,7 +330,7 @@
                                     </div>
 
                                     <div class="accrodion active wow animated fadeInUp" data-wow-delay="0.2s"
-                                        data-wow-duration="1500ms">
+                                         data-wow-duration="1500ms">
                                         <div class="accrodion-title">
                                             <h4>Lựa chọn tốt nhất</h4>
                                         </div>
@@ -348,7 +348,7 @@
                                     </div>
 
                                     <div class="accrodion wow animated fadeInUp" data-wow-delay="0.3s"
-                                        data-wow-duration="1500ms">
+                                         data-wow-duration="1500ms">
                                         <div class="accrodion-title">
                                             <h4>Tiết kiệm chi phí</h4>
                                         </div>
@@ -363,7 +363,7 @@
                                         </div>
                                     </div>
                                     <div class="accrodion wow animated fadeInUp" data-wow-delay="0.4s"
-                                        data-wow-duration="1500ms">
+                                         data-wow-duration="1500ms">
                                         <div class="accrodion-title">
                                             <h4>An toàn luôn là trên hết</h4>
                                         </div>
@@ -378,7 +378,7 @@
                                         </div>
                                     </div>
                                     <div class="accrodion wow animated fadeInUp" data-wow-delay="0.5s"
-                                        data-wow-duration="1500ms">
+                                         data-wow-duration="1500ms">
                                         <div class="accrodion-title">
                                             <h4>Hướng dẫn có kinh nghiệm</h4>
                                         </div>
@@ -393,7 +393,7 @@
                                         </div>
                                     </div>
                                     <div class="accrodion wow animated fadeInUp" data-wow-delay="0.6s"
-                                        data-wow-duration="1500ms">
+                                         data-wow-duration="1500ms">
                                         <div class="accrodion-title">
                                             <h4>Tỷ lệ khách hài lòng 88,9%</h4>
                                         </div>
@@ -417,5 +417,55 @@
             </div>
         </div>
     </section>
+    <script>
+        $(document).ready(function() {
+            $('#tour_code').on('change', function() {
+                var tour_code = $(this).val();
+                if (tour_code) {
+                    $.ajax({
+                        url: '/danh-sach-tour-khach-hang/' + tour_code,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#tour_name').val(data.tour_name);
+                            $('#tour_price').val(data.tour_price);
+                        },
+                        error: function() {
+                            alert('Không tìm thấy thông tin tour!');
+                        }
+                    });
+                } else {
+                    $('#tour_name').val('');
+                    $('#tour_price').val('');
+                }
+            });
+            $('#room_code').on('change', function() {
+                var room_code = $(this).val();
+                if (room_code) {
+                    $.ajax({
+                        url: '/danh-sach-phong-khach-hang/' + room_code,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function(data) {
+                            $('#hotel_name').val(data.hotel_name);
+                            $('#room_price').val(data.room_price);
+                        },
+                        error: function() {
+                            alert('Không tìm thấy thông tin phòng!');
+                        }
+                    });
+                } else {
+                    $('#hotel_name').val('');
+                    $('#room_price').val('');
+                }
+            });
+        });
+
+
+    </script>
 
 @stop
+
+{{--@section('view_js')--}}
+
+{{--@stop--}}

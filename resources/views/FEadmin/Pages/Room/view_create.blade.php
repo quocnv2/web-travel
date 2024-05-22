@@ -57,7 +57,7 @@
                         </div>
 
                         <div class="form-group col-12 col-md-6">
-                            <label class="form-label">Tên</label>
+                            <label class="form-label">Tên phòng</label>
                             <input type="text" class="form-control form-control" placeholder="Tên"
                                    onkeyup="ChangeToSlug();" fdprocessedid="w3ptog" name="name" id="slug"
                                    value="{{ old('name') }}">

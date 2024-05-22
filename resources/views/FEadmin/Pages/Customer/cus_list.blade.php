@@ -25,7 +25,7 @@
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0)">Kinh doanh</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0)">Phản hồi tư vấn</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0)">Phản hồi tư vấn khách hàng</a></li>
                             <li class="breadcrumb-item" aria-current="page">Danh Sách</li>
                         </ul>
                     </div>
@@ -43,7 +43,7 @@
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Danh Sách Tư Vấn</h5>
+                        <h5>Danh Sách Tư Vấn Khách Hàng</h5>
                     </div>
                     <div class="card-body">
                         <table id="res-config" class="display table table-striped table-hover dt-responsive nowrap"
@@ -57,16 +57,6 @@
                                 <th>Số Lượng Người Lớn</th>
                                 <th>Số Lượng Trẻ Em</th>
                                 <th>Ngày Đi</th>
-                                {{--                                <th>Mã Tour</th>--}}
-                                {{--                                <th>Tên Tour</th>--}}
-                                {{--                                <th>Giá Tour</th>--}}
-                                {{--                                <th>Mã Phòng</th>--}}
-                                {{--                                <th>Tên Khách Sạn</th>--}}
-                                {{--                                <th>Tên Phòng</th>--}}
-                                {{--                                <th>Giá Phòng</th>--}}
-                                {{--                                <th>Thành Tiền</th>--}}
-                                {{--                                <th>Ghi Chú</th>--}}
-                                {{--                                <th>Phản Hồi</th>--}}
                                 <th>Trạng thái</th>
                                 <th>Chức năng</th>
                             </tr>
@@ -81,22 +71,6 @@
                                     <td>{{ $value->number_of_adults }}</td>
                                     <td>{{ $value->number_of_children }}</td>
                                     <td>{{ $value->travel_date }}</td>
-                                    {{--                                    <td>{{ $value->tour_code }}</td>--}}
-                                    {{--                                    <td>{{ $value->tour_name }}</td>--}}
-                                    {{--                                    <td>{{ number_format($value->tour_price) }} VNĐ</td>--}}
-                                    {{--                                    <td>{{ $value->room_code }}</td>--}}
-                                    {{--                                    <td>{{ $value->hotel_name }}</td>--}}
-                                    {{--                                    <td>{{ $value->room_name }}</td>--}}
-                                    {{--                                    <td>{{ number_format($value->room_price) }} VNĐ</td>--}}
-                                    {{--                                    <td>{{ number_format($value->total_price) }} VNĐ</td>--}}
-                                    {{--                                    <td>--}}
-                                    {{--                                        <textarea class="form-control" rows="3"--}}
-                                    {{--                                                  readonly>{{ $value->note }}</textarea>--}}
-                                    {{--                                    </td>--}}
-                                    {{--                                    <td>--}}
-                                    {{--                                        <textarea class="form-control" rows="3"--}}
-                                    {{--                                                  readonly>{{ $value->feedback }}</textarea>--}}
-                                    {{--                                    </td>--}}
                                     <td>
                                         @if ($value->status == 0)
                                             <span class="badge rounded-pill text-bg-success">Chưa tư vấn</span>
@@ -120,14 +94,9 @@
                                                             style="display: flex; justify-content: flex-start; color: #2686dc;"><i
                                                                 class="ti ti-eye me-1"></i>Xem chi tiết</span>
                                                 </a>
-                                                <a class="dropdown-item"
-                                                   href="{{route('delete_customer', $value->id) }}" title="Delete"
-                                                   onclick="return confirm('Bạn Có Chắc Xóa Tư Vấn Này Không?')">
-                                                    <span
-                                                        style="display: flex; justify-content: flex-start; color: #dc2626;"><i
-                                                            class="ti ti-trash me-1"></i> Xóa</span>
+                                                <a class="dropdown-item" href="javascript:void(0);" title="Delete" onclick="openDeleteCustomerModal('{{ $value->name }}', '{{ route('delete_customer', $value->id) }}')">
+                                                    <span style="display: flex; justify-content: flex-start; color: #dc2626;"><i class="ti ti-trash me-1"></i> Xóa</span>
                                                 </a>
-
                                             </div>
                                         </div>
                                     </td>
@@ -136,6 +105,25 @@
                             </tbody>
                         </table>
                     </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteCustomerModal" tabindex="-1" aria-labelledby="deleteCustomerModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteCustomerModalLabel">Xác Nhận Xóa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn Có Chắc Xóa Tư Vấn Khách Hàng Này Không?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="button" class="btn btn-danger" id="confirmDeleteCustomerBtn">Xóa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -145,4 +133,16 @@
 @section('view_js')
     @include('FEadmin.Layout.JS.customer_detail_details')
     @include('FEadmin.Layout.Fooder.js_dataTable')
+    <script>
+        function openDeleteCustomerModal(customerName, deleteUrl) {
+            document.querySelector('.modal-body').innerHTML = `Bạn Có Chắc Xóa Tư Vấn <strong>${customerName}</strong> Này Không?`;
+            document.getElementById('confirmDeleteCustomerBtn').onclick = function() {
+                window.location.href = deleteUrl;
+            };
+            var deleteCustomerModal = new bootstrap.Modal(document.getElementById('deleteCustomerModal'));
+            deleteCustomerModal.show();
+        }
+
+
+    </script>
 @stop

@@ -59,8 +59,8 @@ Route::prefix('')->group(function () {
     // Đăng Ký nhận Tư vấn
     Route::get('/dang-ky-nhan-tu-van', [CounselUserController::class, 'register_counsel'])->name('register_counsel');
     Route::post('/dang-ky-nhan-tu-van', [CounselUserController::class, 'create_counsel'])->name('create_counsel');
-    Route::get('/thong-tin-tour', [TourController::class, 'getTourInfo'])->name('getTourInfo');
-
+    Route::get('/danh-sach-tour-khach-hang/{id}', [CounselUserController::class, 'get_tour_customer'])->name('get_tour_customer');
+    Route::get('/danh-sach-phong-khach-hang/{id}', [CounselUserController::class, 'get_room_customer'])->name('get_room_customer');
 });
 
 // // Router Đăng Nhập Admin

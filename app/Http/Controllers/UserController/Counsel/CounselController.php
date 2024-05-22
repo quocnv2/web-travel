@@ -31,11 +31,28 @@ class CounselController extends Controller
     public function create_counsel(Request $request, Customer $customer)
     {
         $customer->create_customes($request);
-//        dd($request->all());
         if ($customer) {
             return redirect()->route('create_counsel')->with('success', 'Gửi Thông Tin Thành Công!');
         } else {
             return redirect()->back()->with('Error', 'Gửi Thông Tin Thất Bại!');
+        }
+    }
+    public function get_tour_customer($id)
+    {
+        $tour = Tour::where('code', $id)->first(['name', 'price']);
+        if ($tour) {
+            return response()->json(['tour_name' => $tour->name, 'tour_price' => $tour->price]);
+        } else {
+            return response()->json(['error' => 'Tour không tồn tại'], 404);
+        }
+    }
+    public function get_room_customer($id)
+    {
+        $tour = Room::where('code', $id)->first(['name', 'price']);
+        if ($tour) {
+            return response()->json(['hotel_name' => $tour->name, 'room_price' => $tour->price]);
+        } else {
+            return response()->json(['error' => 'Tour không tồn tại'], 404);
         }
     }
 

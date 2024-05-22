@@ -91,13 +91,10 @@
                                                             style="display: flex; justify-content: flex-start; color: #2686dc;"><i
                                                                 class="ti ti-eye me-1"></i> Xem</span>
                                                 </a>
-                                                <a class="dropdown-item"
-                                                   href="{{route('delete_blog', $value->slug) }}" title="Delete"
-                                                   onclick="return confirm('Bạn Có Chắc Muốn Bài Viết Không?')">
-                                                    <span
-                                                        style="display: flex; justify-content: flex-start; color: #dc2626;"><i
-                                                            class="ti ti-trash me-1"></i> Xóa</span>
+                                                <a class="dropdown-item" href="javascript:void(0);" title="Delete" onclick="openDeleteBlogModal('{{ $value->title }}', '{{ route('delete_blog', $value->slug) }}')">
+                                                    <span style="display: flex; justify-content: flex-start; color: #dc2626;"><i class="ti ti-trash me-1"></i> Xóa</span>
                                                 </a>
+
                                                 <a class="dropdown-item"
                                                    href="{{route('update_blog', $value->slug)}}"><span
                                                         style="display: flex; justify-content: flex-start; color: #2ca87f;"><i
@@ -106,35 +103,31 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <div class="modal fade" id="customer-modal-{{$value->id}}"
-                                     data-bs-keyboard="false"
-                                     tabindex="-1"
-                                     aria-hidden="true">
-                                    <div
-                                        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                                        <div class="modal-content container-fluid">
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="modal fade" id="customer-modal-{{$value->id}}" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="videoModalLabel">Tiêu đề Video</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
                             @endforeach
                             </tbody>
                         </table>
                     </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteBlogModal" tabindex="-1" aria-labelledby="deleteBlogModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteBlogModalLabel">Xác Nhận Xóa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn Có Chắc Muốn Xóa Bài Viết <span id="blogTitle"></span> Không?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="button" class="btn btn-danger" id="confirmDeleteBlogBtn">Xóa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -146,4 +139,15 @@
     @include('FEadmin.Layout.JS.modal_images_blog')
     @include('FEadmin.Layout.JS.modal_video_blog')
     @include('FEadmin.Layout.Fooder.js_dataTable')
+    <script !src="">
+        function openDeleteBlogModal(blogTitle, deleteUrl) {
+            document.getElementById('blogTitle').innerText = blogTitle;
+            document.getElementById('confirmDeleteBlogBtn').onclick = function() {
+                window.location.href = deleteUrl;
+            };
+            var deleteBlogModal = new bootstrap.Modal(document.getElementById('deleteBlogModal'));
+            deleteBlogModal.show();
+        }
+
+    </script>
 @stop

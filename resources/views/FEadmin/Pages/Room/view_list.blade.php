@@ -49,6 +49,7 @@
                             <thead>
                             <tr>
                                 <th>stt</th>
+                                <th>Mã phòng</th>
                                 <th>Tên phòng</th>
                                 <th>Ảnh/Video</th>
                                 <th>Giá phòng theo đêm</th>
@@ -61,11 +62,14 @@
                             @foreach ($list as $key => $value)
                                 <tr>
                                     <td>{{ $key + 1 }}</td>
+                                    <td>{{ $value->code }}</td>
                                     <td>{{ $value->name }}</td>
                                     <td>
                                         <div class="btn-group" role="group">
-                                            <a type="button" class="btn btn-primary btn-sm images-room-detail" data-id="{{ $value->slug }}" data-toggle="tooltip">Ảnh</a>
-                                            <a type="button" class="btn btn-primary btn-sm videos-room-detail" data-id="{{ $value->slug }}" data-toggle="tooltip">Video</a>
+                                            <a type="button" class="btn btn-primary btn-sm images-room-detail"
+                                               data-id="{{ $value->slug }}" data-toggle="tooltip">Ảnh</a>
+                                            <a type="button" class="btn btn-primary btn-sm videos-room-detail"
+                                               data-id="{{ $value->slug }}" data-toggle="tooltip">Video</a>
                                         </div>
                                     </td>
                                     <td>{{ $value->price }}</td>
@@ -93,13 +97,13 @@
                                                             style="display: flex; justify-content: flex-start; color: #2686dc;"><i
                                                                 class="ti ti-eye me-1"></i> Xem</span>
                                                 </a>
-                                                <a class="dropdown-item"
-                                                   href="{{route('delete_room', $value->slug) }}" title="Delete"
-                                                   onclick="return confirm('Bạn Có Chắc Xóa Phòng Này Không?')">
+                                                <a class="dropdown-item" href="javascript:void(0);" title="Delete"
+                                                   onclick="openDeleteRoomModal('{{ $value->name }}', '{{ route('delete_room', $value->slug) }}')">
                                                     <span
                                                         style="display: flex; justify-content: flex-start; color: #dc2626;"><i
                                                             class="ti ti-trash me-1"></i> Xóa</span>
                                                 </a>
+
                                                 <a class="dropdown-item"
                                                    href="{{route('update_room', $value->slug)}}"><span
                                                         style="display: flex; justify-content: flex-start; color: #2ca87f;"><i
@@ -108,35 +112,31 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <div class="modal fade" id="customer-modal-{{$value->id}}"
-                                     data-bs-keyboard="false"
-                                     tabindex="-1"
-                                     aria-hidden="true">
-                                    <div
-                                        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                                        <div class="modal-content container-fluid">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="modal fade" id="customer-modal-{{$value->id}}" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="videoModalLabel">Tiêu đề Video</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             @endforeach
                             </tbody>
                         </table>
                     </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteRoomModal" tabindex="-1" aria-labelledby="deleteRoomModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteRoomModalLabel">Xác Nhận Xóa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn Có Chắc Xóa Phòng <span id="roomName"></span> Không?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="button" class="btn btn-danger" id="confirmDeleteRoomBtn">Xóa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -148,4 +148,15 @@
     @include('FEadmin.Layout.JS.modal_images_room')
     @include('FEadmin.Layout.JS.modal_video_room')
     @include('FEadmin.Layout.Fooder.js_dataTable')
+    <script !src="">
+        function openDeleteRoomModal(roomName, deleteUrl) {
+            document.getElementById('roomName').innerText = roomName;
+            document.getElementById('confirmDeleteRoomBtn').onclick = function() {
+                window.location.href = deleteUrl;
+            };
+            var deleteRoomModal = new bootstrap.Modal(document.getElementById('deleteRoomModal'));
+            deleteRoomModal.show();
+        }
+
+    </script>
 @stop

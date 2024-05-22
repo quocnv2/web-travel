@@ -1,4 +1,14 @@
 @extends ('Home.master')
+@section('css_view')
+   <style>
+       .tour-listing-five__card__image img {
+           width: 100%;
+           height: 200px; /* Chiều cao bạn muốn đặt */
+           object-fit: cover; /* Đảm bảo hình ảnh không bị biến dạng */
+       }
+
+   </style>
+@stop
 @section('view')
     <!-- main-slider-start -->
     <section class="main-slider-five">
@@ -57,7 +67,7 @@
         </div><!-- banner-slider -->
         <div class="banner-form banner-form--two banner-form--three wow fadeInUp" data-wow-delay="300ms">
             <div class="container">
-                <div class="counter-two__bg" style="background-image: url(assets/images/shapes/counter-bg-2.png);"></div>
+                <div class="counter-two__bg" style="background-image: url({{ url('assets') }}/images/shapes/counter-bg-2.png);"></div>
                 <div class="counter-two__shape"></div>
                 <div class="banner-form__wrapper">
                     <div class="row">
@@ -154,7 +164,7 @@
                                         <!-- /.tour-listing-five__card__bg -->
                                         <div class="tour-listing-five__card__inner">
                                             <a href="{{route('detailTour', $valueTour->slug)}}" class="tour-listing-five__card__image">
-                                                <img src="{{ $valueTour->imgBanner }}" alt="tour">
+                                                <img src="{{ $valueTour->imgBanner }}" style="height: 300px" alt="tour">
                                                 <div class="tour-listing-five__card__featured">
                                                     {{ $valueTour->objCategory->name }}</div>
                                                 {{--                                                <div class="tour-listing-five__card__overlay"> --}}

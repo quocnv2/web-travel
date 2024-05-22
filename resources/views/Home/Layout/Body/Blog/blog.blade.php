@@ -17,7 +17,7 @@
                 </div><!-- /.col-lg-8 -->
                 <div class="col-lg-4">
                     <div class="blog-four__button">
-                        <a href="" class="trevlo-btn trevlo-btn--border">
+                        <a href="{{ route('listBlog') }}" class="trevlo-btn trevlo-btn--border">
                             <span>Xem Tất Cả Blog</span>
                             <i class="trevlo-one-icon-up-right-arrow"></i>
                         </a><!-- /.trevlo-btn -->

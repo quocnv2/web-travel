@@ -76,13 +76,10 @@
                                                             style="display: flex; justify-content: flex-start; color: #2686dc;"><i
                                                                 class="ti ti-eye me-1"></i> Xem</span>
                                                 </a>
-                                                <a class="dropdown-item"
-                                                   href="{{route('delete_recruitment', $value->slug) }}" title="Delete"
-                                                   onclick="return confirm('Bạn Có Chắc Muốn Bài Tuyển Dụng Không?')">
-                                                    <span
-                                                        style="display: flex; justify-content: flex-start; color: #dc2626;"><i
-                                                            class="ti ti-trash me-1"></i> Xóa</span>
+                                                <a class="dropdown-item" href="javascript:void(0);" title="Delete" onclick="openDeleteRecruitmentModal('{{ $value->title }}', '{{ route('delete_recruitment', $value->slug) }}')">
+                                                    <span style="display: flex; justify-content: flex-start; color: #dc2626;"><i class="ti ti-trash me-1"></i> Xóa</span>
                                                 </a>
+
                                                 <a class="dropdown-item"
                                                    href="{{route('view_update_recruitment', $value->slug) }}"><span
                                                         style="display: flex; justify-content: flex-start; color: #2ca87f;"><i
@@ -116,6 +113,25 @@
                             </tbody>
                         </table>
                     </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteRecruitmentModal" tabindex="-1" aria-labelledby="deleteRecruitmentModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteRecruitmentModalLabel">Xác Nhận Xóa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn Có Chắc Muốn Xóa Bài Tuyển Dụng <span id="recruitmentTitle"></span> Không?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="button" class="btn btn-danger" id="confirmDeleteRecruitmentBtn">Xóa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -125,4 +141,15 @@
 @section('view_js')
     @include('FEadmin.Layout.JS.modal_blog')
     @include('FEadmin.Layout.Fooder.js_dataTable')
+    <script !src="">
+        function openDeleteRecruitmentModal(recruitmentTitle, deleteUrl) {
+            document.getElementById('recruitmentTitle').innerText = recruitmentTitle;
+            document.getElementById('confirmDeleteRecruitmentBtn').onclick = function() {
+                window.location.href = deleteUrl;
+            };
+            var deleteRecruitmentModal = new bootstrap.Modal(document.getElementById('deleteRecruitmentModal'));
+            deleteRecruitmentModal.show();
+        }
+
+    </script>
 @stop

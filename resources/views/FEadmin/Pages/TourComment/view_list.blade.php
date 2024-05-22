@@ -89,16 +89,32 @@
                                                             style="display: flex; justify-content: flex-start; color: #2686dc;"><i
                                                                 class="ti ti-eye me-1"></i>Comment User</span>
                                                     </a>
-                                                    <a class="dropdown-item"
-                                                        href="{{ route('delete_comment_room', $value->id) }}" title="Delete"
-                                                        onclick="return confirm('Bạn Có Chắc Xóa Phản Hồi Này Không?')">
-                                                        <span
-                                                            style="display: flex; justify-content: flex-start; color: #dc2626;"><i
-                                                                class="ti ti-trash me-1"></i> Xóa</span>
+                                                    <a class="dropdown-item" href="javascript:void(0);" title="Delete" onclick="openDeleteCommentModal('{{ $value->detail }}', '{{ route('delete_comment_tour', $value->id) }}')">
+                                                        <span style="display: flex; justify-content: flex-start; color: #dc2626;"><i class="ti ti-trash me-1"></i> Xóa</span>
                                                     </a>
+
 
                                                 </div>
                                             </div>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="deleteCommentModal" tabindex="-1" aria-labelledby="deleteCommentModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="deleteCommentModalLabel">Xác Nhận Xóa</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Bạn Có Chắc Xóa Phản Hồi Này Không?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                                            <button type="button" class="btn btn-danger" id="confirmDeleteCommentBtn">Xóa</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </td>
                                     </tr>
                                 @endforeach
@@ -116,4 +132,15 @@
 @section('view_js')
     @include('FEadmin.Layout.JS.modal_tour_comment_details')
     @include('FEadmin.Layout.Fooder.js_dataTable')
+    <script !src="">
+        function openDeleteCommentModal(commentDetail, deleteUrl) {
+            document.querySelector('.modal-body').innerHTML = `Bạn Có Chắc Xóa Phản Hồi <strong>${commentDetail}</strong> Này Không?`;
+            document.getElementById('confirmDeleteCommentBtn').onclick = function() {
+                window.location.href = deleteUrl;
+            };
+            var deleteCommentModal = new bootstrap.Modal(document.getElementById('deleteCommentModal'));
+            deleteCommentModal.show();
+        }
+
+    </script>
 @stop

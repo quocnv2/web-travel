@@ -197,24 +197,4 @@ class TourController extends Controller
             return redirect()->back()->with('error', 'Cập Nhật Bài Viết Thất Bại!');
         }
     }
-    public function getTourInfo(Request $request)
-    {
-        $tourCode = $request->query('tour_code');
-
-        // Tìm kiếm tour dựa trên mã tour
-        $tour = Tour::where('tour_code', $tourCode)->first();
-
-        if ($tour) {
-            return response()->json([
-                'success' => true,
-                'tour_name' => $tour->name,
-                'tour_price' => $tour->price
-            ]);
-        } else {
-            return response()->json([
-                'success' => false,
-                'message' => 'Không tìm thấy tour với mã này.'
-            ]);
-        }
-    }
 }

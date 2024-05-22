@@ -67,7 +67,8 @@
                                     <td>{{ $value->phone }}</td>
                                     <td>{{ $value->titail }}</td>
                                     <td>
-                                        <textarea class="form-control" rows="3" style="max-width: 400px;" readonly>{{$value->commentUser}}</textarea>
+                                        <textarea class="form-control" rows="3" style="max-width: 400px;"
+                                                  readonly>{{$value->commentUser}}</textarea>
                                     </td>
                                     <td>
                                         @if (intval($value->status == 0))
@@ -91,9 +92,8 @@
                                                             style="display: flex; justify-content: flex-start; color: #2686dc;"><i
                                                                 class="ti ti-eye me-1"></i> Xem</span>
                                                 </a>
-                                                <a class="dropdown-item"
-                                                   href="{{route('delete_contact', $value->id) }}" title="Delete"
-                                                   onclick="return confirm('Bạn Có Chắc Xóa Phòng Này Không?')">
+                                                <a class="dropdown-item" href="javascript:void(0);" title="Delete"
+                                                   onclick="openDeleteContactModal('{{ $value->name }}', '{{ route('delete_contact', $value->id) }}')">
                                                     <span
                                                         style="display: flex; justify-content: flex-start; color: #dc2626;"><i
                                                             class="ti ti-trash me-1"></i> Xóa</span>
@@ -103,37 +103,32 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <div class="modal fade" id="customer-modal-{{$value->id}}"
-                                     data-bs-keyboard="false"
-                                     tabindex="-1"
-                                     aria-hidden="true">
-                                    <div
-                                        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                                        <div class="modal-content container-fluid">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="modal fade" id="customer-modal-{{$value->id}}" tabindex="-1"
-                                     aria-labelledby="videoModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="videoModalLabel">Tiêu đề Video</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
                             @endforeach
                             </tbody>
                         </table>
                     </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteContactModal" tabindex="-1"
+                         aria-labelledby="deleteContactModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteContactModalLabel">Xác Nhận Xóa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn Có Chắc Xóa Liên Hệ Này Không?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="button" class="btn btn-danger" id="confirmDeleteContactBtn">Xóa
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -143,4 +138,15 @@
 @section('view_js')
     @include('FEadmin.Layout.JS.modal_contact_details')
     @include('FEadmin.Layout.Fooder.js_dataTable')
+    <script !src="">
+        function openDeleteContactModal(contactName, deleteUrl) {
+            document.querySelector('.modal-body').innerHTML = `Bạn Có Chắc Xóa Liên Hệ <strong>${contactName}</strong> Này Không?`;
+            document.getElementById('confirmDeleteContactBtn').onclick = function () {
+                window.location.href = deleteUrl;
+            };
+            var deleteContactModal = new bootstrap.Modal(document.getElementById('deleteContactModal'));
+            deleteContactModal.show();
+        }
+
+    </script>
 @stop
