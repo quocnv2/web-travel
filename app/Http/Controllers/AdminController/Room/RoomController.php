@@ -98,9 +98,9 @@ class RoomController extends Controller
         }
 
         if ($room->delete_Room($slug) > 0) {
-            return redirect()->route('view_list_room')->with('success', 'Xóa Danh Mục Thành Công!');
+            return redirect()->route('view_list_room')->with('success', 'Xóa Thành Công!');
         } else {
-            return redirect()->route('view_list_room')->with('err', 'Kiểm Tra Lại, Xóa Danh Mục Thất Bại!');
+            return redirect()->route('view_list_room')->with('err', 'Kiểm Tra Lại, Xóa Thất Bại!');
         }
     }
 

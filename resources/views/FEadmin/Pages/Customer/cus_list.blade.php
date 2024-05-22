@@ -25,7 +25,7 @@
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Trang Chủ</a></li>
                             <li class="breadcrumb-item"><a href="javascript: void(0)">Kinh doanh</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0)">Phản hồi contact</a></li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0)">Phản hồi tư vấn</a></li>
                             <li class="breadcrumb-item" aria-current="page">Danh Sách</li>
                         </ul>
                     </div>
@@ -43,77 +43,96 @@
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Danh Sách Phản Hồi</h5>
+                        <h5>Danh Sách Tư Vấn</h5>
                     </div>
                     <div class="card-body">
                         <table id="res-config" class="display table table-striped table-hover dt-responsive nowrap"
-                            style="width: 100%">
+                               style="width: 100%">
                             <thead>
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Họ và tên</th>
-                                    <th>Email</th>
-                                    <th>Số điện thoại</th>
-                                    <th>Số Lượng Người Lớn</th>
-                                    <th>Số Lượng Trẻ Em</th>
-                                    <th>Ngày Đi</th>
-                                    <th>Mã Tour</th>
-                                    <th>Tên Tour</th>
-                                    <th>Giá Tour</th>
-                                    <th>Mã Phòng</th>
-                                    <th>Tên Khách Sạn</th>
-                                    <th>Tên Phòng</th>
-                                    <th>Giá Phòng</th>
-                                    <th>Thành Tiền</th>
-                                    <th>Ghi Chú </th>
-                                    <th>Phản Hồi</th>
-                                    <th>Trạng thái</th>
-                                    <th>Chức năng</th>
-                                </tr>
+                            <tr>
+                                <th>STT</th>
+                                <th>Họ và tên</th>
+                                <th>Email</th>
+                                <th>Số điện thoại</th>
+                                <th>Số Lượng Người Lớn</th>
+                                <th>Số Lượng Trẻ Em</th>
+                                <th>Ngày Đi</th>
+                                {{--                                <th>Mã Tour</th>--}}
+                                {{--                                <th>Tên Tour</th>--}}
+                                {{--                                <th>Giá Tour</th>--}}
+                                {{--                                <th>Mã Phòng</th>--}}
+                                {{--                                <th>Tên Khách Sạn</th>--}}
+                                {{--                                <th>Tên Phòng</th>--}}
+                                {{--                                <th>Giá Phòng</th>--}}
+                                {{--                                <th>Thành Tiền</th>--}}
+                                {{--                                <th>Ghi Chú</th>--}}
+                                {{--                                <th>Phản Hồi</th>--}}
+                                <th>Trạng thái</th>
+                                <th>Chức năng</th>
+                            </tr>
                             </thead>
                             <tbody>
-                                @foreach ($list as $key => $value)
-                                    <tr>
-                                        <td>{{ $key + 1 }}</td>
-                                        <td>{{ $value->name }}</td>
-                                        <td>{{ $value->email }}</td>
-                                        <td>{{ $value->phone }}</td>
-                                        <td>{{ $value->number_of_adults }}</td>
-                                        <td>{{ $value->number_of_children }}</td>
-                                        <td>{{ $value->date }}</td>
-                                        <td>{{ $value->tour_code }}</td>
-                                        <td>{{ $value->tour_name }}</td>
-                                        <td>{{ number_format($value->tour_price) }} VNĐ</td>
-                                        <td>{{ $value->room_code }}</td>
-                                        <td>{{ $value->hotel_name }}</td>
-                                        <td>{{ $value->room_name }}</td>
-                                        <td>{{ number_format($value->room_price) }} VNĐ</td>
-                                        <td>{{ number_format($value->total_price) }} VNĐ</td>
-                                        <td>
-                                            <textarea class="form-control" rows="3" style="max-width: 400px;" readonly>{{ $value->note }}</textarea>
-                                        </td>
-                                        <td>
-                                            <textarea class="form-control" rows="3" style="max-width: 400px;" readonly>{{ $value->feedback }}</textarea>
-                                        </td>
-                                        <td>
-                                            @if ($value->status == 0)
-                                                <span class="badge badge-warning">Chờ xác nhận</span>
-                                            @elseif ($value->status == 1)
-                                                <span class="badge badge-success">Đã xác nhận</span>
-                                            @elseif ($value->status == 2)
-                                                <span class="badge badge-danger">Đã hủy</span>
-                                            @endif
-                                        </td>
-                                        <td class="action">
-                                            <a href="{{ route('update_customer', $value->id) }}"
-                                                class="btn btn-sm btn-primary">Sửa</a>
-                                            <a href="{{ route('delete', $value->id) }}"
-                                                class="btn btn-sm btn-danger"
-                                                onclick="return confirm('
-                                                    Bạn có chắc chắn muốn xóa booking này?')">Xóa</a>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                            @foreach ($list as $key => $value)
+                                <tr>
+                                    <td>{{ $key + 1 }}</td>
+                                    <td>{{ $value->name }}</td>
+                                    <td>{{ $value->email }}</td>
+                                    <td>{{ $value->phone }}</td>
+                                    <td>{{ $value->number_of_adults }}</td>
+                                    <td>{{ $value->number_of_children }}</td>
+                                    <td>{{ $value->travel_date }}</td>
+                                    {{--                                    <td>{{ $value->tour_code }}</td>--}}
+                                    {{--                                    <td>{{ $value->tour_name }}</td>--}}
+                                    {{--                                    <td>{{ number_format($value->tour_price) }} VNĐ</td>--}}
+                                    {{--                                    <td>{{ $value->room_code }}</td>--}}
+                                    {{--                                    <td>{{ $value->hotel_name }}</td>--}}
+                                    {{--                                    <td>{{ $value->room_name }}</td>--}}
+                                    {{--                                    <td>{{ number_format($value->room_price) }} VNĐ</td>--}}
+                                    {{--                                    <td>{{ number_format($value->total_price) }} VNĐ</td>--}}
+                                    {{--                                    <td>--}}
+                                    {{--                                        <textarea class="form-control" rows="3"--}}
+                                    {{--                                                  readonly>{{ $value->note }}</textarea>--}}
+                                    {{--                                    </td>--}}
+                                    {{--                                    <td>--}}
+                                    {{--                                        <textarea class="form-control" rows="3"--}}
+                                    {{--                                                  readonly>{{ $value->feedback }}</textarea>--}}
+                                    {{--                                    </td>--}}
+                                    <td>
+                                        @if ($value->status == 0)
+                                            <span class="badge rounded-pill text-bg-success">Chưa tư vấn</span>
+                                        @else
+                                            <span
+                                                class="badge rounded-pill text-bg-warning text-dark">Đã tư vấn</span>
+                                        @endif
+                                    </td>
+                                    <td class="action">
+
+                                        <div class="btn-group-dropdown">
+                                            <button
+                                                class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left"
+                                                type="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">Lựa chọn
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item text-inverse pr-10 customer_detail"
+                                                   data-id="{{ $value->id }}" data-toggle="tooltip" title="Edit">
+                                                        <span
+                                                            style="display: flex; justify-content: flex-start; color: #2686dc;"><i
+                                                                class="ti ti-eye me-1"></i>Xem chi tiết</span>
+                                                </a>
+                                                <a class="dropdown-item"
+                                                   href="{{route('delete_customer', $value->id) }}" title="Delete"
+                                                   onclick="return confirm('Bạn Có Chắc Xóa Tư Vấn Này Không?')">
+                                                    <span
+                                                        style="display: flex; justify-content: flex-start; color: #dc2626;"><i
+                                                            class="ti ti-trash me-1"></i> Xóa</span>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -124,6 +143,6 @@
     @include('FEadmin.Layout.Body.modal_blog')
 @stop
 @section('view_js')
-    @include('FEadmin.Layout.JS.modal_contact_details')
+    @include('FEadmin.Layout.JS.customer_detail_details')
     @include('FEadmin.Layout.Fooder.js_dataTable')
 @stop

@@ -23,9 +23,10 @@ return new class extends Migration
             $table->string('travel_date'); // ngày đi
             $table->string('tour_code')->nullable(true); //mã tour
             $table->string('tour_name')->nullable(true); // tên tour
-            $table->string('tour_price'); // giá tour
+            $table->string('tour_price')->nullable(true); // giá tour
             $table->string('hotel_name')->nullable(true); // tên khách sạn
             $table->string('room_code')->nullable(true); // mã phòng
+            $table->string('room_price')->nullable(true); // mã phòng
             $table->double('total_price')->nullable() ; // tổng giá tour
             $table->text('note')->nullable(); //ghi chú
             $table->text('feedback')->nullable(true); //phản hồi

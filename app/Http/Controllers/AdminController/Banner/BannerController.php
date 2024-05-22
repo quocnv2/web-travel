@@ -67,9 +67,9 @@ class BannerController extends Controller
         }
 
         if ($banner->delete_Banner($slug) > 0) {
-            return redirect()->route('view_list_banner')->with('success', 'Xóa Danh Mục Thành Công!');
+            return redirect()->route('view_list_banner')->with('success', 'Xóa Thành Công!');
         } else {
-            return redirect()->route('view_list_banner')->with('err', 'Kiểm Tra Lại, Xóa Danh Mục Thất Bại!');
+            return redirect()->route('view_list_banner')->with('err', 'Kiểm Tra Lại, Xóa Thất Bại!');
         }
     }
 

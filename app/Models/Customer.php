@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Customer extends Model
 {
     use HasFactory;
+
     protected $table = "customers";
     public $timestamps = false;
     protected $fillable = [
@@ -29,6 +32,7 @@ class Customer extends Model
         'feedback',
         'status'
     ];
+
     public function get_orderBy_ASC()
     {
         return $this->orderBy('id', 'DESC')->get();
@@ -45,38 +49,33 @@ class Customer extends Model
             'travel_date' => $req->travel_date,
             'tour_code' => $req->tour_code,
             'tour_name' => $req->tour_name,
+            'tour_price' => $req->tour_price,
             'hotel_name' => $req->hotel_name,
             'room_code' => $req->room_code,
+            'room_price' => $req->room_price,
             'note' => $req->note
         ]);
         return $creates;
     }
-    public function update_customes($req, $id)
+
+
+    public function get_link_slug($id)
     {
-        $updates = $this->find($id);
-        $updates->name = $req->name;
-        $updates->email = $req->email;
-        $updates->phone = $req->phone;
-        $updates->number_of_adults = $req->number_of_adults;
-        $updates->number_of_children = $req->number_of_children;
-        $updates->travel_date = $req->travel_date;
-        $updates->tour_code = $req->tour_code;
-        $updates->tour_name = $req->tour_name;
-        $updates->tour_price = $req->tour_price;
-        $updates->hotel_name = $req->hotel_name;
-        $updates->room_code = $req->room_code;
-        $updates->room_name = $req->room_name;
-        $updates->room_price = $req->room_price;
-        $updates->total_price = $req->total_price;
-        $updates->note = $req->note;
-        $updates->feedback = $req->feedback;
-        $updates->save();
-        return $updates;
+        $obj = DB::table('customers')->where('id', $id)->first();
+        return $obj;
     }
-    public function delete_customes($id)
+
+    public function update_customer(Request $req, $slug)
     {
-        $delete = $this->find($id);
-        $delete->delete();
-        return $delete;
+        $obj = DB::table('customers')->where('id', $slug)->update([
+            'feedback' => $req->feedback,
+            'status' => $req->status
+        ]);
+        return $obj;
+    }
+    public function delete_customer($id)
+    {
+        $obj = DB::table('customers')->where('id', $id)->delete();
+        return $obj;
     }
 }

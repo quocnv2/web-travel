@@ -35,7 +35,7 @@ class RoomCommentController extends Controller
         }
 
         if ($room->delete_comment_room($slug) > 0) {
-            return redirect()->route('comment_room_list')->with('success', 'Xóa Danh Mục Thành Công!');
+            return redirect()->route('comment_room_list')->with('success', 'Xóa Thành Công!');
         } else {
             return redirect()->route('comment_room_list')->with('err', 'Kiểm Tra Lại, Xóa Thất Bại!');
         }

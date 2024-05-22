@@ -9,7 +9,8 @@
         <div class="page-header__bg"></div>
         <!-- /.page-header__bg -->
         <div class="container">
-            <h2 class="page-header__title wow animated fadeInLeft" data-wow-delay="0s" data-wow-duration="1500ms">Đăng Ký Tư
+            <h2 class="page-header__title wow animated fadeInLeft" data-wow-delay="0s" data-wow-duration="1500ms">Đăng
+                Ký Tư
                 Vấn</h2>
             <div class="page-header__breadcrumb-box">
                 <ul class="trevlo-breadcrumb">
@@ -25,9 +26,9 @@
                 <div class="col-xl-4">
                     <aside class="tour-listing-sidebar">
                         <div class="tour-listing-sidebar__form tour-listing-sidebar__item wow animated fadeInUp"
-                            data-wow-delay="0.1s" data-wow-duration="1500ms">
+                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="sidebar-blog__single sidebar-blog__single--categories wow animated fadeInUp"
-                                data-wow-delay="0.2s" data-wow-duration="1500ms">
+                                 data-wow-delay="0.2s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Danh Mục</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__categories ">
                                     @foreach ($categories as $cat)
@@ -38,7 +39,7 @@
                             </div>
                         </div><!-- /.tour-listing-sidebar__form tour-listing-sidebar__item -->
                         <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                            data-wow-delay="0.1s" data-wow-duration="1500ms">
+                             data-wow-delay="0.1s" data-wow-duration="1500ms">
 
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Đã
                                 Xem
@@ -67,11 +68,12 @@
                                     @endphp
                                     <li class="tour-listing-sidebar-post__item">
                                         <div class="tour-listing-sidebar-post__image">
-                                            <img src="{{ $valueHistory['imgBanner'] }}" alt="{{ $valueHistory['name'] }}">
+                                            <img src="{{ $valueHistory['imgBanner'] }}"
+                                                 alt="{{ $valueHistory['name'] }}">
                                         </div>
                                         <div class="tour-listing-sidebar-post__content">
                                             <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valueHistory['price'], 0, ',', '.') }}vnđ</p>
+                                                {{ number_format($valueHistory['tour_price'], 0, ',', '.') }}vnđ</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
                                                     href="">{{ $valueHistory['name'] }}</a>
                                             </h5>
@@ -87,7 +89,7 @@
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
                         <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                            data-wow-delay="0.1s" data-wow-duration="1500ms">
+                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới
                                 Nhất
                             </h3>
@@ -119,7 +121,7 @@
                                         </div>
                                         <div class="tour-listing-sidebar-post__content">
                                             <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valueNewtour->price, 0, ',', '.') }}vnđ</p>
+                                                {{ number_format($valueNewtour->tour_price, 0, ',', '.') }}vnđ</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
                                                     href="">{{ $valueNewtour->name }}</a>
                                             </h5>
@@ -130,13 +132,13 @@
                                                 </p>
                                             </div>
                                         </div>
-                                @endforeach
-                                </li>
+                                        @endforeach
+                                    </li>
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
                         <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                            data-wow-delay="0.1s" data-wow-duration="1500ms">
+                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Địa Điểm
                                 Phòng Gần Tour
                             </h3>
@@ -156,13 +158,13 @@
                                             </h4>
                                         </div><!-- /.sidebar-blog__posts-content -->
                                     </li>
-                                @endforeach
-                                </li>
+                                    @endforeach
+                                    </li>
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
                         <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                            data-wow-delay="0.1s" data-wow-duration="1500ms">
+                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Bài Viết
                                 Liên
                                 Quan
@@ -184,8 +186,8 @@
                                             <!-- /.sidebar-blog__posts-title -->
                                         </div><!-- /.sidebar-blog__posts-content -->
                                     </li>
-                                @endforeach
-                                </li>
+                                    @endforeach
+                                    </li>
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
                     </aside><!-- /.tour-listing-sidebar -->
@@ -206,86 +208,89 @@
                         <div class="col-md-7 wow animated fadeInUp" data-wow-delay="0s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="name" id="form-one-name-input" placeholder="Họ và tên"
-                                    class="form-one__input" value="{{ old('name') }}">
+                                       class="form-one__input" value="{{ old('name') }}">
                                 @error('name')
-                                    <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                                 @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-5 wow animated fadeInUp" data-wow-delay="0s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="tel" name="phone" id="form-one-phone-input"
-                                    placeholder="Số điện thoại" class="form-one__input" value="{{ old('phone') }}">
+                                       placeholder="Số điện thoại" class="form-one__input" value="{{ old('phone') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="email" name="email" id="form-one-email-input" placeholder="Email"
-                                    class="form-one__input" value="{{ old('email') }}">
+                                       class="form-one__input" value="{{ old('email') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="travel_date" id="form-one-subject-input"
-                                    placeholder="Ngày Đi" class="form-one__input" value="{{ old('travel_date') }}">
+                                       placeholder="Ngày Đi" class="form-one__input" value="{{ old('travel_date') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="number_of_adults" id="form-one-subject-input"
-                                    placeholder="Số Lượng Người Lớn" class="form-one__input"
-                                    value="{{ old('number_of_adults') }}">
+                                       placeholder="Số Lượng Người Lớn" class="form-one__input"
+                                       value="{{ old('number_of_adults') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="number_of_children" id="form-one-subject-input"
-                                    placeholder="Số Lượng Trẻ Nhỏ" class="form-one__input"
-                                    value="{{ old('number_of_children') }}">
+                                       placeholder="Số Lượng Trẻ Nhỏ" class="form-one__input"
+                                       value="{{ old('number_of_children') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="tour_code" id="form-one-subject-input" placeholder="Mã Tour"
-                                    class="form-one__input" value="{{ old('tour_code') }}">
+                                       class="form-one__input" value="{{ old('tour_code') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="tour_name" id="form-one-subject-input"
-                                    placeholder="Tên Tour" class="form-one__input" value="{{ old('tour_name') }}">
+                                       placeholder="Tên Tour" class="form-one__input" value="{{ old('tour_name') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="tour_name" id="form-one-subject-input"
-                                    placeholder="Giá Tour" class="form-one__input" value="{{ old('tour_name') }}">
+                                <input type="text" name="tour_price" id="form-one-subject-input"
+                                       placeholder="Giá Tour" class="form-one__input" value="{{ old('tour_price') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="room_code" id="form-one-subject-input"
-                                    placeholder="Mã Phòng" class="form-one__input" value="{{ old('room_code') }}">
+                                       placeholder="Mã Phòng" class="form-one__input" value="{{ old('room_code') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="hotel_name" id="form-one-subject-input"
-                                    placeholder="Tên Khách Sạn" class="form-one__input" value="{{ old('hotel_name') }}">
+                                       placeholder="Tên Khách Sạn" class="form-one__input"
+                                       value="{{ old('hotel_name') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="tour_name" id="form-one-subject-input"
-                                    placeholder="Giá Phòng" class="form-one__input" value="{{ old('tour_name') }}">
+                                <input type="text" name="room_price" id="form-one-subject-input"
+                                       placeholder="Giá Phòng" class="form-one__input" value="{{ old('room_price') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
+                        <input type="hidden" name="feedback" id="feedback" value="{{old('feedback')??''}}">
                         <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10" placeholder="Ghi Chú"
-                                    class="form-one__message form-one__input">{{ old('note') ?? 'Ghi Chú' }}</textarea>
+                                <textarea name="note" id="form-one-message-input" cols="30" rows="10"
+                                          placeholder="Ghi Chú"
+                                          class="form-one__message form-one__input">{{ old('note') ?? 'Ghi Chú' }}</textarea>
                                 @error('note')
-                                    <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                                 @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-12-->
@@ -410,5 +415,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
+
 @stop

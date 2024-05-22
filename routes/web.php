@@ -16,6 +16,7 @@ use App\Http\Controllers\AdminController\Room\RoomController;
 use App\Http\Controllers\AdminController\Contact\ContactAdminController;
 use App\Http\Controllers\AdminController\Room\RoomCommentController;
 use App\Http\Controllers\AdminController\Customer\CustomerAdviseController;
+
 // Controller User
 use App\Http\Controllers\UserController\Home\HomeUserController;
 use App\Http\Controllers\UserController\Blog\blogController as blogUserController;
@@ -58,6 +59,7 @@ Route::prefix('')->group(function () {
     // Đăng Ký nhận Tư vấn
     Route::get('/dang-ky-nhan-tu-van', [CounselUserController::class, 'register_counsel'])->name('register_counsel');
     Route::post('/dang-ky-nhan-tu-van', [CounselUserController::class, 'create_counsel'])->name('create_counsel');
+    Route::get('/thong-tin-tour', [TourController::class, 'getTourInfo'])->name('getTourInfo');
 
 });
 
@@ -163,6 +165,6 @@ Route::prefix('travel-admin')->middleware('admin')->group(function () {
     Route::get('/danh-sach-khach-hang', [CustomerAdviseController::class, 'customer_list'])->name('customer_list');
     Route::get('/chi-tiet-khach-hang/{id}', [CustomerAdviseController::class, 'detail_customer'])->name('detail_customer');
     Route::post('/cap-nhat-khach-hang/{id}', [CustomerAdviseController::class, 'update_customer'])->name('update_customer');
-    Route::get('/xoa-khach-hang/{id}', [CustomerAdviseController::class, 'delete_customer'])->name('delete');
-    
+    Route::get('/xoa-khach-hang/{id}', [CustomerAdviseController::class, 'delete_customer'])->name('delete_customer');
+
 });

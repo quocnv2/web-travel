@@ -35,7 +35,7 @@ class TourCommentController extends Controller
         }
 
         if ($tour->delete_comment_tour($slug) > 0) {
-            return redirect()->route('comment_tour_list')->with('success', 'Xóa Danh Mục Thành Công!');
+            return redirect()->route('comment_tour_list')->with('success', 'Xóa Thành Công!');
         } else {
             return redirect()->route('comment_tour_list')->with('err', 'Kiểm Tra Lại, Xóa Thất Bại!');
         }

@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Tour;
 use App\Rules\Tour\TourRequest;
 use App\Rules\Tour\codeRule;
+use Illuminate\Http\Request;
 
 class TourController extends Controller
 {
@@ -104,9 +105,9 @@ class TourController extends Controller
         }
 
         if ($tour->delete_Tour($slug) > 0) {
-            return redirect()->route('view_list_tour')->with('success', 'Xóa Danh Mục Thành Công!');
+            return redirect()->route('view_list_tour')->with('success', 'Xóa Thành Công!');
         } else {
-            return redirect()->route('view_list_tour')->with('err', 'Kiểm Tra Lại, Xóa Danh Mục Thất Bại!');
+            return redirect()->route('view_list_tour')->with('err', 'Kiểm Tra Lại, Xóa Thất Bại!');
         }
     }
 
@@ -194,6 +195,26 @@ class TourController extends Controller
             return redirect()->route('view_list_tour')->with('success', 'Cập Nhật Bài Viết Thành Công!');
         } else {
             return redirect()->back()->with('error', 'Cập Nhật Bài Viết Thất Bại!');
+        }
+    }
+    public function getTourInfo(Request $request)
+    {
+        $tourCode = $request->query('tour_code');
+
+        // Tìm kiếm tour dựa trên mã tour
+        $tour = Tour::where('tour_code', $tourCode)->first();
+
+        if ($tour) {
+            return response()->json([
+                'success' => true,
+                'tour_name' => $tour->name,
+                'tour_price' => $tour->price
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Không tìm thấy tour với mã này.'
+            ]);
         }
     }
 }
