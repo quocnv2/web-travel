@@ -232,18 +232,27 @@
                             <div class="form-one__group">
                                 <input type="tel" name="phone" id="form-one-phone-input"
                                        placeholder="Số điện thoại" class="form-one__input" value="{{ old('phone') }}">
+                                @error('phone')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                                @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="email" name="email" id="form-one-email-input" placeholder="Email"
                                        class="form-one__input" value="{{ old('email') }}">
+                                @error('email')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                                @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="travel_date" id="form-one-subject-input"
+                                <input type="date" name="travel_date" id="travel_date"
                                        placeholder="Ngày Đi" class="form-one__input" value="{{ old('travel_date') }}">
+                                @error('travel_date')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                                @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
@@ -251,6 +260,9 @@
                                 <input type="text" name="number_of_adults" id="form-one-subject-input"
                                        placeholder="Số Lượng Người Lớn" class="form-one__input"
                                        value="{{ old('number_of_adults') }}">
+                                @error('number_of_adults')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                                @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
@@ -258,6 +270,9 @@
                                 <input type="text" name="number_of_children" id="form-one-subject-input"
                                        placeholder="Số Lượng Trẻ Nhỏ" class="form-one__input"
                                        value="{{ old('number_of_children') }}">
+                                @error('number_of_children')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                                @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">

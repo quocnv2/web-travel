@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers\UserController\Counsel;
 
-use Illuminate\Http\Request;
+use App\Helper\storyTour;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Contact\createRequest;
+use App\Http\Requests\Customer\createRequest;
 use App\Models\Banner;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Contact;
+use App\Models\Customer;
 use App\Models\Room;
 use App\Models\Tour;
-use App\Helper\storyTour;
-use App\Models\Customer;
 
 class CounselController extends Controller
 {
@@ -28,7 +27,7 @@ class CounselController extends Controller
         return view('Home.Layout.Pages.Advise.advise', compact('categories', 'tour_list', 'blog_list', 'banner_list', 'contact_list', 'historyTour', 'roomsiml'));
     }
 
-    public function create_counsel(Request $request, Customer $customer)
+    public function create_counsel(createRequest $request, Customer $customer)
     {
         $customer->create_customes($request);
         if ($customer) {
