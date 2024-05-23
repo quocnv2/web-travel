@@ -68,7 +68,13 @@ class Customer extends Model
     public function update_customer(Request $req, $slug)
     {
         $obj = DB::table('customers')->where('id', $slug)->update([
+//
             'feedback' => $req->feedback,
+            'number_of_adults' => $req->number_of_adults,
+            'number_of_children' => $req->number_of_children,
+            'total_tour_price' => $req->total_tour_price,
+            'total_room_price' => $req->total_room_price,
+            'total_price' => $req->total_price,
             'status' => $req->status
         ]);
         return $obj;

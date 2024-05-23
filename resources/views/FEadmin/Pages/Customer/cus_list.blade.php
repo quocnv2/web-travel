@@ -68,8 +68,8 @@
                                     <td>{{ $value->name }}</td>
                                     <td>{{ $value->email }}</td>
                                     <td>{{ $value->phone }}</td>
-                                    <td>{{ $value->number_of_adults }}</td>
-                                    <td>{{ $value->number_of_children }}</td>
+                                    <td>{{ $value->number_of_adults }} người</td>
+                                    <td>{{ $value->number_of_children }} trẻ</td>
                                     <td>{{ $value->travel_date }}</td>
                                     <td>
                                         @if ($value->status == 0)

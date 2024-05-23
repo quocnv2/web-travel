@@ -67,16 +67,27 @@
                                         }
                                     @endphp
                                     <li class="tour-listing-sidebar-post__item">
+
                                         <div class="tour-listing-sidebar-post__image">
-                                            <img src="{{ $valueHistory['imgBanner'] }}"
-                                                 alt="{{ $valueHistory['name'] }}">
+                                            @if (isset($valueHistory['imgBanner']))
+                                                <img src="{{ $valueHistory['imgBanner'] }}"
+                                                     alt="{{ $valueHistory['name'] ?? 'Tour Image' }}">
+                                            @endif
                                         </div>
+
                                         <div class="tour-listing-sidebar-post__content">
-                                            <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valueHistory['tour_price'], 0, ',', '.') }}vnđ</p>
-                                            <h5 class="tour-listing-sidebar-post__link"><a
-                                                    href="">{{ $valueHistory['name'] }}</a>
-                                            </h5>
+                                            @if (isset($valueHistory['tour_price']))
+                                                <p class="tour-listing-sidebar-post__price">
+                                                    {{ number_format($valueHistory['tour_price'], 0, ',', '.') }}vnđ
+                                                </p>
+                                            @endif
+
+                                            @if (isset($valueHistory['name']))
+                                                <h5 class="tour-listing-sidebar-post__link">
+                                                    <a href="">{{ $valueHistory['name'] }}</a>
+                                                </h5>
+                                            @endif
+
                                             <div class="tour-listing-sidebar-post__location">
                                                 <span class="icon-location-1"></span>
                                                 <p class="tour-listing-sidebar-post__location-text text-small">
@@ -84,6 +95,9 @@
                                                 </p>
                                             </div>
                                         </div>
+
+                                    </li>
+
                                 @endforeach
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
@@ -249,38 +263,42 @@
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="tour_code" id="tour_code" placeholder="Mã Tour"
-                                       class="form-one__input" value="{{ old('tour_code') }}">
+                                       class="form-one__input" value="{{ old('tour_code') }}" readonly>
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="tour_name" id="tour_name"
-                                       placeholder="Tên Tour" class="form-one__input" value="{{ old('tour_name') }}">
+                                       placeholder="Tên Tour" class="form-one__input" value="{{ old('tour_name') }}"
+                                       readonly>
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="tour_price" id="tour_price"
-                                       placeholder="Giá Tour" class="form-one__input" value="{{ old('tour_price') }}">
+                                       placeholder="Giá Tour" class="form-one__input" value="{{ old('tour_price') }}"
+                                       readonly>
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="room_code" id="room_code"
-                                       placeholder="Mã Phòng" class="form-one__input" value="{{ old('room_code') }}">
+                                       placeholder="Mã Phòng" class="form-one__input" value="{{ old('room_code') }}"
+                                       readonly>
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="hotel_name" id="hotel_name"
                                        placeholder="Tên Khách Sạn" class="form-one__input"
-                                       value="{{ old('hotel_name') }}">
+                                       value="{{ old('hotel_name') }}" readonly>
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="room_price" id="room_price"
-                                       placeholder="Giá Phòng" class="form-one__input" value="{{ old('room_price') }}">
+                                       placeholder="Giá Phòng" class="form-one__input" value="{{ old('room_price') }}"
+                                       readonly>
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <input type="hidden" name="feedback" id="feedback" value="{{old('feedback')??''}}">
@@ -418,19 +436,19 @@
         </div>
     </section>
     <script>
-        $(document).ready(function() {
-            $('#tour_code').on('change', function() {
+        $(document).ready(function () {
+            $('#tour_code').on('change', function () {
                 var tour_code = $(this).val();
                 if (tour_code) {
                     $.ajax({
                         url: '/danh-sach-tour-khach-hang/' + tour_code,
                         type: 'GET',
                         dataType: 'json',
-                        success: function(data) {
+                        success: function (data) {
                             $('#tour_name').val(data.tour_name);
                             $('#tour_price').val(data.tour_price);
                         },
-                        error: function() {
+                        error: function () {
                             alert('Không tìm thấy thông tin tour!');
                         }
                     });
@@ -439,18 +457,18 @@
                     $('#tour_price').val('');
                 }
             });
-            $('#room_code').on('change', function() {
+            $('#room_code').on('change', function () {
                 var room_code = $(this).val();
                 if (room_code) {
                     $.ajax({
                         url: '/danh-sach-phong-khach-hang/' + room_code,
                         type: 'GET',
                         dataType: 'json',
-                        success: function(data) {
+                        success: function (data) {
                             $('#hotel_name').val(data.hotel_name);
                             $('#room_price').val(data.room_price);
                         },
-                        error: function() {
+                        error: function () {
                             alert('Không tìm thấy thông tin phòng!');
                         }
                     });
@@ -459,6 +477,17 @@
                     $('#room_price').val('');
                 }
             });
+        });
+        $(document).ready(function () {
+            // Hàm để lấy giá trị từ query string
+            function getQueryStringValue(key) {
+                return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+            }
+
+            // Đặt giá trị cho các trường form
+            $('#tour_code').val(getQueryStringValue('tourCode'));
+            $('#tour_name').val(getQueryStringValue('tourName'));
+            $('#tour_price').val(getQueryStringValue('tourPrice'));
         });
 
 

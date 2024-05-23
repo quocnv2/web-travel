@@ -105,7 +105,10 @@ class BannerController extends Controller
         if ($req->file('file')) {
             $response = $req->file('file') ?  cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->imgBanner;
             $file = $response;
+        } else {
+            $file = $obj->imgBanner;
         }
+
         $req->merge(['imgBanner' => $file]);
 
         if ($banner->update_Banner($req, $slug) >= 0) {
