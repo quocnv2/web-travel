@@ -25,7 +25,6 @@ class createRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'required|email',
             'phone' =>  ['required', 'regex:/^(03|05|07|08|09)+([0-9]{8})\b/'],
             'number_of_adults' => 'required',
             'number_of_children' => 'required',
@@ -34,8 +33,6 @@ class createRequest extends FormRequest
     }
     public function messages(){
         return [
-            'email.required' => 'Bạn Chưa Điền Thông Tin Email!',
-            'email.email' => 'Sai Định Dạng Email!',
             'number_of_adults.required' => 'Bạn Chưa Điền Số Lượng Vé Người Lớn!',
             'number_of_children.required' => 'Bạn Chưa Điền Số Lượng Vé Trẻ Em!',
             'name.required' => 'Họ và Tên Không Được Để Trống!',

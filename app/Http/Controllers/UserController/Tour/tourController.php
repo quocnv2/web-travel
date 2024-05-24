@@ -50,7 +50,7 @@ class tourController extends Controller
 
 
 
-    public function detailTour(Category $category, Tour $tourModel, $slug, storyTour $history, Room $room, Blog $blogs, CommentTour $commentTour)
+    public function detailTour(Category $category, Tour $tourModel, $slug, storyTour $history, Room $room, Blog $blogs, CommentTour $commentTour,)
     {
         $objTour = $tourModel->get_link_slug($slug);
         if (!$objTour) {
@@ -58,7 +58,8 @@ class tourController extends Controller
         }
         $categories = $category->get_orderBy_ASC();
         // Danh Sách tour
-        $tourlist = $tourModel->get_orderBy_ASC_status_page_12();
+        $tourlist = $tourModel->whereNotIn('id', [$objTour->id])->get();
+        // $toursml = Tour::where('idCategory', $idCategory)->get();
         // Danh sách tour mới nhất
         $tour = $tourModel->get_orderBy_ASC_status_page();
         // Danh sách tour đã xem
@@ -69,10 +70,14 @@ class tourController extends Controller
         // Bài Viết
         $blogsiml = $blogs->get_orderBy_ASC_status_page();
         $listCommentTour = $commentTour->where('idTour', $objTour->id)->orderBy('id', 'DESC')->get();
-
+        // function
 
         return view('Home.Layout.Pages.Tour.tour_details', compact('categories', 'tour', 'objTour', 'historyTour', 'tourlist', 'blogsiml', 'roomsiml', 'listCommentTour'));
     }
+
+
+
+
 
     public function create_comment_tour(Request $req, CommentTour $commentTour, Tour $tourModel, $slug)
     {

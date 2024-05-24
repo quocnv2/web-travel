@@ -29,6 +29,7 @@ class storyTour{
             'district' => $course->district,
             'wards' => $course->wards,
             'status' => $course->status,
+            'nameCategory' => $course->objCategory->name,
         ];
 
         $this->items[$course->id] = $item;

@@ -47,71 +47,75 @@
                     </div>
                     <div class="card-body">
                         <table id="res-config" class="display table table-striped table-hover dt-responsive nowrap"
-                               style="width: 100%">
+                            style="width: 100%">
                             <thead>
-                            <tr>
-                                <th>STT</th>
-                                <th>Họ và tên</th>
-                                <th>Email</th>
-                                <th>Số điện thoại</th>
-                                <th>Số Lượng Người Lớn</th>
-                                <th>Số Lượng Trẻ Em</th>
-                                <th>Ngày Đi</th>
-                                <th>Trạng thái</th>
-                                <th>Chức năng</th>
-                            </tr>
+                                <tr>
+                                    <th>STT</th>
+                                    <th>Họ và tên</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Số Lượng Người Lớn</th>
+                                    <th>Số Lượng Trẻ Em</th>
+                                    <th>Ngày Đi</th>
+                                    <th>Trạng thái</th>
+                                    <th>Chức năng</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            @foreach ($list as $key => $value)
-                                <tr>
-                                    <td>{{ $key + 1 }}</td>
-                                    <td>{{ $value->name }}</td>
-                                    <td>{{ $value->email }}</td>
-                                    <td>{{ $value->phone }}</td>
-                                    <td>{{ $value->number_of_adults }} người</td>
-                                    <td>{{ $value->number_of_children }} trẻ</td>
-                                    <td>{{ $value->travel_date }}</td>
-                                    <td>
-                                        @if ($value->status == 0)
-                                            <span class="badge rounded-pill text-bg-success">Chưa tư vấn</span>
-                                        @else
-                                            <span
-                                                class="badge rounded-pill text-bg-warning text-dark">Đã tư vấn</span>
-                                        @endif
-                                    </td>
-                                    <td class="action">
+                                @foreach ($list as $key => $value)
+                                    <tr>
+                                        <td>{{ $key + 1 }}</td>
+                                        <td>{{ $value->name }}</td>
+                                        <td>{{ $value->email }}</td>
+                                        <td>{{ $value->phone }}</td>
+                                        <td>{{ $value->number_of_adults }} người</td>
+                                        <td>{{ $value->number_of_children }} trẻ</td>
+                                        <td>{{ $value->travel_date }}</td>
+                                        <td>
+                                            @if ($value->status == 0)
+                                                <span class="badge rounded-pill text-bg-success">Chưa tư vấn</span>
+                                            @else
+                                                <span class="badge rounded-pill text-bg-warning text-dark">Đã tư vấn</span>
+                                            @endif
+                                        </td>
+                                        <td class="action">
 
-                                        <div class="btn-group-dropdown">
-                                            <button
-                                                class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left"
-                                                type="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">Lựa chọn
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item text-inverse pr-10 customer_detail"
-                                                   data-id="{{ $value->id }}" data-toggle="tooltip" title="Edit">
+                                            <div class="btn-group-dropdown">
+                                                <button
+                                                    class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left"
+                                                    type="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                                    aria-expanded="false">Lựa chọn
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item text-inverse pr-10 customer_detail"
+                                                        data-id="{{ $value->id }}" data-toggle="tooltip" title="Edit">
                                                         <span
                                                             style="display: flex; justify-content: flex-start; color: #2686dc;"><i
                                                                 class="ti ti-eye me-1"></i>Xem chi tiết</span>
-                                                </a>
-                                                <a class="dropdown-item" href="javascript:void(0);" title="Delete" onclick="openDeleteCustomerModal('{{ $value->name }}', '{{ route('delete_customer', $value->id) }}')">
-                                                    <span style="display: flex; justify-content: flex-start; color: #dc2626;"><i class="ti ti-trash me-1"></i> Xóa</span>
-                                                </a>
+                                                    </a>
+                                                    <a class="dropdown-item" href="javascript:void(0);" title="Delete"
+                                                        onclick="openDeleteCustomerModal('{{ $value->name }}', '{{ route('delete_customer', $value->id) }}')">
+                                                        <span
+                                                            style="display: flex; justify-content: flex-start; color: #dc2626;"><i
+                                                                class="ti ti-trash me-1"></i> Xóa</span>
+                                                    </a>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                     <!-- Modal -->
-                    <div class="modal fade" id="deleteCustomerModal" tabindex="-1" aria-labelledby="deleteCustomerModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="deleteCustomerModal" tabindex="-1"
+                        aria-labelledby="deleteCustomerModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="deleteCustomerModalLabel">Xác Nhận Xóa</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     Bạn Có Chắc Xóa Tư Vấn Khách Hàng Này Không?
@@ -135,14 +139,13 @@
     @include('FEadmin.Layout.Fooder.js_dataTable')
     <script>
         function openDeleteCustomerModal(customerName, deleteUrl) {
-            document.querySelector('.modal-body').innerHTML = `Bạn Có Chắc Xóa Tư Vấn <strong>${customerName}</strong> Này Không?`;
+            document.querySelector('.modal-body').innerHTML =
+                `Bạn Có Chắc Xóa Tư Vấn <strong>${customerName}</strong> Này Không?`;
             document.getElementById('confirmDeleteCustomerBtn').onclick = function() {
                 window.location.href = deleteUrl;
             };
             var deleteCustomerModal = new bootstrap.Modal(document.getElementById('deleteCustomerModal'));
             deleteCustomerModal.show();
         }
-
-
     </script>
 @stop

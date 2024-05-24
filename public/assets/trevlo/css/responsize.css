@@ -1,0 +1,13 @@
+/* Banner */
+
+@media (min-width: 1440px) {}
+
+@media (min-width: 1200px) and (max-width: 1440px) {}
+
+@media (min-width: 1024px) and (max-width: 1200px) {}
+
+@media (min-width: 780px) and (max-width: 1024px) {}
+
+@media (min-width: 760px) and (max-width: 780px) {}
+
+@media (min-width: 300px) and (max-width: 760px) {}

@@ -26,9 +26,9 @@
                 <div class="col-xl-4">
                     <aside class="tour-listing-sidebar">
                         <div class="tour-listing-sidebar__form tour-listing-sidebar__item wow animated fadeInUp"
-                             data-wow-delay="0.1s" data-wow-duration="1500ms">
+                            data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="sidebar-blog__single sidebar-blog__single--categories wow animated fadeInUp"
-                                 data-wow-delay="0.2s" data-wow-duration="1500ms">
+                                data-wow-delay="0.2s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Danh Mục</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__categories ">
                                     @foreach ($categories as $cat)
@@ -39,7 +39,7 @@
                             </div>
                         </div><!-- /.tour-listing-sidebar__form tour-listing-sidebar__item -->
                         <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                             data-wow-delay="0.1s" data-wow-duration="1500ms">
+                            data-wow-delay="0.1s" data-wow-duration="1500ms">
 
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Đã
                                 Xem
@@ -71,7 +71,7 @@
                                         <div class="tour-listing-sidebar-post__image">
                                             @if (isset($valueHistory['imgBanner']))
                                                 <img src="{{ $valueHistory['imgBanner'] }}"
-                                                     alt="{{ $valueHistory['name'] ?? 'Tour Image' }}">
+                                                    alt="{{ $valueHistory['name'] ?? 'Tour Image' }}">
                                             @endif
                                         </div>
 
@@ -101,7 +101,7 @@
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
                         <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                             data-wow-delay="0.1s" data-wow-duration="1500ms">
+                            data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới
                                 Nhất
                             </h3>
@@ -150,7 +150,7 @@
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
                         <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                             data-wow-delay="0.1s" data-wow-duration="1500ms">
+                            data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Địa Điểm
                                 Phòng Gần Tour
                             </h3>
@@ -175,7 +175,7 @@
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
                         <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                             data-wow-delay="0.1s" data-wow-duration="1500ms">
+                            data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Bài Viết
                                 Liên
                                 Quan
@@ -197,8 +197,8 @@
                                             <!-- /.sidebar-blog__posts-title -->
                                         </div><!-- /.sidebar-blog__posts-content -->
                                     </li>
-                                    @endforeach
-                                    </li>
+                                @endforeach
+                                </li>
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
                     </aside><!-- /.tour-listing-sidebar -->
@@ -219,107 +219,102 @@
                         <div class="col-md-7 wow animated fadeInUp" data-wow-delay="0s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="name" id="form-one-name-input" placeholder="Họ và tên"
-                                       class="form-one__input" value="{{ old('name') }}">
+                                    class="form-one__input" value="{{ old('name') }}">
                                 @error('name')
-                                <small style="color: #f33923;">{{ $message }}</small>
+                                    <small style="color: #f33923;">{{ $message }}</small>
                                 @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-5 wow animated fadeInUp" data-wow-delay="0s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="tel" name="phone" id="form-one-phone-input"
-                                       placeholder="Số điện thoại" class="form-one__input" value="{{ old('phone') }}">
+                                    placeholder="Số điện thoại" class="form-one__input" value="{{ old('phone') }}">
                                 @error('phone')
-                                <small style="color: #f33923;">{{ $message }}</small>
+                                    <small style="color: #f33923;">{{ $message }}</small>
                                 @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="email" name="email" id="form-one-email-input" placeholder="Email"
-                                       class="form-one__input" value="{{ old('email') }}">
+                                    class="form-one__input" value="{{ old('email') }}">
                                 @error('email')
-                                <small style="color: #f33923;">{{ $message }}</small>
+                                    <small style="color: #f33923;">{{ $message }}</small>
                                 @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="date" name="travel_date" id="travel_date"
-                                       placeholder="Ngày Đi" class="form-one__input" value="{{ old('travel_date') }}">
+                                <input type="date" name="travel_date" id="travel_date" placeholder="Ngày Đi"
+                                    class="form-one__input" value="{{ old('travel_date') }}">
                                 @error('travel_date')
-                                <small style="color: #f33923;">{{ $message }}</small>
+                                    <small style="color: #f33923;">{{ $message }}</small>
                                 @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="number_of_adults" id="form-one-subject-input"
-                                       placeholder="Số Lượng Người Lớn" class="form-one__input"
-                                       value="{{ old('number_of_adults') }}">
+                                    placeholder="Số Lượng Người Lớn" class="form-one__input"
+                                    value="{{ old('number_of_adults') }}">
                                 @error('number_of_adults')
-                                <small style="color: #f33923;">{{ $message }}</small>
+                                    <small style="color: #f33923;">{{ $message }}</small>
                                 @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="number_of_children" id="form-one-subject-input"
-                                       placeholder="Số Lượng Trẻ Nhỏ" class="form-one__input"
-                                       value="{{ old('number_of_children') }}">
+                                    placeholder="Số Lượng Trẻ Nhỏ" class="form-one__input"
+                                    value="{{ old('number_of_children') }}">
                                 @error('number_of_children')
-                                <small style="color: #f33923;">{{ $message }}</small>
+                                    <small style="color: #f33923;">{{ $message }}</small>
                                 @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="tour_code" id="tour_code" placeholder="Mã Tour"
-                                       class="form-one__input" value="{{ old('tour_code') }}">
+                                    class="form-one__input" value="{{ old('tour_code') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="tour_name" id="tour_name"
-                                       placeholder="Tên Tour" class="form-one__input" value="{{ old('tour_name') }}"
-                                       readonly>
+                                <input type="text" name="tour_name" id="tour_name" placeholder="Tên Tour"
+                                    class="form-one__input" value="{{ old('tour_name') }}" readonly>
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="tour_price" id="tour_price"
-                                       placeholder="Giá Tour" class="form-one__input" value="{{ old('tour_price') }}"
-                                       readonly>
+                                <input type="text" name="tour_price" id="tour_price" placeholder="Giá Tour"
+                                    class="form-one__input" value="{{ old('tour_price') }}" readonly>
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="room_code" id="room_code"
-                                       placeholder="Mã Phòng" class="form-one__input" value="{{ old('room_code') }}">
+                                <input type="text" name="room_code" id="room_code" placeholder="Mã Phòng"
+                                    class="form-one__input" value="{{ old('room_code') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="hotel_name" id="hotel_name"
-                                       placeholder="Tên Khách Sạn" class="form-one__input"
-                                       value="{{ old('hotel_name') }}" readonly>
+                                <input type="text" name="hotel_name" id="hotel_name" placeholder="Tên Khách Sạn"
+                                    class="form-one__input" value="{{ old('hotel_name') }}" readonly>
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <input type="text" name="room_price" id="room_price"
-                                       placeholder="Giá Phòng" class="form-one__input" value="{{ old('room_price') }}"
-                                       readonly>
+                                <input type="text" name="room_price" id="room_price" placeholder="Giá Phòng"
+                                    class="form-one__input" value="{{ old('room_price') }}" readonly>
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
-                        <input type="hidden" name="feedback" id="feedback" value="{{old('feedback')??''}}">
+                        <input type="hidden" name="feedback" id="feedback" value="{{ old('feedback') ?? '' }}">
                         <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="form-one__group">
-                                <textarea name="note" id="form-one-message-input" cols="30" rows="10"
-                                          placeholder="Ghi Chú"
-                                          class="form-one__message form-one__input">{{ old('note') ?? 'Ghi Chú' }}</textarea>
+                                <textarea name="note" id="form-one-message-input" cols="30" rows="10" placeholder="Ghi Chú"
+                                    class="form-one__message form-one__input">{{ old('note') ?? 'Ghi Chú' }}</textarea>
                                 @error('note')
-                                <small style="color: #f33923;">{{ $message }}</small>
+                                    <small style="color: #f33923;">{{ $message }}</small>
                                 @enderror
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-12-->
@@ -342,7 +337,7 @@
                             <div class="col-xl-12 col-lg-12">
                                 <div class="trevlo-accrodion faq-page__faq" data-grp-name="faq-page__faq">
                                     <div class="accrodion wow animated fadeInUp" data-wow-delay="0.1s"
-                                         data-wow-duration="1500ms">
+                                        data-wow-duration="1500ms">
                                         <div class="accrodion-title">
                                             <h4>Đặt chỗ dễ dàng</h4>
                                         </div>
@@ -359,7 +354,7 @@
                                     </div>
 
                                     <div class="accrodion active wow animated fadeInUp" data-wow-delay="0.2s"
-                                         data-wow-duration="1500ms">
+                                        data-wow-duration="1500ms">
                                         <div class="accrodion-title">
                                             <h4>Lựa chọn tốt nhất</h4>
                                         </div>
@@ -377,7 +372,7 @@
                                     </div>
 
                                     <div class="accrodion wow animated fadeInUp" data-wow-delay="0.3s"
-                                         data-wow-duration="1500ms">
+                                        data-wow-duration="1500ms">
                                         <div class="accrodion-title">
                                             <h4>Tiết kiệm chi phí</h4>
                                         </div>
@@ -392,7 +387,7 @@
                                         </div>
                                     </div>
                                     <div class="accrodion wow animated fadeInUp" data-wow-delay="0.4s"
-                                         data-wow-duration="1500ms">
+                                        data-wow-duration="1500ms">
                                         <div class="accrodion-title">
                                             <h4>An toàn luôn là trên hết</h4>
                                         </div>
@@ -407,7 +402,7 @@
                                         </div>
                                     </div>
                                     <div class="accrodion wow animated fadeInUp" data-wow-delay="0.5s"
-                                         data-wow-duration="1500ms">
+                                        data-wow-duration="1500ms">
                                         <div class="accrodion-title">
                                             <h4>Hướng dẫn có kinh nghiệm</h4>
                                         </div>
@@ -422,7 +417,7 @@
                                         </div>
                                     </div>
                                     <div class="accrodion wow animated fadeInUp" data-wow-delay="0.6s"
-                                         data-wow-duration="1500ms">
+                                        data-wow-duration="1500ms">
                                         <div class="accrodion-title">
                                             <h4>Tỷ lệ khách hài lòng 88,9%</h4>
                                         </div>
@@ -447,21 +442,22 @@
         </div>
     </section>
     <script>
-        $(document).ready(function () {
-            $('#tour_code').on('change', function () {
+        $(document).ready(function() {
+            $('#tour_code').on('change', function() {
                 var tour_code = $(this).val();
                 if (tour_code) {
                     $.ajax({
                         url: '/danh-sach-tour-khach-hang/' + tour_code,
                         type: 'GET',
                         dataType: 'json',
-                        success: function (data) {
+                        success: function(data) {
                             $('#tour_name').val(data.tour_name);
                             $('#tour_price').val(data.tour_price);
                         },
-                        error: function () {
+                        error: function() {
                             swal(
-                                "Không Tìm Thấy Tour Bạn Yêu Cầu, Hãy kiểm Tra Lại", "Thông Báo Từ Hệ Thống!", 'error', {
+                                "Không Tìm Thấy Tour Bạn Yêu Cầu, Hãy kiểm Tra Lại",
+                                "Thông Báo Từ Hệ Thống!", 'error', {
                                     button: true,
                                     button: "OK",
                                     timer: 50000,
@@ -475,20 +471,21 @@
                 }
             });
 
-            $('#room_code').on('change', function () {
+            $('#room_code').on('change', function() {
                 var room_code = $(this).val();
                 if (room_code) {
                     $.ajax({
                         url: '/danh-sach-phong-khach-hang/' + room_code,
                         type: 'GET',
                         dataType: 'json',
-                        success: function (data) {
+                        success: function(data) {
                             $('#hotel_name').val(data.hotel_name);
                             $('#room_price').val(data.room_price);
                         },
-                        error: function () {
+                        error: function() {
                             swal(
-                                "Không Tìm Thấy Phòng Bạn Yêu Cầu, Hãy kiểm Tra Lại", "Thông Báo Từ Hệ Thống!", 'error', {
+                                "Không Tìm Thấy Phòng Bạn Yêu Cầu, Hãy kiểm Tra Lại",
+                                "Thông Báo Từ Hệ Thống!", 'error', {
                                     button: true,
                                     button: "OK",
                                     timer: 50000,
@@ -506,6 +503,6 @@
 
 @stop
 
-{{--@section('view_js')--}}
+{{-- @section('view_js') --}}
 
-{{--@stop--}}
+{{-- @stop --}}
