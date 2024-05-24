@@ -37,7 +37,7 @@ class CommentRoom extends Model
             'phone' => $req->phone,
             'email' => $req->email,
             'commentUser' => $req->commentUser,
-            'commentAdmin' => $req->commentAdmin,
+            'commentAdmin' => $req->commentAdmin??"",
             'idRoom' => $req->idRoom,
             'status' => $req->status,
         ]);
