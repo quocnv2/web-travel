@@ -35,7 +35,7 @@
                 <div class="tour-listing-details__destination-row row">
                     <div class="col-xl-4 wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">
                         <div class="tour-listing-details__destination-left">
-                            <h3 class="tour-listing-details__dastination-title">Phòng: {{ $objRoom->name }}</h3>
+                            <h3 class="tour-listing-details__dastination-title">{{ $objRoom->name }}</h3>
                             <h4 class="tour-listing-details__dastination-price">
                                 <span>{{ number_format($objRoom->price, 0, ',', '.') }}vnđ</span><span
                                     class="tour-listing-details__dastination-person">/ Đêm </span>
