@@ -1,19 +1,19 @@
 @extends ('Home.master')
 @section('css_view')
-   <style>
-       .tour-listing-five__card__image img {
-           width: 100%;
-           height: 200px; /* Chiều cao bạn muốn đặt */
-           object-fit: cover; /* Đảm bảo hình ảnh không bị biến dạng */
-       }
+    <style>
+        .tour-listing-five__card__image img {
+            width: 100%;
+            height: 200px; /* Chiều cao bạn muốn đặt */
+            object-fit: cover; /* Đảm bảo hình ảnh không bị biến dạng */
+        }
 
-   </style>
+    </style>
 @stop
 @section('view')
     <!-- main-slider-start -->
     <section class="main-slider-five">
         <div class="main-slider-five__carousel trevlo-owl__carousel owl-carousel owl-theme"
-            data-owl-options='{
+             data-owl-options='{
             "items": 1,
             "margin": 0,
             "loop": true,
@@ -43,7 +43,8 @@
                                     <h5 class="main-slider-five__sub-title">Đối Tác Phiêu Lưu Tốt Nhất Của Bạn</h5>
                                     <h3 class="main-slider-five__title">{{ $bannerValue->name }}</h3>
                                     <div class="main-slider-five__button">
-                                        <a href="{{ $bannerValue->linkCourses }}" class="trevlo-btn trevlo-btn--two trevlo-btn--base">
+                                        <a href="{{ $bannerValue->linkCourses }}"
+                                           class="trevlo-btn trevlo-btn--two trevlo-btn--base">
                                             <span>Xem Chi Tiết</span>
                                             <i class="trevlo-one-icon-up-right-arrow"></i>
                                         </a><!-- /.trevlo-btn -->
@@ -55,19 +56,20 @@
                         </div><!-- /.row -->
                     </div>
                     <img src="{{ url('assets') }}/trevlo/images/shapes/slider-cloud-5-1.png" alt="cloud"
-                        class="main-slider-five__cloud">
+                         class="main-slider-five__cloud">
                     <div class="main-slider-five__shape">
                         <img src="{{ url('assets') }}/trevlo/images/shapes/slider-shape-5-2.png" alt="shape"
-                            class="main-slider-five__shape__one">
+                             class="main-slider-five__shape__one">
                         <img src="{{ url('assets') }}/trevlo/images/shapes/slider-shape-5-3.png" alt="shape"
-                            class="main-slider-five__shape__two">
+                             class="main-slider-five__shape__two">
                     </div><!-- /.main-slider-five__shape -->
                 </div><!-- item -->
             @endforeach
         </div><!-- banner-slider -->
         <div class="banner-form banner-form--two banner-form--three wow fadeInUp" data-wow-delay="300ms">
             <div class="container">
-                <div class="counter-two__bg" style="background-image: url({{ url('assets') }}/images/shapes/counter-bg-2.png);"></div>
+                <div class="counter-two__bg"
+                     style="background-image: url({{ url('assets') }}/images/shapes/counter-bg-2.png);"></div>
                 <div class="counter-two__shape"></div>
                 <div class="banner-form__wrapper">
                     <div class="row">
@@ -108,7 +110,7 @@
 
                             <p class="sec-title__tagline">Tour Du Lịch</p><!-- /.sec-title__tagline -->
 
-                            <h2 class="sec-title__title">Những Địa Điểm Du Lịch Thú Vị <br> việt Nam</h2>
+                            <h2 class="sec-title__title">Những Địa Điểm Du Lịch Thú Vị việt Nam</h2>
                             <!-- /.sec-title__title -->
                         </div><!-- /.sec-title -->
                     </div><!-- /.col-lg-8 -->
@@ -120,7 +122,8 @@
             <div class="row g-0">
                 <div class="col-lg-12">
                     <div class="trevlo-stretch-element-inside-column">
-                        <div class="tour-listing-five__carousel trevlo-owl__carousel trevlo-owl__carousel--basic-nav trevlo-owl__carousel--with-shadow owl-theme owl-carousel"
+                        <div
+                            class="tour-listing-five__carousel trevlo-owl__carousel trevlo-owl__carousel--basic-nav trevlo-owl__carousel--with-shadow owl-theme owl-carousel"
                             data-owl-options='{
                     "items": 3,
                     "margin": 30,
@@ -159,31 +162,20 @@
                                 <div class="item">
                                     <div class="tour-listing-five__card">
                                         <div class="tour-listing-five__card__bg"
-                                            style="background-image: url({{ url('assets') }}/trevlo/images/shapes/tour-shape-bg-5-1.png);">
+                                             style="background-image: url({{ url('assets') }}/trevlo/images/shapes/tour-shape-bg-5-1.png);">
                                         </div>
                                         <!-- /.tour-listing-five__card__bg -->
                                         <div class="tour-listing-five__card__inner">
-                                            <a href="{{route('detailTour', $valueTour->slug)}}" class="tour-listing-five__card__image">
+                                            <a href="{{route('detailTour', $valueTour->slug)}}"
+                                               class="tour-listing-five__card__image">
                                                 <img src="{{ $valueTour->imgBanner }}" style="height: 300px" alt="tour">
                                                 <div class="tour-listing-five__card__featured">
                                                     {{ $valueTour->objCategory->name }}</div>
-                                                {{--                                                <div class="tour-listing-five__card__overlay"> --}}
-                                                {{--                                                    <span class="tour-listing-five__card__plus"> --}}
-                                                {{--                                                        <i class="icon-plus"></i> --}}
-                                                {{--                                                    </span> --}}
-                                                {{--                                                </div><!-- /.tour-listing-five__card__overlay --> --}}
                                             </a><!-- /.tour-listing-five__card__image -->
                                             <div class="tour-listing-five__card__content">
-                                                {{-- <div class="tour-listing-five__card__ratings">
-                                                    <div class="trevlo-ratings">
-                                                        <i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                            class="fa fa-star"></i><i class="fa fa-star"></i><i
-                                                            class="fa fa-star"></i>
-                                                    </div>
-                                                    <p class="tour-listing-five__card__ratings__text">4.9 (5)</p>
-                                                </div><!-- /.tour-listing-five__card__ratings --> --}}
                                                 <h3 class="tour-listing-five__card__title">
-                                                    <a href="{{route('detailTour', $valueTour->slug)}}">{{ $valueTour->name }}</a>
+                                                    <a href="{{route('detailTour', $valueTour->slug)}}">({{ $valueTour->code }}
+                                                        ) {{ $valueTour->name }}</a>
                                                 </h3><!-- /.tour-listing-five__card__title -->
                                                 <div class="tour-listing-five__card__location">
                                                     <span class="tour-listing-five__card__location__icon">
@@ -227,8 +219,8 @@
                                                     </div><!-- /.tour-listing-five__card__price-box -->
                                                     <div class="tour-listing-five__card__btn-group">
                                                         <a href="javascript:void(0);"
-                                                            class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
-                                                            data-gallery-options='{
+                                                           class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
+                                                           data-gallery-options='{
                                                             "items": [
                                                                    @foreach ($imageArray as $index => $imgs)
                                                                         @if (isset($imgs['link']) && $imgs['link'] != '')
@@ -243,8 +235,8 @@
                                                             <span class="icon-photo-camera-1"></span>
                                                         </a>
                                                         <a href="javascript:void(0);"
-                                                        class="tour-listing-five__card__popup-btn trevlo-image-popup"
-                                                            data-gallery-options='{
+                                                           class="tour-listing-five__card__popup-btn trevlo-image-popup"
+                                                           data-gallery-options='{
                                                             "items": [
                                                                    @foreach ($videoArray as $index => $videos)
                                                                         @if (isset($videos['link']) && $videos['link'] != '')
@@ -271,7 +263,7 @@
             </div><!-- /.row -->
         </div><!-- /.container -->
         <img src="{{ url('assets') }}/trevlo/images/shapes/tour-shape-5-1.png" alt="shape"
-            class="tour-listing-five__shape">
+             class="tour-listing-five__shape">
     </section><!-- /.tour-listing-five section-space -->
 
     @include('Home.Layout.Body.Feedback.feedback')

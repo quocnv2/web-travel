@@ -78,7 +78,7 @@
                                             <p class="tour-listing-sidebar-post__price">
                                                 {{ number_format($valueNewtour->price, 0, ',', '.') }}vnđ</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
-                                                    href="">{{ $valueNewtour->name }}</a>
+                                                    href="">({{ $valueNewtour->code }}) {{ $valueNewtour->name }}</a>
                                             </h5>
                                             <div class="tour-listing-sidebar-post__location">
                                                 <span class="icon-location-1"></span>
@@ -125,7 +125,7 @@
                                             <p class="tour-listing-sidebar-post__price">
                                                 {{ number_format($valueHistory['price'], 0, ',', '.') }}vnđ</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
-                                                    href="">{{ $valueHistory['name'] }}</a>
+                                                    href="">({{ $valueHistory['code'] }}) {{ $valueHistory['name'] }}</a>
                                             </h5>
                                             <div class="tour-listing-sidebar-post__location">
                                                 <span class="icon-location-1"></span>
@@ -193,7 +193,7 @@
                                             class="icon-heart"></span></a>
                                     <div class="tour-listing-three__card-content tour-listing__card-content">
                                         <h3 class="tour-listing-three__card-title tour-listing__card-title"><a
-                                                href="{{route('detailTour', $valueTour->slug)}}">{{ $valueTour->name }}</a></h3>
+                                                href="{{route('detailTour', $valueTour->slug)}}">(Mã Tour: {{$valueTour->code}}) {{ $valueTour->name }}</a></h3>
                                         <div
                                             class="tour-listing-three__card-inner-content tour-listing__card-inner-content">
                                             <div class="tour-listing__card-camera-group">
