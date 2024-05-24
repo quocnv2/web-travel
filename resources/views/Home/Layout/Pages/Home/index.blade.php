@@ -174,8 +174,7 @@
                                             </a><!-- /.tour-listing-five__card__image -->
                                             <div class="tour-listing-five__card__content">
                                                 <h3 class="tour-listing-five__card__title">
-                                                    <a href="{{route('detailTour', $valueTour->slug)}}">({{ $valueTour->code }}
-                                                        ) {{ $valueTour->name }}</a>
+                                                    <a href="{{route('detailTour', $valueTour->slug)}}">( {{"Mã Tour :" ." ". $valueTour->code }} ) {{ $valueTour->name }}</a>
                                                 </h3><!-- /.tour-listing-five__card__title -->
                                                 <div class="tour-listing-five__card__location">
                                                     <span class="tour-listing-five__card__location__icon">
@@ -214,7 +213,7 @@
                                                         </p>
                                                         <!-- /.tour-listing-five__card__price-title -->
                                                         <h4 class="tour-listing-five__card__price">
-                                                            {{ number_format($valueTour->price, 0, ',', '.') }}vnđ</h4>
+                                                            {{ number_format($valueTour->price, 0, ',', '.') }} VND</h4>
                                                         <!-- /.tour-listing-five__card__price -->
                                                     </div><!-- /.tour-listing-five__card__price-box -->
                                                     <div class="tour-listing-five__card__btn-group">

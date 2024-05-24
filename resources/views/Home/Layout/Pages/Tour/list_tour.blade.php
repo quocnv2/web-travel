@@ -72,20 +72,21 @@
                                     @endphp
                                     <li class="tour-listing-sidebar-post__item">
                                         <div class="tour-listing-sidebar-post__image">
-                                            <img src="{{ $valueNewtour->imgBanner }}" alt="{{ $valueNewtour->name }}">
+                                            <img src="{{ $valueNewtour->imgBanner }}" alt="{{$valueNewtour->name }}">
                                         </div>
                                         <div class="tour-listing-sidebar-post__content">
                                             <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valueNewtour->price, 0, ',', '.') }}vnđ</p>
+                                                {{ number_format($valueNewtour->price, 0, ',', '.') }} VND</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
-                                                    href="">({{ $valueNewtour->code }}) {{ $valueNewtour->name }}</a>
+                                                    href="">{{ $valueNewtour->name }}</a>
                                             </h5>
                                             <div class="tour-listing-sidebar-post__location">
                                                 <span class="icon-location-1"></span>
                                                 <p class="tour-listing-sidebar-post__location-text text-small">
-                                                    {{ $address }}
+                                                    {{ $valueNewtour->objCategory->name }}
                                                 </p>
                                             </div>
+
                                         </div>
                                 @endforeach
                                 </li>
@@ -123,14 +124,14 @@
                                         </div>
                                         <div class="tour-listing-sidebar-post__content">
                                             <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valueHistory['price'], 0, ',', '.') }}vnđ</p>
+                                                {{ number_format($valueHistory['price'], 0, ',', '.') }} VND</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
-                                                    href="">({{ $valueHistory['code'] }}) {{ $valueHistory['name'] }}</a>
+                                                    href="">{{ $valueHistory['name'] }}</a>
                                             </h5>
                                             <div class="tour-listing-sidebar-post__location">
                                                 <span class="icon-location-1"></span>
                                                 <p class="tour-listing-sidebar-post__location-text text-small">
-                                                    {{ $addressHitory }}
+                                                    {{ $valueHistory['nameCategory'] }}
                                                 </p>
                                             </div>
                                         </div>
@@ -193,7 +194,7 @@
                                             class="icon-heart"></span></a>
                                     <div class="tour-listing-three__card-content tour-listing__card-content">
                                         <h3 class="tour-listing-three__card-title tour-listing__card-title"><a
-                                                href="{{route('detailTour', $valueTour->slug)}}">(Mã Tour: {{$valueTour->code}}) {{ $valueTour->name }}</a></h3>
+                                                href="{{route('detailTour', $valueTour->slug)}}">( Mã Tour: {{$valueTour->code}} ) {{ $valueTour->name }}</a></h3>
                                         <div
                                             class="tour-listing-three__card-inner-content tour-listing__card-inner-content">
                                             <div class="tour-listing__card-camera-group">
@@ -234,7 +235,7 @@
                                                 <div class="tour-listing__card-location-box">
                                                     <span class="icon-location-1"></span>
                                                     <p class="tour-listing__card-location-text text-small">
-                                                        {{ $addresssss }}
+                                                        Tour {{ $valueTour->objCategory->name }}
                                                     </p>
                                                 </div><!-- /.tour-listing__card-location-box -->
                                             </div><!-- /.tour-listing-three__card-top-content -->
@@ -244,13 +245,13 @@
                                                 <div class="tour-listing__card-bottom-left">
                                                     <div class="tour-listing__card-day">
                                                         <p class="tour-listing__card-day-text text-small">
-                                                            Tour {{ $valueTour->objCategory->name }}
+                                                            {{ $addresssss }}
                                                         </p>
                                                     </div><!-- /.tour-listing__card-day -->
                                                 </div><!-- /.tour-listing__card-bottom-left -->
                                                 <div class="tour-listing__card-bottom-right">
                                                     <h4 class="tour-listing__card-price">
-                                                        {{ number_format($valueTour->price, 0, ',', '.') }}vnđ</h4>
+                                                        {{ number_format($valueTour->price, 0, ',', '.') }} VND</h4>
                                                 </div><!-- /.tour-listing__card-bottom-right -->
                                             </div><!-- /.tour-listing__card-bottom -->
                                         </div><!-- /.tour-listing__card-inner-content -->

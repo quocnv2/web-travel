@@ -38,7 +38,7 @@
                 <ul class="trevlo-breadcrumb">
                     <li><a href="{{ route('home') }}">Trang Chủ</a></li>
                     <li><a href="{{ route('listTour') }}">Tour</a></li>
-                    <li>Tour {{ $objTour->name }}</li>
+                    <li> {{ $objTour->name }}</li>
                 </ul><!-- /.trevlo-breadcrumb -->
             </div><!-- /.page-header__breadcrumb-box -->
         </div><!-- /.container -->
@@ -49,9 +49,9 @@
                 <div class="tour-listing-details__destination-row row">
                     <div class="col-xl-4 wow animated fadeInLeft" data-wow-delay="0.1s" data-wow-duration="1500ms">
                         <div class="tour-listing-details__destination-left">
-                            <h3 class="tour-listing-details__dastination-title">Tour: {{ $objTour->name }}</h3>
+                            <h3 class="tour-listing-details__dastination-title">{{ $objTour->name }}</h3>
                             <h4 class="tour-listing-details__dastination-price">
-                                <span>{{ number_format($objTour->price, 0, ',', '.') }}vnđ</span><span
+                                <span>{{ number_format($objTour->price, 0, ',', '.') }}VND</span><span
                                     class="tour-listing-details__dastination-person">/ Người </span>
                             </h4>
                         </div><!-- /.tour-listing-details__daetination-left -->
@@ -152,26 +152,6 @@
                                     Xem </h3>
                                 <ul class="tour-listing-sidebar-post">
                                     @foreach ($historyTour as $key => $valueHistory)
-                                        @php
-                                            $addressHitory = '';
-                                            if (isset($valueHistory['province'])) {
-                                                $addressHitory .= $valueHistory['province'];
-                                            }
-                                            if (isset($valueHistory['district'])) {
-                                                if ($address !== '') {
-                                                    $addressHitory .= ' - ';
-                                                }
-                                                $addressHitory .= $valueHistory['district'];
-                                            }
-
-                                            // Kiểm tra và thêm thông tin phường xã
-                                            if (isset($valueHistory['wards'])) {
-                                                if ($addressHitory !== '') {
-                                                    $addressHitory .= ' - ';
-                                                }
-                                                $addressHitory .= $valueHistory['wards'];
-                                            }
-                                        @endphp
                                         <li class="tour-listing-sidebar-post__item">
                                             <div class="tour-listing-sidebar-post__image">
                                                 <img src="{{ $valueHistory['imgBanner'] }}"
@@ -179,14 +159,14 @@
                                             </div>
                                             <div class="tour-listing-sidebar-post__content">
                                                 <p class="tour-listing-sidebar-post__price">
-                                                    {{ number_format($valueHistory['price'], 0, ',', '.') }}vnđ</p>
+                                                    {{ number_format($valueHistory['price'], 0, ',', '.') }}VND</p>
                                                 <h5 class="tour-listing-sidebar-post__link"><a
-                                                        href="">({{ $valueHistory['code'] }}) {{ $valueHistory['name'] }}</a>
+                                                        href="">  {{ $valueHistory['name'] }}</a>
                                                 </h5>
                                                 <div class="tour-listing-sidebar-post__location">
                                                     <span class="icon-location-1"></span>
                                                     <p class="tour-listing-sidebar-post__location-text text-small">
-                                                        {{ $addressHitory }}
+                                                         {{ $valueHistory['nameCategory'] }}
                                                     </p>
                                                 </div>
                                             </div>
@@ -201,26 +181,6 @@
                                 </h3>
                                 <ul class="tour-listing-sidebar-post">
                                     @foreach ($tour as $valueNewtour)
-                                        @php
-                                            $address = '';
-                                            if (isset($valueNewtour->province)) {
-                                                $address .= $valueNewtour->province;
-                                            }
-                                            if (isset($valueNewtour->district)) {
-                                                if ($address !== '') {
-                                                    $address .= ' - ';
-                                                }
-                                                $address .= $valueNewtour->district;
-                                            }
-
-                                            // Kiểm tra và thêm thông tin phường xã
-                                            if (isset($valueNewtour->wards)) {
-                                                if ($address !== '') {
-                                                    $address .= ' - ';
-                                                }
-                                                $address .= $valueNewtour->wards;
-                                            }
-                                        @endphp
                                         <li class="tour-listing-sidebar-post__item">
                                             <div class="tour-listing-sidebar-post__image">
                                                 <img src="{{ $valueNewtour->imgBanner }}"
@@ -228,14 +188,14 @@
                                             </div>
                                             <div class="tour-listing-sidebar-post__content">
                                                 <p class="tour-listing-sidebar-post__price">
-                                                    {{ number_format($valueNewtour->price, 0, ',', '.') }}vnđ</p>
+                                                    {{ number_format($valueNewtour->price, 0, ',', '.') }} VND</p>
                                                 <h5 class="tour-listing-sidebar-post__link"><a
-                                                        href="">({{ $valueNewtour->code }}) {{ $valueNewtour->name }}</a>
+                                                        href=""> {{ $valueNewtour->name }}</a>
                                                 </h5>
                                                 <div class="tour-listing-sidebar-post__location">
                                                     <span class="icon-location-1"></span>
                                                     <p class="tour-listing-sidebar-post__location-text text-small">
-                                                        {{ $address }}
+                                                        {{ $valueNewtour->objCategory->name }}
                                                     </p>
                                                 </div>
                                             </div>
@@ -273,8 +233,7 @@
                             <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
                                  data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Bài Viết
-                                    Liên
-                                    Quan
+                                    Liên Quan
                                 </h3>
                                 <ul class="tour-listing-sidebar-post">
                                     @foreach ($blogsiml as $valSml)
@@ -353,7 +312,7 @@
                             </p>
                         </div><!-- /.tour-listing-details__explore -->
                         <div class="tour-listing-details__included">
-                            <h3 class="tour-listing-details__title tour-listing-details__included-title">Về Chúng Tôi
+                            <h3 class="tour-listing-details__title tour-listing-details__included-title">Ưu Điểm Về Dịch Vụ Của Chúng Tôi
                             </h3>
                             <div class="row">
                                 <div class="col-lg-6 col-md-7 wow animated fadeInUp" data-wow-delay="0.1s"
@@ -390,10 +349,9 @@
                         </div><!-- /.tour-listing-details__included -->
 
                         <div class="tour-listing-details__similar container-fluid">
-                            <h3 class="tour-listing-details__title tour-listing-details__similar-title">Tour Liên
-                                Quan</h3>
+                            <h3 class="tour-listing-details__title tour-listing-details__similar-title">Tour Liên Quan</h3>
                             <div class="row">
-                                @foreach ($tourlist as $valueTour)
+                                @foreach ($tourlist  as $valueTour)
                                     @php
                                         $addresssss = '';
                                         if (isset($valueTour->province)) {
@@ -433,7 +391,7 @@
                                                     class="icon-heart"></span></a>
                                             <div class="tour-listing-three__card-content tour-listing__card-content">
                                                 <h3 class="tour-listing-three__card-title tour-listing__card-title"><a
-                                                        href="{{ route('detailTour', $valueTour->slug) }}">({{ $valueTour->code }}) {{ $valueTour->name }}</a>
+                                                        href="{{ route('detailTour', $valueTour->slug) }}">( {{ "Mã Tour : "." " . $valueTour->code }} ) {{ $valueTour->name }}</a>
                                                 </h3>
                                                 <div
                                                     class="tour-listing-three__card-inner-content tour-listing__card-inner-content">
@@ -475,7 +433,8 @@
                                                         <div class="tour-listing__card-location-box">
                                                             <span class="icon-location-1"></span>
                                                             <p class="tour-listing__card-location-text text-small">
-                                                                {{ $addresssss }}
+                                                                Tour {{ $valueTour->objCategory->name }}
+
                                                             </p>
                                                         </div><!-- /.tour-listing__card-location-box -->
                                                     </div><!-- /.tour-listing-three__card-top-content -->
@@ -487,20 +446,19 @@
                                                         <div class="tour-listing__card-bottom-left">
                                                             <div class="tour-listing__card-day">
                                                                 <p class="tour-listing__card-day-text text-small">
-                                                                    Tour {{ $valueTour->objCategory->name }}
+                                                                    {{ $addresssss }}
                                                                 </p>
                                                             </div><!-- /.tour-listing__card-day -->
                                                         </div><!-- /.tour-listing__card-bottom-left -->
                                                         <div class="tour-listing__card-bottom-right">
                                                             <h4 class="tour-listing__card-price">
                                                                 {{ number_format($valueTour->price, 0, ',', '.') }}
-                                                                vnđ</h4>
+                                                                VND</h4>
                                                         </div><!-- /.tour-listing__card-bottom-right -->
                                                     </div><!-- /.tour-listing__card-bottom -->
                                                 </div><!-- /.tour-listing__card-inner-content -->
                                             </div><!-- /.tour-listing__card-content -->
                                         </div><!-- /.tour-listing__card -->
-
                                     </div><!-- /.col-12 -->
                                 @endforeach
                             </div><!-- /.row -->
