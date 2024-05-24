@@ -95,9 +95,7 @@
                                                 </p>
                                             </div>
                                         </div>
-
                                     </li>
-
                                 @endforeach
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
@@ -146,8 +144,8 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        @endforeach
                                     </li>
+                                @endforeach
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
@@ -172,8 +170,7 @@
                                             </h4>
                                         </div><!-- /.sidebar-blog__posts-content -->
                                     </li>
-                                    @endforeach
-                                    </li>
+                                @endforeach
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
@@ -278,7 +275,7 @@
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="tour_code" id="tour_code" placeholder="Mã Tour"
-                                       class="form-one__input" value="{{ old('tour_code') }}" readonly>
+                                       class="form-one__input" value="{{ old('tour_code') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
@@ -298,8 +295,7 @@
                         <div class="col-md-3 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
                             <div class="form-one__group">
                                 <input type="text" name="room_code" id="room_code"
-                                       placeholder="Mã Phòng" class="form-one__input" value="{{ old('room_code') }}"
-                                       readonly>
+                                       placeholder="Mã Phòng" class="form-one__input" value="{{ old('room_code') }}">
                             </div><!-- /.form-one__group -->
                         </div><!-- /.col-md-6 -->
                         <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s" data-wow-duration="1500ms">
@@ -464,7 +460,13 @@
                             $('#tour_price').val(data.tour_price);
                         },
                         error: function () {
-                            alert('Không tìm thấy thông tin tour!');
+                            swal(
+                                "Không Tìm Thấy Tour Bạn Yêu Cầu, Hãy kiểm Tra Lại", "Thông Báo Từ Hệ Thống!", 'error', {
+                                    button: true,
+                                    button: "OK",
+                                    timer: 50000,
+                                    dangerMode: true,
+                                })
                         }
                     });
                 } else {
@@ -472,6 +474,7 @@
                     $('#tour_price').val('');
                 }
             });
+
             $('#room_code').on('change', function () {
                 var room_code = $(this).val();
                 if (room_code) {
@@ -484,7 +487,13 @@
                             $('#room_price').val(data.room_price);
                         },
                         error: function () {
-                            alert('Không tìm thấy thông tin phòng!');
+                            swal(
+                                "Không Tìm Thấy Phòng Bạn Yêu Cầu, Hãy kiểm Tra Lại", "Thông Báo Từ Hệ Thống!", 'error', {
+                                    button: true,
+                                    button: "OK",
+                                    timer: 50000,
+                                    dangerMode: true,
+                                })
                         }
                     });
                 } else {
@@ -493,19 +502,6 @@
                 }
             });
         });
-        $(document).ready(function () {
-            // Hàm để lấy giá trị từ query string
-            function getQueryStringValue(key) {
-                return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
-            }
-
-            // Đặt giá trị cho các trường form
-            $('#tour_code').val(getQueryStringValue('tourCode'));
-            $('#tour_name').val(getQueryStringValue('tourName'));
-            $('#tour_price').val(getQueryStringValue('tourPrice'));
-        });
-
-
     </script>
 
 @stop

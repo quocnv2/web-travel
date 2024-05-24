@@ -23,6 +23,11 @@ class Category extends Model
     ];
 
     //Phương thức lấy danh sách
+    public function get_orderBy_ASC_Where_status(){
+        return $this->where('status', 1)->orderBy('timeCreate','DESC')->get();
+    }
+
+    //Phương thức lấy danh sách
     public function get_orderBy_ASC(){
         return $this->orderBy('timeCreate','DESC')->get();
     }

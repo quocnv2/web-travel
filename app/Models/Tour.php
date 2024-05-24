@@ -100,6 +100,10 @@ class Tour extends Model
         return $obj;
     }
 
+    public function get_orderBy_ASC_Where_status(){
+        return Tour::with('objCategory')->where('status', 1)->orderBy('timeCreate','DESC')->get();
+    }
+
     public function get_orderBy_ASC(){
         return Tour::with('objCategory')->orderBy('timeCreate','DESC')->get();
     }

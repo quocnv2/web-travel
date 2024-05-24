@@ -37,7 +37,8 @@
                             <a href="{{route('listBlog')}}">Bài viết</a>
                         </li>
                         <li>
-                            <a href="https://www.facebook.com/profile.php?id=100069226627675" target="black">Facebook</a>
+                            <a href="https://www.facebook.com/profile.php?id=100069226627675"
+                               target="black">Facebook</a>
                         </li>
                         {{-- <li>
                             <a href="">Youtube</a>

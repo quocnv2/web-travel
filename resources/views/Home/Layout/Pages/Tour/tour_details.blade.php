@@ -598,20 +598,6 @@
             </div>
         </div>
     </section>
-    <script>
-        $(document).ready(function() {
-            $('#registerContact').click(function() {
-                var tourCode = '{{ $objTour->code }}';
-                var tourName = encodeURIComponent('{{ $objTour->name }}');
-                var tourPrice = '{{ $objTour->price }}';
-                window.location.href = '/dang-ky-nhan-tu-van?tourCode=' + tourCode + '&tourName=' + tourName + '&tourPrice=' + tourPrice;
-            });
-        });
-
-
-
-    </script>
-
 @stop
 
 
