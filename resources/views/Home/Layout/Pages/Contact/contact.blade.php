@@ -212,7 +212,7 @@
                             </div>
                             <div class="accrodion-content" style="display: none;">
                                 <div class="inner">
-                                    <p>THãy tin tưởng vào sự chất lượng và dịch vụ tuyệt vời của chúng tôi, được chứng
+                                    <p>Hãy tin tưởng vào sự chất lượng và dịch vụ tuyệt vời của chúng tôi, được chứng
                                         minh thông qua tỷ lệ khách hài lòng cao lên đến 88,9%. Khám phá những đánh giá
                                         tích cực từ những người du lịch đã trải nghiệm và tham gia vào cộng đồng của
                                         chúng tôi ngay hôm nay!</p>
