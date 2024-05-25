@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{{ url('assets') }}/trevlo/vendors/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="{{ url('assets') }}/trevlo/css/responsize.css" />
 <link rel="stylesheet" href="{{ url('assets') }}/trevlo/vendors/bootstrap-select/bootstrap-select.min.css" />
 <link rel="stylesheet" href="{{ url('assets') }}/trevlo/vendors/animate/animate.min.css" />
 <link rel="stylesheet" href="{{ url('assets') }}/trevlo/vendors/fontawesome/css/all.min.css" />
