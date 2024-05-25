@@ -16,7 +16,7 @@
                             <span class="footer-three__contact__list__icon">
                                 <i class="trevlo-one-icon-maps-and-flags"></i>
                             </span><!-- /.footer-three__contact__list__icon -->
-                            BQL khu BTTN Hnag Kia - Pà Cò, Tân sơn, Đồng tân, Mai châu, Hòa bình
+                            BQL khu BTTN Hang Kia - Pà Cò, Tân sơn, Đồng tân, Mai châu, Hòa bình
                         </li>
                         <li>
                             <span class="footer-three__contact__list__icon">

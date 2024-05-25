@@ -147,7 +147,7 @@
                             </div>
                             <div class="accrodion-content" style="display: none;">
                                 <div class="inner">
-                                    <p>rải nghiệm đặt chỗ không bao giờ dễ dàng hơn với công cụ đặt phòng tiện lợi của
+                                    <p>Trải nghiệm đặt chỗ không bao giờ dễ dàng hơn với công cụ đặt phòng tiện lợi của
                                         chúng tôi. Chỉ cần vài bước đơn giản, bạn đã có thể đặt chỗ cho chuyến du lịch
                                         của mình một cách nhanh chóng và thuận tiện.</p>
                                 </div>

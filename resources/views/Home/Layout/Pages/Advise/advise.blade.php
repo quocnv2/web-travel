@@ -343,7 +343,7 @@
                                         </div>
                                         <div class="accrodion-content" style="display: none;">
                                             <div class="inner">
-                                                <p>rải nghiệm đặt chỗ không bao giờ dễ dàng hơn với công cụ đặt phòng
+                                                <p>Trải nghiệm đặt chỗ không bao giờ dễ dàng hơn với công cụ đặt phòng
                                                     tiện lợi của
                                                     chúng tôi. Chỉ cần vài bước đơn giản, bạn đã có thể đặt chỗ cho
                                                     chuyến du lịch
@@ -423,7 +423,7 @@
                                         </div>
                                         <div class="accrodion-content" style="display: none;">
                                             <div class="inner">
-                                                <p>THãy tin tưởng vào sự chất lượng và dịch vụ tuyệt vời của chúng tôi,
+                                                <p>Thãy tin tưởng vào sự chất lượng và dịch vụ tuyệt vời của chúng tôi,
                                                     được chứng
                                                     minh thông qua tỷ lệ khách hài lòng cao lên đến 88,9%. Khám phá
                                                     những đánh giá

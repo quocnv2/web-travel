@@ -26,8 +26,8 @@
 
                         <p class="sec-title__tagline">Về Chúng Tôi</p><!-- /.sec-title__tagline -->
 
-                        <h2 class="sec-title__title">Trải Nghiệm Thế Giới <br>
-                            Cùng Công Ty Của Chúng Tôi</h2>
+                        <h2 class="sec-title__title">Trải nghiệm Tây Bắc cùng Sông Trà Tour
+                            </h2>
                         <!-- /.sec-title__title -->
                     </div><!-- /.sec-title -->
                     <p class="about-five__text">Khám phá vùng Độc Lạ tây Bắc với chúng tôi - công ty du lịch cam kết đảm bảo giá tốt nhất và mang lại sự hài lòng cao nhất từ khách hàng..</p><!-- /.about-five__text -->
