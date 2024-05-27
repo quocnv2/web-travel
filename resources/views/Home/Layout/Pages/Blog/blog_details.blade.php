@@ -34,7 +34,7 @@
                 <div class="blog-page__col-sidebar col-xl-4 col-lg-5">
                     <div class="sidebar-blog sidebar-blog--left">
                         <aside class="widget-area">
-                            <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp"
+                            <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp left-controller-blog "
                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Bài Viết Mới Nhất</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__posts ">

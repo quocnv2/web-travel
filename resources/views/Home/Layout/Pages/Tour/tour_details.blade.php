@@ -131,7 +131,7 @@
                 <div class="row">
                     <div class="col-xl-4">
                         <aside class="tour-listing-sidebar">
-                            <div class="tour-listing-sidebar__form tour-listing-sidebar__item wow animated fadeInUp"
+                            <div class="tour-listing-sidebar__form tour-listing-sidebar__item wow animated fadeInUp "
                                  data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <div class="sidebar-blog__single sidebar-blog__single--categories wow animated fadeInUp"
                                      data-wow-delay="0.2s" data-wow-duration="1500ms">
@@ -145,7 +145,7 @@
                                     </ul><!-- /.sidebar-blog__categories  -->
                                 </div>
                             </div><!-- /.tour-listing-sidebar__form tour-listing-sidebar__item -->
-                            <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
+                            <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp  right-menu-moblie"
                                  data-wow-delay="0.1s" data-wow-duration="1500ms">
 
                                 <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Đã
@@ -174,7 +174,7 @@
                                 </ul>
                             </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
-                            <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
+                            <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp  right-menu-moblie"
                                  data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới
                                     Nhất
@@ -204,7 +204,7 @@
                                 </ul>
                             </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
-                            <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
+                            <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp  right-menu-moblie"
                                  data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Địa Điểm
                                     Phòng Gần Tour
@@ -230,7 +230,7 @@
                                 </ul>
                             </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
-                            <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
+                            <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp  right-menu-moblie "
                                  data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Bài Viết
                                     Liên Quan
@@ -307,11 +307,11 @@
                                     Tour
                                 </h3>
                             </div>
-                            <p class="tour-listing-details__explore-text wow animated fadeInUp" data-wow-delay="0.1s"
+                            <p class="tour-listing-details__explore-text wow animated fadeInUp " data-wow-delay="0.1s"
                                data-wow-duration="1500ms">{!! $objTour->info_details_blog !!}
                             </p>
                         </div><!-- /.tour-listing-details__explore -->
-                        <div class="tour-listing-details__included">
+                        <div class="tour-listing-details__included details-mobile ">
                             <h3 class="tour-listing-details__title tour-listing-details__included-title">Ưu Điểm Về Dịch Vụ Của Chúng Tôi
                             </h3>
                             <div class="row">
@@ -348,7 +348,35 @@
                             </div><!-- /.row -->
                         </div><!-- /.tour-listing-details__included -->
 
-                        <div class="tour-listing-details__similar container-fluid">
+                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp list-detals-moblie "
+                        data-wow-delay="0.1s" data-wow-duration="1500ms">
+                       <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Liên Quan
+                       </h3>
+                       <ul class="tour-listing-sidebar-post">
+                           @foreach ($tourlist as $valueNewtour)
+                               <li class="tour-listing-sidebar-post__item">
+                                   <div class="tour-listing-sidebar-post__image">
+                                       <img src="{{ $valueNewtour->imgBanner }}"
+                                            alt="{{ $valueNewtour->name }}">
+                                   </div>
+                                   <div class="tour-listing-sidebar-post__content">
+                                       <p class="tour-listing-sidebar-post__price">
+                                           {{ number_format($valueNewtour->price, 0, ',', '.') }} VND</p>
+                                       <h5 class="tour-listing-sidebar-post__link"><a
+                                               href="{{route('detailTour', $valueNewtour->slug)}}"> {{ $valueNewtour->name }}</a>
+                                       </h5>
+                                       <div class="tour-listing-sidebar-post__location">
+                                           <span class="icon-location-1"></span>
+                                           <p class="tour-listing-sidebar-post__location-text text-small">
+                                               {{ $valueNewtour->objCategory->name }}
+                                           </p>
+                                       </div>
+                                   </div>
+                               </li>
+                           @endforeach
+                       </ul>
+                   </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
+                        <div class="tour-listing-details__similar container-fluid right-menu-moblie   ">
                             <h3 class="tour-listing-details__title tour-listing-details__similar-title">Tour Liên Quan</h3>
                             <div class="row">
                                 @foreach ($tourlist  as $valueTour)
@@ -464,8 +492,8 @@
                             </div><!-- /.row -->
                         </div><!-- /.tour-listing-details__similar container-fluid -->
                         @if ($listCommentTour && count($listCommentTour) > 0)
-                            <div class="tour-listing-details__reviews">
-                                <h3 class="tour-listing-details__reviews-title tour-listing-details__title">
+                            <div class="tour-listing-details__reviews ">
+                                <h3 class="tour-listing-details__reviews-title tour-listing-details__title ">
                                     Đánh Giá Của Khách Hàng
                                 </h3>
                                 <div class="tour-listing-details__reviews-comment">
@@ -497,7 +525,7 @@
                                 </div>
                             </div>
                         @endif
-                        <div class="tour-listing-details__add-review">
+                        <div class="tour-listing-details__add-review mobile-review">
                             <h3 class="tour-listing-details__add-review-title tour-listing-details__title">Để Lại Đánh
                                 Giá Của Bạn
                             </h3>

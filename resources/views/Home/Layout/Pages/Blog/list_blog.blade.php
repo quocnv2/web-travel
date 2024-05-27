@@ -32,7 +32,7 @@
                 <div class="blog-page__col-sidebar col-xl-4 col-lg-5">
                     <div class="sidebar-blog sidebar-blog--left">
                         <aside class="widget-area">
-                            <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp"
+                            <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp left-controller-blog "
                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Bài Viết Mới Nhất</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__posts ">
@@ -74,7 +74,7 @@
                     </div><!-- /.sidebar-blog -->
                 </div><!-- /.col-xl-4 col-lg-5 -->
                 <div class="blog-page__col-blog-card col-xl-8 col-lg-7">
-                    <div class="blog-page__container container-fluid">
+                    <div class="blog-page__container container-fluid controller-blog">
                         <div class="row">
                             @foreach ($blog_list as $valueBlog)
                                 <div class="col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
@@ -114,44 +114,70 @@
                                     </div><!-- /.blog-four__card -->
                                 </div><!-- /.col-lg-4 col-md-6 -->
                             @endforeach
+                        </div><!-- /.row -->                     
+                    </div><!-- /.blog-page__container container-fluid -->
+                    <div class="blog-page__container container-fluid mobile-controller-blog">
+                        <div class="row">
+                            <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp "
+                                data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <h4 class="sidebar-blog__title">Bài Viết Mới Nhất</h4><!-- /.sidebar-blog__title -->
+                                <ul class="sidebar-blog__posts ">
+                                    @foreach ($blog_list as $valNew)
+                                        <li class="sidebar-blog__posts-item">
+                                            <div class="sidebar-blog__posts-image">
+                                                <img src="{{ $valNew->imgBanner }}" alt="latest-post">
+                                            </div><!-- /.sidebar-blog__posts-image -->
+                                            <div class="sidebar-blog__posts-content">
+                                                <p class="sidebar-blog__posts-date">
+                                                    <i class="far fa-clock"></i>
+                                                    {{ Carbon::parse($valNew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
+                                                </p><!-- /.sidebar__posts-date -->
+                                                <h4 class="sidebar-blog__posts-title"><a
+                                                        href="{{ route('detailBlog', $valNew->slug) }}">{{ $valNew->name }}</a>
+                                                </h4>
+                                                <!-- /.sidebar-blog__posts-title -->
+                                            </div><!-- /.sidebar-blog__posts-content -->
+                                        </li>
+                                    @endforeach
+                                </ul><!-- /.sidebar-blog__posts  -->
+                            </div><!-- /.sidebar-blog__single -->
                         </div><!-- /.row -->
-
-                        <ul class="post-pagination @@extraClassName">
-                            @if (ceil($blog_list->total() / 8) > 1)
-                                <?php
-                                $current_page = isset($_GET['page']) ? $_GET['page'] : '1';
-                                $page = $current_page - 1;
-                                $pages = $current_page + 1;
-                                $maxPage = ceil($blog_list->total() / 8);
-                                $check = $current_page;
-                                ?>
-                                @if ($current_page > 1)
-                                    <li>
-                                        <a href="?page={{ $current_page + 1 }}" aria-label="Next">
-                                            <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-                                        </a>
-                                    </li>
-                                @endif
-
-                                @for ($i = max(1, $current_page - 1); $i <= min($maxPage, $current_page + 2); $i++)
-                                    <li>
-                                        <a class="{{ $i == $searchResult->currentPage() ? 'active' : '' }}"
-                                            href="?page={{ $i }}">{{ $i }}</a>
-                                    </li>
-                                @endfor
-
-                                @if ($current_page < $maxPage)
-                                    <li>
-                                        <a href="?page={{ $current_page + 1 }}" aria-label="Next">
-                                            <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-                                        </a>
-                                    </li>
-                                @endif
-                            @else
-                            @endif
-                        </ul><!-- /.post-pagination -->
                     </div><!-- /.blog-page__container container-fluid -->
                 </div><!-- /.col-xl-8 col-lg-7 -->
+                <ul class="post-pagination @@extraClassName">
+                    @if (ceil($blog_list->total() / 8) > 1)
+                        <?php
+                        $current_page = isset($_GET['page']) ? $_GET['page'] : '1';
+                        $page = $current_page - 1;
+                        $pages = $current_page + 1;
+                        $maxPage = ceil($blog_list->total() / 8);
+                        $check = $current_page;
+                        ?>
+                        @if ($current_page > 1)
+                            <li>
+                                <a href="?page={{ $current_page + 1 }}" aria-label="Next">
+                                    <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                                </a>
+                            </li>
+                        @endif
+
+                        @for ($i = max(1, $current_page - 1); $i <= min($maxPage, $current_page + 2); $i++)
+                            <li>
+                                <a class="{{ $i == $searchResult->currentPage() ? 'active' : '' }}"
+                                    href="?page={{ $i }}">{{ $i }}</a>
+                            </li>
+                        @endfor
+
+                        @if ($current_page < $maxPage)
+                            <li>
+                                <a href="?page={{ $current_page + 1 }}" aria-label="Next">
+                                    <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                                </a>
+                            </li>
+                        @endif
+                    @else
+                    @endif
+                </ul><!-- /.post-pagination -->
             </div><!-- /.row -->
         </div><!-- /.container -->
     </div><!-- /.blog-page -->
