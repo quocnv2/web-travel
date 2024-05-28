@@ -11,6 +11,7 @@ use App\Models\Tour;
 use App\Helper\storyTour;
 use App\Models\Blog;
 use App\Models\Room;
+use App\Http\Requests\CommentTour\createRequestTour;
 
 class tourController extends Controller
 {
@@ -73,7 +74,7 @@ class tourController extends Controller
         return view('Home.Layout.Pages.Tour.tour_details', compact('categories', 'tour', 'objTour', 'historyTour', 'tourlist', 'blogsiml', 'roomsiml', 'listCommentTour'));
     }
 
-    public function create_comment_tour(Request $req, CommentTour $commentTour, Tour $tourModel, $slug)
+    public function create_comment_tour(createRequestTour $req, CommentTour $commentTour, Tour $tourModel, $slug)
     {
         $create = $commentTour->create_comment_tour($req);
         $objTour = $tourModel->get_link_slug($slug);

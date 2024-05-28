@@ -14,15 +14,16 @@ use Illuminate\Http\Request;
 
 class roomController extends Controller
 {
-    public function listRoom(Category $category, Room $room)
+    public function listRoom(Category $category, Room $room,storyRoom $storyRoom)
     {
         $categories = $category->get_orderBy_ASC();
         $room_new = $room->get_orderBy_ASC_status_page();
         $room_list = $room->get_orderBy_ASC_status_page_8();
-        return view('Home.Layout.Pages.Room.list_room', compact('categories', 'room_new', 'room_list'));
+        $historyRoom = $storyRoom->list_storyRoom();
+        return view('Home.Layout.Pages.Room.list_room', compact('categories', 'room_new', 'room_list','historyRoom'));
     }
 
-    public function listRoom_Category(Category $category, Room $room, $slug)
+    public function listRoom_Category(Category $category, Room $room,storyRoom $storyRoom, $slug)
     {
         $objCategory = $category->get_link_slug($slug);
         $slugCate = $slug;
@@ -32,8 +33,9 @@ class roomController extends Controller
 
         $categories = $category->get_orderBy_ASC();
         $room_new = $room->get_orderBy_ASC_status_page();
-        $room_list = $room->get_orderBy_ASC_status_where_category_page_8($objCategory->id);
-        return view('Home.Layout.Pages.Room.list_room', compact('categories', 'room_new', 'room_list', 'objCategory'));
+        $room_list = $room->get_orderBy_ASC_status_where_category_page_3($objCategory->id);
+        $historyRoom = $storyRoom->list_storyRoom();
+        return view('Home.Layout.Pages.Room.list_room', compact('categories', 'room_new', 'room_list', 'objCategory','historyRoom'));
     }
 
     public function detailRoom(Category $category, Room $room, storyRoom $storyRoom, Blog $blog, Tour $tour, CommentRoom $commentRoom, $slug)
@@ -43,7 +45,7 @@ class roomController extends Controller
             return redirect()->route('error404');
         }
         $categories = $category->get_orderBy_ASC();
-        $room_list = $room->whereNotIn('id', [$objRoom->id])->get();
+        $room_list = $room->whereNotIn('id', [$objRoom->id])->paginate(4);
         $room_new = $room->get_orderBy_ASC_status_page();
         $storyRoom->add_storyRoom($objRoom);
         $historyRoom = $storyRoom->list_storyRoom();

@@ -35,7 +35,7 @@ class Room extends Model
 
     public function get_orderBy_ASC_status_page()
     {
-        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(6);
+        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(3);
         return $obj;
     }
 
@@ -104,18 +104,18 @@ class Room extends Model
         return $obj;
     }
 
-    public function get_orderBy_ASC_status_where_category_page_8($idCategory)
+    public function get_orderBy_ASC_status_where_category_page_3($idCategory)
     {
-        $obj = Room::with('objCategory')->where('status', 0)->where('idCategory', $idCategory)->orderBy('timeCreate', 'DESC')->paginate(8);
+        $obj = Room::with('objCategory')->where('status', 0)->where('idCategory', $idCategory)->orderBy('timeCreate', 'DESC')->paginate(3);
         return $obj;
     }
-    public function get_orderBy_ASC_status_page_12(){
-        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(12);
-        return $obj;
-    }
-    public function get_orderBy_ASC_status_where_category_page_12($idCategory){
-        $obj = Room::with('objCategory')->where('status', 0)->where('idCategory', $idCategory)->orderBy('timeCreate', 'DESC')->paginate(12);
-        return $obj;
-    }
+//    public function get_orderBy_ASC_status_page_12(){
+//        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(12);
+//        return $obj;
+//    }
+//    public function get_orderBy_ASC_status_where_category_page_12($idCategory){
+//        $obj = Room::with('objCategory')->where('status', 0)->where('idCategory', $idCategory)->orderBy('timeCreate', 'DESC')->paginate(12);
+//        return $obj;
+//    }
 
 }

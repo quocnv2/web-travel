@@ -145,10 +145,16 @@
                                             </div>
                                             <div class="tour-listing-sidebar-post__content">
                                                 <p class="tour-listing-sidebar-post__price">
-                                                    {{ number_format($valueHistory['price'], 0, ',', '.') }}vnđ</p>
+                                                    {{ number_format($valueHistory['price'], 0, ',', '.') }} VND</p>
                                                 <h5 class="tour-listing-sidebar-post__link"><a href="">
                                                         {{ $valueHistory['name'] }}</a>
                                                 </h5>
+                                                <div class="tour-listing-sidebar-post__location">
+                                                    <span class="icon-location-1"></span>
+                                                    <p class="tour-listing-sidebar-post__location-text text-small">
+                                                        {{ $valueHistory['nameCategory'] }}
+                                                    </p>
+                                                </div>
 
                                             </div>
                                     @endforeach
@@ -171,6 +177,12 @@
                                                 <h5 class="tour-listing-sidebar-post__link"><a
                                                         href="">{{ $obj->name }}</a>
                                                 </h5>
+                                                <div class="tour-listing-sidebar-post__location">
+                                                    <span class="icon-location-1"></span>
+                                                    <p class="tour-listing-sidebar-post__location-text text-small">
+                                                        {{ $valueHistory['nameCategory'] }}
+                                                    </p>
+                                                </div>
 
                                             </div>
                                         </li>
@@ -184,19 +196,24 @@
                                 </h3>
                                 <ul class="tour-listing-sidebar-post">
                                     @foreach ($tour_list as $valsiml)
-                                        <li class="sidebar-blog__posts-item">
-                                            <div class="sidebar-blog__posts-image">
-                                                <img src="{{ $valsiml->imgBanner }}" alt="latest-post">
-                                            </div><!-- /.sidebar-blog__posts-image -->
-                                            <div class="sidebar-blog__posts-content">
-                                                <p class="sidebar-blog__posts-date">
-                                                    <i class="far fa-clock"></i>
-                                                    {{ Carbon::parse($valsiml->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
-                                                </p><!-- /.sidebar__posts-date -->
-                                                <h4 class="sidebar-blog__posts-title"><a
-                                                        href="{{ route('detailTour', $valsiml->slug) }}">{{ $valsiml->name }}</a>
-                                                </h4>
-                                            </div><!-- /.sidebar-blog__posts-content -->
+                                        <li class="tour-listing-sidebar-post__item">
+                                        <div class="tour-listing-sidebar-post__image">
+                                            <img src="{{ $valsiml->imgBanner }}"
+                                                 alt="{{ $valsiml->name }}">
+                                        </div>
+                                        <div class="tour-listing-sidebar-post__content">
+                                            <p class="tour-listing-sidebar-post__price">
+                                                {{ number_format($valsiml->price, 0, ',', '.') }} VND</p>
+                                            <h5 class="tour-listing-sidebar-post__link"><a
+                                                    href=""> {{ $valsiml->name }}</a>
+                                            </h5>
+                                            <div class="tour-listing-sidebar-post__location">
+                                                <span class="icon-location-1"></span>
+                                                <p class="tour-listing-sidebar-post__location-text text-small">
+                                                    {{ $valsiml->objCategory->name }}
+                                                </p>
+                                            </div>
+                                        </div>
                                         </li>
                                         {{--                                        </li> --}}
                                     @endforeach

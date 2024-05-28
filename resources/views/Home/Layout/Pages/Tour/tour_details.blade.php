@@ -501,7 +501,7 @@
                                         <div class="tour-listing-details__reviews-comment-box">
                                             <div class="tour-listing-details__reviews-image wow animated fadeInUp"
                                                  data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                                <img src="assets/images/tours/review-1.jpg" alt="Cherie S. Cullen">
+                                                <img src="{{ url('assets') }}/images/tours/review-1.jpg" alt="">
                                             </div><!-- /."tour-listing-details__reviews-image -->
                                             <div class="tour-listing-details__reviews-content wow animated fadeInUp"
                                                  data-wow-delay="0.3s" data-wow-duration="1500ms">
