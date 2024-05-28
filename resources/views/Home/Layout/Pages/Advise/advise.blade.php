@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-xl-4">
                     <aside class="tour-listing-sidebar">
-                        <div class="tour-listing-sidebar__form tour-listing-sidebar__item wow animated fadeInUp"
+                        <div class="tour-listing-sidebar__form tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-new"
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <div class="sidebar-blog__single sidebar-blog__single--categories wow animated fadeInUp"
                                 data-wow-delay="0.2s" data-wow-duration="1500ms">
@@ -38,7 +38,7 @@
                                 </ul><!-- /.sidebar-blog__categories  -->
                             </div>
                         </div><!-- /.tour-listing-sidebar__form tour-listing-sidebar__item -->
-                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
+                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-new"
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
 
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Đã
@@ -100,7 +100,7 @@
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
-                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
+                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-new"
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới
                                 Nhất
@@ -149,7 +149,7 @@
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
-                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
+                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-new"
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Địa Điểm
                                 Phòng Gần Tour
@@ -174,7 +174,7 @@
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
 
-                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
+                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-new"
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Bài Viết
                                 Liên
