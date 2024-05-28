@@ -24,6 +24,7 @@ use App\Http\Controllers\UserController\Tour\tourController as tourUserControlle
 use App\Http\Controllers\UserController\Room\roomController as roomUserController;
 use App\Http\Controllers\UserController\Contact\contactController as contactUserController;
 use App\Http\Controllers\UserController\Counsel\CounselController as CounselUserController;
+use App\Http\Controllers\UserController\Recruitment\RecruitmentUserController ;
 
 Route::prefix('')->group(function () {
     Route::get('/', [HomeUserController::class, 'index'])->name('home');
@@ -38,6 +39,12 @@ Route::prefix('')->group(function () {
     Route::get('/chi-tiet-tour/{slug}', [tourUserController::class, 'detailTour'])->name('detailTour');
     Route::post('/chi-tiet-tour/{slug}', [tourUserController::class, 'create_comment_tour'])->name('create_comment_tour');
     Route::get('/danh-sach-tour/danh-muc/{slug}', [tourUserController::class, 'listTour_Category'])->name('listTour_Category');
+
+    // Tuyển Dụng
+    Route::get('/danh-sach-tuyen-dung', [RecruitmentUserController::class, 'list_recruitment'])->name('list_recruitment');
+    Route::get('/chi-tiet-tuyen-dung/{slug}', [RecruitmentUserController::class, 'detailRecruitment'])->name('detailRecruitment');
+//    Route::post('/chi-tiet-tuyen-dung/{slug}', [roomUserController::class, 'create_comment_room'])->name('create_comment_room');
+//    Route::get('/danh-sach-tuyen-dung/danh-muc/{slug}', [roomUserController::class, 'listRoom_Category'])->name('listRoom_Category');
 
 
     // Room
