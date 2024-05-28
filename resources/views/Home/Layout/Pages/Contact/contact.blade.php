@@ -118,7 +118,7 @@
                  class="about-six__parashoot">
         </div><!-- /.container -->
     </section>
-    <section class="faq-page section-space" style="padding: 80px;">
+    <section class="faq-page section-space">
         <div class="container">
             <div class="sec-title text-left">
 

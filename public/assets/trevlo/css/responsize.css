@@ -1,5 +1,9 @@
 /* Banner */
 
+.faq-page {
+    padding: 80px;
+}
+
 @media (min-width: 1440px) {
     .tour-list-mobile {
         display: none;
@@ -44,6 +48,45 @@
     }
     .mobile-controller-blog {
         display: none;
+    }
+    .faq-page {
+        padding: 0px;
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 765px) and (max-width: 800px) {
+    .tour-list-mobile {
+        display: none;
+    }
+    .section-space {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+    li.dropdown {
+        color: white;
+    }
+    .left-controller-tour-new {
+        display: none;
+    }
+    .left-controller-tour-story {
+        display: none;
+    }
+    .list-room-mobile {
+        display: none;
+    }
+    .list-detals-moblie {
+        display: none;
+    }
+    .mobile-controller-blog {
+        display: none;
+    }
+    .fadeInLeft {
+        display: none;
+    }
+    .faq-page {
+        padding: 0px;
+        margin-top: 50px;
     }
 }
 
@@ -100,5 +143,12 @@
     }
     .right-menu-moblie {
         display: none;
+    }
+    .fadeInLeft {
+        display: none;
+    }
+    .faq-page {
+        padding: 0px;
+        margin-top: 50px;
     }
 }
