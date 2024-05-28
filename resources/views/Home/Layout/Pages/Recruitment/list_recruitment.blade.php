@@ -13,7 +13,7 @@
             <div class="page-header__breadcrumb-box">
                 <ul class="trevlo-breadcrumb">
                     <li><a href="{{ route('home') }}">Trang Chủ</a></li>
-                    <li><a href="{{ route('list_recruitment') }}">Tuyển Dụng</a></li>
+                    <li><a href="{{ route('list_blog_recruitment') }}">Tuyển Dụng</a></li>
                 </ul>
             </div>
         </div>
@@ -39,7 +39,7 @@
                             </div>
                             <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp"
                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                <h4 class="sidebar-blog__title">Bài Tuyển dụng Mới Nhất</h4>
+                                <h4 class="sidebar-blog__title">Bài Tuyển Dụng Mới Nhất</h4>
                                 <ul class="sidebar-blog__posts">
                                     @foreach ($recruitment_new as $valNew)
                                         <li class="sidebar-blog__posts-item">
@@ -49,7 +49,7 @@
                                                     {{ Carbon::parse($valNew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
                                                 </p>
                                                 <h4 class="sidebar-blog__posts-title"><a
-                                                        href="{{ route('detailBlog', $valNew->slug) }}">{{ $valNew->title }}</a>
+                                                        href="{{ route('detailRecruitment', $valNew->slug) }}">{{ $valNew->title }}</a>
                                                 </h4>
                                                 <div class="recruitment-text">{!! $valNew->content !!}</div>
                                             </div>

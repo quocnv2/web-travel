@@ -41,11 +41,8 @@ Route::prefix('')->group(function () {
     Route::get('/danh-sach-tour/danh-muc/{slug}', [tourUserController::class, 'listTour_Category'])->name('listTour_Category');
 
     // Tuyển Dụng
-    Route::get('/danh-sach-tuyen-dung', [RecruitmentUserController::class, 'list_recruitment'])->name('list_recruitment');
-    Route::get('/danh-sach-tuyen-dung/{slug}', [RecruitmentUserController::class, 'list_recruitment_watch'])->name('list_recruitment_watch');
-    Route::get('/chi-tiet-tuyen-dung/{slug}', [RecruitmentUserController::class, 'detailRecruitment'])->name('detailRecruitment');
-//    Route::post('/chi-tiet-tuyen-dung/{slug}', [roomUserController::class, 'create_comment_room'])->name('create_comment_room');
-//    Route::get('/danh-sach-tuyen-dung/danh-muc/{slug}', [roomUserController::class, 'listRoom_Category'])->name('listRoom_Category');
+    Route::get('/danh-sach-bai-viet-tuyen-dung', [RecruitmentUserController::class, 'list_blog_recruitment'])->name('list_blog_recruitment');
+    Route::get('/chi-tiet-bai-viet-tuyen-dung/{slug}', [RecruitmentUserController::class, 'detailRecruitment'])->name('detailRecruitment');
 
 
     // Room

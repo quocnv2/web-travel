@@ -12,7 +12,7 @@
             <div class="page-header__breadcrumb-box">
                 <ul class="trevlo-breadcrumb">
                     <li><a href="{{ route('home') }}">Trang Chủ</a></li>
-                    <li><a href="{{ route('list_recruitment') }}">Tuyển Dụng</a></li>
+                    <li><a href="{{ route('list_blog_recruitment') }}">Tuyển Dụng</a></li>
                 </ul>
             </div>
         </div>
@@ -47,7 +47,7 @@
                                                 </p><!-- /.sidebar__posts-date -->
                                                 <h4 class="sidebar-blog__posts-title">
                                                     <a
-                                                        href="{{ route('detail_recruitment', $valNew->slug) }}">{{ $valNew->title }}</a>
+                                                        href="{{ route('detailRecruitment', $valNew->slug) }}">{{ $valNew->title }}</a>
                                                 </h4>
                                                 <div class="recruitment-text">{!! $valNew->content !!}</div>
                                             </div>

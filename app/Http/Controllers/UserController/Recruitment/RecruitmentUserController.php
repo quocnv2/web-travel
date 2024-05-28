@@ -9,27 +9,13 @@ use App\Models\Tour;
 
 class RecruitmentUserController extends Controller
 {
-    public function list_recruitment(Recruitment $recruitment, Category $category, Tour $tourModel)
+    public function list_blog_recruitment(Recruitment $recruitment, Category $category, Tour $tourModel)
     {
         $categories = $category->get_orderBy_ASC();
         $recruitment_new = $recruitment->get_orderBy_ASC_status_page();
         $recruitment_list = $recruitment->get_orderBy_ASC_status_page_8();
         $tour = $tourModel->get_orderBy_ASC_status_page();
         return view('Home.Layout.Pages.Recruitment.list_recruitment', compact('categories', 'recruitment_new', 'recruitment_list','tour'));
-    }
-
-    public function list_recruitment_watch(Recruitment $recruitment, Category $category,$slug)
-    {
-        $objCategory = $category->get_link_slug($slug);
-
-        if (!$objCategory) {
-            return redirect()->route('error404');
-        }
-
-        $categories = $category->get_orderBy_ASC();
-        $rec_new = $recruitment->get_orderBy_ASC_status_page();
-
-        return view('Home.Layout.Pages.Recruitment.list_recruitment', compact('categories', 'rec_new', 'objCategory'));
     }
 
     public function detailRecruitment(Category $category, Recruitment $recruitment, $slug, Tour $tourModel)
