@@ -1,7 +1,6 @@
 @extends ('Home.master')
 @php
     use Carbon\Carbon;
-
     $slugCategory = isset($objCategory) ? $objCategory : '';
 @endphp
 
@@ -52,12 +51,13 @@
                                                 <h4 class="sidebar-blog__posts-title"><a
                                                         href="{{ route('detailBlog', $valNew->slug) }}">{{ $valNew->title }}</a>
                                                 </h4>
-                                                <p class="truncate-content">{!! strip_tags($valNew->content) !!}</p>
+                                                <div class="recruitment-text">{!! $valNew->content !!}</div>
                                             </div>
                                         </li>
                                     @endforeach
                                 </ul>
                             </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
                             <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-new mt-4"
                                  data-wow-delay="0.1s" data-wow-duration="1500ms">
@@ -67,6 +67,11 @@
                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới Nhất
                                 </h3>
+>>>>>>> dat
+=======
+                            <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-new mt-4"
+                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới Nhất</h3>
 >>>>>>> dat
                                 <ul class="tour-listing-sidebar-post">
                                     @foreach ($tour as $valueNewtour)
@@ -106,7 +111,6 @@
                                                         {{ $valueNewtour->objCategory->name }}
                                                     </p>
                                                 </div>
-
                                             </div>
                                     @endforeach
                                     </li>
