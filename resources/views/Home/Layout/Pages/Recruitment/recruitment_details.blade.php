@@ -55,22 +55,10 @@
                                     @endforeach
                                 </ul>
                             </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
                             <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp mt-4 left-controller-tour-new"
-                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới Nhất</h3>
-=======
-                            <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-new"
                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới Nhất
                                 </h3>
->>>>>>> dat
-=======
-                            <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp mt-4 left-controller-tour-new"
-                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới Nhất</h3>
->>>>>>> dat
                                 <ul class="tour-listing-sidebar-post">
                                     @foreach ($tour as $valueNewtour)
                                         @php
