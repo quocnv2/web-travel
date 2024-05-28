@@ -15,7 +15,7 @@
                         <li>
                             <a href="{{route('home')}}">Trang chủ</a>
                         </li>
-                        <li class="dropdown">
+                        <li class="dropdown ">
                             <span>Danh Mục</span>
                             <ul class="sub-menu">
                                 @foreach ($categories as $category)

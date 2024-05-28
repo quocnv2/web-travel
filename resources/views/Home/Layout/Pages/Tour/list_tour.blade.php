@@ -29,7 +29,7 @@
     <section class="tour-listing-style tour-listing section-space">
         <div class="container">
             <div class="row">
-                <div class="col-xl-4">
+                <div class="col-xl-4 col-12 left-controller">
                     <aside class="tour-listing-sidebar">
                         <form action="#"
                             class="tour-listing-sidebar__form tour-listing-sidebar__item wow animated fadeInUp"
@@ -45,7 +45,7 @@
                                 </ul><!-- /.sidebar-blog__categories  -->
                             </div>
                         </form><!-- /.tour-listing-sidebar__form tour-listing-sidebar__item -->
-                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
+                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-new"
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới Nhất</h3>
                             <ul class="tour-listing-sidebar-post">
@@ -92,7 +92,7 @@
                                 </li>
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
-                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
+                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-story"
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
 
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Đã Xem</h3>
@@ -140,8 +140,8 @@
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
                     </aside><!-- /.tour-listing-sidebar -->
                 </div><!-- /.col-xl-4 -->
-                <div class="col-xl-8">
-                    <div class="tour-listing-filter__row row">
+                <div class="col-xl-8 col-12 right-controller">
+                    <div class="tour-listing-filter__row row tour-list-pc">
                         <div class="col-12">
                             <div class="showing-result tour-listing-one__showing-result">
                                 <div class="showing-result__info-top">
@@ -257,10 +257,92 @@
                                         </div><!-- /.tour-listing__card-inner-content -->
                                     </div><!-- /.tour-listing__card-content -->
                                 </div><!-- /.tour-listing__card -->
-
                             </div><!-- /.col-12 -->
                         @endforeach
                     </div><!-- /.row -->
+                    <div class="tour-listing-filter__row row tour-list-mobile">
+                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
+                            data-wow-delay="0.1s" data-wow-duration="1500ms">
+                            <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới Nhất</h3>
+                            <ul class="tour-listing-sidebar-post">
+                                @foreach ($tourlist as $valueNewtour)
+                                    @php
+                                        $address = '';
+                                        if (isset($valueNewtour->province)) {
+                                            $address .= $valueNewtour->province;
+                                        }
+                                        if (isset($valueNewtour->district)) {
+                                            if ($address !== '') {
+                                                $address .= ' - ';
+                                            }
+                                            $address .= $valueNewtour->district;
+                                        }
+
+                                        // Kiểm tra và thêm thông tin phường xã
+                                        if (isset($valueNewtour->wards)) {
+                                            if ($address !== '') {
+                                                $address .= ' - ';
+                                            }
+                                            $address .= $valueNewtour->wards;
+                                        }
+                                    @endphp
+                                    <li class="tour-listing-sidebar-post__item">
+                                        <div class="tour-listing-sidebar-post__image">
+                                            <img src="{{ $valueNewtour->imgBanner }}" alt="{{$valueNewtour->name }}">
+                                        </div>
+                                        <div class="tour-listing-sidebar-post__content">
+                                            <p class="tour-listing-sidebar-post__price">
+                                                {{ number_format($valueNewtour->price, 0, ',', '.') }} VND</p>
+                                            <h5 class="tour-listing-sidebar-post__link"><a
+                                                    href="{{route('detailTour', $valueTour->slug)}}">{{ $valueNewtour->name }}</a>
+                                            </h5>
+                                            <div class="tour-listing-sidebar-post__location">
+                                                <span class="icon-location-1"></span>
+                                                <p class="tour-listing-sidebar-post__location-text text-small">
+                                                    {{ $valueNewtour->objCategory->name }}
+                                                </p>
+                                            </div>
+
+                                        </div>
+                                @endforeach
+                                </li>
+                            </ul>
+                        </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
+                    </div><!-- /.row -->
+                    <ul class="post-pagination @@extraClassName">
+                        @if (ceil($tourlist->total() / 8) > 1)
+                            <?php
+                            $current_page = isset($_GET['page']) ? $_GET['page'] : '1';
+                            $page = $current_page - 1;
+                            $pages = $current_page + 1;
+                            $maxPage = ceil($tourlist->total() / 12);
+                            $check = $current_page;
+                            ?>
+                            @if ($current_page > 1)
+                                <li>
+                                    <a href="?page={{ $current_page + 1 }}" aria-label="Next">
+                                        <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                                    </a>
+                                </li>
+                            @endif
+
+                            @for ($i = max(1, $current_page - 1); $i <= min($maxPage, $current_page + 2); $i++)
+                                <li>
+                                    <a class="{{ $i == $searchResult->currentPage() ? 'active' : '' }}"
+                                        href="?page={{ $i }}">{{ $i }}</a>
+                                </li>
+                            @endfor
+
+                            @if ($current_page < $maxPage)
+                                <li>
+                                    <a href="?page={{ $current_page + 1 }}" aria-label="Next">
+                                        <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                                    </a>
+                                </li>
+                            @endif
+                        @else
+                        @endif
+                    </ul><!-- /.post-pagination -->
                 </div><!-- /.col-xl-8 -->
             </div><!-- /.row -->
         </div><!-- /.container -->

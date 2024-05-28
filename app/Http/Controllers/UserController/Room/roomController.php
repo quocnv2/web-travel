@@ -43,7 +43,7 @@ class roomController extends Controller
             return redirect()->route('error404');
         }
         $categories = $category->get_orderBy_ASC();
-        $room_list = $room->get_orderBy_ASC_status_page_12();
+        $room_list = $room->whereNotIn('id', [$objRoom->id])->get();
         $room_new = $room->get_orderBy_ASC_status_page();
         $storyRoom->add_storyRoom($objRoom);
         $historyRoom = $storyRoom->list_storyRoom();

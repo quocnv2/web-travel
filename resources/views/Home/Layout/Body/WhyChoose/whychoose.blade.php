@@ -1,4 +1,4 @@
-<section class="cta-one">
+<section class="cta-one right-menu-moblie">
     <div class="container">
         <div class="cta-one__wrapper" style="background-image: url({{url('assets') }}/trevlo/images/shapes/cta-bg-1.png);">
             <div class="cta-one__shape-one"><img src="{{url('assets') }}/trevlo/images/shapes/cta-1-shape-1.png" alt="trevlo"></div>

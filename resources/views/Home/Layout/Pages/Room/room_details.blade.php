@@ -118,8 +118,8 @@
         <div class="tour-listing-details__info-area">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-4">
-                        <aside class="tour-listing-sidebar">
+                    <div class="col-xl-4  row-room-list-mobile">
+                        <aside class="tour-listing-sidebar ">
                             <div class="tour-listing-sidebar__form tour-listing-sidebar__item wow animated fadeInUp"
                                  data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <div class="sidebar-blog__single sidebar-blog__single--categories wow animated fadeInUp"
@@ -329,7 +329,7 @@
                             </div>
                         </div>
 
-                        <div class="tour-listing-details__similar container-fluid">
+                        <div class="tour-listing-details__similar container-fluid row-room-list-mobile">
                             <h3 class="tour-listing-details__title tour-listing-details__similar-title">Phòng Liên
                                 Quan</h3>
                             <div class="row">
@@ -424,6 +424,31 @@
                                     </div><!-- /.col-12 -->
                                 @endforeach
                             </div><!-- /.row -->
+                        </div><!-- /.tour-listing-details__similar container-fluid -->
+                        <div class="tour-listing-details__similar container-fluid list-room-mobile ">
+                            <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
+                            data-wow-delay="0.1s" data-wow-duration="1500ms">
+                           <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Phòng Liên Quan
+                           </h3>
+                           <ul class="tour-listing-sidebar-post">
+                               @foreach ($room_list as $obj)
+                                   <li class="tour-listing-sidebar-post__item">
+                                       <div class="tour-listing-sidebar-post__image">
+                                           <img src="{{ $obj->imgRoom }}"
+                                                alt="{{ $obj->name }}">
+                                       </div>
+                                       <div class="tour-listing-sidebar-post__content">
+                                           <p class="tour-listing-sidebar-post__price">
+                                               {{ number_format($obj->price, 0, ',', '.') }}vnđ</p>
+                                           <h5 class="tour-listing-sidebar-post__link"><a
+                                                   href="">{{ $obj->name }}</a>
+                                           </h5>
+
+                                       </div>
+                                   </li>
+                               @endforeach
+                           </ul>
+                       </div>
                         </div><!-- /.tour-listing-details__similar container-fluid -->
                         <div class="tour-listing-details__add-review">
                             <h3 class="tour-listing-details__add-review-title tour-listing-details__title">Để Lại Đánh

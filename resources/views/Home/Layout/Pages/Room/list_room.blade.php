@@ -2,21 +2,22 @@
 @php
     use Carbon\Carbon;
 
-    $slugCategory = isset($objCategory) ? $objCategory : ''
+    $slugCategory = isset($objCategory) ? $objCategory : '';
 @endphp
 @section('view')
     <section class="page-header">
         <div class="page-header__bg"></div>
         <!-- /.page-header__bg -->
         <div class="container">
-            <h2 class="page-header__title wow animated fadeInLeft" data-wow-delay="0s" data-wow-duration="1500ms">Danh sách phòng</h2>
+            <h2 class="page-header__title wow animated fadeInLeft" data-wow-delay="0s" data-wow-duration="1500ms">Danh sách
+                phòng</h2>
             <div class="page-header__breadcrumb-box">
                 <ul class="trevlo-breadcrumb">
                     <li><a href="{{ route('home') }}">Trang Chủ</a></li>
-                    @if($slugCategory)
+                    @if ($slugCategory)
                         <li><a href="{{ route('listRoom') }}">Phòng</a></li>
                         <li><a href="{{ route('listRoom_Category', $slugCategory->slug) }}">Danh Mục</a></li>
-                        <li>{{$slugCategory->name}}</li>
+                        <li>{{ $slugCategory->name }}</li>
                     @else
                         <li>Phòng</li>
                     @endif
@@ -33,8 +34,8 @@
                 <div class="blog-page__col-sidebar col-xl-4 col-lg-5">
                     <div class="sidebar-blog sidebar-blog--left">
                         <aside class="widget-area">
-                            <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp"
-                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
+                            <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp left-controller-room-new  "
+                                data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Phòng Mới Nhất</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__posts ">
                                     @foreach ($room_new as $valNew)
@@ -48,7 +49,8 @@
                                                     {{ Carbon::parse($valNew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
                                                 </p><!-- /.sidebar__posts-date -->
                                                 <h5 class="sidebar-blog__posts-title"><a
-                                                        href="{{route('detailRoom', $valNew->slug)}}">{{ $valNew->name }}</a></h5>
+                                                        href="{{ route('detailRoom', $valNew->slug) }}">{{ $valNew->name }}</a>
+                                                </h5>
                                                 <!-- /.sidebar-blog__posts-title -->
                                             </div><!-- /.sidebar-blog__posts-content -->
                                         </li>
@@ -56,7 +58,7 @@
                                 </ul><!-- /.sidebar-blog__posts  -->
                             </div><!-- /.sidebar-blog__single -->
                             <div class="sidebar-blog__single sidebar-blog__single--categories wow animated fadeInUp"
-                                 data-wow-delay="0.2s" data-wow-duration="1500ms">
+                                data-wow-delay="0.2s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Danh Mục</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__categories ">
                                     @foreach ($categories as $cat)
@@ -74,8 +76,8 @@
                     </div><!-- /.sidebar-blog -->
                 </div><!-- /.col-xl-4 col-lg-5 -->
 
-                <div class="col-xl-8">
-                    <div class="tour-listing-filter__row row">
+                <div class="col-xl-8 ">
+                    <div class="tour-listing-filter__row row-room-list-mobile">
                         <div class="col-12">
                             <div class="showing-result tour-listing-one__showing-result">
                                 <div class="showing-result__info-top">
@@ -96,26 +98,27 @@
                             @endphp
                             <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <div class="tour-listing-three__card tour-listing__card">
-                                    <a href="{{route('detailRoom', $valNew->slug)}}"
-                                       class="tour-listing-three__card-image-box tour-listing__card-image-box">
+                                    <a href="{{ route('detailRoom', $valNew->slug) }}"
+                                        class="tour-listing-three__card-image-box tour-listing__card-image-box">
                                         <img src="{{ $valueRoom->imgRoom }}" alt="{{ $valueRoom->name }}"
-                                             class="tour-listing-three__card-image tour-listing__card-image">
+                                            class="tour-listing-three__card-image tour-listing__card-image">
                                         <div
                                             class="tour-listing-three__card-image-overlay tour-listing__card-image-overlay">
                                         </div><!-- /.tour-listing__card-image-overlay -->
                                     </a><!-- /.tour-listing__card-image-box -->
                                     <a href="#"
-                                       class="tour-listing-three__card-wishlist tour-listing__card-wishlist"><span
+                                        class="tour-listing-three__card-wishlist tour-listing__card-wishlist"><span
                                             class="icon-heart"></span></a>
                                     <div class="tour-listing-three__card-content tour-listing__card-content">
                                         <h3 class="tour-listing-three__card-title tour-listing__card-title"><a
-                                                href="{{route('detailRoom', $valNew->slug)}}">{{ $valueRoom->name }}</a></h3>
+                                                href="{{ route('detailRoom', $valNew->slug) }}">{{ $valueRoom->name }}</a>
+                                        </h3>
                                         <div
                                             class="tour-listing-three__card-inner-content tour-listing__card-inner-content">
                                             <div class="tour-listing__card-camera-group">
                                                 <a href="javascript:void(0);"
-                                                   class="tour-listing-five__card__popup-btn trevlo-image-popup tour-listing__card-camera-btn trevlo-image-popup"
-                                                   data-gallery-options='{
+                                                    class="tour-listing-five__card__popup-btn trevlo-image-popup tour-listing__card-camera-btn trevlo-image-popup"
+                                                    data-gallery-options='{
                                                             "items": [
                                                                    @foreach ($imageArray as $index => $imgs)
                                                                         @if (isset($imgs['link']) && $imgs['link'] != '')
@@ -130,8 +133,8 @@
                                                     <span class="icon-photo-camera-1"></span>
                                                 </a>
                                                 <a href="javascript:void(0);"
-                                                   class="tour-listing-five__card__popup-btn trevlo-image-popup tour-listing__card-camera-btn trevlo-image-popup"
-                                                   data-gallery-options='{
+                                                    class="tour-listing-five__card__popup-btn trevlo-image-popup tour-listing__card-camera-btn trevlo-image-popup"
+                                                    data-gallery-options='{
                                                             "items": [
                                                                    @foreach ($videoArray as $index => $videos)
                                                                         @if (isset($videos['link']) && $videos['link'] != '')
@@ -168,9 +171,71 @@
                             </div><!-- /.col-12 -->
                         @endforeach
                     </div><!-- /.row -->
-                </div><!-- /.col-xl-8 -->
-            </div><!-- /.row -->
-        </div><!-- /.container -->
-    </div><!-- /.blog-page -->
-    <!-- Blog Page End -->
-@stop
+                    <div class="tour-listing-filter__row list-room-mobile  ">
+                        <div class="col-12">
+                            <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp list-room-mobile"
+                                data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <h4 class="sidebar-blog__title">Phòng Mới Nhất</h4><!-- /.sidebar-blog__title -->
+                                <ul class="sidebar-blog__posts ">
+                                    @foreach ($room_list  as $valNew)
+                                        <li class="sidebar-blog__posts-item">
+                                            <div class="sidebar-blog__posts-image">
+                                                <img src="{{ $valNew->imgRoom }}" alt="latest-post">
+                                            </div><!-- /.sidebar-blog__posts-image -->
+                                            <div class="sidebar-blog__posts-content">
+                                                <p class="sidebar-blog__posts-date">
+                                                    <i class="far fa-clock"></i>
+                                                    {{ Carbon::parse($valNew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
+                                                </p><!-- /.sidebar__posts-date -->
+                                                <h5 class="sidebar-blog__posts-title"><a
+                                                        href="{{ route('detailRoom', $valNew->slug) }}">{{ $valNew->name }}</a>
+                                                </h5>
+                                                <!-- /.sidebar-blog__posts-title -->
+                                            </div><!-- /.sidebar-blog__posts-content -->
+                                        </li>
+                                    @endforeach
+                                </ul><!-- /.sidebar-blog__posts  -->
+                            </div><!-- /.sidebar-blog__single -->
+                        </div><!-- /.col-xl-8 -->
+                        <ul class="post-pagination @@extraClassName">
+                            @if (ceil($room_new->total() / 8) > 1)
+                                <?php
+                                $current_page = isset($_GET['page']) ? $_GET['page'] : '1';
+                                $page = $current_page - 1;
+                                $pages = $current_page + 1;
+                                $maxPage = ceil($room_list->total() / 12);
+                                $check = $current_page;
+                                ?>
+                                @if ($current_page > 1)
+                                    <li>
+                                        <a href="?page={{ $current_page + 1 }}" aria-label="Next">
+                                            <span aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+                                        </a>
+                                    </li>
+                                @endif
+
+                                @for ($i = max(1, $current_page - 1); $i <= min($maxPage, $current_page + 2); $i++)
+                                    <li>
+                                        <a class="{{ $i == $searchResult->currentPage() ? 'active' : '' }}"
+                                            href="?page={{ $i }}">{{ $i }}</a>
+                                    </li>
+                                @endfor
+
+                                @if ($current_page < $maxPage)
+                                    <li>
+                                        <a href="?page={{ $current_page + 1 }}" aria-label="Next">
+                                            <span aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+                                        </a>
+                                    </li>
+                                @endif
+                            @else
+                            @endif
+                        </ul><!-- /.post-pagination -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.blog-page -->
+        </div>
+    </div>
+
+            <!-- Blog Page End -->
+        @stop
