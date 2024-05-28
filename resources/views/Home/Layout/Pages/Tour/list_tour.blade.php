@@ -315,7 +315,7 @@
                             $current_page = isset($_GET['page']) ? $_GET['page'] : '1';
                             $page = $current_page - 1;
                             $pages = $current_page + 1;
-                            $maxPage = ceil($tourlist->total() / 12);
+                            $maxPage = ceil($tourlist->total() / 8);
                             $check = $current_page;
                             ?>
                             @if ($current_page > 1)
@@ -328,7 +328,7 @@
 
                             @for ($i = max(1, $current_page - 1); $i <= min($maxPage, $current_page + 2); $i++)
                                 <li>
-                                    <a class="{{ $i == $searchResult->currentPage() ? 'active' : '' }}"
+                                    <a class="{{ $i == $current_page ? 'active' : '' }}"
                                         href="?page={{ $i }}">{{ $i }}</a>
                                 </li>
                             @endfor

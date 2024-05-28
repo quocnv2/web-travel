@@ -41,7 +41,7 @@ class Blog extends Model
     }
 
     public function get_orderBy_ASC_status_page(){
-        $obj = Blog::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(3);
+        $obj = Blog::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(6);
         return $obj;
     }
     public function get_details_blog($slug)

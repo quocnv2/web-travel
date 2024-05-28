@@ -33,8 +33,4 @@ class contactController extends Controller
         $list = $contact -> get_orderBy_ASC();
         return view('FEadmin.Pages.Contact.view_list', compact('list'));
     }
-
-
-
-
 }

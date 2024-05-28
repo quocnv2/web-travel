@@ -163,7 +163,7 @@
 
                         @for ($i = max(1, $current_page - 1); $i <= min($maxPage, $current_page + 2); $i++)
                             <li>
-                                <a class="{{ $i == $searchResult->currentPage() ? 'active' : '' }}"
+                                <a class="{{ $i == $current_page ? 'active' : '' }}"
                                     href="?page={{ $i }}">{{ $i }}</a>
                             </li>
                         @endfor

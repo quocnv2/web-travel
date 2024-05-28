@@ -58,8 +58,6 @@ class roomController extends Controller
     {
         $create = $commentRoom->create_comment_room($req);
         $objRoom = $room->get_link_slug($slug);
-//        dd($req->all());
-
 
         if ($create) {
             return redirect()->route('create_comment_room', ['slug' => $slug, 'room' => $objRoom])->with('success', 'Thêm Mới Thành Công!');

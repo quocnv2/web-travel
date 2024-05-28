@@ -37,13 +37,13 @@ class Tour extends Model
         $obj = Tour::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->where('name', 'like', '%' . $key . '%')->get();
         return $obj;
     }
-    public function get_orderBy_ASC_status_page_12(){
-        $obj = Tour::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(12);
+    public function get_orderBy_ASC_status_page_8(){
+        $obj = Tour::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(8);
         return $obj;
     }
 
-    public function get_orderBy_ASC_status_where_category_page_12($idCategory){
-        $obj = Tour::with('objCategory')->where('status', 0)->where('idCategory', $idCategory)->orderBy('timeCreate', 'DESC')->paginate(12);
+    public function get_orderBy_ASC_status_where_category_page_8($idCategory){
+        $obj = Tour::with('objCategory')->where('status', 0)->where('idCategory', $idCategory)->orderBy('timeCreate', 'DESC')->paginate(8);
         return $obj;
     }
 

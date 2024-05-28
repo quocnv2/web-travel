@@ -48,18 +48,16 @@
                             $videoArray = json_decode($objRoom->videoArray, true);
                         @endphp
                         <div class="tour-listing-details__destination-right">
-                            <div class="tour-listing-details__destination-info wow animated fadeInUp"
-                                 data-wow-delay="0.5s"
-                                 data-wow-duration="1500ms">
+                            <div class="tour-listing-details__destination-info wow animated fadeInUp" data-wow-delay="0.5s"
+                                data-wow-duration="1500ms">
                                 <span class="icon-plane"></span>
                                 <div class="tour-listing-details__destination-info-title">
                                     <h4 class="tour-listing-details__destination-info-top">Mã Phòng</h4>
                                     <h4 class="tour-listing-details__destination-info-bottom">{{ $objRoom->code }}</h4>
                                 </div>
                             </div>
-                            <div class="tour-listing-details__destination-info wow animated fadeInUp"
-                                 data-wow-delay="0.1s"
-                                 data-wow-duration="1500ms">
+                            <div class="tour-listing-details__destination-info wow animated fadeInUp" data-wow-delay="0.1s"
+                                data-wow-duration="1500ms">
                                 <span class="icon-clock-1"></span>
                                 <div class="tour-listing-details__destination-info-title">
                                     <h4 class="tour-listing-details__destination-info-top">Thời Gian</h4>
@@ -68,19 +66,18 @@
                                     </h4>
                                 </div>
                             </div>
-                            <div class="tour-listing-details__destination-info wow animated fadeInUp"
-                                 data-wow-delay="0.7s"
-                                 data-wow-duration="1500ms">
+                            <div class="tour-listing-details__destination-info wow animated fadeInUp" data-wow-delay="0.7s"
+                                data-wow-duration="1500ms">
                                 <span class="icon-location-1"></span>
                                 <div class="tour-listing-details__destination-info-title">
                                     <h4 class="tour-listing-details__destination-info-top">Vị Trí</h4>
-                                    <h4 class="tour-listing-details__destination-info-bottom">{{ $objRoom->objCategory->name }}</h4>
+                                    <h4 class="tour-listing-details__destination-info-bottom">
+                                        {{ $objRoom->objCategory->name }}</h4>
 
                                 </div>
                             </div>
-                            <div class="tour-listing-details__destination-info wow animated fadeInUp"
-                                 data-wow-delay="0.3s"
-                                 data-wow-duration="1500ms">
+                            <div class="tour-listing-details__destination-info wow animated fadeInUp" data-wow-delay="0.3s"
+                                data-wow-duration="1500ms">
                                 <span class="icon-Duration"></span>
                                 <div class="tour-listing-details__destination-info-title">
                                     <h4 class="tour-listing-details__destination-info-top">Khách Hàng Đã Trải Nhiệm</h4>
@@ -107,7 +104,7 @@
                     </div>
                     <div class="tour-listing-details__info-right">
                         <a href="javascript:void(0);" id="registerContact"
-                           class="tour-listing-details__share-btn trevlo-btn trevlo-btn--white-two">
+                            class="tour-listing-details__share-btn trevlo-btn trevlo-btn--white-two">
                             <span class="icon-share"></span> <span>Đăng Ký Liên Hệ</span>
                         </a>
                     </div>
@@ -121,9 +118,9 @@
                     <div class="col-xl-4  row-room-list-mobile">
                         <aside class="tour-listing-sidebar ">
                             <div class="tour-listing-sidebar__form tour-listing-sidebar__item wow animated fadeInUp"
-                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <div class="sidebar-blog__single sidebar-blog__single--categories wow animated fadeInUp"
-                                     data-wow-delay="0.2s" data-wow-duration="1500ms">
+                                    data-wow-delay="0.2s" data-wow-duration="1500ms">
                                     <h4 class="sidebar-blog__title">Danh Mục</h4><!-- /.sidebar-blog__title -->
                                     <ul class="sidebar-blog__categories ">
                                         @foreach ($categories as $cat)
@@ -135,23 +132,21 @@
                                 </div>
                             </div>
                             <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                data-wow-delay="0.1s" data-wow-duration="1500ms">
 
                                 <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Phòng Đã
                                     Xem </h3>
                                 <ul class="tour-listing-sidebar-post">
                                     @foreach ($historyRoom as $key => $valueHistory)
-
                                         <li class="tour-listing-sidebar-post__item">
                                             <div class="tour-listing-sidebar-post__image">
                                                 <img src="{{ $valueHistory['imgRoom'] }}"
-                                                     alt="{{ $valueHistory['name'] }}">
+                                                    alt="{{ $valueHistory['name'] }}">
                                             </div>
                                             <div class="tour-listing-sidebar-post__content">
                                                 <p class="tour-listing-sidebar-post__price">
                                                     {{ number_format($valueHistory['price'], 0, ',', '.') }}vnđ</p>
-                                                <h5 class="tour-listing-sidebar-post__link"><a
-                                                        href="">
+                                                <h5 class="tour-listing-sidebar-post__link"><a href="">
                                                         {{ $valueHistory['name'] }}</a>
                                                 </h5>
 
@@ -160,7 +155,7 @@
                                 </ul>
                             </div>
                             <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Phòng Mới
                                     Nhất
                                 </h3>
@@ -168,8 +163,7 @@
                                     @foreach ($room_new as $obj)
                                         <li class="tour-listing-sidebar-post__item">
                                             <div class="tour-listing-sidebar-post__image">
-                                                <img src="{{ $obj->imgRoom }}"
-                                                     alt="{{ $obj->name }}">
+                                                <img src="{{ $obj->imgRoom }}" alt="{{ $obj->name }}">
                                             </div>
                                             <div class="tour-listing-sidebar-post__content">
                                                 <p class="tour-listing-sidebar-post__price">
@@ -184,9 +178,9 @@
                                 </ul>
                             </div>
                             <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Địa Điểm
-                                     Tour
+                                    Tour
                                 </h3>
                                 <ul class="tour-listing-sidebar-post">
                                     @foreach ($tour_list as $valsiml)
@@ -204,12 +198,12 @@
                                                 </h4>
                                             </div><!-- /.sidebar-blog__posts-content -->
                                         </li>
-                                        {{--                                        </li>--}}
+                                        {{--                                        </li> --}}
                                     @endforeach
                                 </ul>
                             </div>
                             <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Bài Viết
                                     Liên
                                     Quan
@@ -247,8 +241,8 @@
                                 <div class="post-category__btn-group">
                                     <div class="tour-listing-five__card__btn-group">
                                         <a href="javascript:void(0);"
-                                           class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
-                                           data-gallery-options='{
+                                            class="tour-listing-five__card__popup-btn tour-listing-five__card__popup-btn--camera trevlo-image-popup"
+                                            data-gallery-options='{
                                                             "items": [
                                                                    @foreach ($imageArray as $index => $imgs)
                                                                         @if (isset($imgs['link']) && $imgs['link'] != '')
@@ -263,8 +257,8 @@
                                             <span class="icon-photo-camera-1"></span>
                                         </a>
                                         <a href="javascript:void(0);"
-                                           class="tour-listing-five__card__popup-btn trevlo-image-popup"
-                                           data-gallery-options='{
+                                            class="tour-listing-five__card__popup-btn trevlo-image-popup"
+                                            data-gallery-options='{
                                                             "items": [
                                                                    @foreach ($videoArray as $index => $videos)
                                                                         @if (isset($videos['link']) && $videos['link'] != '')
@@ -289,7 +283,7 @@
                                     Phòng </h3>
                             </div>
                             <p class="tour-listing-details__explore-text wow animated fadeInUp" data-wow-delay="0.1s"
-                               data-wow-duration="1500ms">{!! $objRoom->content !!}
+                                data-wow-duration="1500ms">{!! $objRoom->content !!}
                             </p>
                         </div><!-- /.tour-listing-details__explore -->
                         <div class="tour-listing-details__included">
@@ -297,7 +291,7 @@
                             </h3>
                             <div class="row">
                                 <div class="col-lg-6 col-md-7 wow animated fadeInUp" data-wow-delay="0.1s"
-                                     data-wow-duration="1500ms">
+                                    data-wow-duration="1500ms">
                                     <ul class="tour-listing-details__included-list-one">
                                         <li>
                                             <i class="fas fa-check-circle"></i>
@@ -340,18 +334,18 @@
                                         $videoArray = json_decode($valueRoom->videoArray, true);
                                     @endphp
                                     <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s"
-                                         data-wow-duration="1500ms">
+                                        data-wow-duration="1500ms">
                                         <div class="tour-listing-three__card tour-listing__card">
                                             <a href=""
-                                               class="tour-listing-three__card-image-box tour-listing__card-image-box">
+                                                class="tour-listing-three__card-image-box tour-listing__card-image-box">
                                                 <img src="{{ $valueRoom->imgRoom }}"
-                                                     class="tour-listing-three__card-image tour-listing__card-image">
+                                                    class="tour-listing-three__card-image tour-listing__card-image">
                                                 <div
                                                     class="tour-listing-three__card-image-overlay tour-listing__card-image-overlay">
                                                 </div><!-- /.tour-listing__card-image-overlay -->
                                             </a><!-- /.tour-listing__card-image-box -->
                                             <a href="#"
-                                               class="tour-listing-three__card-wishlist tour-listing__card-wishlist"><span
+                                                class="tour-listing-three__card-wishlist tour-listing__card-wishlist"><span
                                                     class="icon-heart"></span></a>
                                             <div class="tour-listing-three__card-content tour-listing__card-content">
                                                 <h3 class="tour-listing-three__card-title tour-listing__card-title"><a
@@ -361,8 +355,8 @@
                                                     class="tour-listing-three__card-inner-content tour-listing__card-inner-content">
                                                     <div class="tour-listing__card-camera-group">
                                                         <a href="javascript:void(0);"
-                                                           class="tour-listing-five__card__popup-btn trevlo-image-popup tour-listing__card-camera-btn trevlo-image-popup"
-                                                           data-gallery-options='{
+                                                            class="tour-listing-five__card__popup-btn trevlo-image-popup tour-listing__card-camera-btn trevlo-image-popup"
+                                                            data-gallery-options='{
                                                                 "items": [
                                                                        @foreach ($imageArray as $index => $imgs)
                                                                             @if (isset($imgs['link']) && $imgs['link'] != '')
@@ -377,8 +371,8 @@
                                                             <span class="icon-photo-camera-1"></span>
                                                         </a>
                                                         <a href="javascript:void(0);"
-                                                           class="tour-listing-five__card__popup-btn trevlo-image-popup tour-listing__card-camera-btn trevlo-image-popup"
-                                                           data-gallery-options='{
+                                                            class="tour-listing-five__card__popup-btn trevlo-image-popup tour-listing__card-camera-btn trevlo-image-popup"
+                                                            data-gallery-options='{
                                                                 "items": [
                                                                        @foreach ($videoArray as $index => $videos)
                                                                             @if (isset($videos['link']) && $videos['link'] != '')
@@ -427,28 +421,28 @@
                         </div><!-- /.tour-listing-details__similar container-fluid -->
                         <div class="tour-listing-details__similar container-fluid list-room-mobile ">
                             <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
-                            data-wow-delay="0.1s" data-wow-duration="1500ms">
-                           <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Phòng Liên Quan
-                           </h3>
-                           <ul class="tour-listing-sidebar-post">
-                               @foreach ($room_list as $obj)
-                                   <li class="tour-listing-sidebar-post__item">
-                                       <div class="tour-listing-sidebar-post__image">
-                                           <img src="{{ $obj->imgRoom }}"
-                                                alt="{{ $obj->name }}">
-                                       </div>
-                                       <div class="tour-listing-sidebar-post__content">
-                                           <p class="tour-listing-sidebar-post__price">
-                                               {{ number_format($obj->price, 0, ',', '.') }}vnđ</p>
-                                           <h5 class="tour-listing-sidebar-post__link"><a
-                                                   href="">{{ $obj->name }}</a>
-                                           </h5>
+                                data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Phòng Liên
+                                    Quan
+                                </h3>
+                                <ul class="tour-listing-sidebar-post">
+                                    @foreach ($room_list as $obj)
+                                        <li class="tour-listing-sidebar-post__item">
+                                            <div class="tour-listing-sidebar-post__image">
+                                                <img src="{{ $obj->imgRoom }}" alt="{{ $obj->name }}">
+                                            </div>
+                                            <div class="tour-listing-sidebar-post__content">
+                                                <p class="tour-listing-sidebar-post__price">
+                                                    {{ number_format($obj->price, 0, ',', '.') }}vnđ</p>
+                                                <h5 class="tour-listing-sidebar-post__link"><a
+                                                        href="">{{ $obj->name }}</a>
+                                                </h5>
 
-                                       </div>
-                                   </li>
-                               @endforeach
-                           </ul>
-                       </div>
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div><!-- /.tour-listing-details__similar container-fluid -->
                         <div class="tour-listing-details__add-review">
                             <h3 class="tour-listing-details__add-review-title tour-listing-details__title">Để Lại Đánh
@@ -458,43 +452,41 @@
                         <div class="tour-listing-details__form">
 
                             <form class="form-one row gutter-20" method="POST"
-                                  action="{{ route('create_comment_room', ['slug' => $objRoom->slug]) }}">
+                                action="{{ route('create_comment_room', ['slug' => $objRoom->slug]) }}">
                                 @csrf
                                 <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s"
-                                     data-wow-duration="1500ms">
+                                    data-wow-duration="1500ms">
                                     <div class="form-one__group">
                                         <input type="text" name="name" id="form-one-name-input"
-                                               placeholder="Họ và tên" class="form-one__input"
-                                               value="{{ old('name') }}">
+                                            placeholder="Họ và tên" class="form-one__input" value="{{ old('name') }}">
 
                                         @error('name')
-                                        <small style="color: #f33923;">{{ $message }}</small>
+                                            <small style="color: #f33923;">{{ $message }}</small>
                                         @enderror
                                     </div><!-- /.form-one__group -->
                                 </div><!-- /.col-md-6 -->
                                 <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s"
-                                     data-wow-duration="1500ms">
+                                    data-wow-duration="1500ms">
                                     <div class="form-one__group">
                                         <input type="email" name="email" id="form-one-email-input"
-                                               placeholder="Email" class="form-one__input" value="{{ old('email') }}">
+                                            placeholder="Email" class="form-one__input" value="{{ old('email') }}">
                                     </div><!-- /.form-one__group -->
                                 </div><!-- /.col-md-6 -->
                                 <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s"
-                                     data-wow-duration="1500ms">
+                                    data-wow-duration="1500ms">
                                     <div class="form-one__group">
-                                        <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10"
-                                                  placeholder="Viết tâm thư"
-                                                  class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Bài Viết' }}</textarea>
+                                        <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10" placeholder="Viết tâm thư"
+                                            class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Bài Viết' }}</textarea>
                                         @error('commentUser')
-                                        <small style="color: #f33923;">{{ $message }}</small>
+                                            <small style="color: #f33923;">{{ $message }}</small>
                                         @enderror
                                     </div><!-- /.form-one__group -->
                                 </div><!-- /.col-12-->
                                 <input type="hidden" name="idRoom" value="{{ $objRoom->id }}">
-                                <input type="hidden" name="commentAdmin" value="{{ old('commentAdmin') ?? ''}}">
+                                <input type="hidden" name="commentAdmin" value="{{ old('commentAdmin') ?? '' }}">
                                 <input type="hidden" name="status" value="{{ $objRoom->status ?? 0 }}">
                                 <div class="col-12 wow animated fadeInUp" data-wow-delay="0.2s"
-                                     data-wow-duration="1500ms">
+                                    data-wow-duration="1500ms">
                                     <div class="form-one__btn-box">
                                         <button type="submit" class="form-one__btn trevlo-btn trevlo-btn--base">
                                             <span>Gửi tin nhắn</span></button>
@@ -511,5 +503,5 @@
 
     </section>
 
-    {{--    </section>--}}
+    {{--    </section> --}}
 @stop

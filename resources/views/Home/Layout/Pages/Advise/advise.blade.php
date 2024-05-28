@@ -151,9 +151,7 @@
 
                         <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-new"
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
-                            <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Địa Điểm
-                                Phòng Gần Tour
-                            </h3>
+                            <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Khách Sạn </h3>
                             <ul class="tour-listing-sidebar-post">
                                 @foreach ($roomsiml as $valsiml)
                                     <li class="sidebar-blog__posts-item">
@@ -177,8 +175,7 @@
                         <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-new"
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Bài Viết
-                                Liên
-                                Quan
+                                Mới Nhất
                             </h3>
                             <ul class="tour-listing-sidebar-post">
                                 @foreach ($blog_list as $valSml)

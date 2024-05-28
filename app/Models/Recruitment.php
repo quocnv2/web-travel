@@ -66,7 +66,7 @@ class Recruitment extends Model
         return $obj;
     }
     public function get_orderBy_ASC_status_page(){
-        return Recruitment::where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(3);
+        return Recruitment::where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(6);
     }
     public function get_orderBy_ASC_status_page_8(){
         $obj = Recruitment::where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(8);

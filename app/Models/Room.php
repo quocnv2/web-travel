@@ -35,7 +35,7 @@ class Room extends Model
 
     public function get_orderBy_ASC_status_page()
     {
-        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(3);
+        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(6);
         return $obj;
     }
 
@@ -100,7 +100,7 @@ class Room extends Model
 
     public function get_orderBy_ASC_status_page_8()
     {
-        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(12);
+        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(8);
         return $obj;
     }
 
