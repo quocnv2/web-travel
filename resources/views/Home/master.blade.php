@@ -75,8 +75,8 @@
         <div class="search-popup__overlay search-toggler"></div>
         <!-- /.search-popup__overlay -->
         <div class="search-popup__content">
-            <form role="search" method="get" class="search-popup__form" action="{{route("search")}}">
-                <input type="text" id="search" placeholder="Tìm Kiếm..." name="key"/>
+            <form role="search" method="get" class="search-popup__form" action="{{ route('search') }}">
+                <input type="text" id="search" placeholder="Tìm Kiếm..." name="key" />
                 <button type="submit" aria-label="search submit" class="search-popup__btn trevlo-btn trevlo-btn--base">
                     <span class="icon-search"></span>
                 </button>
@@ -90,6 +90,52 @@
         <span class="scroll-to-top__text">Đầu Trang</span>
         <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
     </a>
+
+    <a href="https://www.facebook.com/profile.php?id=100069226627675&gidzl=PZxQQpABM7rbADfjCfDHV6KdqMijc5OgUNFGRosRK2bp8D1lSPHRVIHytsrxnrXzUI_OOpPcZRCdCeTHVW"
+        id="linkzalo" target="_blank" rel="noopener noreferrer">
+        <div class="fcta-zalo-vi-tri-nut-facebook">
+            <div id="fcta-zalo-tracking" class="fcta-zalo-nen-nut-facebook">
+                <div id="fcta-zalo-tracking" class="fcta-zalo-ben-trong-nut">
+                    <img style="width: 100%;" src="{{ url('assets') }}/images/layout/facebook.png">
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a href="" id="linkzalo" target="_blank" rel="noopener noreferrer">
+        <div class="fcta-zalo-vi-tri-nut">
+            <div id="fcta-zalo-tracking" class="fcta-zalo-nen-nut">
+                <div id="fcta-zalo-tracking" class="fcta-zalo-ben-trong-nut">
+                    <img style="width: 100%;" src="{{ url('assets') }}/images/layout/zalo.png">
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a href="" id="linkzalo" target="_blank" rel="noopener noreferrer">
+        <div class="fcta-zalo-vi-tri-nut-telegram">
+            <div id="fcta-zalo-tracking" class="fcta-zalo-nen-nut-telegram">
+                <div id="fcta-zalo-tracking" class="fcta-zalo-ben-trong-nut">
+                    <img style="width: 100%;" src="{{ url('assets') }}/images/layout/messenger.png">
+                </div>
+            </div>
+        </div>
+    </a>
+
+    <a href="{{ route('register_counsel') }}" id="linkzalo" rel="noopener noreferrer">
+        <div id="fcta-zalo-tracking" class="fcta-zalo-mess">
+            <span id="fcta-zalo-tracking">Đăng Ký Tư Vấn</span>
+        </div>
+        <div class="fcta-zalo-vi-tri-nut-lien-he">
+            <div id="fcta-zalo-tracking" class="fcta-zalo-nen-nut-lien-he">
+                <div id="fcta-zalo-tracking" class="fcta-zalo-ben-trong-nut">
+                    <img style="width: 100%;" src="{{ url('assets') }}/images/layout/phone.png">
+                </div>
+            </div>
+        </div>
+    </a>
+    <!--Code nút Zalo từ LucidGen.com, anh em tracking Google Tag Manager bằng Click ID chứa fcta-zalo-tracking nhé-->
+    <!-- :: END PAGES -->
 
     @include('Home.Layout.Fooder.JS.js_header')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
