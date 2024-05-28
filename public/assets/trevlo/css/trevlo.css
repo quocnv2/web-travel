@@ -1303,12 +1303,6 @@ path {
     background-color: var(--trevlo-black, #000000);
 }
 
-.scroll-to-top.show {
-    opacity: 1;
-    visibility: visible;
-    bottom: 70px;
-}
-
 
 /* post paginations */
 
@@ -14742,7 +14736,6 @@ body.megamenu-popup-active .mobile-nav__content {
     background-color: var(--trevlo-white, #ffffff);
     border-bottom: 1px solid var(--trevlo-white3, #EBE6DE);
     padding-bottom: 30px;
-
 }
 
 .tour-listing-details__info {
@@ -24213,13 +24206,3 @@ body.boxed-wrapper .main-header__booking-btn {
 .tour-type-two__box:hover .tour-type-two__box__back {
     transform: rotateY(0deg);
 }
-
-
-<<<<<<< HEAD
-/*# sourceMappingURL=trevlo.css.map */
-=======
-/*# sourceMappingURL=trevlo.css.map */
-
-
-/*# sourceMappingURL=trevlo.css.map */
->>>>>>> khanh
