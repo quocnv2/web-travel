@@ -1,7 +1,6 @@
 @extends ('Home.master')
 @php
     use Carbon\Carbon;
-
     $slugCategory = isset($objCategory) ? $objCategory : '';
 @endphp
 
@@ -52,7 +51,7 @@
                                                 <h4 class="sidebar-blog__posts-title"><a
                                                         href="{{ route('detailBlog', $valNew->slug) }}">{{ $valNew->title }}</a>
                                                 </h4>
-                                                <p class="truncate-content">{!! strip_tags($valNew->content) !!}</p>
+                                                <div class="recruitment-text">{!! $valNew->content !!}</div>
                                             </div>
                                         </li>
                                     @endforeach
@@ -99,7 +98,6 @@
                                                         {{ $valueNewtour->objCategory->name }}
                                                     </p>
                                                 </div>
-
                                             </div>
                                     @endforeach
                                     </li>

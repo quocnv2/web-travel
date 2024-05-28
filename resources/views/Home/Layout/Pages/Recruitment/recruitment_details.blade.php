@@ -1,16 +1,4 @@
 @extends ('Home.master')
-@section('css_view')
-    <style>
-        .truncate-content {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: normal;
-        }
-    </style>
-@shop
 @php
     use Carbon\Carbon;
 @endphp
@@ -61,7 +49,7 @@
                                                     <a
                                                         href="{{ route('detail_recruitment', $valNew->slug) }}">{{ $valNew->title }}</a>
                                                 </h4>
-                                                <p class="truncate-content">{!! strip_tags($valNew->content) !!}</p>
+                                                <div class="recruitment-text">{!! $valNew->content !!}</div>
                                             </div>
                                         </li>
                                     @endforeach
