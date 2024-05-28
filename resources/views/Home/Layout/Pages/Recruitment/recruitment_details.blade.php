@@ -10,7 +10,7 @@
             white-space: normal;
         }
     </style>
-@show
+@shop
 @php
     use Carbon\Carbon;
 @endphp
@@ -37,19 +37,17 @@
                     <div class="sidebar-blog sidebar-blog--left">
                         <aside class="widget-area">
                             <div class="sidebar-blog__single sidebar-blog__single--categories wow animated fadeInUp"
-                                 data-wow-delay="0.2s" data-wow-duration="1500ms">
+                                data-wow-delay="0.2s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Danh Mục</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__categories ">
                                     @foreach ($categories as $cat)
                                         <li><a href="{{ route('listBlog_Category', $cat->slug) }}">{{ $cat->name }}</a>
                                         </li>
                                     @endforeach
-
-
                                 </ul><!-- /.sidebar-blog__categories  -->
                             </div>
                             <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp"
-                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Tuyển Dụng Mới Nhất</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__posts">
                                     @foreach ($rec_new as $valNew)
@@ -60,7 +58,8 @@
                                                     {{ Carbon::parse($valNew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
                                                 </p><!-- /.sidebar__posts-date -->
                                                 <h4 class="sidebar-blog__posts-title">
-                                                    <a href="{{ route('detail_recruitment', $valNew->slug) }}">{{ $valNew->title }}</a>
+                                                    <a
+                                                        href="{{ route('detail_recruitment', $valNew->slug) }}">{{ $valNew->title }}</a>
                                                 </h4>
                                                 <p class="truncate-content">{!! strip_tags($valNew->content) !!}</p>
                                             </div>
@@ -69,8 +68,9 @@
                                 </ul>
                             </div>
                             <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp left-controller-tour-new"
-                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới Nhất</h3>
+                                data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới Nhất
+                                </h3>
                                 <ul class="tour-listing-sidebar-post">
                                     @foreach ($tour as $valueNewtour)
                                         @php
@@ -95,7 +95,7 @@
                                         @endphp
                                         <li class="tour-listing-sidebar-post__item">
                                             <div class="tour-listing-sidebar-post__image">
-                                                <img src="{{ $valueNewtour->imgBanner }}" alt="{{$valueNewtour->name }}">
+                                                <img src="{{ $valueNewtour->imgBanner }}" alt="{{ $valueNewtour->name }}">
                                             </div>
                                             <div class="tour-listing-sidebar-post__content">
                                                 <p class="tour-listing-sidebar-post__price">
@@ -111,29 +111,25 @@
                                                 </div>
 
                                             </div>
-                                            @endforeach
                                         </li>
+                                    @endforeach
                                 </ul>
                             </div>
-
                         </aside>
                     </div>
                 </div>
 
                 <div class="col-xl-8 col-lg-7">
-
                     <div class="blog-details">
                         <div class="blog-card-three">
                             <div class="blog__card">
                                 <div class="blog__card-content wow animated fadeInUp" data-wow-delay="0.1s"
-                                     data-wow-duration="1500ms">
+                                    data-wow-duration="1500ms">
                                     <h3 class="blog__card-title">{{ $objRec->title }}</h3>
                                     <p class="blog__card-text">{!! $objRec->content !!}</p>
-
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
