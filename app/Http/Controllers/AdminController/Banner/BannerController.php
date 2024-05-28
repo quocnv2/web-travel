@@ -67,9 +67,9 @@ class BannerController extends Controller
         }
 
         if ($banner->delete_Banner($slug) > 0) {
-            return redirect()->route('view_list_banner')->with('success', 'Xóa Danh Mục Thành Công!');
+            return redirect()->route('view_list_banner')->with('success', 'Xóa Thành Công!');
         } else {
-            return redirect()->route('view_list_banner')->with('err', 'Kiểm Tra Lại, Xóa Danh Mục Thất Bại!');
+            return redirect()->route('view_list_banner')->with('err', 'Kiểm Tra Lại, Xóa Thất Bại!');
         }
     }
 
@@ -105,7 +105,10 @@ class BannerController extends Controller
         if ($req->file('file')) {
             $response = $req->file('file') ?  cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->imgBanner;
             $file = $response;
+        } else {
+            $file = $obj->imgBanner;
         }
+
         $req->merge(['imgBanner' => $file]);
 
         if ($banner->update_Banner($req, $slug) >= 0) {

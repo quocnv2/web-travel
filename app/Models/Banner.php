@@ -39,9 +39,14 @@ class Banner extends Model
         return $creates;
     }
 
+    public function get_orderBy_ASC_Where_status()
+    {
+        return DB::table('banner')->where('status', 0)->orderBy('timeCreate', 'DESC')->get();
+    }
+
     public function get_orderBy_ASC()
     {
-        return $this->orderBy('timeCreate', 'DESC')->get();
+        return DB::table('banner')->orderBy('timeCreate', 'DESC')->get();
     }
 
     public function get_link_slug($slug)

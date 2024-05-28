@@ -17,10 +17,10 @@
                                  class="user-avtar wid-45 rounded-circle"/>
                         </div>
                         <div class="flex-grow-1 ms-3 me-2">
-                            {{--                            <h6 class="mb-0">{{ Auth::guard('admin')->user()->fullName }}</h6> --}}
-                            {{--                            <small>{{ Auth::guard('admin')->user()->email }}</small> --}}
-                            <h6 class="mb-0">Demo</h6>
-                            <small>Email Demo</small>
+                            <h6 class="mb-0">{{ Auth::guard('admin')->user()->fullName }}</h6>
+                            <small>{{ Auth::guard('admin')->user()->email }}</small>
+                            {{-- <h6 class="mb-0">Demo</h6>
+                            <small>Email Demo</small> --}}
                         </div>
                         <a class="btn btn-icon btn-link-secondary avtar" data-bs-toggle="collapse"
                            href="#pc_sidebar_userlink">
@@ -50,6 +50,40 @@
             <ul class="pc-navbar">
                 <li class="pc-item pc-caption">
                     <label>Kinh Doanh</label>
+                </li>
+                <li class="pc-item pc-hasmenu">
+                    <a class="pc-link">
+                        <span class="pc-micon">
+                            <svg class="pc-icon">
+                                <use xlink:href="#custom-user-square"></use>
+                            </svg>
+                        </span>
+                        <span class="pc-mtext">Phản hồi</span><span class="pc-arrow"><i
+                                data-feather="chevron-right"></i></span></a>
+                    <ul class="pc-submenu">
+                        <li class="pc-item"><a class="pc-link" href="{{ route('contact_list') }}">Contact</a>
+                        </li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('comment_tour_list') }}">Tour</a>
+                        </li>
+                        <li class="pc-item"><a class="pc-link" href="{{route('comment_blog_list')}}">Bài viết</a>
+                        </li>
+                        <li class="pc-item"><a class="pc-link" href="{{route('comment_room_list')}}">Phòng</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="pc-item pc-hasmenu">
+                    <a class="pc-link">
+                        <span class="pc-micon">
+                            <svg class="pc-icon">
+                                <use xlink:href="#custom-user-square"></use>
+                            </svg>
+                        </span>
+                        <span class="pc-mtext">Khách Hàng</span><span class="pc-arrow"><i
+                                data-feather="chevron-right"></i></span></a>
+                    <ul class="pc-submenu">
+                        <li class="pc-item"><a class="pc-link" href="{{ route('customer_list') }}">Danh Sách</a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="pc-item pc-caption">
                     <label>Hệ Thống</label>

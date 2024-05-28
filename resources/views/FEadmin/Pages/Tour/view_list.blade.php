@@ -101,13 +101,10 @@
                                                             style="display: flex; justify-content: flex-start; color: #2686dc;"><i
                                                                 class="ti ti-eye me-1"></i> Xem</span>
                                                 </a>
-                                                <a class="dropdown-item" href="{{ route('delete_tour', $value->slug) }}"
-                                                   title="Delete"
-                                                   onclick="return confirm('Bạn Có Chắc Muốn Bài Tuyển Dụng Không?')">
-                                                        <span
-                                                            style="display: flex; justify-content: flex-start; color: #dc2626;"><i
-                                                                class="ti ti-trash me-1"></i> Xóa</span>
+                                                <a class="dropdown-item" href="javascript:void(0);" title="Delete" onclick="openDeleteTourModal('{{ $value->name }}', '{{ route('delete_tour', $value->slug) }}')">
+                                                    <span style="display: flex; justify-content: flex-start; color: #dc2626;"><i class="ti ti-trash me-1"></i> Xóa</span>
                                                 </a>
+
                                                 <a class="dropdown-item"
                                                    href="{{route('update_tour',$value->slug)}} "><span
                                                         style="display: flex; justify-content: flex-start; color: #2ca87f;"><i
@@ -116,33 +113,30 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <div class="modal fade" id="customer-modal-{{ $value->id }}"
-                                     data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-                                        <div class="modal-content container-fluid">
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="modal fade" id="customer-modal-{{ $value->id }}" tabindex="-1"
-                                     aria-labelledby="videoModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-lg">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="videoModalLabel">Tiêu đề Video</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             @endforeach
                             </tbody>
                         </table>
                     </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteTourModal" tabindex="-1" aria-labelledby="deleteTourModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="deleteTourModalLabel">Xác Nhận Xóa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Bạn Có Chắc Muốn Xóa Tour <span id="tourName"></span> Không?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="button" class="btn btn-danger" id="confirmDeleteTourBtn">Xóa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -154,4 +148,15 @@
     @include('FEadmin.Layout.JS.modal_images_tour')
     @include('FEadmin.Layout.JS.modal_video')
     @include('FEadmin.Layout.Fooder.js_dataTable')
+    <script !src="">
+        function openDeleteTourModal(tourName, deleteUrl) {
+            document.getElementById('tourName').innerText = tourName;
+            document.getElementById('confirmDeleteTourBtn').onclick = function() {
+                window.location.href = deleteUrl;
+            };
+            var deleteTourModal = new bootstrap.Modal(document.getElementById('deleteTourModal'));
+            deleteTourModal.show();
+        }
+
+    </script>
 @stop

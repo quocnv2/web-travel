@@ -47,8 +47,17 @@
                         </div>
                         @enderror
 
+                        <div class="form-group col-12 col-md-2">
+                            <label class="form-label">Mã Phòng</label>
+                            <input type="text" class="form-control form-control" placeholder="Mã Phòng" name="code"
+                                value="{{ old('code') }}">
+                            @error('code')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
+                        </div>
+
                         <div class="form-group col-12 col-md-6">
-                            <label class="form-label">Tên</label>
+                            <label class="form-label">Tên phòng</label>
                             <input type="text" class="form-control form-control" placeholder="Tên"
                                    onkeyup="ChangeToSlug();" fdprocessedid="w3ptog" name="name" id="slug"
                                    value="{{ old('name') }}">
@@ -60,7 +69,7 @@
                             @enderror
                         </div>
 
-                        <div class="form-group col-12 col-md-6">
+                        <div class="form-group col-12 col-md-4">
                             <label class="form-label">Đường dẫn sạch</label>
                             <input type="text" class="form-control" name="slug" value="{{ old('slug') }}"
                                    id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">

@@ -17,6 +17,7 @@ class Room extends Model
 
     protected $fillable = [
         'id',
+        'code',
         'name',
         'slug',
         'imgRoom',
@@ -32,8 +33,9 @@ class Room extends Model
         'timeCreate',
     ];
 
-    public function get_orderBy_ASC_status_page(){
-        $obj = Blog::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(3);
+    public function get_orderBy_ASC_status_page()
+    {
+        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(3);
         return $obj;
     }
 
@@ -42,6 +44,7 @@ class Room extends Model
     {
         $currentTime = now();
         $creates = $this->Create([
+            'code' => $req->code,
             'name' => $req->name,
             'slug' => $req->slug,
             'imgRoom' => $req->imgRoom,
@@ -58,7 +61,7 @@ class Room extends Model
     // Phương Thức lấy bản ghi theo slug
     public function get_link_slug($slug)
     {
-        $obj = DB::table('room')->where('slug', $slug)->first();
+        $obj = Room::with('objCategory')->where('slug', $slug)->first();
         return $obj;
     }
 
@@ -70,12 +73,13 @@ class Room extends Model
 
     public function get_orderBy_ASC()
     {
-        return $this->orderBy('timeCreate', 'DESC')->get();
+        return Room::with('objCategory')->orderBy('timeCreate','DESC')->get();
     }
 
     public function update_room($req, $slug)
     {
         $obj = DB::table('room')->where('slug', $slug)->update([
+            'code' => $req->code,
             'name' => $req->name,
             'slug' => $req->slug,
             'imgRoom' => $req->imgRoom,
@@ -93,4 +97,25 @@ class Room extends Model
     {
         return $this->belongsTo(Category::class, 'idCategory');
     }
+
+    public function get_orderBy_ASC_status_page_8()
+    {
+        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(12);
+        return $obj;
+    }
+
+    public function get_orderBy_ASC_status_where_category_page_8($idCategory)
+    {
+        $obj = Room::with('objCategory')->where('status', 0)->where('idCategory', $idCategory)->orderBy('timeCreate', 'DESC')->paginate(8);
+        return $obj;
+    }
+    public function get_orderBy_ASC_status_page_12(){
+        $obj = Room::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(12);
+        return $obj;
+    }
+    public function get_orderBy_ASC_status_where_category_page_12($idCategory){
+        $obj = Room::with('objCategory')->where('status', 0)->where('idCategory', $idCategory)->orderBy('timeCreate', 'DESC')->paginate(12);
+        return $obj;
+    }
+
 }

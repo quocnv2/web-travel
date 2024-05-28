@@ -8,6 +8,7 @@ use App\Http\Requests\Room\updateRequest;
 use App\Models\Category;
 use App\Models\Room;
 use App\Rules\Room\RoomRequest;
+use App\Rules\Room\codeRule;
 
 class RoomController extends Controller
 {
@@ -97,9 +98,9 @@ class RoomController extends Controller
         }
 
         if ($room->delete_Room($slug) > 0) {
-            return redirect()->route('view_list_room')->with('success', 'Xóa Danh Mục Thành Công!');
+            return redirect()->route('view_list_room')->with('success', 'Xóa Thành Công!');
         } else {
-            return redirect()->route('view_list_room')->with('err', 'Kiểm Tra Lại, Xóa Danh Mục Thất Bại!');
+            return redirect()->route('view_list_room')->with('err', 'Kiểm Tra Lại, Xóa Thất Bại!');
         }
     }
 
@@ -119,75 +120,17 @@ class RoomController extends Controller
         return view('FEadmin.Pages.Room.view_update', compact('obj', 'list_Category'));
     }
 
-//    public function update_room(updateRequest $req, Room $room, $slug)
-//    {
-//
-//        $obj = $room->get_link_slug($slug);
-//        $originalImgRoom = $req->imgRoom;
-//        $originalImageArray = $req->imageArray;
-//        $originalVideoArray = $req->videoArray;
-//        if (!$obj) {
-//            return view('FEadmin.Pages.Error.error404');
-//        }
-//        $file = '';
-//        if ($req->file('file')) {
-//            $response = $req->file('file') ? cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->imgRoom;
-//            $file = $response;
-//        } else {
-//            $file = $originalImgRoom;
-//        }
-//
-//        // Xử lý list ảnh
-//        $images = []; // Danh sách đường dẫn ảnh
-//
-//        if ($req->hasFile('filesImage')) {
-//            foreach ($req->file('filesImage') as $image) {
-//                $response = cloudinary()->upload($image->getRealPath())->getSecurePath();
-//                // Tạo một mảng chứa id và link ảnh và thêm vào danh sách
-//                $images[] = ['id' => uniqid(), 'link' => $response];
-//            }
-//        } else {
-//            $images = $originalImageArray;
-//        }
-//        // Xử Lý list video
-//        $videos = []; // Danh sách đường dẫn video
-//        $videoUpdated = false; // Biến kiểm tra có cập nhật video mới không
-//
-//        if ($req->hasFile('filesVideo')) {
-//            foreach ($req->file('filesVideo') as $video) {
-//                $response = cloudinary()->uploadApi()->upload($video->getRealPath(), [
-//                    'resource_type' => 'video',
-//                    'upload_large' => true
-//                ]);
-//                $secureUrl = $response['secure_url'];
-//                $videos[] = ['id' => uniqid(), 'link' => $secureUrl];
-//            }
-//            $videoUpdated = true; // Đánh dấu là có cập nhật video mới
-//        } else {
-//            // Gán giá trị mảng rỗng nếu không có video mới và không có video cũ
-//            $videos = $originalVideoArray ; // Đảm bảo nó là mảng
-//        }
-//
-//        // Tạo Req
-//        $req->merge([
-//            'imgRoom' => $file,
-//            'imageArray' => $images,
-//            'videoArray' => $videos,
-//        ]);
-//
-//
-//        if ($room->update_room($req, $slug) >= 0) {
-//            return redirect()->route('view_list_room',['videoArray' => $videos])->with('success', 'Cập Nhật Bài Viết Thành Công!',);
-//        } else {
-//            return redirect()->back()->with('error', 'Cập Nhật Bài Viết Thất Bại!');
-//        }
-//    }
-    //
     public function update_room(updateRequest $req, Room $room, $slug)
     {
         $validatedData = $req->validate([
             'slug' => [new RoomRequest($slug)],
         ]);
+
+        $validatedData = $req->validate([
+            'code' => [new codeRule($slug)],
+        ]);
+
+
         $obj = $room->get_link_slug($slug);
         if (!$obj) {
             return view('FEadmin.Pages.Error.error404');
@@ -208,7 +151,7 @@ class RoomController extends Controller
             $images = is_array($obj->imageArray) ? $obj->imageArray : json_decode($obj->imageArray, true);
         }
 
-// Xử Lý list video
+        // Xử Lý list video
         $videos = []; // Danh sách đường dẫn video
         $videoUpdated = false; // Biến kiểm tra có cập nhật video mới không
 

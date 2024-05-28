@@ -43,7 +43,7 @@
                                     <th>stt</th>
                                     <th>Họ và Tên</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
+                                    <th>Số điện thoại</th>
                                     <th>Ngày sinh</th>
                                     <th>Giới tính</th>
                                     <th>Phân quyền</th>
@@ -59,7 +59,7 @@
                                         <td>{{ $value->email }}</td>
                                         <td>{{ $value->phone }}</td>
                                         <td>{{ $value->birthday }}</td>
-                                        <td>  
+                                        <td>
                                             @if (intval($value->sex == 0))
                                                 <span class="badge rounded-pill text-bg-success">Nam</span>
                                             @else
@@ -78,10 +78,14 @@
                                           <div class="btn-group-dropdown">
                                             <button class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lựa chọn</button>
                                             <div class="dropdown-menu">
-                                              <a class="dropdown-item" href="{{route('delete_account', $value->slugUser) }}" title="Delete" onclick="return confirm('Bạn Có Chắc Muốn Xóa Nhân Sự {{ $value->fullName }} Không?')">
-                                                <span style="display: flex; justify-content: flex-start; color: #dc2626;"><i class="ti ti-trash me-1"></i> Xóa</span>
-                                              </a>
-                                              <a class="dropdown-item" href="{{route('view_update_account', $value->slugUser) }}"><span style="display: flex; justify-content: flex-start; color: #2ca87f;"><i class="ti ti-pencil me-1"></i> Cập Nhật</span></a>
+{{--                                              <a class="dropdown-item" href="{{route('delete_account', $value->slugUser) }}" title="Delete" onclick="return confirm('Bạn Có Chắc Muốn Xóa Nhân Sự {{ $value->fullName }} Không?')">--}}
+{{--                                                <span style="display: flex; justify-content: flex-start; color: #dc2626;"><i class="ti ti-trash me-1"></i> Xóa</span>--}}
+{{--                                              </a>--}}
+                                                <a class="dropdown-item" href="javascript:void(0);" title="Delete" onclick="openDeleteModal('{{ $value->fullName }}', '{{ route('delete_account', $value->slugUser) }}')">
+                                                    <span style="display: flex; justify-content: flex-start; color: #dc2626;"><i class="ti ti-trash me-1"></i> Xóa</span>
+                                                </a>
+
+                                                <a class="dropdown-item" href="{{route('view_update_account', $value->slugUser) }}"><span style="display: flex; justify-content: flex-start; color: #2ca87f;"><i class="ti ti-pencil me-1"></i> Cập Nhật</span></a>
                                               <a class="dropdown-item" href="{{route('view_update_password', $value->slugUser) }}"><span style="display: flex; justify-content: flex-start; color: #a8982c;"><i class="ti ti-settings me-1"></i> Cập Nhật Mật Khẩu</span></a>
                                             </div>
                                           </div>
@@ -89,7 +93,27 @@
                                     </tr>
                                 @endforeach
                             </tbody>
+
                         </table>
+                        <!-- Modal -->
+                        <div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteConfirmationModalLabel">Xác Nhận Xóa</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Bạn Có Chắc Muốn Xóa Nhân Sự <span id="userName"></span> Không?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Xóa</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -98,4 +122,15 @@
 @stop
 @section('view_js')
     @include('FEadmin.Layout.Fooder.js_dataTable')
+    <script>
+        function openDeleteModal(fullName, deleteUrl) {
+            document.getElementById('userName').innerText = fullName;
+            document.getElementById('confirmDeleteBtn').onclick = function() {
+                window.location.href = deleteUrl;
+            };
+            var deleteModal = new bootstrap.Modal(document.getElementById('deleteConfirmationModal'));
+            deleteModal.show();
+        }
+
+    </script>
 @stop

@@ -69,8 +69,7 @@
     --trevlo-size-sm: 11px;
     --trevlo-body-size: 16px;
     --trevlo-body-line-height: 1.875;
-    /* --trevlo-sec-space: 120px; */
-    --trevlo-sec-space: 60px;
+    --trevlo-sec-space: 120px;
     --trevlo-base: #FF5956;
     --trevlo-base-rgb: 255, 89, 86;
     --trevlo-primary: #2D2330;
@@ -339,7 +338,12 @@
     margin-bottom: 11px;
 }
 
-.sec-title__title,
+.sec-title__title {
+    font-size: 30px;
+    line-height: 1.25;
+    margin-bottom: 0;
+}
+
 .sec-title__heading {
     font-size: var(--trevlo-size-8xl, 40px);
     line-height: 1.25;
@@ -2098,8 +2102,19 @@ path {
 }
 
 .testimonials-card__quote {
-    margin-bottom: 0;
-    transition: all 0.4s ease-in-out;
+    position: relative;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    text-transform: capitalize;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 2em;
 }
 
 .testimonial-two {
@@ -5326,6 +5341,11 @@ path {
         margin-left: auto;
         margin-right: auto;
     }
+}
+
+.banner-form--two .banner-form__col {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 @media (max-width: 991px) {
@@ -9582,7 +9602,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 .about-five__text {
-    margin-bottom: 27px;
+    margin-bottom: 10px;
     font-weight: 400;
     line-height: 1.75;
 }
@@ -9591,29 +9611,23 @@ body.megamenu-popup-active .mobile-nav__content {
     margin: 0;
     padding: 0;
     list-style: none;
-    margin-bottom: 45px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     gap: 7px 30px;
+    flex-wrap: wrap;
 }
 
 .about-five__list li {
-    width: 42%;
+    width: 50%;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 2px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 18px;
     color: var(--trevlo-black2);
     line-height: 1.78;
     text-transform: capitalize;
-}
-
-*,
- ::after,
- ::before {
-    box-sizing: border-box;
 }
 
 @media (max-width: 1199px) {
@@ -9940,7 +9954,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 .about-six .sec-title {
-    margin-bottom: 21px;
+    margin-bottom: 10px;
 }
 
 .about-six .sec-title__title {
@@ -10513,6 +10527,180 @@ body.megamenu-popup-active .mobile-nav__content {
     background-position: left bottom;
     background-repeat: no-repeat;
     animation: zumpRight 3s infinite linear;
+}
+
+.why-choose-three__content {
+    position: relative;
+    z-index: 1;
+    padding: 89px 0 120px;
+}
+
+@media (max-width: 991px) {
+    .why-choose-three__content {
+        padding: 89px 0 90px;
+    }
+}
+
+@media (max-width: 767px) {
+    .why-choose-three__content {
+        padding: 49px 0 50px;
+    }
+}
+
+.why-choose-three__content .sec-title {
+    margin-bottom: 20px;
+}
+
+.why-choose-three__content__text {
+    font-weight: 700;
+    color: var(--trevlo-primary, #2D2330);
+    opacity: 0.6;
+    max-width: 505px;
+    margin: 0 0 30px;
+}
+
+.why-choose-three__box-wrapper {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-right: -300px;
+    gap: 30px;
+}
+
+@media (max-width: 1199px) {
+    .why-choose-three__box-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .why-choose-three__box-wrapper {
+        display: block;
+    }
+}
+
+.why-choose-three__box {
+    position: relative;
+    border-radius: 13px;
+    border: 1px solid var(--trevlo-white3, #EBE6DE);
+    background: var(--trevlo-white, #ffffff);
+    box-shadow: 0px 16px 30px 0px rgba(0, 0, 0, 0.05);
+    padding: 15px 17px 29px 28px;
+    margin-top: 30px;
+}
+
+@media (max-width: 767px) {
+    .why-choose-three__box {
+        margin-top: 50px;
+    }
+}
+
+.why-choose-three__box__icon {
+    width: 82px;
+    height: 82px;
+    background-color: var(--trevlo-base, #FF5956);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+    margin: -45px 0 16px;
+    overflow: hidden;
+    font-size: 40px;
+    color: var(--trevlo-white, #ffffff);
+}
+
+.why-choose-three__box__icon::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 150%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: var(--trevlo-base, #FF5956);
+    transition: 700ms cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.why-choose-three__box__icon::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 150%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    background-color: var(--trevlo-primary, #2D2330);
+    transition-duration: 700ms;
+    transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.why-choose-three__box__icon span {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    transition: all 500ms linear;
+    transition-delay: 0s;
+    transition-delay: 0s;
+    transition-delay: 0.1s;
+    transform: scale(1);
+}
+
+.why-choose-three__box:hover .why-choose-three__box__icon span {
+    transform: scale(0.95);
+}
+
+.why-choose-three__box:hover .why-choose-three__box__icon::before {
+    top: 100%;
+}
+
+.why-choose-three__box:hover .why-choose-three__box__icon::after {
+    bottom: -50%;
+}
+
+.why-choose-three__box__title {
+    font-size: 20px;
+    margin: 0 0 9px;
+}
+
+.why-choose-three__box__text {
+    font-weight: 700;
+    margin: 0;
+}
+
+.why-choose-three__image {
+    position: relative;
+    text-align: right;
+    margin-top: -105px;
+}
+
+@media (max-width: 1199px) {
+    .why-choose-three__image {
+        margin: 0;
+        text-align: left;
+    }
+}
+
+.why-choose-three__image img {
+    border-radius: 50px 0px 0px 0px;
+    max-width: 100%;
+    height: auto;
+    min-height: 800px;
+    object-fit: cover;
+}
+
+@media (max-width: 1199px) {
+    .why-choose-three__image img {
+        border-radius: 0;
+        width: 100%;
+        min-height: auto;
+    }
 }
 
 .why-choose-three__content {
@@ -11791,6 +11979,40 @@ body.megamenu-popup-active .mobile-nav__content {
 @media (max-width: 575px) {
     .offer-three__border-one {
         top: -80px;
+    }
+}
+
+.offer-three__border-two {
+    max-width: 100%;
+    height: auto;
+    position: absolute;
+    right: 0;
+    bottom: 63px;
+    animation: rightToLeft 2500ms linear infinite;
+}
+
+@media (max-width: 1350px) {
+    .offer-three__border-two {
+        bottom: -10px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .offer-three__border-two {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 991px) {
+    .offer-three__border-two {
+        max-width: 300px;
+        bottom: -50px;
+    }
+}
+
+@media (max-width: 575px) {
+    .offer-three__border-two {
+        bottom: -80px;
     }
 }
 
@@ -13781,7 +14003,7 @@ body.megamenu-popup-active .mobile-nav__content {
     height: auto;
     position: absolute;
     left: 0;
-    bottom: 160px;
+    bottom: 0px;
     animation: leftToRight 2500ms linear infinite;
 }
 
@@ -14039,6 +14261,13 @@ body.megamenu-popup-active .mobile-nav__content {
     font-size: 20px;
     line-height: 1.25;
     text-transform: capitalize;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1.2em;
+    height: 50px;
 }
 
 .tour-listing-five__card__title:hover {
@@ -14513,7 +14742,7 @@ body.megamenu-popup-active .mobile-nav__content {
     background-color: var(--trevlo-white, #ffffff);
     border-bottom: 1px solid var(--trevlo-white3, #EBE6DE);
     padding-bottom: 30px;
-    margin-bottom: 80px;
+
 }
 
 .tour-listing-details__info {
@@ -15571,6 +15800,8 @@ body.megamenu-popup-active .mobile-nav__content {
     display: flex;
     align-items: flex-start;
     gap: 20px;
+    display: flex;
+    align-items: center;
 }
 
 @media (max-width: 360px) {
@@ -15607,7 +15838,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 .tour-listing-sidebar-post__image img {
-    width: 100%;
+    width: 70px;
     display: block;
     border-radius: 6px;
 }
@@ -15635,6 +15866,12 @@ body.megamenu-popup-active .mobile-nav__content {
     color: inherit;
     background: linear-gradient(to right, currentcolor 0%, currentcolor 100%) 0px 95%/0px 1px no-repeat;
     transition: all 500ms ease;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1.2em;
 }
 
 .tour-listing-sidebar-post__link a:hover {
@@ -15652,7 +15889,7 @@ body.megamenu-popup-active .mobile-nav__content {
 
 .tour-listing-sidebar-post__location span {
     position: relative;
-    top: 4px;
+    top: 1px;
     font-size: 14px;
     color: var(--trevlo-base, #FF5956);
     margin-right: 8px;
@@ -15660,6 +15897,12 @@ body.megamenu-popup-active .mobile-nav__content {
 
 .tour-listing-sidebar-post__location-text {
     margin-bottom: 0;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1.2em;
 }
 
 
@@ -18724,6 +18967,12 @@ body.megamenu-popup-active .mobile-nav__content {
     letter-spacing: -0.03em;
     line-height: 1.2;
     text-transform: capitalize;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1.2em;
 }
 
 @media (max-width: 412px) {
@@ -19286,13 +19535,19 @@ body.megamenu-popup-active .mobile-nav__content {
 
 .sidebar-blog__posts-date i {
     color: var(--trevlo-base, #FF5956);
-    margin-right: 13px;
+    margin-right: 6px;
 }
 
 .sidebar-blog__posts-title {
     font-size: var(--trevlo-size-2xl, 16px);
     text-transform: capitalize;
-    line-height: 1.3;
+    /* line-height: 1.3; */
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    line-height: 1.2em;
 }
 
 .sidebar-blog__posts-title a {
@@ -20633,6 +20888,46 @@ li:hover .footer-three__contact__list__icon {
     height: auto;
     position: absolute;
     opacity: 0.15;
+}
+
+@media (max-width: 1799px) {
+    .footer-three__shape-one,
+    .footer-three__shape-two {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 1599px) {
+    .footer-three__shape-one,
+    .footer-three__shape-two {
+        max-width: 105px;
+    }
+}
+
+@media (max-width: 1399px) {
+    .footer-three__shape-one,
+    .footer-three__shape-two {
+        max-width: 80px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .footer-three__shape-one,
+    .footer-three__shape-two {
+        display: none;
+    }
+}
+
+.footer-three__shape-one {
+    left: 0;
+    bottom: 21px;
+    animation: leftToRight 2500ms linear infinite;
+}
+
+.footer-three__shape-two {
+    top: 30px;
+    right: 0;
+    animation: rightToLeft 2500ms linear infinite;
 }
 
 @media (max-width: 1799px) {
@@ -23132,13 +23427,13 @@ body.boxed-wrapper .main-header__booking-btn {
 
 .feature-one__box {
     position: relative;
-    padding: 0 0 0 70px;
+    padding: 0 0 0 85px;
     min-height: 71px;
 }
 
 .feature-one__box__icon {
-    width: 60px;
-    height: 60px;
+    width: 71px;
+    height: 71px;
     background-color: var(--trevlo-base, #FF5956);
     display: flex;
     align-items: center;
@@ -23149,7 +23444,7 @@ body.boxed-wrapper .main-header__booking-btn {
     left: 0;
     top: 5px;
     overflow: hidden;
-    font-size: 28px;
+    font-size: 38px;
     color: var(--trevlo-white, #ffffff);
 }
 
@@ -23206,8 +23501,8 @@ body.boxed-wrapper .main-header__booking-btn {
 }
 
 .feature-one__box__title {
-    font-size: 16px;
-    margin: 0 0 7px;
+    font-size: 20px;
+    margin: 7px 0 7px;
 }
 
 .feature-one__box__text {
@@ -23920,4 +24215,11 @@ body.boxed-wrapper .main-header__booking-btn {
 }
 
 
+<<<<<<< HEAD
 /*# sourceMappingURL=trevlo.css.map */
+=======
+/*# sourceMappingURL=trevlo.css.map */
+
+
+/*# sourceMappingURL=trevlo.css.map */
+>>>>>>> khanh

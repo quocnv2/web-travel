@@ -7,8 +7,9 @@ use App\Http\Requests\Tour\createRequest;
 use App\Http\Requests\Tour\updateRequest;
 use App\Models\Category;
 use App\Models\Tour;
-use App\Rules\Tour\RoomRequest;
 use App\Rules\Tour\TourRequest;
+use App\Rules\Tour\codeRule;
+use Illuminate\Http\Request;
 
 class TourController extends Controller
 {
@@ -104,9 +105,9 @@ class TourController extends Controller
         }
 
         if ($tour->delete_Tour($slug) > 0) {
-            return redirect()->route('view_list_tour')->with('success', 'Xóa Danh Mục Thành Công!');
+            return redirect()->route('view_list_tour')->with('success', 'Xóa Thành Công!');
         } else {
-            return redirect()->route('view_list_tour')->with('err', 'Kiểm Tra Lại, Xóa Danh Mục Thất Bại!');
+            return redirect()->route('view_list_tour')->with('err', 'Kiểm Tra Lại, Xóa Thất Bại!');
         }
     }
 
@@ -131,6 +132,11 @@ class TourController extends Controller
         $validatedData = $req->validate([
             'slug' => [new TourRequest($slug)],
         ]);
+
+        $validatedData = $req->validate([
+            'code' => [new codeRule($slug)],
+        ]);
+
 
         $obj = $tour->get_link_slug($slug);
 

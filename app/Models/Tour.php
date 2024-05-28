@@ -33,6 +33,25 @@ class Tour extends Model
         'timeCreate',
     ];
 
+    public function get_orderBy_ASC_status_pagess($key){
+        $obj = Tour::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->where('name', 'like', '%' . $key . '%')->get();
+        return $obj;
+    }
+    public function get_orderBy_ASC_status_page_12(){
+        $obj = Tour::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(12);
+        return $obj;
+    }
+
+    public function get_orderBy_ASC_status_where_category_page_12($idCategory){
+        $obj = Tour::with('objCategory')->where('status', 0)->where('idCategory', $idCategory)->orderBy('timeCreate', 'DESC')->paginate(12);
+        return $obj;
+    }
+
+    public function get_orderBy_ASC_status_page(){
+        $obj = Tour::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(6);
+        return $obj;
+    }
+
     // phương thức thêm mới
     public function create_tour($req)
     {
@@ -57,6 +76,13 @@ class Tour extends Model
     }
 
     // Phương Thức lấy bản ghi theo slug
+    public function get_link_code_0($slug)
+    {
+        $obj = Tour::with('objCategory')->where('status = 0', $slug)->first();
+        return $obj;
+    }
+
+
     public function get_link_code($slug)
     {
         $obj = Tour::with('objCategory')->where('code', $slug)->first();
@@ -74,6 +100,10 @@ class Tour extends Model
     {
         $obj = DB::table('tour')->where('slug', $slug)->delete();
         return $obj;
+    }
+
+    public function get_orderBy_ASC_Where_status(){
+        return Tour::with('objCategory')->where('status', 1)->orderBy('timeCreate','DESC')->get();
     }
 
     public function get_orderBy_ASC(){
@@ -104,5 +134,4 @@ class Tour extends Model
     {
         return $this-> belongsTo(Category::class,'idCategory');
     }
-
 }

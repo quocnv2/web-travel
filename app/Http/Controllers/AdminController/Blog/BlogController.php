@@ -106,9 +106,9 @@ class BlogController extends Controller
         }
 
         if ($blog->delete_blog($slug) > 0) {
-            return redirect()->route('view_list_blog')->with('success', 'Xóa Danh Mục Thành Công!');
+            return redirect()->route('view_list_blog')->with('success', 'Xóa Bài Viết Thành Công!');
         } else {
-            return redirect()->route('view_list_blog')->with('err', 'Kiểm Tra Lại, Xóa Danh Mục Thất Bại!');
+            return redirect()->route('view_list_blog')->with('err', 'Kiểm Tra Lại, Xóa Bài Viết Thất Bại!');
         }
     }
 

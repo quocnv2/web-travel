@@ -1,0 +1,104 @@
+/* Banner */
+
+@media (min-width: 1440px) {
+    .tour-list-mobile {
+        display: none;
+    }
+    .mobile-controller-blog {
+        display: none;
+    }
+    .list-detals-moblie {
+        display: none;
+    }
+    .list-room-mobile {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1440px) {}
+
+@media (min-width: 1024px) and (max-width: 1200px) {}
+
+@media (min-width: 765px) and (max-width: 1024px) {
+    .tour-list-mobile {
+        display: none;
+    }
+    .section-space {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+    li.dropdown {
+        color: white;
+    }
+    .left-controller-tour-new {
+        display: none;
+    }
+    .left-controller-tour-story {
+        display: none;
+    }
+    .list-room-mobile {
+        display: none;
+    }
+    .list-detals-moblie {
+        display: none;
+    }
+    .mobile-controller-blog {
+        display: none;
+    }
+}
+
+.mobile-review {
+    padding-top: 20px;
+}
+
+@media (min-width: 300px) and (max-width: 760px) {
+    .banner-form--two {
+        display: none;
+    }
+    li.dropdown {
+        color: white;
+    }
+    .main-slider-five__title {
+        font-size: 25px;
+    }
+    .main-slider-five {
+        height: 900px;
+    }
+    .main-slider-five__carousel .active .main-slider-five__image {
+        height: 800px;
+    }
+    .main-slider-five__carousel .active .main-slider-five__title {
+        font-size: 40px;
+    }
+    .left-controller-tour-new {
+        display: none;
+    }
+    .left-controller-tour-story {
+        display: none;
+    }
+    .right-controller .tour-list-pc {
+        display: none;
+    }
+    .mobile-review {
+        padding-top: 20px;
+    }
+    .section-space {
+        padding-top: 20px !important;
+        padding-bottom: 20px !important;
+    }
+    .row-room-list-mobile {
+        display: none;
+    }
+    .left-controller-room-new {
+        display: none;
+    }
+    .left-controller-blog {
+        display: none;
+    }
+    .controller-blog {
+        display: none;
+    }
+    .right-menu-moblie {
+        display: none;
+    }
+}

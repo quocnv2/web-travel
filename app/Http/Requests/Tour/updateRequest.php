@@ -24,15 +24,23 @@ class updateRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'code' => 'required',
             'name' => 'required',
+            'idCategory' => 'required',
+            'slug' => 'required',
             'status' => 'required',
+            'price' => 'required|numeric',
         ];
     }
     public function messages()
     {
         return [
+            'code.required' => 'Trường không được để trống!',
             'name.required' => 'Trường không được để trống!',
-            'status.required' => 'Trạng thái là bắt buộc!',
+            'idCategory.required' => 'Trường không được để trống!',
+            'price.required' => 'Trường không được để trống!',
+            'price.numeric' => 'Trường Mặc Định Là Số!',
+            'slug.required' => 'Trường không được để trống!',
         ];
     }
 }

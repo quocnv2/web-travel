@@ -75,8 +75,8 @@
         <div class="search-popup__overlay search-toggler"></div>
         <!-- /.search-popup__overlay -->
         <div class="search-popup__content">
-            <form role="search" method="get" class="search-popup__form" action="#">
-                <input type="text" id="search" placeholder="Search Here..." />
+            <form role="search" method="get" class="search-popup__form" action="{{route("search")}}">
+                <input type="text" id="search" placeholder="Tìm Kiếm..." name="key"/>
                 <button type="submit" aria-label="search submit" class="search-popup__btn trevlo-btn trevlo-btn--base">
                     <span class="icon-search"></span>
                 </button>
@@ -92,6 +92,15 @@
     </a>
 
     @include('Home.Layout.Fooder.JS.js_header')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- :: SUCCESS -->
+    @include('Home.Layout.Sweetalert.success')
+    <!-- :: END SUCCESS -->
+    <!-- :: ERROR -->
+    @include('Home.Layout.Sweetalert.error')
+    <!-- :: END ERROR -->
 </body>
 
 </html>

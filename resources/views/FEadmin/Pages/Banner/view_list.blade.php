@@ -33,7 +33,7 @@
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>Danh Sách Danh Mục Vị Trí</h5>
+                        <h5>Danh Sách Banner</h5>
                     </div>
                     <div class="card-body">
                         <table id="res-config" class="display table table-striped table-hover dt-responsive nowrap"
@@ -65,10 +65,10 @@
                                           <div class="btn-group-dropdown">
                                             <button class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Lựa chọn</button>
                                             <div class="dropdown-menu">
-                                              <a class="dropdown-item" href="{{route('delete_banner', $value->slug) }}" title="Delete" onclick="return confirm('Bạn Có Chắc Muốn Xóa Banner {{ $value->name }} Không?')">
-                                                <span style="display: flex; justify-content: flex-start; color: #dc2626;"><i class="ti ti-trash me-1"></i> Xóa</span>
-                                              </a>
-                                              <a class="dropdown-item" href="{{route('view_update_banner', $value->slug) }}"><span style="display: flex; justify-content: flex-start; color: #2ca87f;"><i class="ti ti-pencil me-1"></i> Cập Nhật</span></a>
+                                                <a class="dropdown-item" href="javascript:void(0);" title="Delete" onclick="openDeleteBannerModal('{{ $value->name }}', '{{ route('delete_banner', $value->slug) }}')">
+                                                    <span style="display: flex; justify-content: flex-start; color: #dc2626;"><i class="ti ti-trash me-1"></i> Xóa</span>
+                                                </a>
+                                                <a class="dropdown-item" href="{{route('view_update_banner', $value->slug) }}"><span style="display: flex; justify-content: flex-start; color: #2ca87f;"><i class="ti ti-pencil me-1"></i> Cập Nhật</span></a>
                                             </div>
                                           </div>
                                         </td>
@@ -76,6 +76,25 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <!-- Modal -->
+                        <div class="modal fade" id="deleteBannerModal" tabindex="-1" aria-labelledby="deleteBannerModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteBannerModalLabel">Xác Nhận Xóa</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Bạn Có Chắc Muốn Xóa Banner <span id="bannerName"></span> Không?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                        <button type="button" class="btn btn-danger" id="confirmDeleteBannerBtn">Xóa</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -84,4 +103,15 @@
 @stop
 @section('view_js')
     @include('FEadmin.Layout.Fooder.js_dataTable')
+    <script>
+        function openDeleteBannerModal(bannerName, deleteUrl) {
+            document.getElementById('bannerName').innerText = bannerName;
+            document.getElementById('confirmDeleteBannerBtn').onclick = function() {
+                window.location.href = deleteUrl;
+            };
+            var deleteBannerModal = new bootstrap.Modal(document.getElementById('deleteBannerModal'));
+            deleteBannerModal.show();
+        }
+
+    </script>
 @stop

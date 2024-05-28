@@ -62,9 +62,9 @@ class RecruitmentController extends Controller
         }
 
         if ($recruitment->deleteRecruitment($slug) > 0) {
-            return redirect()->route('view_list_recruitment')->with('success', 'Xóa Danh Mục Thành Công!');
+            return redirect()->route('view_list_recruitment')->with('success', 'Xóa Thành Công!');
         } else {
-            return redirect()->route('view_list_recruitment')->with('err', 'Kiểm Tra Lại, Xóa Danh Mục Thất Bại!');
+            return redirect()->route('view_list_recruitment')->with('err', 'Kiểm Tra Lại, Xóa Thất Bại!');
         }
     }
 

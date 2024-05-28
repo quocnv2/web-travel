@@ -9976,7 +9976,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 /*-----------------------------------------
-# Offer Two 
+# Offer Two
 -----------------------------------------*/
 .offer-two {
   background-color: var(--trevlo-white, #ffffff);
@@ -10087,7 +10087,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 /*-----------------------------------------
-# Offer Three 
+# Offer Three
 -----------------------------------------*/
 .offer-three {
   position: relative;
@@ -13463,7 +13463,7 @@ body.megamenu-popup-active .mobile-nav__content {
   transition: all 0.4s linear;
 }
 .tour-listing-sidebar-post__image img {
-  width: 100%;
+  width: 70px;
   display: block;
   border-radius: 6px;
 }

@@ -44,6 +44,13 @@ class Blog extends Model
         $obj = Blog::with('objCategory')->where('status', 0)->orderBy('timeCreate', 'DESC')->paginate(3);
         return $obj;
     }
+    public function get_details_blog($slug)
+    {
+        $post =  Blog::with('objCategory')
+            ->where('slug', $slug)
+            ->where('status', 0);
+        return $post;
+    }
 
     // phương thức thêm mới
     public function create_blog($req)

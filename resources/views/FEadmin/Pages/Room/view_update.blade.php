@@ -31,39 +31,47 @@
         <div class="row">
             <div class="col-sm-12 col-md-8 offset-md-2 col-lg-10 offset-lg-1">
                 <!-- Basic Inputs -->
-                <form class="card" method="POST" id="formReset"
-                      enctype="multipart/form-data">
+                <form class="card" method="POST" id="formReset" enctype="multipart/form-data">
                     @csrf
                     <div class="card-header">
-                        <h5>Cập Nhật Phòng {{$obj->name}}</h5>
+                        <h5>Cập Nhật Phòng {{ $obj->name }}</h5>
                     </div>
                     <div class="card-body row">
                         @error('status')
-                        <div class="alert alert-primary">
-                            <div class="media align-items-center">
-                                <i class="ti ti-info-circle h2 f-w-400 mb-0"></i>
-                                <div class="media-body ms-3">{{ $message }}.</div>
+                            <div class="alert alert-primary">
+                                <div class="media align-items-center">
+                                    <i class="ti ti-info-circle h2 f-w-400 mb-0"></i>
+                                    <div class="media-body ms-3">{{ $message }}.</div>
+                                </div>
                             </div>
-                        </div>
                         @enderror
+
+                        <div class="form-group col-12 col-md-2">
+                            <label class="form-label">Mã Phòng</label>
+                            <input type="text" class="form-control form-control" placeholder="Mã Tour" name="code"
+                                value="{{ $obj->code }}">
+                            @error('code')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
+                        </div>
 
                         <div class="form-group col-12 col-md-6">
                             <label class="form-label">Tên</label>
                             <input type="text" class="form-control form-control" placeholder="Tên"
-                                   onkeyup="ChangeToSlug();" fdprocessedid="w3ptog" name="name" id="slug"
-                                   value="{{ $obj->name }}">
+                                onkeyup="ChangeToSlug();" fdprocessedid="w3ptog" name="name" id="slug"
+                                value="{{ $obj->name }}">
                             @error('name')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                             @error('slug')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
 
-                        <div class="form-group col-12 col-md-6">
+                        <div class="form-group col-12 col-md-4">
                             <label class="form-label">Đường dẫn sạch</label>
                             <input type="text" class="form-control" name="slug" value="{{ $obj->slug }}"
-                                   id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
+                                id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
                         </div>
                         <div class="form-group col-12 col-md-6">
                             <label class="form-label" for="exampleSelect1">Vị Trí</label>
@@ -71,32 +79,32 @@
                                 @foreach ($list_Category->sortBy('name') as $value)
                                     @if ($value->status == 0)
                                         <option value="{{ $value->id }}"
-                                                @if ($value->id == old('idCategory')) selected @endif>
+                                            @if ($value->id == old('idCategory')) selected @endif>
                                             {{ $value->name }}
                                         </option>
                                     @endif
                                 @endforeach
                             </select>
                             @error('idCategory')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="form-group col-12 col-md-6">
                             <label class="form-label">Giá Phòng Theo Đêm</label>
                             <input type="text" class="form-control form-control" placeholder="Giá Thuê Theo Giờ"
-                                   name="price" value="{{ $obj->price }}" id="price">
+                                name="price" value="{{ $obj->price }}" id="price">
                             @error('price')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                             <small id="rent_price" style="display: none;"></small>
                         </div>
                         <div class="form-group col-12 col-md-4">
                             <div class="row"
-                                 style="display: flex;align-content: center;align-items: center; margin-bottom: 10px;">
+                                style="display: flex;align-content: center;align-items: center; margin-bottom: 10px;">
                                 <label class="form-label col-6">Ảnh Banner</label>
                                 <div class="col-6" style="display: flex; justify-content: flex-end;">
-                                    <button type="button" class="btn btn-shadow btn-success btn-sm"
-                                            data-bs-toggle="modal" data-bs-target="#myModal-Banner">Xem
+                                    <button type="button" class="btn btn-shadow btn-success btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#myModal-Banner">Xem
                                     </button>
                                 </div>
                                 <div class="modal" id="myModal-Banner">
@@ -105,14 +113,13 @@
 
                                             <!-- Modal Header -->
                                             <div class="modal-header">
-                                                <button type="button" class="btn-close"
-                                                        data-bs-dismiss="modal"></button>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                             </div>
 
                                             <!-- Modal body -->
                                             <div class="modal-body">
-                                                <img src="{{$obj->imgRoom}}" style="width: 100%;" class="rounded"
-                                                     alt="Cinque Terre">
+                                                <img src="{{ $obj->imgRoom }}" style="width: 100%;" class="rounded"
+                                                    alt="Cinque Terre">
                                             </div>
                                         </div>
                                     </div>
@@ -126,19 +133,19 @@
                                 </label>
                                 <span id="filesel_1">Chọn Ảnh Banner...</span>
                                 <input type="file" id="imgUpload_1" name="file" accept="image/*"
-                                       multiple="false">
+                                    multiple="false">
                             </div>
                             @error('file')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="form-group col-12 col-md-4">
                             <div class="row"
-                                 style="display: flex;align-content: center;align-items: center; margin-bottom: 10px;">
+                                style="display: flex;align-content: center;align-items: center; margin-bottom: 10px;">
                                 <label class="form-label col-6">Ảnh Chi Tiết</label>
                                 <div class="col-6" style="display: flex; justify-content: flex-end;">
                                     <button type="button" class="btn btn-shadow btn-success btn-sm"
-                                            data-bs-toggle="modal" data-bs-target="#myModal-list">Xem
+                                        data-bs-toggle="modal" data-bs-target="#myModal-list">Xem
                                     </button>
                                 </div>
                                 <div class="modal" id="myModal-list">
@@ -148,7 +155,7 @@
                                             <!-- Modal Header -->
                                             <div class="modal-header">
                                                 <button type="button" class="btn-close"
-                                                        data-bs-dismiss="modal"></button>
+                                                    data-bs-dismiss="modal"></button>
                                             </div>
 
                                             <!-- Modal body -->
@@ -158,29 +165,33 @@
                                                     <!-- Indicators/dots -->
                                                     <div class="carousel-indicators">
                                                         <button type="button" data-bs-target="#demo"
-                                                                data-bs-slide-to="0" class="active"></button>
+                                                            data-bs-slide-to="0" class="active"></button>
                                                         <button type="button" data-bs-target="#demo"
-                                                                data-bs-slide-to="1"></button>
+                                                            data-bs-slide-to="1"></button>
                                                         <button type="button" data-bs-target="#demo"
-                                                                data-bs-slide-to="2"></button>
+                                                            data-bs-slide-to="2"></button>
                                                     </div>
 
                                                     <!-- The slideshow/carousel -->
                                                     @php
-                                                        $imageArray= json_decode($obj->imageArray, true);
+                                                        $imageArray = json_decode($obj->imageArray, true);
                                                     @endphp
 
-                                                            <!-- The slideshow/carousel -->
+                                                    <!-- The slideshow/carousel -->
                                                     @php
                                                         // Giả sử $imageArray có thể là chuỗi JSON hoặc đã là một mảng
-                                                        $imageArray = is_string($imageArray) ? json_decode($imageArray, true) : $imageArray;
+                                                        $imageArray = is_string($imageArray)
+                                                            ? json_decode($imageArray, true)
+                                                            : $imageArray;
                                                     @endphp
 
                                                     <div class="carousel-inner">
-                                                        @if(is_array($imageArray) && count($imageArray) > 0)
-                                                            @foreach($imageArray as $index => $image)
-                                                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                                                    <img src="{{ optional($image)['link'] }}" class="d-block w-100" alt="...">
+                                                        @if (is_array($imageArray) && count($imageArray) > 0)
+                                                            @foreach ($imageArray as $index => $image)
+                                                                <div
+                                                                    class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                                                    <img src="{{ optional($image)['link'] }}"
+                                                                        class="d-block w-100" alt="...">
                                                                 </div>
                                                             @endforeach
                                                         @else
@@ -192,11 +203,11 @@
 
                                                     <!-- Left and right controls/icons -->
                                                     <button class="carousel-control-prev" type="button"
-                                                            data-bs-target="#demo" data-bs-slide="prev">
+                                                        data-bs-target="#demo" data-bs-slide="prev">
                                                         <span class="carousel-control-prev-icon"></span>
                                                     </button>
                                                     <button class="carousel-control-next" type="button"
-                                                            data-bs-target="#demo" data-bs-slide="next">
+                                                        data-bs-target="#demo" data-bs-slide="next">
                                                         <span class="carousel-control-next-icon"></span>
                                                     </button>
                                                 </div>
@@ -211,19 +222,19 @@
                                 </label>
                                 <span id="filesel_2">Chọn Ảnh Chi Tiết...</span>
                                 <input type="file" id="imgUpload_2" name="filesImage[]" accept="image/*"
-                                       multiple="">
+                                    multiple="">
                             </div>
                             @error('filesImage')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
                         <div class="form-group col-12 col-md-4">
                             <div class="row"
-                                 style="display: flex;align-content: center;align-items: center; margin-bottom: 10px;">
+                                style="display: flex;align-content: center;align-items: center; margin-bottom: 10px;">
                                 <label class="form-label col-6">Video Chi Tiết</label>
                                 <div class="col-6" style="display: flex; justify-content: flex-end;">
                                     <button type="button" class="btn btn-shadow btn-success btn-sm"
-                                            data-bs-toggle="modal" data-bs-target="#myModal-video">Xem
+                                        data-bs-toggle="modal" data-bs-target="#myModal-video">Xem
                                     </button>
                                 </div>
                                 <div class="modal" id="myModal-video">
@@ -232,7 +243,7 @@
                                             <!-- Modal Header -->
                                             <div class="modal-header">
                                                 <button type="button" class="btn-close"
-                                                        data-bs-dismiss="modal"></button>
+                                                    data-bs-dismiss="modal"></button>
                                             </div>
 
                                             <!-- Modal body -->
@@ -241,26 +252,30 @@
                                                     <!-- Indicators/dots -->
                                                     <div class="carousel-indicators">
                                                         <button type="button" data-bs-target="#demovideo"
-                                                                data-bs-slide-to="0" class="active"></button>
+                                                            data-bs-slide-to="0" class="active"></button>
                                                         <button type="button" data-bs-target="#demovideo"
-                                                                data-bs-slide-to="1"></button>
+                                                            data-bs-slide-to="1"></button>
                                                         <button type="button" data-bs-target="#demovideo"
-                                                                data-bs-slide-to="2"></button>
+                                                            data-bs-slide-to="2"></button>
                                                     </div>
                                                     @php
                                                         $videoArray = json_decode($obj->videoArray, true) ?? [];
                                                     @endphp
 
-                                                            <!-- The slideshow/carousel -->
+                                                    <!-- The slideshow/carousel -->
                                                     <div class="carousel-inner">
                                                         @php
-                                                            $videoArray = is_string($videoArray) ? json_decode($videoArray, true) : $videoArray;
+                                                            $videoArray = is_string($videoArray)
+                                                                ? json_decode($videoArray, true)
+                                                                : $videoArray;
                                                         @endphp
 
-                                                        @if(is_array($videoArray) && count($videoArray) > 0)
-                                                            @foreach($videoArray as $index => $video)
-                                                                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                                                    <video src="{{ optional($video)['link'] }}" class="d-block w-100" controls></video>
+                                                        @if (is_array($videoArray) && count($videoArray) > 0)
+                                                            @foreach ($videoArray as $index => $video)
+                                                                <div
+                                                                    class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                                                    <video src="{{ optional($video)['link'] }}"
+                                                                        class="d-block w-100" controls></video>
                                                                 </div>
                                                             @endforeach
                                                         @else
@@ -272,11 +287,11 @@
 
                                                     <!-- Left and right controls/icons -->
                                                     <button class="carousel-control-prev" type="button"
-                                                            data-bs-target="#demovideo" data-bs-slide="prev">
+                                                        data-bs-target="#demovideo" data-bs-slide="prev">
                                                         <span class="carousel-control-prev-icon"></span>
                                                     </button>
                                                     <button class="carousel-control-next" type="button"
-                                                            data-bs-target="#demovideo" data-bs-slide="next">
+                                                        data-bs-target="#demovideo" data-bs-slide="next">
                                                         <span class="carousel-control-next-icon"></span>
                                                     </button>
                                                 </div>
@@ -291,21 +306,21 @@
                                 </label>
                                 <span id="filesel_3">Chọn Video Chi Tiết...</span>
                                 <input type="file" id="imgUpload_3" name="filesVideo[]" accept="video/*"
-                                       multiple="">
+                                    multiple="">
                             </div>
                             @error('filesVideo')
-                            <small style="color: #f33923;">{{ $message }}</small>
+                                <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
 
 
                         <div class="form-group col-12">
                             @error('blogDetails')
-                            <div class="form-group">
-                                <div class="alert alert-danger">
-                                    <strong>Cảnh Báo!</strong> Nội Dung Bài Viết Không Được Để Trống!
+                                <div class="form-group">
+                                    <div class="alert alert-danger">
+                                        <strong>Cảnh Báo!</strong> Nội Dung Bài Viết Không Được Để Trống!
+                                    </div>
                                 </div>
-                            </div>
                             @enderror
                             <div class="form-group">
                                 <label class="form-label">Chi Tiết</label>
@@ -319,14 +334,14 @@
                             <div class="col-sm-12">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="status" value="0"
-                                           id="customCheckinlhstate1" {{ $obj->status == 0 ? 'checked' : '' }}
-                                           data-gtm-form-interact-field-id="2">
+                                        id="customCheckinlhstate1" {{ $obj->status == 0 ? 'checked' : '' }}
+                                        data-gtm-form-interact-field-id="2">
                                     <label class="form-check-label" for="customCheckinlhstate1"> Hiện </label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="status" value="1"
-                                           id="customCheckinlhstate2" {{ $obj->status == 1 ? 'checked' : '' }}
-                                           data-gtm-form-interact-field-id="1">
+                                        id="customCheckinlhstate2" {{ $obj->status == 1 ? 'checked' : '' }}
+                                        data-gtm-form-interact-field-id="1">
                                     <label class="form-check-label" for="customCheckinlhstate2"> Ẩn </label>
                                 </div>
                             </div>
@@ -352,7 +367,7 @@
 
     <script src="{{ url('assets') }}/js/plugins/ckeditor/classic/ckeditor.js"></script>
     <script>
-        (function () {
+        (function() {
             ClassicEditor.create(document.querySelector('#classic-editor')).catch((error) => {
                 console.error(error);
             });
@@ -360,7 +375,7 @@
     </script>
 
     <script type="text/javascript">
-        $("#imgUpload_1").change(function () {
+        $("#imgUpload_1").change(function() {
             var numFiles = $(this)[0].files.length;
             if (numFiles > 1) {
                 swal(
@@ -377,7 +392,7 @@
             }
         });
 
-        $("#imgUpload_2").change(function () {
+        $("#imgUpload_2").change(function() {
             var numFiles = $(this)[0].files.length;
             if (numFiles < 2) {
                 $('#filesel_2').text(numFiles + ' file selected');
@@ -386,7 +401,7 @@
             }
         });
 
-        $("#imgUpload_3").change(function () {
+        $("#imgUpload_3").change(function() {
             var numFiles = $(this)[0].files.length;
             if (numFiles < 2) {
                 $('#filesel_3').text(numFiles + ' file selected');
