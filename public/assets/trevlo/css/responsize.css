@@ -1,9 +1,5 @@
 /* Banner */
 
-.faq-page {
-    padding: 80px;
-}
-
 @media (min-width: 1440px) {
     .tour-list-mobile {
         display: none;
