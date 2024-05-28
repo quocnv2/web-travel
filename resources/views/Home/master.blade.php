@@ -102,7 +102,7 @@
         </div>
     </a>
 
-    <a href="" id="linkzalo" target="_blank" rel="noopener noreferrer">
+    <a href="https://zalo.me/0888920092" id="linkzalo" target="_blank" rel="noopener noreferrer">
         <div class="fcta-zalo-vi-tri-nut">
             <div id="fcta-zalo-tracking" class="fcta-zalo-nen-nut">
                 <div id="fcta-zalo-tracking" class="fcta-zalo-ben-trong-nut">
@@ -112,7 +112,8 @@
         </div>
     </a>
 
-    <a href="" id="linkzalo" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.messenger.com/t/100772425270420/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0"
+        id="linkzalo" target="_blank" rel="noopener noreferrer">
         <div class="fcta-zalo-vi-tri-nut-telegram">
             <div id="fcta-zalo-tracking" class="fcta-zalo-nen-nut-telegram">
                 <div id="fcta-zalo-tracking" class="fcta-zalo-ben-trong-nut">
