@@ -354,7 +354,7 @@
                                     <div class="tour-listing-details__reviews-comment-box">
                                         <div class="tour-listing-details__reviews-image wow animated fadeInUp"
                                              data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                            <img src="{{ url('assets') }}/images/tours/review-1.jpg" alt="">
+                                            <img src="{{asset('assets/images/user/avatar-2.jpg')}}" alt=" {{ $listComment->name }}">
                                         </div><!-- /."tour-listing-details__reviews-image -->
                                         <div class="tour-listing-details__reviews-content wow animated fadeInUp"
                                              data-wow-delay="0.3s" data-wow-duration="1500ms">
@@ -362,16 +362,33 @@
                                                 <div class="tour-listing-details__reviews-info">
                                                     <h3 class="tour-listing-details__reviews-name">
                                                         {{ $listComment->name }}</h3>
-
                                                 </div><!-- /.tour-listing-details__reviews-info -->
-
                                             </div><!-- /.tour-listing-details__reviews-inner-content -->
                                             <p class="tour-listing-details__reviews-text">
                                                 {{ $listComment->commentUser }}
                                             </p>
-                                            <a href="#"
-                                               class="tour-listing-details__reviews-btn trevlo-btn trevlo-btn--white-two"><span>Phản
-                                                    Hồi</span></a>
+                                        </div><!-- /.tour-listing-details__reviews-content -->
+                                    </div><!-- /.tour-listing-details__reviews-comment-box -->
+                                @endforeach
+                            </div>
+                            <div class="tour-listing-details__reviews-comment  ">
+                                @foreach ($listCommentTour as $listComment)
+                                    <div class="tour-listing-details__reviews-comment-box">
+                                        <div class="tour-listing-details__reviews-image wow animated fadeInUp"
+                                             data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                            <img src="{{asset('assets/images/user/avatar-2.jpg')}}" alt=" {{ $listComment->name }}">
+                                        </div><!-- /."tour-listing-details__reviews-image -->
+                                        <div class="tour-listing-details__reviews-content wow animated fadeInUp"
+                                             data-wow-delay="0.3s" data-wow-duration="1500ms">
+                                            <div class="tour-listing-details__reviews-inner-content">
+                                                <div class="tour-listing-details__reviews-info">
+                                                    <h3 class="tour-listing-details__reviews-name">
+                                                        {{ $listComment->name }}</h3>
+                                                </div><!-- /.tour-listing-details__reviews-info -->
+                                            </div><!-- /.tour-listing-details__reviews-inner-content -->
+                                            <p class="tour-listing-details__reviews-text">
+                                                {{ $listComment->commentUser }}
+                                            </p>
                                         </div><!-- /.tour-listing-details__reviews-content -->
                                     </div><!-- /.tour-listing-details__reviews-comment-box -->
                                 @endforeach
@@ -576,94 +593,6 @@
                                 @endforeach
                             </div><!-- /.row -->
                         </div><!-- /.tour-listing-details__similar container-fluid -->
-<<<<<<< HEAD
-                        @if ($listCommentTour && count($listCommentTour) > 0)
-                            <div class="tour-listing-details__reviews ">
-                                <h3 class="tour-listing-details__reviews-title tour-listing-details__title ">
-                                    Đánh Giá Của Khách Hàng
-                                </h3>
-                                <div class="tour-listing-details__reviews-comment">
-                                    @foreach ($listCommentTour as $listComment)
-                                        <div class="tour-listing-details__reviews-comment-box">
-                                            <div class="tour-listing-details__reviews-image wow animated fadeInUp"
-                                                data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                                <img src="{{ url('assets') }}/images/tours/review-1.jpg" alt="">
-                                            </div><!-- /."tour-listing-details__reviews-image -->
-                                            <div class="tour-listing-details__reviews-content wow animated fadeInUp"
-                                                data-wow-delay="0.3s" data-wow-duration="1500ms">
-                                                <div class="tour-listing-details__reviews-inner-content">
-                                                    <div class="tour-listing-details__reviews-info">
-                                                        <h3 class="tour-listing-details__reviews-name">
-                                                            {{ $listComment->name }}</h3>
-
-                                                    </div><!-- /.tour-listing-details__reviews-info -->
-
-                                                </div><!-- /.tour-listing-details__reviews-inner-content -->
-                                                <p class="tour-listing-details__reviews-text">
-                                                    {{ $listComment->commentUser }}
-                                                </p>
-                                                <a href="#"
-                                                    class="tour-listing-details__reviews-btn trevlo-btn trevlo-btn--white-two"><span>Phản
-                                                        Hồi</span></a>
-                                            </div><!-- /.tour-listing-details__reviews-content -->
-                                        </div><!-- /.tour-listing-details__reviews-comment-box -->
-                                    @endforeach
-                                </div>
-                            </div>
-                        @endif
-                        <div class="tour-listing-details__add-review mobile-review">
-                            <h3 class="tour-listing-details__add-review-title tour-listing-details__title">Để Lại Đánh
-                                Giá Của Bạn
-                            </h3>
-                        </div>
-                        <div class="tour-listing-details__form">
-
-                            <form class="form-one row gutter-20" method="POST"
-                                action="{{ route('create_comment_tour', ['slug' => $objTour->slug]) }}">
-                                @csrf
-                                <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s"
-                                    data-wow-duration="1500ms">
-                                    <div class="form-one__group">
-                                        <input type="text" name="name" id="form-one-name-input"
-                                            placeholder="Họ và tên" class="form-one__input" value="{{ old('name') }}">
-
-                                        @error('name')
-                                            <small style="color: #f33923;">{{ $message }}</small>
-                                        @enderror
-                                    </div><!-- /.form-one__group -->
-                                </div><!-- /.col-md-6 -->
-                                <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s"
-                                    data-wow-duration="1500ms">
-                                    <div class="form-one__group">
-                                        <input type="email" name="email" id="form-one-email-input"
-                                            placeholder="Email" class="form-one__input" value="{{ old('email') }}">
-                                    </div><!-- /.form-one__group -->
-                                </div><!-- /.col-md-6 -->
-                                <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s"
-                                    data-wow-duration="1500ms">
-                                    <div class="form-one__group">
-                                        <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10" placeholder="Viết tâm thư"
-                                            class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Bài Viết' }}</textarea>
-                                        @error('commentUser')
-                                            <small style="color: #f33923;">{{ $message }}</small>
-                                        @enderror
-                                    </div><!-- /.form-one__group -->
-                                </div><!-- /.col-12-->
-                                <input type="hidden" name="idTour" value="{{ $objTour->id }}">
-                                <input type="hidden" name="status" value="{{ $objTour->status ?? 0 }}">
-                                <div class="col-12 wow animated fadeInUp" data-wow-delay="0.2s"
-                                    data-wow-duration="1500ms">
-                                    <div class="form-one__btn-box">
-                                        <button type="submit" class="form-one__btn trevlo-btn trevlo-btn--base">
-                                            <span>Gửi tin nhắn</span></button>
-                                    </div>
-                                </div>
-
-                            </form>
-
-                        </div>
-=======
->>>>>>> khanh
                     </div>
                 </div>
             </div>
