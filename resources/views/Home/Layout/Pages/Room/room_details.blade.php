@@ -245,6 +245,58 @@
                                     @endforeach
                                 </ul>
                             </div>
+                            <div class="tour-listing-details__add-review">
+                                <h3 class="tour-listing-details__add-review-title tour-listing-details__title">Để Lại Đánh
+                                    Giá Của Bạn
+                                </h3>
+                            </div>
+                            <div class="tour-listing-details__form">
+
+                                <form class="form-one row gutter-20" method="POST"
+                                    action="{{ route('create_comment_room', ['slug' => $objRoom->slug]) }}">
+                                    @csrf
+                                    <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s"
+                                        data-wow-duration="1500ms">
+                                        <div class="form-one__group">
+                                            <input type="text" name="name" id="form-one-name-input"
+                                                placeholder="Họ và tên" class="form-one__input" value="{{ old('name') }}">
+
+                                            @error('name')
+                                                <small style="color: #f33923;">{{ $message }}</small>
+                                            @enderror
+                                        </div><!-- /.form-one__group -->
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s"
+                                        data-wow-duration="1500ms">
+                                        <div class="form-one__group">
+                                            <input type="email" name="email" id="form-one-email-input"
+                                                placeholder="Email" class="form-one__input" value="{{ old('email') }}">
+                                        </div><!-- /.form-one__group -->
+                                    </div><!-- /.col-md-6 -->
+                                    <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s"
+                                        data-wow-duration="1500ms">
+                                        <div class="form-one__group">
+                                            <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10" placeholder="Viết tâm thư"
+                                                class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Bài Viết' }}</textarea>
+                                            @error('commentUser')
+                                                <small style="color: #f33923;">{{ $message }}</small>
+                                            @enderror
+                                        </div><!-- /.form-one__group -->
+                                    </div><!-- /.col-12-->
+                                    <input type="hidden" name="idRoom" value="{{ $objRoom->id }}">
+                                    <input type="hidden" name="commentAdmin" value="{{ old('commentAdmin') ?? '' }}">
+                                    <input type="hidden" name="status" value="{{ $objRoom->status ?? 0 }}">
+                                    <div class="col-12 wow animated fadeInUp" data-wow-delay="0.2s"
+                                        data-wow-duration="1500ms">
+                                        <div class="form-one__btn-box">
+                                            <button type="submit" class="form-one__btn trevlo-btn trevlo-btn--base">
+                                                <span>Gửi tin nhắn</span></button>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
                         </aside>
                     </div>
                     <div class="col-xl-8">
@@ -461,58 +513,7 @@
                                 </ul>
                             </div>
                         </div><!-- /.tour-listing-details__similar container-fluid -->
-                        <div class="tour-listing-details__add-review">
-                            <h3 class="tour-listing-details__add-review-title tour-listing-details__title">Để Lại Đánh
-                                Giá Của Bạn
-                            </h3>
-                        </div>
-                        <div class="tour-listing-details__form">
 
-                            <form class="form-one row gutter-20" method="POST"
-                                action="{{ route('create_comment_room', ['slug' => $objRoom->slug]) }}">
-                                @csrf
-                                <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s"
-                                    data-wow-duration="1500ms">
-                                    <div class="form-one__group">
-                                        <input type="text" name="name" id="form-one-name-input"
-                                            placeholder="Họ và tên" class="form-one__input" value="{{ old('name') }}">
-
-                                        @error('name')
-                                            <small style="color: #f33923;">{{ $message }}</small>
-                                        @enderror
-                                    </div><!-- /.form-one__group -->
-                                </div><!-- /.col-md-6 -->
-                                <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s"
-                                    data-wow-duration="1500ms">
-                                    <div class="form-one__group">
-                                        <input type="email" name="email" id="form-one-email-input"
-                                            placeholder="Email" class="form-one__input" value="{{ old('email') }}">
-                                    </div><!-- /.form-one__group -->
-                                </div><!-- /.col-md-6 -->
-                                <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s"
-                                    data-wow-duration="1500ms">
-                                    <div class="form-one__group">
-                                        <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10" placeholder="Viết tâm thư"
-                                            class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Bài Viết' }}</textarea>
-                                        @error('commentUser')
-                                            <small style="color: #f33923;">{{ $message }}</small>
-                                        @enderror
-                                    </div><!-- /.form-one__group -->
-                                </div><!-- /.col-12-->
-                                <input type="hidden" name="idRoom" value="{{ $objRoom->id }}">
-                                <input type="hidden" name="commentAdmin" value="{{ old('commentAdmin') ?? '' }}">
-                                <input type="hidden" name="status" value="{{ $objRoom->status ?? 0 }}">
-                                <div class="col-12 wow animated fadeInUp" data-wow-delay="0.2s"
-                                    data-wow-duration="1500ms">
-                                    <div class="form-one__btn-box">
-                                        <button type="submit" class="form-one__btn trevlo-btn trevlo-btn--base">
-                                            <span>Gửi tin nhắn</span></button>
-                                    </div>
-                                </div>
-
-                            </form>
-
-                        </div>
                     </div>
                 </div>
             </div>
