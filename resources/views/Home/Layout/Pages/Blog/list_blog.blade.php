@@ -32,8 +32,21 @@
                 <div class="blog-page__col-sidebar col-xl-4 col-lg-5">
                     <div class="sidebar-blog sidebar-blog--left">
                         <aside class="widget-area">
+                            <div class="sidebar-blog__single sidebar-blog__single--categories wow animated fadeInUp"
+                                 data-wow-delay="0.2s" data-wow-duration="1500ms">
+                                <h4 class="sidebar-blog__title">Danh Mục</h4><!-- /.sidebar-blog__title -->
+                                <ul class="sidebar-blog__categories ">
+                                    @foreach ($categories as $cat)
+                                        <li><a href="{{ route('listBlog_Category', $cat->slug) }}">{{ $cat->name }}</a>
+                                        </li>
+                                    @endforeach
+
+
+                                </ul><!-- /.sidebar-blog__categories  -->
+                            </div>
                             <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp left-controller-blog "
                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
+
                                 <h4 class="sidebar-blog__title">Bài Viết Mới Nhất</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__posts ">
                                     @foreach ($blog_new as $valNew)
@@ -55,18 +68,7 @@
                                     @endforeach
                                 </ul><!-- /.sidebar-blog__posts  -->
                             </div><!-- /.sidebar-blog__single -->
-                            <div class="sidebar-blog__single sidebar-blog__single--categories wow animated fadeInUp"
-                                data-wow-delay="0.2s" data-wow-duration="1500ms">
-                                <h4 class="sidebar-blog__title">Danh Mục</h4><!-- /.sidebar-blog__title -->
-                                <ul class="sidebar-blog__categories ">
-                                    @foreach ($categories as $cat)
-                                        <li><a href="{{ route('listBlog_Category', $cat->slug) }}">{{ $cat->name }}</a>
-                                        </li>
-                                    @endforeach
 
-
-                                </ul><!-- /.sidebar-blog__categories  -->
-                            </div>
                             <!-- /.sidebar-blog__single -->
                             <!-- /.sidebar-blog__single -->
                             <!-- /.sidebar-blog__single -->
@@ -114,7 +116,7 @@
                                     </div><!-- /.blog-four__card -->
                                 </div><!-- /.col-lg-4 col-md-6 -->
                             @endforeach
-                        </div><!-- /.row -->                     
+                        </div><!-- /.row -->
                     </div><!-- /.blog-page__container container-fluid -->
                     <div class="blog-page__container container-fluid mobile-controller-blog">
                         <div class="row">

@@ -26,6 +26,7 @@ class storyRoom{
             'price' => $course->price,
             'idCategory' => $course->idCategory,
             'status' => $course->status,
+            'nameCategory' => $course->objCategory->name,
         ];
 
         $this->items[$course->id] = $item;

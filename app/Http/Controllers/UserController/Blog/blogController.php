@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\UserController\Blog;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CommentBlog\createRequest;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\CommentBlog;
-use Illuminate\Http\Request;
 
 class blogController extends Controller
 {
@@ -45,7 +45,7 @@ class blogController extends Controller
         return view('Home.Layout.Pages.Blog.blog_details', compact('categories', 'blog_new', 'objBlog', 'listCommentBlog'));
     }
 
-    public function create_comment_blog(Request $req, CommentBlog $commentBlog, Blog $tourBlog, $slug)
+    public function create_comment_blog(createRequest $req, CommentBlog $commentBlog, Blog $tourBlog, $slug)
     {
 //        dd($req->all());
         $create = $commentBlog->create_comment_blog($req);
