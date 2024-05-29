@@ -30,6 +30,7 @@ class updateRequest extends FormRequest
             'slug' => 'required',
             'status' => 'required',
             'price' => 'required|numeric',
+            'weekendPrice' => 'required|numeric',
         ];
     }
 
@@ -42,6 +43,8 @@ class updateRequest extends FormRequest
             'price.required' => 'Trường không được để trống!',
             'price.numeric' => 'Trường Mặc Định Là Số!',
             'slug.required' => 'Trường không được để trống!',
+            'weekendPrice.required' => 'Trường không được để trống!',
+            'weekendPrice.numeric' => 'Trường Mặc Định Là Số!',
         ];
     }
 }

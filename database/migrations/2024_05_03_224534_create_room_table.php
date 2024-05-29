@@ -23,6 +23,7 @@ return new class extends Migration
             $table->json('videoArray')->nullable(); //Danh sách video
             $table->longtext('content')->nullable(); //chi tiết
             $table->double('price')->default(0)->nullable();
+            $table->double('weekendPrice')->default(0)->nullable(); // Giá Cuối Tuần
             $table->unsignedBigInteger('idCategory'); // danh mục vị trí
             $table->foreign('idCategory')->references('id')->on('categories')->onDelete('cascade');
             $table->tinyInteger('status')->default(0);

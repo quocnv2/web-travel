@@ -25,6 +25,7 @@ class Room extends Model
         'videoArray',
         'content',
         'price',
+        'weekendPrice',
         'idCategory',
         'province',
         'district',
@@ -52,6 +53,7 @@ class Room extends Model
             'videoArray' => json_encode($req->videoArray),
             'content' => $req->content,
             'price' => $req->price,
+            'weekendPrice' => $req->weekendPrice,
             'idCategory' => $req->idCategory,
             'timeCreate' => $currentTime,
         ]);
@@ -87,6 +89,7 @@ class Room extends Model
             'videoArray' => json_encode($req->videoArray),
             'content' => $req->content,
             'price' => $req->price,
+            'weekendPrice' => $req->weekendPrice,
             'idCategory' => $req->idCategory,
             'status' => $req->status,
         ]);

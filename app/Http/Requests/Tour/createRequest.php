@@ -31,6 +31,7 @@ class createRequest extends FormRequest
             'status' => 'required',
             'file' => 'required|nullable|image|mimes:jpeg,png,jpg,gif|max:10000',
             'price' => 'required|numeric',
+            'weekendPrice' => 'required|numeric',
         ];
     }
 
@@ -43,6 +44,8 @@ class createRequest extends FormRequest
             'idCategory.required' => 'Trường không được để trống!',
             'price.required' => 'Trường không được để trống!',
             'price.numeric' => 'Trường Mặc Định Là Số!',
+            'weekendPrice.required' => 'Trường không được để trống!',
+            'weekendPrice.numeric' => 'Trường Mặc Định Là Số!',
             'file.required' => 'Ảnh Banner là bắt buộc!',
             'file.nullable' => 'Trường ảnh không được để trống',
             'file.image' => 'Trường phải là một hình ảnh.',

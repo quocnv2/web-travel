@@ -90,13 +90,22 @@
                             @enderror
                         </div>
                         <div class="form-group col-12 col-md-6">
-                            <label class="form-label">Giá Phòng Theo Đêm</label>
-                            <input type="text" class="form-control form-control" placeholder="Giá Thuê Theo Giờ"
+                            <label class="form-label">Giá Phòng Theo Đêm (Ngày Thường)</label>
+                            <input type="text" class="form-control form-control" placeholder="Giá Thuê Theo Đêm"
                                 name="price" value="{{ $obj->price }}" id="price">
                             @error('price')
                                 <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                             <small id="rent_price" style="display: none;"></small>
+                        </div>
+                        <div class="form-group col-12 col-md-6">
+                            <label class="form-label">Giá Phòng Theo Đêm (Cuối Tuần/ Ngày Lễ)</label>
+                            <input type="text" class="form-control form-control" placeholder="Giá Thuê Theo Đêm"
+                                name="weekendPrice" value="{{ $obj->weekendPrice }}" id="weekendPrice">
+                            @error('weekendPrice')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
+                            <small id="rent_weekendPrice" style="display: none;"></small>
                         </div>
                         <div class="form-group col-12 col-md-4">
                             <div class="row"
@@ -113,7 +122,8 @@
 
                                             <!-- Modal Header -->
                                             <div class="modal-header">
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                <button type="button" class="btn-close"
+                                                    data-bs-dismiss="modal"></button>
                                             </div>
 
                                             <!-- Modal body -->
@@ -411,5 +421,27 @@
         });
     </script>
 
+    <script>
+        function formatCurrency(input, output) {
+            const value = parseFloat(input.value);
+            if (!isNaN(value)) {
+                const formattedValue = new Intl.NumberFormat('vi-VN', {
+                    style: 'currency',
+                    currency: 'VND'
+                }).format(value);
+                output.innerHTML = formattedValue;
+                output.style.display = 'block';
+            } else {
+                output.style.display = 'none';
+            }
+        }
 
+        const rentCostInput = document.getElementById('price');
+        const rentCostOutput = document.getElementById('rent_price');
+        rentCostInput.addEventListener('input', () => formatCurrency(rentCostInput, rentCostOutput));
+        const rentCostInput_weekendPrice = document.getElementById('weekendPrice');
+        const rentCostOutput_weekendPrice = document.getElementById('rent_weekendPrice');
+        rentCostInput.addEventListener('input', () => formatCurrency(rentCostInput_weekendPrice,
+            rentCostOutput_weekendPrice));
+    </script>
 @stop

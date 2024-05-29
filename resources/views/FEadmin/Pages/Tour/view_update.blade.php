@@ -118,7 +118,7 @@
 
 
                         <div class="form-group col-12 col-md-6">
-                            <label class="form-label">Giá Tour</label>
+                            <label class="form-label">Giá Tour (Ngày Thường)</label>
                             <input type="text" class="form-control form-control" placeholder="Giá người lớn"
                                 name="price" value="{{ $obj->price }}" id="price">
                             @error('price')
@@ -127,6 +127,13 @@
                             <small id="rent_price" style="display: none;"></small>
                         </div>
                         <div class="form-group col-12 col-md-6">
+                            <label class="form-label">Giá Tour (Cuối Tuần/ Ngày Lễ</label>
+                            <input type="text" class="form-control form-control" placeholder="Giá người lớn"
+                                name="weekendPrice" value="{{ $obj->weekendPrice }}" id="weekendPrice">
+                            @error('weekendPrice')
+                                <small style="color: #f33923;">{{ $message }}</small>
+                            @enderror
+                            <small id="rent_weekendPrice" style="display: none;"></small>
                         </div>
 
                         <div class="form-group col-12 col-md-4">
@@ -449,5 +456,8 @@
         const rentCostInput = document.getElementById('price');
         const rentCostOutput = document.getElementById('rent_price');
         rentCostInput.addEventListener('input', () => formatCurrency(rentCostInput, rentCostOutput));
+        const rentCostInput_weekendPrice = document.getElementById('weekendPrice');
+        const rentCostOutput_weekendPrice = document.getElementById('rent_weekendPrice');
+        rentCostInput.addEventListener('input', () => formatCurrency(rentCostInput_weekendPrice, rentCostOutput_weekendPrice));
     </script>
 @stop

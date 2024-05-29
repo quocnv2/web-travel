@@ -4,7 +4,7 @@
             <a href="{{ route('view_home_admin') }}" class="b-brand text-primary">
                 <!-- ========   Change your logo from here   ============ -->
                 <img style="max-width: 70%;" src="{{ url('assets') }}/images/logo_white_background.png"
-                     class="img-fluid logo-lg" alt="logo">
+                    class="img-fluid logo-lg" alt="logo">
                 <span class="badge bg-light-success rounded-pill ms-2 theme-version">v9.0</span>
             </a>
         </div>
@@ -14,7 +14,7 @@
                     <div class="d-flex align-items-center">
                         <div class="flex-shrink-0">
                             <img src="{{ url('assets') }}/images/user/avatar-1.jpg" alt="user-image"
-                                 class="user-avtar wid-45 rounded-circle"/>
+                                class="user-avtar wid-45 rounded-circle" />
                         </div>
                         <div class="flex-grow-1 ms-3 me-2">
                             <h6 class="mb-0">{{ Auth::guard('admin')->user()->fullName }}</h6>
@@ -23,7 +23,7 @@
                             <small>Email Demo</small> --}}
                         </div>
                         <a class="btn btn-icon btn-link-secondary avtar" data-bs-toggle="collapse"
-                           href="#pc_sidebar_userlink">
+                            href="#pc_sidebar_userlink">
                             <svg class="pc-icon">
                                 <use xlink:href="#custom-sort-outline"></use>
                             </svg>
@@ -58,16 +58,10 @@
                                 <use xlink:href="#custom-user-square"></use>
                             </svg>
                         </span>
-                        <span class="pc-mtext">Phản hồi</span><span class="pc-arrow"><i
+                        <span class="pc-mtext">Khách Hàng</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="{{ route('contact_list') }}">Contact</a>
-                        </li>
-                        <li class="pc-item"><a class="pc-link" href="{{ route('comment_tour_list') }}">Tour</a>
-                        </li>
-                        <li class="pc-item"><a class="pc-link" href="{{route('comment_blog_list')}}">Bài viết</a>
-                        </li>
-                        <li class="pc-item"><a class="pc-link" href="{{route('comment_room_list')}}">Phòng</a>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('customer_list') }}">Danh Sách</a>
                         </li>
                     </ul>
                 </li>
@@ -75,13 +69,19 @@
                     <a class="pc-link">
                         <span class="pc-micon">
                             <svg class="pc-icon">
-                                <use xlink:href="#custom-user-square"></use>
+                                <use xlink:href="#custom-notification-status"></use>
                             </svg>
                         </span>
-                        <span class="pc-mtext">Khách Hàng</span><span class="pc-arrow"><i
+                        <span class="pc-mtext">Phản hồi</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="{{ route('customer_list') }}">Danh Sách</a>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('contact_list') }}">Contact</a>
+                        </li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('comment_tour_list') }}">Tour</a>
+                        </li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('comment_blog_list') }}">Bài viết</a>
+                        </li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('comment_room_list') }}">Phòng</a>
                         </li>
                     </ul>
                 </li>

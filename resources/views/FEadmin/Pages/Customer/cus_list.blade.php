@@ -80,7 +80,7 @@
                                         </td>
                                         <td class="action">
 
-                                            <div class="btn-group-dropdown">
+                                            <div class="btn-group-dropdown" style="margin-left: 5px;">
                                                 <button
                                                     class="btn btn-outline-secondary dropdown-toggle btn-sm mg-button-left"
                                                     type="button" data-bs-toggle="dropdown" aria-haspopup="true"
