@@ -55,7 +55,7 @@
                                         </div>
                                         <div class="tour-listing-sidebar-post__content">
                                             <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valRoom->price, 0, ',', '.') }} VND</p>
+                                                {{ number_format($valRoom->price, 0, ',', '.') }} VNĐ/Đêm</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
                                                     href="{{ route('detailRoom', $valRoom->slug) }}">{{ $valRoom->name }}</a>
                                             </h5>
@@ -83,7 +83,7 @@
                                         </div>
                                         <div class="tour-listing-sidebar-post__content">
                                             <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valueHistory['price'], 0, ',', '.') }} VND
+                                                {{ number_format($valueHistory['price'], 0, ',', '.') }} VNĐ/Đêm
                                             </p>
                                             <h5 class="tour-listing-sidebar-post__link">
                                                 <a href="">{{ $valueHistory['name'] }}</a>
@@ -196,7 +196,7 @@
                                                 </div><!-- /.tour-listing__card-bottom-left -->
                                                 <div class="tour-listing__card-bottom-right">
                                                     <h4 class="tour-listing__card-price">
-                                                        {{ number_format($listRoom->price, 0, ',', '.') }} VND</h4>
+                                                        {{ number_format($listRoom->price, 0, ',', '.') }} VNĐ/Đêm</h4>
                                                 </div><!-- /.tour-listing__card-bottom-right -->
                                             </div><!-- /.tour-listing__card-bottom -->
                                         </div><!-- /.tour-listing__card-inner-content -->
@@ -218,7 +218,7 @@
                                         </div>
                                         <div class="tour-listing-sidebar-post__content">
                                             <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valueNewtour->price, 0, ',', '.') }} VND</p>
+                                                {{ number_format($valueNewtour->price, 0, ',', '.') }} VND/ Đêm</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
                                                     href="{{route('detailRoom', $valueNewtour->slug)}}">{{ $valueNewtour->name }}</a>
                                             </h5>

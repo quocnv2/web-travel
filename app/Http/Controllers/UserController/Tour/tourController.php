@@ -57,7 +57,7 @@ class tourController extends Controller
         }
         $categories = $category->get_orderBy_ASC();
         // Danh Sách tour
-        $tourlist = $tourModel->whereNotIn('id', [$objTour->id])->get();
+        $tourlist = $tourModel->whereNotIn('id', [$objTour->id])->paginate(4);
         // $toursml = Tour::where('idCategory', $idCategory)->get();
         // Danh sách tour mới nhất
         $tour = $tourModel->get_orderBy_ASC_status_page();

@@ -145,7 +145,7 @@
                                             </div>
                                             <div class="tour-listing-sidebar-post__content">
                                                 <p class="tour-listing-sidebar-post__price">
-                                                    {{ number_format($valueHistory['price'], 0, ',', '.') }} VND</p>
+                                                    {{ number_format($valueHistory['price'], 0, ',', '.') }} VNĐ/Đêm</p>
                                                 <h5 class="tour-listing-sidebar-post__link"><a href="">
                                                         {{ $valueHistory['name'] }}</a>
                                                 </h5>
@@ -173,7 +173,7 @@
                                             </div>
                                             <div class="tour-listing-sidebar-post__content">
                                                 <p class="tour-listing-sidebar-post__price">
-                                                    {{ number_format($obj->price, 0, ',', '.') }}vnđ</p>
+                                                    {{ number_format($obj->price, 0, ',', '.') }} VNĐ/Đêm</p>
                                                 <h5 class="tour-listing-sidebar-post__link"><a
                                                         href="">{{ $obj->name }}</a>
                                                 </h5>
@@ -203,7 +203,7 @@
                                         </div>
                                         <div class="tour-listing-sidebar-post__content">
                                             <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valsiml->price, 0, ',', '.') }} VND</p>
+                                                {{ number_format($valsiml->price, 0, ',', '.') }} VNĐ/Đêm</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
                                                     href=""> {{ $valsiml->name }}</a>
                                             </h5>
