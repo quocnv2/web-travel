@@ -1509,3 +1509,27 @@
         scrollbar-color: #888 transparent;
     }
 }
+
+
+/* CSS cho thanh cuộn trên trình duyệt Chrome */
+
+.banner-overflow-y::-webkit-scrollbar {
+    width: 5px;
+    /* Độ rộng của thanh cuộn */
+}
+
+.banner-overflow-y::-webkit-scrollbar-thumb {
+    background-color: #888;
+    /* Màu của thanh cuộn */
+    border-radius: 5px;
+    /* Độ cong của các góc */
+}
+
+
+/* CSS cho thanh cuộn trên trình duyệt Firefox */
+
+.banner-overflow-y {
+    scrollbar-width: thin;
+    scrollbar-color: #888 transparent;
+    scrollbar-color: #888 transparent;
+}
