@@ -40,7 +40,6 @@
                                         <li><a href="{{ route('listBlog_Category', $cat->slug) }}">{{ $cat->name }}</a>
                                         </li>
                                     @endforeach
-
                                 </ul><!-- /.sidebar-blog__categories  -->
                             </div>
                             <div class="sidebar-blog__single sidebar-blog__single--posts wow animated fadeInUp left-controller-blog "

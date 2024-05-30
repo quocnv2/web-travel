@@ -53,7 +53,6 @@
                                     <th>stt</th>
                                     <th>Mã phòng</th>
                                     <th>Tên phòng</th>
-                                    <th>Ảnh/Video</th>
                                     <th>Giá phòng theo đêm (Ngày Thường)</th>
                                     <th>Giá phòng theo đêm (Cuối Tuần/ Ngày Lễ)</th>
                                     <th>Ngày tạo</th>
@@ -67,17 +66,9 @@
                                         <td>{{ $key + 1 }}</td>
                                         <td>{{ $value->code }}</td>
                                         <td>{{ $value->name }}</td>
-                                        <td>
-                                            <div class="btn-group" role="group">
-                                                <a type="button" class="btn btn-primary btn-sm images-room-detail"
-                                                    data-id="{{ $value->slug }}" data-toggle="tooltip">Ảnh</a>
-                                                <a type="button" class="btn btn-primary btn-sm videos-room-detail"
-                                                    data-id="{{ $value->slug }}" data-toggle="tooltip">Video</a>
-                                            </div>
-                                        </td>
                                         <td>{{ number_format($value->price, 0, ',', '.') }} vnđ/Đêm</td>
                                         <td>{{ number_format($value->weekendPrice, 0, ',', '.') }} vnđ/Đêm</td>
-                                        <td>{{ Carbon::parse($value->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY, H:mm:ss A') }}
+                                        <td>{{ Carbon::parse($value->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY, H:mm A') }}
                                         </td>
                                         <td>
                                             @if (intval($value->status == 0))
@@ -95,6 +86,16 @@
                                                     aria-expanded="false">Lựa chọn
                                                 </button>
                                                 <div class="dropdown-menu">
+                                                    <a type="button"
+                                                        class="dropdown-item text-inverse pr-10 images-room-detail"
+                                                        data-id="{{ $value->slug }}" data-toggle="tooltip"><span
+                                                            style="display: flex; justify-content: flex-start; color: #2686dc;"><i
+                                                                data-feather="image"></i> Ảnh</span></a>
+                                                    <a type="button"
+                                                        class="dropdown-item text-inverse pr-10 videos-room-detail"
+                                                        data-id="{{ $value->slug }}" data-toggle="tooltip"><span
+                                                            style="display: flex; justify-content: flex-start; color: #2686dc;"><i
+                                                                data-feather="film"></i> Video</span></a>
                                                     <a class="dropdown-item text-inverse pr-10 room_detail"
                                                         data-id="{{ $value->slug }}" data-toggle="tooltip" title="Edit">
                                                         <span

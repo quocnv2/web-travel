@@ -58,7 +58,6 @@
                                     <th>Giá Tour (Cuối Tuần/ Ngày Lễ)</th>
                                     <th>Ngày tạo</th>
                                     <th>Trạng thái</th>
-                                    <th>Ảnh/Video</th>
                                     <th>Chức năng</th>
                                 </tr>
                             </thead>
@@ -71,7 +70,7 @@
                                         <td>{{ $value->objCategory->name }}</td>
                                         <td>{{ number_format($value->price, 0, ',', '.') }} vnđ</td>
                                         <td>{{ number_format($value->weekendPrice, 0, ',', '.') }} vnđ</td>
-                                        <td>{{ Carbon::parse($value->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY, H:mm:ss A') }}
+                                        <td>{{ Carbon::parse($value->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY, H:mm A') }}
                                         </td>
                                         <td>
                                             @if (intval($value->status == 0))
@@ -79,14 +78,6 @@
                                             @else
                                                 <span class="badge rounded-pill text-bg-warning text-dark">Ẩn</span>
                                             @endif
-                                        </td>
-                                        <td>
-                                            <div class="btn-group" role="group" aria-label="Basic example">
-                                                <a type="button" class="btn btn-primary btn-sm images-tour-detail"
-                                                    data-id="{{ $value->slug }}" data-toggle="tooltip">Ảnh</a>
-                                                <a type="button" class="btn btn-primary btn-sm videos-tour-detail"
-                                                    data-id="{{ $value->slug }}" data-toggle="tooltip">Video</a>
-                                            </div>
                                         </td>
                                         <td class="action">
 
@@ -97,6 +88,16 @@
                                                     aria-expanded="false">Lựa chọn
                                                 </button>
                                                 <div class="dropdown-menu">
+                                                    <a type="button"
+                                                        class="dropdown-item text-inverse pr-10 images-tour-detail"
+                                                        data-id="{{ $value->slug }}" data-toggle="tooltip"><span
+                                                            style="display: flex; justify-content: flex-start; color: #2686dc;"><i
+                                                                data-feather="image"></i> Ảnh</span></a>
+                                                    <a type="button"
+                                                        class="dropdown-item text-inverse pr-10 videos-tour-detail"
+                                                        data-id="{{ $value->slug }}" data-toggle="tooltip"><span
+                                                            style="display: flex; justify-content: flex-start; color: #2686dc;"><i
+                                                                data-feather="film"></i> Video</span></a>
                                                     <a class="dropdown-item text-inverse pr-10 tour_detail"
                                                         data-id="{{ $value->slug }}" data-toggle="tooltip" title="Edit">
                                                         <span
@@ -109,7 +110,6 @@
                                                             style="display: flex; justify-content: flex-start; color: #dc2626;"><i
                                                                 class="ti ti-trash me-1"></i> Xóa</span>
                                                     </a>
-
                                                     <a class="dropdown-item"
                                                         href="{{ route('update_tour', $value->slug) }} "><span
                                                             style="display: flex; justify-content: flex-start; color: #2ca87f;"><i

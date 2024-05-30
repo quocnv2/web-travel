@@ -333,7 +333,6 @@
                                         </li>
                                     </ul><!-- /.tour-listing-details__included-list-one -->
                                 </div><!-- /.col-lg-6 col-md-7 -->
-
                             </div><!-- /.row -->
                         </div><!-- /.tour-listing-details__included -->
                         <div class="tour-listing-details__reviews ">
