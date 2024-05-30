@@ -344,64 +344,62 @@
 
                             </div><!-- /.row -->
                         </div><!-- /.tour-listing-details__included -->
-                        @if ($listCommentTour && count($listCommentTour) > 0)
+                           
                         <div class="tour-listing-details__reviews ">
                             <h3 class="tour-listing-details__reviews-title tour-listing-details__title ">
                                 Đánh Giá Của Khách Hàng
                             </h3>
+                            @if ($listCommentTour && count($listCommentTour) > 0)
                             <div class="tour-listing-details__reviews-comment">
                                 @foreach ($listCommentTour as $listComment)
                                     <div class="tour-listing-details__reviews-comment-box">
                                         <div class="tour-listing-details__reviews-image wow animated fadeInUp"
                                              data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                            <img src="{{asset('assets/images/user/avatar-2.jpg')}}" alt=" {{ $listComment->name }}">
+                                            <img src="{{asset('assets/images/user/avatar-2.jpg')}}" alt="{{ $listComment->name }}">
                                         </div><!-- /."tour-listing-details__reviews-image -->
-                                        <div class="tour-listing-details__reviews-content wow animated fadeInUp"
+                                        <div class="tour-listing-details__reviews-content wow animated fadeInUp" style="padding: 0px 15px;"
                                              data-wow-delay="0.3s" data-wow-duration="1500ms">
                                             <div class="tour-listing-details__reviews-inner-content">
                                                 <div class="tour-listing-details__reviews-info">
                                                     <h3 class="tour-listing-details__reviews-name">
-                                                        {{ $listComment->name }}</h3>
-                                                </div><!-- /.tour-listing-details__reviews-info -->
+                                                     {{ $listComment->name }}</h3>
+                                               </div><!-- /.tour-listing-details__reviews-info -->
                                             </div><!-- /.tour-listing-details__reviews-inner-content -->
-                                            <p class="tour-listing-details__reviews-text">
+                                            <p class="tour-listing-details__reviews-text" style="margin-bottom: 0px;">
                                                 {{ $listComment->commentUser }}
                                             </p>
                                         </div><!-- /.tour-listing-details__reviews-content -->
                                     </div><!-- /.tour-listing-details__reviews-comment-box -->
-                                @endforeach
-                            </div>
-                            <div class="tour-listing-details__reviews-comment  ">
-                                @foreach ($listCommentTour as $listComment)
+                                    
                                     <div class="tour-listing-details__reviews-comment-box">
                                         <div class="tour-listing-details__reviews-image wow animated fadeInUp"
                                              data-wow-delay="0.1s" data-wow-duration="1500ms">
-                                            <img src="{{asset('assets/images/user/avatar-2.jpg')}}" alt=" {{ $listComment->name }}">
+                                            <img src="{{asset('assets/images/user/avatar-2.jpg')}}" alt="Tổng Đài Độc Lạ Tây Bắc">
                                         </div><!-- /."tour-listing-details__reviews-image -->
-                                        <div class="tour-listing-details__reviews-content wow animated fadeInUp"
+                                        <div class="tour-listing-details__reviews-content wow animated fadeInUp" style="padding: 0px 15px;"
                                              data-wow-delay="0.3s" data-wow-duration="1500ms">
                                             <div class="tour-listing-details__reviews-inner-content">
                                                 <div class="tour-listing-details__reviews-info">
                                                     <h3 class="tour-listing-details__reviews-name">
-                                                        {{ $listComment->name }}</h3>
+                                                       Tổng Đài Độc Lạ Tây Bắc</h3>
                                                 </div><!-- /.tour-listing-details__reviews-info -->
                                             </div><!-- /.tour-listing-details__reviews-inner-content -->
-                                            <p class="tour-listing-details__reviews-text">
-                                                {{ $listComment->commentUser }}
+                                            <p class="tour-listing-details__reviews-text" style="margin-bottom: 0px;">
+                                                {{ $listComment->commentAdmin }}
                                             </p>
                                         </div><!-- /.tour-listing-details__reviews-content -->
                                     </div><!-- /.tour-listing-details__reviews-comment-box -->
+                                
                                 @endforeach
+                                @endif
                             </div>
                         </div>
-                    @endif
                     <div class="tour-listing-details__add-review mobile-review">
                         <h3 class="tour-listing-details__add-review-title tour-listing-details__title">Để Lại Đánh
                             Giá Của Bạn
                         </h3>
                     </div>
                     <div class="tour-listing-details__form">
-
                         <form class="form-one row gutter-20" method="POST"
                               action="{{ route('create_comment_tour', ['slug' => $objTour->slug]) }}">
                             @csrf
@@ -444,31 +442,29 @@
                                         <span>Gửi tin nhắn</span></button>
                                 </div>
                             </div>
-
                         </form>
-
                     </div>
                         <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp list-detals-moblie "
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
-                            <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Liên Quan
+                            <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title" style="margin-top: 20px;">Tour Liên Quan
                             </h3>
                             <ul class="tour-listing-sidebar-post">
-                                @foreach ($tourlist as $valueNewtour)
+                                @foreach ($tourlist as $valTour)
                                     <li class="tour-listing-sidebar-post__item">
                                         <div class="tour-listing-sidebar-post__image">
-                                            <img src="{{ $valueNewtour->imgBanner }}" alt="{{ $valueNewtour->name }}">
+                                            <img src="{{ $valTour->imgBanner }}" alt="{{ $valTour->name }}">
                                         </div>
                                         <div class="tour-listing-sidebar-post__content">
                                             <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valueNewtour->price, 0, ',', '.') }} VND</p>
+                                                {{ number_format($valTour->price, 0, ',', '.') }} VND</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
-                                                    href="{{ route('detailTour', $valueNewtour->slug) }}">
-                                                    {{ $valueNewtour->name }}</a>
+                                                    href="{{ route('detailTour', $valTour->slug) }}">
+                                                    {{ $valTour->name }}</a>
                                             </h5>
                                             <div class="tour-listing-sidebar-post__location">
                                                 <span class="icon-location-1"></span>
                                                 <p class="tour-listing-sidebar-post__location-text text-small">
-                                                    {{ $valueNewtour->objCategory->name }}
+                                                    {{ $valTour->objCategory->name }}
                                                 </p>
                                             </div>
                                         </div>
