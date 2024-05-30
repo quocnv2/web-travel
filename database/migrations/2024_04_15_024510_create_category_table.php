@@ -16,6 +16,7 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->string('slug')->nullable(false);
             $table->string('name')->nullable(false);
+            $table->string('longtext')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->string('timeCreate');
             // $table->string('iconText')->nullable();

@@ -52,7 +52,7 @@ class roomController extends Controller
         // tour
         $tour_list = $tour->get_orderBy_ASC_status_page();
         $blog_list = $blog->get_orderBy_ASC_status_page();
-        $listCommentRoom = $commentRoom->where('idRoom', $objRoom->id)->orderBy('id', 'DESC')->get();
+        $listCommentRoom = $commentRoom->where('idRoom', $objRoom->id)->orderBy('id', 'DESC')->paginate(3);
         return view('Home.Layout.Pages.Room.room_details', compact('categories', 'room_new', 'objRoom', 'room_list', 'listCommentRoom', 'historyRoom', 'tour_list', 'blog_list'));
     }
 

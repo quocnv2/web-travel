@@ -901,10 +901,6 @@
     .tour-list-mobile {
         display: none;
     }
-    .section-space {
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
-    }
     li.dropdown {
         color: white;
     }
@@ -940,8 +936,8 @@
         display: none;
     }
     .section-space {
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
     }
     li.dropdown {
         color: white;
@@ -1010,10 +1006,6 @@
     }
     .mobile-review {
         padding-top: 20px;
-    }
-    .section-space {
-        padding-top: 20px !important;
-        padding-bottom: 20px !important;
     }
     .row-room-list-mobile {
         display: none;
@@ -1271,4 +1263,249 @@
     text-overflow: ellipsis;
     line-height: 1.2em;
     height: 50px;
+}
+
+.mg-top-banner {
+    margin-top: -200px;
+}
+
+
+/* Banner */
+
+@media (min-width: 300px) and (max-width: 430px) {
+    .sec-title--two .sec-title__tagline {
+        font-size: 12px;
+    }
+    .feature-two .sec-title__title {
+        font-size: 12px;
+    }
+    #banner_category .feature-two__icon {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 25px;
+        color: var(--trevlo-base, #FF5956);
+        border-radius: 10px;
+        background-color: var(--trevlo-white, #ffffff);
+        transition: all 500ms ease;
+    }
+    #banner_category {
+        margin-top: 10px;
+    }
+    #title__tagline {
+        font-size: 12px;
+    }
+    #banner_category .feature-two__title {
+        margin: 0;
+        font-size: 14px;
+        color: var(--trevlo-white, #ffffff);
+        line-height: 1.56;
+        text-transform: capitalize;
+        transition: all 500ms ease;
+    }
+    .banner-overflow-y {
+        height: 320px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    #two__bottom_banner {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 430px) and (max-width: 780px) {
+    .sec-title--two .sec-title__tagline {
+        font-size: 12px;
+    }
+    .feature-two .sec-title__title {
+        font-size: 12px;
+    }
+    #banner_category .feature-two__icon {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 25px;
+        color: var(--trevlo-base, #FF5956);
+        border-radius: 10px;
+        background-color: var(--trevlo-white, #ffffff);
+        transition: all 500ms ease;
+    }
+    #banner_category {
+        margin-top: 10px;
+    }
+    #title__tagline {
+        font-size: 12px;
+    }
+    #banner_category .feature-two__title {
+        margin: 0;
+        font-size: 14px;
+        color: var(--trevlo-white, #ffffff);
+        line-height: 1.56;
+        text-transform: capitalize;
+        transition: all 500ms ease;
+    }
+    .banner-overflow-y {
+        height: 320px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    #two__bottom_banner {
+        margin-top: 10px;
+    }
+    #banner_category_tatil {
+        display: none;
+    }
+    .main-slider-five__carousel .active .main-slider-five__image {
+        height: 800px;
+    }
+    .main-slider-five__carousel .item {
+        padding-bottom: 0px !important;
+    }
+    .cta-one__sub-title {
+        color: var(--trevlo-white, #ffffff);
+        font-family: var(--trevlo-special-font, "Covered By Your Grace", cursive);
+        font-size: 23px !important;
+        font-weight: 400;
+        margin: 0 0 3px;
+    }
+    .cta-one__title {
+        font-size: 20px !important;
+        line-height: 30px !important;
+        margin-top: 20px !important;
+    }
+}
+
+@media (min-width: 780px) and (max-width: 1050px) {
+    .sec-title--two .sec-title__tagline {
+        font-size: 12px;
+    }
+    .feature-two .sec-title__title {
+        font-size: 12px;
+    }
+    #banner_category .feature-two__icon {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 25px;
+        color: var(--trevlo-base, #FF5956);
+        border-radius: 10px;
+        background-color: var(--trevlo-white, #ffffff);
+        transition: all 500ms ease;
+    }
+    #banner_category {
+        margin-top: 10px;
+    }
+    #title__tagline {
+        font-size: 12px;
+    }
+    #banner_category .feature-two__title {
+        margin: 0;
+        font-size: 14px;
+        color: var(--trevlo-white, #ffffff);
+        line-height: 1.56;
+        text-transform: capitalize;
+        transition: all 500ms ease;
+    }
+    .banner-overflow-y {
+        height: 320px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    #two__bottom_banner {
+        margin-top: 10px;
+    }
+    .main-slider-five__carousel .active .main-slider-five__image {
+        height: 1000px;
+    }
+    .main-slider-five__carousel .item {
+        padding-bottom: 220px !important;
+    }
+    .cta-one__sub-title {
+        color: var(--trevlo-white, #ffffff);
+        font-family: var(--trevlo-special-font, "Covered By Your Grace", cursive);
+        font-size: 23px !important;
+        font-weight: 400;
+        margin: 0 0 3px;
+    }
+    .cta-one__title {
+        font-size: 20px !important;
+        line-height: 30px !important;
+        margin-top: 20px !important;
+    }
+}
+
+@media (min-width: 1050px) and (max-width: 1450px) {
+    #banner_category {
+        margin-top: 10px;
+    }
+    .banner-overflow-y {
+        max-height: 320px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .feature-two__bottom {
+        margin-top: 0px !important;
+        padding: 26.5px 60px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 50px 30px;
+        justify-content: center;
+        /* background-color: var(--trevlo-base); */
+        border-radius: 30px 30px 0 0;
+    }
+    #banner_category .feature-two__title {
+        margin: 0;
+        font-size: 14px;
+        color: var(--trevlo-white, #ffffff);
+        line-height: 1.56;
+        text-transform: capitalize;
+        transition: all 500ms ease;
+    }
+    #banner_category .feature-two__icon {
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 25px;
+        color: var(--trevlo-base, #FF5956);
+        border-radius: 10px;
+        background-color: var(--trevlo-white, #ffffff);
+        transition: all 500ms ease;
+    }
+}
+
+@media (min-width: 1450px) {
+    .banner-overflow-y {
+        max-height: 320px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    /* CSS cho thanh cuộn trên trình duyệt Chrome */
+    .banner-overflow-y::-webkit-scrollbar {
+        width: 5px;
+        /* Độ rộng của thanh cuộn */
+    }
+    .banner-overflow-y::-webkit-scrollbar-thumb {
+        background-color: #888;
+        /* Màu của thanh cuộn */
+        border-radius: 5px;
+        /* Độ cong của các góc */
+    }
+    /* CSS cho thanh cuộn trên trình duyệt Firefox */
+    .banner-overflow-y {
+        scrollbar-width: thin;
+        scrollbar-color: #888 transparent;
+    }
 }

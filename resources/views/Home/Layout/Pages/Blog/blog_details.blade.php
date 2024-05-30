@@ -132,71 +132,108 @@
 
                         </div><!-- /.post-info -->
                     </div><!-- /.blog-details -->
-                    @if ($listCommentBlog && count($listCommentBlog) > 0)
-                        <div class="comment-wrapper">
-                            <div class="comment-wrapper__title-box">
-                                <h3 class="comment-wrapper__title">Bình Luận</h3>
-                            </div><!-- /.comment-wrapper__title-box -->
-                            <div class="comment-box comment-box-one">
-                                @foreach ($listCommentBlog as $valueCommentBlog)
-                                    <div class="comment-box__image wow animated fadeInUp" data-wow-delay="0s"
-                                        data-wow-duration="1500ms">
-                                        <img src="{{ $valueCommentBlog->objBlog->imgBanner }}" alt="David Shon">
-                                    </div><!-- /.comment-box__image -->
-                                    <div class="comment-box__content wow animated fadeInUp" data-wow-delay="0.3s"
-                                        data-wow-duration="1500ms">
-                                        <h3 class="comment-box__name">{{ $valueCommentBlog->name }}</h3>
-                                        <p class="comment-box__text">{{ $valueCommentBlog->commentUser }}</p>
-                                    </div><!-- /.comment-box__content -->
+                    <div class="tour-listing-details__reviews ">
+                        <h3 class="tour-listing-details__reviews-title tour-listing-details__title ">
+                            Đánh Giá Của Khách Hàng
+                        </h3>
+                            @if ($listCommentBlog && count($listCommentBlog) > 0)
+                            <div class="tour-listing-details__reviews-comment">
+                                @foreach ($listCommentBlog as $listBlogComment)
+                                    <div class="tour-listing-details__reviews-comment-box">
+                                        <div class="tour-listing-details__reviews-image wow animated fadeInUp"
+                                            data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                            <img src="{{ asset('assets/images/user/avatar-2.jpg') }}"
+                                                alt="{{ $listBlogComment->name }}">
+                                        </div><!-- /."tour-listing-details__reviews-image -->
+                                        <div class="tour-listing-details__reviews-content wow animated fadeInUp"
+                                            style="padding: 0px 15px;" data-wow-delay="0.3s"
+                                            data-wow-duration="1500ms">
+                                            <div class="tour-listing-details__reviews-inner-content">
+                                                <div class="tour-listing-details__reviews-info">
+                                                    <h3 class="tour-listing-details__reviews-name">
+                                                        {{ $listBlogComment->name }}</h3>
+                                                </div><!-- /.tour-listing-details__reviews-info -->
+                                            </div><!-- /.tour-listing-details__reviews-inner-content -->
+                                            <p class="tour-listing-details__reviews-text" style="margin-bottom: 0px;">
+                                                {{ $listBlogComment->commentUser }}
+                                            </p>
+                                        </div><!-- /.tour-listing-details__reviews-content -->
+                                    </div><!-- /.tour-listing-details__reviews-comment-box -->
                                 @endforeach
-                            </div><!-- /.comment-box -->
+                            @endif
+                            @if ($listCommentBlog && count($listCommentBlog) != null)
+                                @foreach ($listCommentBlog as $listAdComment)
+                                    <div class="tour-listing-details__reviews-comment-box">
+                                        <div class="tour-listing-details__reviews-image wow animated fadeInUp"
+                                            data-wow-delay="0.1s" data-wow-duration="1500ms">
+                                            <img src="{{ asset('assets/images/user/avatar-2.jpg') }}"
+                                                alt="Tổng Đài Độc Lạ Tây Bắc">
+                                        </div><!-- /."tour-listing-details__reviews-image -->
+                                        <div class="tour-listing-details__reviews-content wow animated fadeInUp"
+                                            style="padding: 0px 15px;" data-wow-delay="0.3s"
+                                            data-wow-duration="1500ms">
+                                            <div class="tour-listing-details__reviews-inner-content">
+                                                <div class="tour-listing-details__reviews-info">
+                                                    <h3 class="tour-listing-details__reviews-name">
+                                                        Tổng Đài Độc Lạ Tây Bắc</h3>
+                                                </div><!-- /.tour-listing-details__reviews-info -->
+                                            </div><!-- /.tour-listing-details__reviews-inner-content -->
+                                            <p class="tour-listing-details__reviews-text" style="margin-bottom: 0px;">
+                                                {{ $listAdComment->commentAdmin }}
+                                            </p>
+                                        </div><!-- /.tour-listing-details__reviews-content -->
+                                    </div><!-- /.tour-listing-details__reviews-comment-box -->
+                                @endforeach
+                        @endif
+                    </div>
+                    <div class="tour-listing-details__add-review mobile-review">
+                        <h3 class="tour-listing-details__add-review-title tour-listing-details__title">Để Lại Đánh
+                            Giá Của Bạn
+                        </h3>
+                    </div>
+                    <div class="tour-listing-details__form">
+                        <form class="form-one row gutter-20" method="POST"
+                            action="{{ route('create_comment_blog', ['slug' => $objBlog->slug]) }}">
+                            @csrf
+                            <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s"
+                                data-wow-duration="1500ms">
+                                <div class="form-one__group">
+                                    <input type="text" name="name" id="form-one-name-input"
+                                        placeholder="Họ và tên" class="form-one__input" value="{{ old('name') }}">
 
-                        </div><!-- /.comment-wrapper -->
-                    @endif
-                    <div class="comment-form">
-                        <div class="comment-form__inner-container container-fluid">
-                            <h3 class="comment-form__title">Để Lại Bình Luận Của Bạn</h3>
-                            <form class="form-one row gutter-20" method="POST"
-                                action="{{ route('create_comment_blog', ['slug' => $objBlog->slug]) }}">
-                                @csrf
-                                <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0s" data-wow-duration="1500ms">
-                                    <div class="form-one__group">
-                                        <input type="text" name="name" id="form-one-name-input"
-                                            placeholder="Tên Của Bạn" class="form-one__input" value="{{ old('name') }}">
-                                        @error('name')
-                                            <small style="color: #f33923;">{{ $message }}</small>
-                                        @enderror
-                                    </div><!-- /.form-one__group -->
-                                </div><!-- /.col-md-6 -->
-                                <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s"
-                                    data-wow-duration="1500ms">
-                                    <div class="form-one__group">
-                                        <input type="email" name="email" id="form-one-email-input" placeholder="Email"
-                                            class="form-one__input" value="{{ old('email') }}">
-                                    </div><!-- /.form-one__group -->
-                                </div><!-- /.col-md-6 -->
-                                <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s"
-                                    data-wow-duration="1500ms">
-                                    <div class="form-one__group">
-                                        <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10"
-                                            placeholder="Comment Của Bạn" class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Bài Viết' }}</textarea>
-                                    </div><!-- /.form-one__group -->
-                                </div><!-- /.col-12-->
-                                <input type="hidden" name="idBlog" value="{{ $objBlog->id }}">
-                                <input type="hidden" name="status" value="{{ $objBlog->status ?? 0 }}">
-                                <input type="hidden" name="commentAdmin"
-                                    value="{{ $objBlog->commentAdmin ?? 'Admin' }}">
-                                <div class="col-12 wow animated fadeInUp" data-wow-delay="0.2s"
-                                    data-wow-duration="1500ms">
-                                    <div class="form-one__btn-box">
-                                        <button type="submit"
-                                            class="form-one__btn trevlo-btn trevlo-btn--base"><span>Gửi</span>
-                                        </button>
-                                    </div><!-- /.form-one__btn-box -->
-                                </div><!-- /.col-12-->
-                            </form>
-                        </div><!-- /.comment-form__inner-container container-fluid -->
-                    </div><!-- /.comment-form -->
+                                    @error('name')
+                                        <small style="color: #f33923;">{{ $message }}</small>
+                                    @enderror
+                                </div><!-- /.form-one__group -->
+                            </div><!-- /.col-md-6 -->
+                            <div class="col-md-6 wow animated fadeInUp" data-wow-delay="0.3s"
+                                data-wow-duration="1500ms">
+                                <div class="form-one__group">
+                                    <input type="email" name="email" id="form-one-email-input"
+                                        placeholder="Email" class="form-one__input" value="{{ old('email') }}">
+                                </div><!-- /.form-one__group -->
+                            </div><!-- /.col-md-6 -->
+                            <div class="col-12 wow animated fadeInUp" data-wow-delay="0.1s"
+                                data-wow-duration="1500ms">
+                                <div class="form-one__group">
+                                    <textarea name="commentUser" id="form-one-message-input" cols="30" rows="10" placeholder="Viết tâm thư"
+                                        class="form-one__message form-one__input">{{ old('commentUser') ?? 'Nội Dung Bài Viết' }}</textarea>
+                                    @error('commentUser')
+                                        <small style="color: #f33923;">{{ $message }}</small>
+                                    @enderror
+                                </div><!-- /.form-one__group -->
+                            </div><!-- /.col-12-->
+                            <input type="hidden" name="idBlog" value="{{ $objBlog->id }}">
+                            <input type="hidden" name="status" value="{{ $objBlog->status ?? 0 }}">
+                            <div class="col-12 wow animated fadeInUp" data-wow-delay="0.2s"
+                                data-wow-duration="1500ms">
+                                <div class="form-one__btn-box">
+                                    <button type="submit" class="form-one__btn trevlo-btn trevlo-btn--base">
+                                        <span>Gửi tin nhắn</span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div><!-- /.col-xl-8 col-lg-7 -->
             </div><!-- /.row -->
         </div><!-- /.container -->
