@@ -68,7 +68,7 @@ class tourController extends Controller
         $roomsiml = $room->get_orderBy_ASC_status_page();
         // Bài Viết
         $blogsiml = $blogs->get_orderBy_ASC_status_page();
-        $listCommentTour = $commentTour->where('idTour', [$objTour->id])->get();
+        $listCommentTour = $commentTour->where('idTour', [$objTour->id])->paginate(3);
         // function
 
         return view('Home.Layout.Pages.Tour.tour_details', compact('categories', 'tour', 'objTour', 'historyTour', 'tourlist', 'blogsiml', 'roomsiml', 'listCommentTour'));
