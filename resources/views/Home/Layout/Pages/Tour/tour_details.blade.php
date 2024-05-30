@@ -152,7 +152,8 @@
                                             <div class="tour-listing-sidebar-post__content">
                                                 <p class="tour-listing-sidebar-post__price">
                                                     {{ number_format($valueHistory['price'], 0, ',', '.') }} VND</p>
-                                                <h5 class="tour-listing-sidebar-post__link"><a href="{{ route('detailTour', $valueHistory['slug']) }}">
+                                                <h5 class="tour-listing-sidebar-post__link"><a
+                                                        href="{{ route('detailTour', $valueHistory['slug']) }}">
                                                         {{ $valueHistory['name'] }}</a>
                                                 </h5>
                                                 <div class="tour-listing-sidebar-post__location">
@@ -339,7 +340,7 @@
                             <h3 class="tour-listing-details__reviews-title tour-listing-details__title ">
                                 Đánh Giá Của Khách Hàng
                             </h3>
-                            @if ($listCommentTour && count($listCommentTour) > 0)
+                                @if ($listCommentTour && count($listCommentTour) > 0)
                                 <div class="tour-listing-details__reviews-comment">
                                     @foreach ($listCommentTour as $listComment)
                                         <div class="tour-listing-details__reviews-comment-box">
@@ -362,7 +363,10 @@
                                                 </p>
                                             </div><!-- /.tour-listing-details__reviews-content -->
                                         </div><!-- /.tour-listing-details__reviews-comment-box -->
-
+                                    @endforeach
+                                @endif
+                                @if ($listCommentTour && count($listCommentTour) != null)
+                                    @foreach ($listCommentTour as $listAdComment)
                                         <div class="tour-listing-details__reviews-comment-box">
                                             <div class="tour-listing-details__reviews-image wow animated fadeInUp"
                                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
@@ -379,14 +383,13 @@
                                                     </div><!-- /.tour-listing-details__reviews-info -->
                                                 </div><!-- /.tour-listing-details__reviews-inner-content -->
                                                 <p class="tour-listing-details__reviews-text" style="margin-bottom: 0px;">
-                                                    {{ $listComment->commentAdmin }}
+                                                    {{ $listAdComment->commentAdmin }}
                                                 </p>
                                             </div><!-- /.tour-listing-details__reviews-content -->
                                         </div><!-- /.tour-listing-details__reviews-comment-box -->
                                     @endforeach
                             @endif
                         </div>
-
                         <div class="tour-listing-details__add-review mobile-review">
                             <h3 class="tour-listing-details__add-review-title tour-listing-details__title">Để Lại Đánh
                                 Giá Của Bạn

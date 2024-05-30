@@ -39,7 +39,7 @@ class blogController extends Controller
             return redirect()->route('error404');
         }
 
-        $categories = $category->get_orderBy_ASC();
+        $categories = $category->get_orderBy_ASC(); 
         $blog_new = $blog->get_orderBy_ASC_status_page();
         $listCommentBlog = $commentBlog->where('idBlog', $objBlog->id)->orderBy('id', 'DESC')->get();
         return view('Home.Layout.Pages.Blog.blog_details', compact('categories', 'blog_new', 'objBlog', 'listCommentBlog'));
