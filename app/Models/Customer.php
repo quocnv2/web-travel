@@ -55,6 +55,8 @@ class Customer extends Model
             'hotel_name' => $req->hotel_name,
             'room_code' => $req->room_code,
             'room_price' => $req->room_price,
+            'installment_percentage' => $req->installment_percentage,
+            'number_of_installment_months' => $req->number_of_installment_months,
             'note' => $req->note
         ]);
         return $creates;

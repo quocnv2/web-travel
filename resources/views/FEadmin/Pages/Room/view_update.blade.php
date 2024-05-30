@@ -73,7 +73,7 @@
                             <input type="text" class="form-control" name="slug" value="{{ $obj->slug }}"
                                 id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
                         </div>
-                        <div class="form-group col-12 col-md-6">
+                        <div class="form-group col-12 col-md-4">
                             <label class="form-label" for="exampleSelect1">Vị Trí</label>
                             <select class="form-select" id="exampleSelect1" name="idCategory">
                                 @foreach ($list_Category->sortBy('name') as $value)
@@ -89,7 +89,7 @@
                                 <small style="color: #f33923;">{{ $message }}</small>
                             @enderror
                         </div>
-                        <div class="form-group col-12 col-md-6">
+                        <div class="form-group col-12 col-md-4">
                             <label class="form-label">Giá Phòng Theo Đêm (Ngày Thường)</label>
                             <input type="text" class="form-control form-control" placeholder="Giá Thuê Theo Đêm"
                                 name="price" value="{{ $obj->price }}" id="price">
@@ -98,7 +98,7 @@
                             @enderror
                             <small id="rent_price" style="display: none;"></small>
                         </div>
-                        <div class="form-group col-12 col-md-6">
+                        <div class="form-group col-12 col-md-4">
                             <label class="form-label">Giá Phòng Theo Đêm (Cuối Tuần/ Ngày Lễ)</label>
                             <input type="text" class="form-control form-control" placeholder="Giá Thuê Theo Đêm"
                                 name="weekendPrice" value="{{ $obj->weekendPrice }}" id="weekendPrice">

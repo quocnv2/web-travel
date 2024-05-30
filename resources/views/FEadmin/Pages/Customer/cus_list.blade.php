@@ -56,6 +56,8 @@
                                     <th>Số điện thoại</th>
                                     <th>Số Lượng Người Lớn</th>
                                     <th>Số Lượng Trẻ Em</th>
+                                    <th>Phần trăm trả trước</th>
+                                    <th>Số tháng trả góp</th>
                                     <th>Ngày Đi</th>
                                     <th>Trạng thái</th>
                                     <th>Chức năng</th>
@@ -70,6 +72,8 @@
                                         <td>{{ $value->phone }}</td>
                                         <td>{{ $value->number_of_adults }} người</td>
                                         <td>{{ $value->number_of_children }} trẻ</td>
+                                        <td>{{ $value->installment_percentage }} </td>
+                                        <td>{{ $value->number_of_installment_months }} </td>
                                         <td>{{ $value->travel_date }}</td>
                                         <td>
                                             @if ($value->status == 0)

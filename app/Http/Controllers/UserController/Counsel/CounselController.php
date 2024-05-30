@@ -36,22 +36,22 @@ class CounselController extends Controller
     }
 
 
-    // public function get_tour_customer($id)
-    // {
-    //     $tour = Tour::where('code', $id)->where('status', 0)->first(['name', 'price']);
-    //     if ($tour) {
-    //         return response()->json(['tour_name' => $tour->name, 'tour_price' => $tour->price]);
-    //     } else {
-    //         return response()->json(['error' => 'Tour không tồn tại'], 404);
-    //     }
-    // }
-    // public function get_room_customer($id)
-    // {
-    //     $tour = Room::where('code', $id)->where('status', 0)->first(['name', 'price']);
-    //     if ($tour) {
-    //         return response()->json(['hotel_name' => $tour->name, 'room_price' => $tour->price]);
-    //     } else {
-    //         return response()->json(['error' => 'Tour không tồn tại'], 404);
-    //     }
-    // }
+     public function get_tour_customer($id)
+     {
+         $tour = Tour::where('code', $id)->where('status', 0)->first(['name', 'price']);
+         if ($tour) {
+             return response()->json(['tour_name' => $tour->name, 'tour_price' => $tour->price]);
+         } else {
+             return response()->json(['error' => 'Tour không tồn tại'], 404);
+         }
+     }
+     public function get_room_customer($id)
+     {
+         $tour = Room::where('code', $id)->where('status', 0)->first(['name', 'price']);
+         if ($tour) {
+             return response()->json(['hotel_name' => $tour->name, 'room_price' => $tour->price]);
+         } else {
+             return response()->json(['error' => 'Tour không tồn tại'], 404);
+         }
+     }
 }
