@@ -49,41 +49,40 @@
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới Nhất</h3>
                             <ul class="tour-listing-sidebar-post">
-                                @foreach ($tour as $valueNewtour)
+                                @foreach ($tour as $newTour)
                                     @php
                                         $address = '';
-                                        if (isset($valueNewtour->province)) {
-                                            $address .= $valueNewtour->province;
+                                        if (isset($newTour->province)) {
+                                            $address .= $newTour->province;
                                         }
-                                        if (isset($valueNewtour->district)) {
+                                        if (isset($newTour->district)) {
                                             if ($address !== '') {
                                                 $address .= ' - ';
                                             }
-                                            $address .= $valueNewtour->district;
+                                            $address .= $newTour->district;
                                         }
-
                                         // Kiểm tra và thêm thông tin phường xã
-                                        if (isset($valueNewtour->wards)) {
+                                        if (isset($newTour->wards)) {
                                             if ($address !== '') {
                                                 $address .= ' - ';
                                             }
-                                            $address .= $valueNewtour->wards;
+                                            $address .= $newTour->wards;
                                         }
                                     @endphp
                                     <li class="tour-listing-sidebar-post__item">
                                         <div class="tour-listing-sidebar-post__image">
-                                            <img src="{{ $valueNewtour->imgBanner }}" alt="{{$valueNewtour->name }}">
+                                            <img src="{{ $newTour->imgBanner }}" alt="{{$newTour->name }}">
                                         </div>
                                         <div class="tour-listing-sidebar-post__content">
                                             <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valueNewtour->price, 0, ',', '.') }} VND</p>
+                                                {{ number_format($newTour->price, 0, ',', '.') }} VND</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
-                                                    href="">{{ $valueNewtour->name }}</a>
+                                                    href="">{{ $newTour->name }}</a>
                                             </h5>
                                             <div class="tour-listing-sidebar-post__location">
                                                 <span class="icon-location-1"></span>
                                                 <p class="tour-listing-sidebar-post__location-text text-small">
-                                                    {{ $valueNewtour->objCategory->name }}
+                                                    {{ $newTour->objCategory->name }}
                                                 </p>
                                             </div>
 
@@ -109,7 +108,6 @@
                                             }
                                             $addressHitory .= $valueHistory['district'];
                                         }
-
                                         // Kiểm tra và thêm thông tin phường xã
                                         if (isset($valueHistory['wards'])) {
                                             if ($addressHitory !== '') {
@@ -265,41 +263,41 @@
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">Tour Mới Nhất</h3>
                             <ul class="tour-listing-sidebar-post">
-                                @foreach ($tourlist as $valueNewtour)
+                                @foreach ($tourlist as $listTour)
                                     @php
                                         $address = '';
-                                        if (isset($valueNewtour->province)) {
-                                            $address .= $valueNewtour->province;
+                                        if (isset($listTour->province)) {
+                                            $address .= $listTour->province;
                                         }
-                                        if (isset($valueNewtour->district)) {
+                                        if (isset($listTour->district)) {
                                             if ($address !== '') {
                                                 $address .= ' - ';
                                             }
-                                            $address .= $valueNewtour->district;
+                                            $address .= $listTour->district;
                                         }
 
                                         // Kiểm tra và thêm thông tin phường xã
-                                        if (isset($valueNewtour->wards)) {
+                                        if (isset($listTour->wards)) {
                                             if ($address !== '') {
                                                 $address .= ' - ';
                                             }
-                                            $address .= $valueNewtour->wards;
+                                            $address .= $listTour->wards;
                                         }
                                     @endphp
                                     <li class="tour-listing-sidebar-post__item">
                                         <div class="tour-listing-sidebar-post__image">
-                                            <img src="{{ $valueNewtour->imgBanner }}" alt="{{$valueNewtour->name }}">
+                                            <img src="{{ $listTour->imgBanner }}" alt="{{$listTour->name }}">
                                         </div>
                                         <div class="tour-listing-sidebar-post__content">
                                             <p class="tour-listing-sidebar-post__price">
-                                                {{ number_format($valueNewtour->price, 0, ',', '.') }} VND</p>
+                                                {{ number_format($listTour->price, 0, ',', '.') }} VND</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
-                                                    href="{{route('detailTour', $valueTour->slug)}}">{{ $valueNewtour->name }}</a>
+                                                    href="{{route('detailTour', $valueTour->slug)}}">{{ $listTour->name }}</a>
                                             </h5>
                                             <div class="tour-listing-sidebar-post__location">
                                                 <span class="icon-location-1"></span>
                                                 <p class="tour-listing-sidebar-post__location-text text-small">
-                                                    {{ $valueNewtour->objCategory->name }}
+                                                    {{ $listTour->objCategory->name }}
                                                 </p>
                                             </div>
 

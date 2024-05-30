@@ -38,18 +38,18 @@
                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Bài Viết Mới Nhất</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__posts ">
-                                    @foreach ($blog_new as $valNew)
+                                    @foreach ($blog_new as $blognew)
                                         <li class="sidebar-blog__posts-item">
                                             <div class="sidebar-blog__posts-image">
-                                                <img src="{{ $valNew->imgBanner }}" alt="latest-post">
+                                                <img src="{{ $blognew->imgBanner }}" alt="{{ $blognew->name }}">
                                             </div><!-- /.sidebar-blog__posts-image -->
                                             <div class="sidebar-blog__posts-content">
                                                 <p class="sidebar-blog__posts-date">
                                                     <i class="far fa-clock"></i>
-                                                    {{ Carbon::parse($valNew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
+                                                    {{ Carbon::parse($blognew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
                                                 </p><!-- /.sidebar__posts-date -->
                                                 <h4 class="sidebar-blog__posts-title"><a
-                                                        href="{{ route('detailBlog', $valNew->slug) }}">{{ $valNew->name }}</a>
+                                                        href="{{ route('detailBlog', $blognew->slug) }}">{{ $blognew->name }}</a>
                                                 </h4>
                                                 <!-- /.sidebar-blog__posts-title -->
                                             </div><!-- /.sidebar-blog__posts-content -->
@@ -65,8 +65,6 @@
                                         <li><a href="{{ route('listBlog_Category', $cat->slug) }}">{{ $cat->name }}</a>
                                         </li>
                                     @endforeach
-
-
                                 </ul><!-- /.sidebar-blog__categories  -->
                             </div>
                             <!-- /.sidebar-blog__single -->
@@ -75,9 +73,7 @@
                         </aside><!-- /.widget-area -->
                     </div><!-- /.sidebar-blog -->
                 </div><!-- /.col-xl-4 col-lg-5 -->
-
                 <div class="col-xl-8 col-lg-7">
-
                     <div class="blog-details">
                         <div class="blog-card-three">
                             <div class="blog__card">

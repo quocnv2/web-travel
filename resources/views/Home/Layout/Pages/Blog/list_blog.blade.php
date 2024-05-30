@@ -33,14 +33,13 @@
                     <div class="sidebar-blog sidebar-blog--left">
                         <aside class="widget-area">
                             <div class="sidebar-blog__single sidebar-blog__single--categories wow animated fadeInUp"
-                                 data-wow-delay="0.2s" data-wow-duration="1500ms">
+                                data-wow-delay="0.2s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Danh Mục</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__categories ">
                                     @foreach ($categories as $cat)
                                         <li><a href="{{ route('listBlog_Category', $cat->slug) }}">{{ $cat->name }}</a>
                                         </li>
                                     @endforeach
-
 
                                 </ul><!-- /.sidebar-blog__categories  -->
                             </div>
@@ -78,17 +77,17 @@
                 <div class="blog-page__col-blog-card col-xl-8 col-lg-7">
                     <div class="blog-page__container container-fluid controller-blog">
                         <div class="row">
-                            @foreach ($blog_list as $valueBlog)
+                            @foreach ($blog_list as $bloglist)
                                 <div class="col-md-6 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="00ms">
                                     <div class="blog-four__card">
-                                        <a href="{{ route('detailBlog', $valueBlog->slug) }}"
+                                        <a href="{{ route('detailBlog', $bloglist->slug) }}"
                                             class="blog-four__card__image-link"
-                                            style="background-image: url({{ $valueBlog->imgBanner }});">
+                                            style="background-image: url({{ $bloglist->imgBanner }});">
                                             <div class="blog-four__card__date">
                                                 <span
-                                                    class="blog-four__card__date__day">{{ Carbon::parse($valueBlog->timeCreate)->locale('vi')->isoFormat('Do') }}</span>
+                                                    class="blog-four__card__date__day">{{ Carbon::parse($bloglist->timeCreate)->locale('vi')->isoFormat('Do') }}</span>
                                                 <span
-                                                    class="blog-four__card__date__month">{{ Carbon::parse($valueBlog->timeCreate)->locale('vi')->isoFormat('[tháng] M') }}</span>
+                                                    class="blog-four__card__date__month">{{ Carbon::parse($bloglist->timeCreate)->locale('vi')->isoFormat('[tháng] M') }}</span>
                                             </div>
                                             <div class="blog-four__card__overlay">
                                                 <span class="blog-four__card__plus">
@@ -98,16 +97,16 @@
                                         </a><!-- /.blog-four__card__image-link -->
                                         <div class="blog-four__card__content">
                                             <h3 class="blog-four__card__title"><a
-                                                    href="{{ route('detailBlog', $valueBlog->slug) }}">{{ $valueBlog->name }}</a>
+                                                    href="{{ route('detailBlog', $bloglist->slug) }}">{{ $bloglist->name }}</a>
                                             </h3><!-- /.blog-four__card__title -->
                                             <ul class="list-unstyled blog-four__card__meta">
                                                 <li>
                                                     <a
-                                                        href="{{ route('listBlog_Category', $valueBlog->objCategory->slug) }}">
+                                                        href="{{ route('listBlog_Category', $bloglist->objCategory->slug) }}">
                                                         <span class="blog-four__card__meta__icon">
                                                             <i class="trevlo-one-icon-user"></i>
                                                         </span>
-                                                        {{ $valueBlog->objCategory->name }}
+                                                        {{ $bloglist->objCategory->name }}
                                                     </a>
                                                 </li>
 
@@ -124,18 +123,18 @@
                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h4 class="sidebar-blog__title">Bài Viết Mới Nhất</h4><!-- /.sidebar-blog__title -->
                                 <ul class="sidebar-blog__posts ">
-                                    @foreach ($blog_list as $valNew)
+                                    @foreach ($blog_list as $blogmobile)
                                         <li class="sidebar-blog__posts-item">
                                             <div class="sidebar-blog__posts-image">
-                                                <img src="{{ $valNew->imgBanner }}" alt="latest-post">
+                                                <img src="{{ $blogmobile->imgBanner }}" alt="latest-post">
                                             </div><!-- /.sidebar-blog__posts-image -->
                                             <div class="sidebar-blog__posts-content">
                                                 <p class="sidebar-blog__posts-date">
                                                     <i class="far fa-clock"></i>
-                                                    {{ Carbon::parse($valNew->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
+                                                    {{ Carbon::parse($blogmobile->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY') }}
                                                 </p><!-- /.sidebar__posts-date -->
                                                 <h4 class="sidebar-blog__posts-title"><a
-                                                        href="{{ route('detailBlog', $valNew->slug) }}">{{ $valNew->name }}</a>
+                                                        href="{{ route('detailBlog', $blogmobile->slug) }}">{{ $blogmobile->name }}</a>
                                                 </h4>
                                                 <!-- /.sidebar-blog__posts-title -->
                                             </div><!-- /.sidebar-blog__posts-content -->
