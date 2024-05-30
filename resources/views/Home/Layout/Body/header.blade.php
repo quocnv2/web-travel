@@ -37,15 +37,29 @@
                             <a href="{{ route('listBlog') }}">Bài viết</a>
                         </li>
                         <li>
-                            <a href="{{route('list_blog_recruitment')}}">Tuyển dụng</a>
+                            <a href="{{ route('list_blog_recruitment') }}">Tuyển dụng</a>
                         </li>
-                        <li>
-                            <a href="https://www.facebook.com/profile.php?id=100069226627675"
-                                target="black">Facebook</a>
+                        <li class="dropdown">
+                            <a>Liên Kết</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="https://www.facebook.com/profile.php?id=100069226627675"
+                                        target="black">Facebook</a>
+                                </li>
+                                <li>
+                                    <a href="https://zalo.me/0888920092"
+                                        target="black">Zalo</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/profile.php?id=100069226627675"
+                                        target="black">Youtube</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/profile.php?id=100069226627675"
+                                        target="black">Tiktok</a>
+                                </li>
+                            </ul>
                         </li>
-                        {{-- <li>
-                            <a href="">Youtube</a>
-                        </li> --}}
                         <li>
                             <a href="{{ route('contact_web') }}">Liên hệ</a>
                         </li>

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('customers', function (Blueprint $table) {
+        Schema::create('tour_contact', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
             $table->string('email')->nullable()->validate(['email' => 'email']);
@@ -21,18 +21,9 @@ return new class extends Migration
             $table->integer('number_of_adults'); //số lượng người lớn
             $table->integer('number_of_children'); //số lượng trẻ nhỏ
             $table->string('travel_date'); // ngày đi
-            $table->string('tour_code')->nullable(true); //mã tour
-            $table->string('tour_name')->nullable(true); // tên tour
-            $table->double('tour_price')->nullable(true); // giá tour
-            $table->string('hotel_name')->nullable(true); // tên khách sạn
-            $table->string('room_code')->nullable(true); // mã phòng
-            $table->double('room_price')->nullable(true); // mã phòng
-            $table->double('total_price')->nullable() ; // tổng giá tour
             $table->text('note')->nullable(); //ghi chú
             $table->text('feedback')->nullable(true); //phản hồi
             $table->string('status')->default(0);
-            $table->string('installment_percentage')->nullable(true); // phần trăm trả góp
-            $table->string('number_of_installment_months')->nullable(true); // số tháng trả góp
             $table->timestamps();
         });
     }
@@ -44,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('customers');
+        Schema::dropIfExists('tour_contact');
     }
 };

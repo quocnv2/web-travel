@@ -35,29 +35,135 @@
                             <i class="fab fa-facebook-f" aria-hidden="true"></i>
                             <span class="sr-only">Facebook</span>
                         </a>
+                        <a href="https://www.messenger.com/t/100772425270420/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0" target="black">
+                            <i class="fab fa-facebook-messenger" aria-hidden="true"></i>
+                            <span class="sr-only">Messenger</span>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100069226627675" target="black">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                            <span class="sr-only">Youtube</span>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100069226627675" target="black">
+                            <i class="fab fa-tiktok" aria-hidden="true"></i>
+                            <span class="sr-only">Tiktok</span>
+                        </a>
                     </div><!-- /.social-links -->
-                    <div class="container">
+                    <div class="container-fluid mg-top-banner">
                         <div class="row gutter-y-50">
                             <div class="col-lg-10 mx-auto">
                                 <div class="main-slider-five__content">
-
-                                    <h5 class="main-slider-five__sub-title">Đối Tác Phiêu Lưu Tốt Nhất Của Bạn</h5>
-                                    <h3 class="main-slider-five__title">{{ $bannerValue->name }}</h3>
-                                    <div class="main-slider-five__button">
-                                        <a href="{{ $bannerValue->linkCourses }}"
-                                            class="trevlo-btn trevlo-btn--two trevlo-btn--base">
-                                            <span>Xem Chi Tiết</span>
-                                            <i class="trevlo-one-icon-up-right-arrow"></i>
-                                        </a><!-- /.trevlo-btn -->
-                                    </div>
+                                    <section class="feature-two">
+                                        <div class="container-fluid">
+                                            <div class="feature-two__inner"
+                                                style="background-image: url(assets/images/backgrounds/feature-bg-2-1.jpg);">
+                                                <div class="feature-two__wrapper">
+                                                    <div class="sec-title sec-title--two text-center">
+                                                        <p class="sec-title__tagline" id="title__tagline">Đối Tác Phiêu Lưu Tốt Nhất Của Bạn</p>
+                                                        <!-- /.sec-title__tagline -->
+                                                        <h2 class="sec-title__title">{{ $bannerValue->name }}</h2>
+                                                        <!-- /.sec-title__title -->
+                                                    </div><!-- /.sec-title -->
+                                                    <div class="row gutter-y-30 banner-overflow-y">
+                                                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 wow fadeInUp" id="banner_category"
+                                                            data-wow-duration="1500ms" data-wow-delay="00ms">
+                                                            <div class="feature-two__item">
+                                                                <div class="feature-two__icon">
+                                                                    <span class="trevlo-one-icon-secure-payment"></span>
+                                                                </div><!-- /.feature-two__icon -->
+                                                                <h3 class="feature-two__title">Best Security</h3>
+                                                                <!-- /.feature-two__title -->
+                                                            </div><!-- /.feature-two__item -->
+                                                        </div><!-- /.col-xxl-3 col-xl-4 col-lg-6 col-md-6 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 wow fadeInUp" id="banner_category"
+                                                            data-wow-duration="1500ms" data-wow-delay="200ms">
+                                                            <div class="feature-two__item">
+                                                                <div class="feature-two__icon">
+                                                                    <span class="trevlo-one-icon-wifi"></span>
+                                                                </div><!-- /.feature-two__icon -->
+                                                                <h3 class="feature-two__title">Free Internet</h3>
+                                                                <!-- /.feature-two__title -->
+                                                            </div><!-- /.feature-two__item -->
+                                                        </div><!-- /.col-xxl-3 col-xl-4 col-lg-6 col-md-6 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 wow fadeInUp" id="banner_category"
+                                                            data-wow-duration="1500ms" data-wow-delay="400ms">
+                                                            <div class="feature-two__item">
+                                                                <div class="feature-two__icon">
+                                                                    <span class="trevlo-one-icon-solar-panel"></span>
+                                                                </div><!-- /.feature-two__icon -->
+                                                                <h3 class="feature-two__title">Solar Energy</h3>
+                                                                <!-- /.feature-two__title -->
+                                                            </div><!-- /.feature-two__item -->
+                                                        </div><!-- /.col-xxl-3 col-xl-4 col-lg-6 col-md-6 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 wow fadeInUp" id="banner_category"
+                                                            data-wow-duration="1500ms" data-wow-delay="600ms">
+                                                            <div class="feature-two__item">
+                                                                <div class="feature-two__icon">
+                                                                    <span class="trevlo-one-icon-bicycle-rider"></span>
+                                                                </div><!-- /.feature-two__icon -->
+                                                                <h3 class="feature-two__title">hills Biking</h3>
+                                                                <!-- /.feature-two__title -->
+                                                            </div><!-- /.feature-two__item -->
+                                                        </div><!-- /.col-xxl-3 col-xl-4 col-lg-6 col-md-6 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 wow fadeInUp" id="banner_category"
+                                                            data-wow-duration="1500ms" data-wow-delay="00ms">
+                                                            <div class="feature-two__item">
+                                                                <div class="feature-two__icon">
+                                                                    <span class="trevlo-one-icon-swimming"></span>
+                                                                </div><!-- /.feature-two__icon -->
+                                                                <h3 class="feature-two__title">Swim & Fishing</h3>
+                                                                <!-- /.feature-two__title -->
+                                                            </div><!-- /.feature-two__item -->
+                                                        </div><!-- /.col-xxl-3 col-xl-4 col-lg-6 col-md-6 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 wow fadeInUp" id="banner_category"
+                                                            data-wow-duration="1500ms" data-wow-delay="200ms">
+                                                            <div class="feature-two__item">
+                                                                <div class="feature-two__icon">
+                                                                    <span class="trevlo-one-icon-gps"></span>
+                                                                </div><!-- /.feature-two__icon -->
+                                                                <h3 class="feature-two__title">proper guide</h3>
+                                                                <!-- /.feature-two__title -->
+                                                            </div><!-- /.feature-two__item -->
+                                                        </div><!-- /.col-xxl-3 col-xl-4 col-lg-6 col-md-6 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 wow fadeInUp" id="banner_category"
+                                                            data-wow-duration="1500ms" data-wow-delay="400ms">
+                                                            <div class="feature-two__item">
+                                                                <div class="feature-two__icon">
+                                                                    <span class="trevlo-one-icon-buddhist-yoga-pose"></span>
+                                                                </div><!-- /.feature-two__icon -->
+                                                                <h3 class="feature-two__title">GYM and Yoga</h3>
+                                                                <!-- /.feature-two__title -->
+                                                            </div><!-- /.feature-two__item -->
+                                                        </div><!-- /.col-xxl-3 col-xl-4 col-lg-6 col-md-6 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-6 wow fadeInUp" id="banner_category"
+                                                            data-wow-duration="1500ms" data-wow-delay="600ms">
+                                                            <div class="feature-two__item">
+                                                                <div class="feature-two__icon">
+                                                                    <span class="trevlo-one-icon-hiking"></span>
+                                                                </div><!-- /.feature-two__icon -->
+                                                                <h3 class="feature-two__title">long hikes</h3>
+                                                                <!-- /.feature-two__title -->
+                                                            </div><!-- /.feature-two__item -->
+                                                        </div><!-- /.col-xxl-3 col-xl-4 col-lg-6 col-md-6 -->
+                                                    </div><!-- /.row -->
+                                                    <div class="feature-two__bottom" id="two__bottom">
+                                                        <div class="main-slider-five__button">
+                                                            <a href="{{route('listTour')}}"
+                                                                class="trevlo-btn trevlo-btn--two trevlo-btn--base">
+                                                                <span>Xem Danh Sách Tour</span>
+                                                                <i class="trevlo-one-icon-up-right-arrow"></i>
+                                                            </a><!-- /.trevlo-btn -->
+                                                        </div>
+                                                    </div><!-- /.feature-two__top -->
+                                                </div><!-- /.feature-two__wrapper -->
+                                            </div><!-- /.feature-two__inner -->
+                                        </div><!-- /.container -->
+                                    </section><!-- /.feature-two section-space-bottom -->
 
                                     <!-- /.main-slider-five__button -->
                                 </div><!-- /.main-slider-five__content -->
                             </div><!-- /.col-lg-10 mx-auto -->
                         </div><!-- /.row -->
                     </div>
-                    <img src="{{ url('assets') }}/trevlo/images/shapes/slider-cloud-5-1.png" alt="cloud"
-                        class="main-slider-five__cloud">
                     <div class="main-slider-five__shape">
                         <img src="{{ url('assets') }}/trevlo/images/shapes/slider-shape-5-2.png" alt="shape"
                             class="main-slider-five__shape__one">
@@ -67,7 +173,7 @@
                 </div><!-- item -->
             @endforeach
         </div><!-- banner-slider -->
-        <div class="banner-form banner-form--two banner-form--three wow fadeInUp" data-wow-delay="300ms">
+        <div class="banner-form banner-form--two banner-form--three wow fadeInUp" id="banner_category_tatil" data-wow-delay="300ms">
             <div class="container">
                 <div class="counter-two__bg"
                     style="background-image: url({{ url('assets') }}/images/shapes/counter-bg-2.png);"></div>
@@ -168,7 +274,8 @@
                                         <div class="tour-listing-five__card__inner">
                                             <a href="{{ route('detailTour', $tourdes->slug) }}"
                                                 class="tour-listing-five__card__image">
-                                                <img src="{{ $tourdes->imgBanner }}" style="height: 300px" alt="tour">
+                                                <img src="{{ $tourdes->imgBanner }}" style="height: 300px"
+                                                    alt="tour">
                                                 <div class="tour-listing-five__card__featured">
                                                     {{ $tourdes->objCategory->name }}</div>
                                             </a><!-- /.tour-listing-five__card__image -->
