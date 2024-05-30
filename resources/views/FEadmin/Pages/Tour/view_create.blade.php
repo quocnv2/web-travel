@@ -292,8 +292,10 @@
         const rentCostInput = document.getElementById('price');
         const rentCostOutput = document.getElementById('rent_price');
         rentCostInput.addEventListener('input', () => formatCurrency(rentCostInput, rentCostOutput));
+
         const rentCostInput_weekendPrice = document.getElementById('weekendPrice');
         const rentCostOutput_weekendPrice = document.getElementById('rent_weekendPrice');
-        rentCostInput.addEventListener('input', () => formatCurrency(rentCostInput_weekendPrice, rentCostOutput_weekendPrice));
+        rentCostInput_weekendPrice.addEventListener('input', () => formatCurrency(rentCostInput_weekendPrice,
+            rentCostOutput_weekendPrice));
     </script>
 @stop
