@@ -91,6 +91,16 @@ class CategoryController extends Controller
             return view('FEadmin.Pages.Error.error404');
         }
 
+        $file = '';
+        if ($req->file('file')) {
+            $response = $req->file('file') ?  cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath() : $obj->icon;
+            $file = $response;
+        } else {
+            $file = $obj->icon;
+        }
+
+        $req->merge(['icon' => $file]);
+
         if ($category->update_category($req, $slug) >= 0) {
             return redirect()->route('view_list_category')->with('success', 'Cập Nhật Danh Mục Thành Công!');
         } else {
