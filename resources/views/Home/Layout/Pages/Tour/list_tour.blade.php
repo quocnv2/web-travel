@@ -77,7 +77,7 @@
                                             <p class="tour-listing-sidebar-post__price">
                                                 {{ number_format($newTour->price, 0, ',', '.') }} VND</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
-                                                    href="">{{ $newTour->name }}</a>
+                                                    href="{{ route('detailTour',$newTour->slug) }}">{{ $newTour->name }}</a>
                                             </h5>
                                             <div class="tour-listing-sidebar-post__location">
                                                 <span class="icon-location-1"></span>
@@ -124,7 +124,7 @@
                                             <p class="tour-listing-sidebar-post__price">
                                                 {{ number_format($valueHistory['price'], 0, ',', '.') }} VND</p>
                                             <h5 class="tour-listing-sidebar-post__link"><a
-                                                    href="">{{ $valueHistory['name'] }}</a>
+                                                    href="{{ route('detailTour',$valueHistory['slug']) }}">{{ $valueHistory['name'] }}</a>
                                             </h5>
                                             <div class="tour-listing-sidebar-post__location">
                                                 <span class="icon-location-1"></span>
