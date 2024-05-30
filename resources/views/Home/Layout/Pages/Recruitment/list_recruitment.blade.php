@@ -91,7 +91,7 @@
                                                 <p class="tour-listing-sidebar-post__price">
                                                     {{ number_format($valueNewtour->price, 0, ',', '.') }} VND</p>
                                                 <h5 class="tour-listing-sidebar-post__link"><a
-                                                        href="">{{ $valueNewtour->name }}</a>
+                                                        href="{{ route('detailTour',$valueNewtour->slug) }}">{{ $valueNewtour->name }}</a>
                                                 </h5>
                                                 <div class="tour-listing-sidebar-post__location">
                                                     <span class="icon-location-1"></span>
