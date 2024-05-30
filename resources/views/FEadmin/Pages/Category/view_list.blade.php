@@ -56,8 +56,8 @@
                                                 <div class="col-auto"><img src="{{ $value->icon }}"
                                                         alt="{{ $value->name }}" class="wid-40 rounded-circle"></div>
                                                 <div class="col">
-                                                    <h6 class="mb-0">Addie Bass</h6>
-                                                    <p class="text-muted f-12 mb-0">{{ $value->name }}</p>
+                                                    <h6 class="mb-0">{{ $value->name }}</h6>
+                                                    <p class="text-muted f-12 mb-0">{{ $value->slug }}</p>
                                                 </div>
                                             </div>
                                         </td>
