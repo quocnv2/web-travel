@@ -497,7 +497,6 @@
             });
         });
     </script>
-
 @stop
 
 {{-- @section('view_js') --}}

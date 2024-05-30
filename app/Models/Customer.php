@@ -30,7 +30,9 @@ class Customer extends Model
         'total_price',
         'note',
         'feedback',
-        'status'
+        'status',
+        'installment_percentage',
+        'number_of_installment_months'
     ];
 
     public function get_orderBy_ASC()

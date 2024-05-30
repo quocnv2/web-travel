@@ -24,18 +24,15 @@ return new class extends Migration
             $table->string('tour_code')->nullable(true); //mã tour
             $table->string('tour_name')->nullable(true); // tên tour
             $table->double('tour_price')->nullable(true); // giá tour
-            $table->double('total_tour_price')->nullable(true); // giá tour
             $table->string('hotel_name')->nullable(true); // tên khách sạn
             $table->string('room_code')->nullable(true); // mã phòng
             $table->double('room_price')->nullable(true); // mã phòng
-            $table->double('total_room_price')->nullable(true); // giá tour
             $table->double('total_price')->nullable() ; // tổng giá tour
             $table->text('note')->nullable(); //ghi chú
             $table->text('feedback')->nullable(true); //phản hồi
             $table->string('status')->default(0);
             $table->string('installment_percentage')->nullable(true); // phần trăm trả góp
             $table->string('number_of_installment_months')->nullable(true); // số tháng trả góp
-            $table->double('total_price_weekendPrice')->nullable() ; // tiền trả góp cho 1 người
             $table->timestamps();
         });
     }
