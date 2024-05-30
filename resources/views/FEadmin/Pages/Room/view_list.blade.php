@@ -68,7 +68,7 @@
                                         <td>{{ $value->name }}</td>
                                         <td>{{ number_format($value->price, 0, ',', '.') }} vnđ/Đêm</td>
                                         <td>{{ number_format($value->weekendPrice, 0, ',', '.') }} vnđ/Đêm</td>
-                                        <td>{{ Carbon::parse($value->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY, H:mm:ss A') }}
+                                        <td>{{ Carbon::parse($value->timeCreate)->locale('vi')->isoFormat('Do [tháng] M [năm] YYYY, H:mm A') }}
                                         </td>
                                         <td>
                                             @if (intval($value->status == 0))
