@@ -19,6 +19,7 @@ class Category extends Model
         'name',
         'slug',
         'status',
+        'icon',
         'timeCreate',
     ];
 
@@ -39,6 +40,7 @@ class Category extends Model
             'name' => $req -> name,
             'slug' => $req -> slug,
             'status' => $req -> status,
+            'icon' => $req -> icon,
             'timeCreate' => $currentTime,
         ]);
         return $creates;
@@ -61,6 +63,7 @@ class Category extends Model
         $obj = DB::table('categories')->where('slug', $slug)->update([
             'name' => $req -> name,
             'slug' => $req -> slug,
+            'icon' => $req -> icon,
             'status' => $req -> status,
         ]);
         return $obj;

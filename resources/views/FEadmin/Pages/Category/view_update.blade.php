@@ -30,12 +30,12 @@
         <div class="row">
             <div class="col-sm-12 col-md-6 offset-md-3 col-lg-6 offset-lg-3">
                 <!-- Basic Inputs -->
-                <form class="card" method="POST" id="formReset">
+                <form class="card" method="POST" id="formReset" enctype="multipart/form-data">
                     @csrf
                     <div class="card-header">
                         <h5>Cập Nhật Danh Mục Vị Trí: "{{ $obj->name }}"</h5>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body row">
                         @error('status')
                             <div class="alert alert-primary">
                                 <div class="media align-items-center">
@@ -61,6 +61,18 @@
                             <input type="text" class="form-control" name="slug" value="{{ $obj->slug }}"
                                 id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
                         </div>
+                        <div class="form-group col-10">
+                            <div class="input-group col-10">
+                                <input type="file" class="form-control" id="inputGroupFile02" name="file">
+                                <label class="input-group-text" for="inputGroupFile02">Ảnh</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-2">
+                            <a href="https://www.flaticon.com/" target="_blank" class="btn btn-success">Link Icon</a>
+                        </div>
+                        @error('file')
+                        <small class="mb-3" style="color: #f33923;">{{ $message }}</small>
+                        @enderror
                         <div class="form-group row mb-0">
                             <label class="form-label">Trạng thái</label>
                             <div class="col-sm-12">

@@ -31,10 +31,16 @@ class CategoryController extends Controller
         // if(Auth::guard('admin')->user()->decentralization == 1){
         //     return view('FEadmin.Pages.Error.error404');
         // }
+        $file = '';
+        if ($req->file('file')) {
+            $response = cloudinary()->upload($req->file('file')->getRealPath())->getSecurePath();
+            $file = $response;
+        }
 
+        $req->merge(['icon' => $file]);
         //Thực hiện thêm mới
         $create = $category -> create_category($req);
-        
+
         if ($create) {
             return redirect() -> route('view_creater_category')->with('success', 'Thêm Mới Thành Công!');
         }else{
@@ -78,7 +84,7 @@ class CategoryController extends Controller
         $validatedData = $req->validate([
             'slug' => [new CategoriesRule($slug)],
         ]);
-    
+
         $obj = $category->get_link_slug($slug);
 
         if (!$obj) {
