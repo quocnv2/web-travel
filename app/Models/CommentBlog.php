@@ -37,7 +37,7 @@ class CommentBlog extends Model
             'phone' => $req->phone,
             'email' => $req->email,
             'commentUser' => $req->commentUser,
-            'commentAdmin' => $req->commentAdmin,
+            'commentAdmin' => $req->commentAdmin??'',
             'idBlog' => $req->idBlog,
             'status' => $req->status,
         ]);
