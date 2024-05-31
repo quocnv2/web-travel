@@ -74,9 +74,9 @@
                     <i class="trevlo-one-icon-search" aria-hidden="true"></i>
                     <span class="sr-only">Search</span>
                 </a><!-- /.search-toggler -->
-                <a href="{{ route('register_counsel') }}"
+                <a href="{{ route('tour_contact') }}"
                     class="main-header__button trevlo-btn trevlo-btn--two trevlo-btn--base">
-                    <span>Đăng Ký Tư Vấn</span>
+                    <span>Đăng Ký Thiết Kế Tour Riêng</span>
                     <i class="trevlo-one-icon-up-right-arrow"></i>
                 </a>
             </div><!-- /.main-header__right -->

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController\ContactTour\TourContactAdminController;
+use App\Http\Controllers\UserController\TourContact\TourContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController\Category\CategoryController;
 use App\Http\Controllers\AdminController\Account\AccountController;
@@ -24,7 +26,7 @@ use App\Http\Controllers\UserController\Tour\tourController as tourUserControlle
 use App\Http\Controllers\UserController\Room\roomController as roomUserController;
 use App\Http\Controllers\UserController\Contact\contactController as contactUserController;
 use App\Http\Controllers\UserController\Counsel\CounselController as CounselUserController;
-use App\Http\Controllers\UserController\Recruitment\RecruitmentUserController ;
+use App\Http\Controllers\UserController\Recruitment\RecruitmentUserController;
 
 Route::prefix('')->group(function () {
     Route::get('/', [HomeUserController::class, 'index'])->name('home');
@@ -66,8 +68,12 @@ Route::prefix('')->group(function () {
     // Đăng Ký nhận Tư vấn
     Route::get('/dang-ky-nhan-tu-van', [CounselUserController::class, 'register_counsel'])->name('register_counsel');
     Route::post('/dang-ky-nhan-tu-van', [CounselUserController::class, 'create_counsel'])->name('create_counsel');
-     Route::get('/danh-sach-tour-khach-hang/{id}', [CounselUserController::class, 'get_tour_customer'])->name('get_tour_customer');
-     Route::get('/danh-sach-phong-khach-hang/{id}', [CounselUserController::class, 'get_room_customer'])->name('get_room_customer');
+    Route::get('/danh-sach-tour-khach-hang/{id}', [CounselUserController::class, 'get_tour_customer'])->name('get_tour_customer');
+    Route::get('/danh-sach-phong-khach-hang/{id}', [CounselUserController::class, 'get_room_customer'])->name('get_room_customer');
+
+    // Đăng ký Thiết Kế Tour Riêng
+    Route::get('/dang-ky-thiet-ke-tour-rieng', [TourContactController::class, 'tour_contact'])->name('tour_contact');
+    Route::post('/dang-ky-thiet-ke-tour-rieng', [TourContactController::class, 'create_tour_contact'])->name('create_tour_contact');
 });
 
 // // Router Đăng Nhập Admin
@@ -173,5 +179,10 @@ Route::prefix('travel-admin')->middleware('admin')->group(function () {
     Route::get('/chi-tiet-khach-hang/{id}', [CustomerAdviseController::class, 'detail_customer'])->name('detail_customer');
     Route::post('/cap-nhat-khach-hang/{id}', [CustomerAdviseController::class, 'update_customer'])->name('update_customer');
     Route::get('/xoa-khach-hang/{id}', [CustomerAdviseController::class, 'delete_customer'])->name('delete_customer');
+
+    Route::get('/danh-sach-tour-rieng', [TourContactAdminController::class, 'tour_contact_list'])->name('tour_contact_list');
+    Route::get('/chi-tiet-tour-rieng/{id}', [TourContactAdminController::class, 'detail_tour_contact'])->name('detail_customer');
+    Route::post('/cap-nhat-tour-rieng/{id}', [TourContactAdminController::class, 'update_tour_contact'])->name('update_tour_contact');
+    Route::get('/xoa-tour-rieng/{id}', [TourContactAdminController::class, 'delete_tour_contact'])->name('delete_tour_contact');
 
 });

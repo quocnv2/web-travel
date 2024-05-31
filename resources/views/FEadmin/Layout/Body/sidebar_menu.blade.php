@@ -61,7 +61,9 @@
                         <span class="pc-mtext">Khách Hàng</span><span class="pc-arrow"><i
                                 data-feather="chevron-right"></i></span></a>
                     <ul class="pc-submenu">
-                        <li class="pc-item"><a class="pc-link" href="{{ route('customer_list') }}">Danh Sách</a>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('customer_list') }}">Tư vấn khách hàng</a>
+                        </li>
+                        <li class="pc-item"><a class="pc-link" href="{{ route('tour_contact_list') }}">Tư vấn tour riêng</a>
                         </li>
                     </ul>
                 </li>
