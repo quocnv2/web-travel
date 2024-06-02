@@ -61,13 +61,13 @@
                             <input type="text" class="form-control" name="slug" value="{{ $obj->slug }}"
                                 id="convert_slug" placeholder="Đường dẫn sạch" readonly fdprocessedid="qaalh">
                         </div>
-                        <div class="form-group col-md-10 col-8">
+                        <div class="form-group col-lg-9 col-md-9 col-8">
                             <div class="input-group col-10">
                                 <input type="file" class="form-control" id="inputGroupFile02" name="file">
                                 <label class="input-group-text" for="inputGroupFile02">Ảnh</label>
                             </div>
                         </div>
-                        <div class="form-group col-md-2 col-4">
+                        <div class="form-group col-lg-3 col-md-3 col-4">
                             <a href="https://www.flaticon.com/" target="_blank" class="btn btn-success">Link Icon</a>
                         </div>
                         @error('file')

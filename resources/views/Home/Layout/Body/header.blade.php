@@ -76,7 +76,7 @@
                 </a><!-- /.search-toggler -->
                 <a href="{{ route('tour_contact') }}"
                     class="main-header__button trevlo-btn trevlo-btn--two trevlo-btn--base">
-                    <span>Đăng Ký Thiết Kế Tour Riêng</span>
+                    <span>Thiết Kế Tour Riêng</span>
                     <i class="trevlo-one-icon-up-right-arrow"></i>
                 </a>
             </div><!-- /.main-header__right -->
