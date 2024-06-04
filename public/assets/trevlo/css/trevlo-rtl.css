@@ -4672,7 +4672,7 @@ path {
 
 .form-one__btn-box {
     position: relative;
-    top: -10px;
+    top: 15px;
     text-align: center;
 }
 
@@ -14416,7 +14416,7 @@ body.megamenu-popup-active .mobile-nav__content {
 
 .tour-listing-details__destination {
     padding-top: 70px;
-    padding-bottom: 75px;
+    padding-bottom: 55px;
     background-color: var(--trevlo-white2, #FAF5EE);
     margin-bottom: 30px;
 }

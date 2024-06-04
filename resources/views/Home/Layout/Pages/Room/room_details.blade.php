@@ -337,14 +337,14 @@
                             <h3 class="tour-listing-details__reviews-title tour-listing-details__title ">
                                 Đánh Giá Của Khách Hàng
                             </h3>
-                            @if ($listCommentRoom && count($listCommentRoom) > 0)
-                                <div class="tour-listing-details__reviews-comment">
-                                    @foreach ($listCommentRoom as $listComment)
+                            @foreach ($listCommentRoom as $comment)
+                                @if ($comment->status == 0)
+                                    <div class="tour-listing-details__reviews-comment">
                                         <div class="tour-listing-details__reviews-comment-box">
                                             <div class="tour-listing-details__reviews-image wow animated fadeInUp"
                                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
                                                 <img src="{{ asset('assets/images/user/avatar-2.jpg') }}"
-                                                    alt="{{ $listComment->name }}">
+                                                    alt="{{ $comment->name }}">
                                             </div><!-- /."tour-listing-details__reviews-image -->
                                             <div class="tour-listing-details__reviews-content wow animated fadeInUp"
                                                 style="padding: 0px 15px;" data-wow-delay="0.3s"
@@ -352,15 +352,15 @@
                                                 <div class="tour-listing-details__reviews-inner-content">
                                                     <div class="tour-listing-details__reviews-info">
                                                         <h3 class="tour-listing-details__reviews-name">
-                                                            {{ $listComment->name }}</h3>
+                                                            {{ $comment->name }}</h3>
                                                     </div><!-- /.tour-listing-details__reviews-info -->
                                                 </div><!-- /.tour-listing-details__reviews-inner-content -->
                                                 <p class="tour-listing-details__reviews-text" style="margin-bottom: 0px;">
-                                                    {{ $listComment->commentUser }}
+                                                    {{ $comment->commentUser }}
                                                 </p>
                                             </div><!-- /.tour-listing-details__reviews-content -->
                                         </div><!-- /.tour-listing-details__reviews-comment-box -->
-
+                                    @elseif ($comment->status == 1)
                                         <div class="tour-listing-details__reviews-comment-box">
                                             <div class="tour-listing-details__reviews-image wow animated fadeInUp"
                                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
@@ -377,12 +377,18 @@
                                                     </div><!-- /.tour-listing-details__reviews-info -->
                                                 </div><!-- /.tour-listing-details__reviews-inner-content -->
                                                 <p class="tour-listing-details__reviews-text" style="margin-bottom: 0px;">
-                                                    {{ $listComment->commentAdmin }}
+                                                    {{ $comment->commentAdmin }}
                                                 </p>
                                             </div><!-- /.tour-listing-details__reviews-content -->
                                         </div><!-- /.tour-listing-details__reviews-comment-box -->
-                                    @endforeach
-                            @endif
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="tour-listing__load-more">
+                            <div class="form-one__btn-box">
+                                <a href="/danh-sach-tour" class="form-one__btn trevlo-btn trevlo-btn--base">
+                                    <span>Xem Thêm</span></a>
+                            </div>
                         </div>
 
                         <div class="tour-listing-details__add-review mobile-review">
