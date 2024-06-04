@@ -67,5 +67,19 @@ class roomController extends Controller
             return redirect()->back()->with('Error', 'Thêm Mới Thất Bại!');
         }
     }
+    public function getCommentRoom(Request $request)
+    {
+        $roomId = $request->roomId; // Assuming 'tourId' is passed as a query parameter
+
+        $comments = CommentRoom::where('idRoom', $roomId)
+            ->orderBy('id', 'desc')
+            ->paginate(3);
+
+        if ($comments->isEmpty()) {
+            return response()->json(['error' => 'No comments found for this room'], 404);
+        }
+
+        return response()->json($comments);
+    }
 
 }
