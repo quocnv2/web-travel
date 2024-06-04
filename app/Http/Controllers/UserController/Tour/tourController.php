@@ -69,7 +69,7 @@ class tourController extends Controller
         // Bài Viết
         $blogsiml = $blogs->get_orderBy_ASC_status_page();
         $listCommentTour = $commentTour->where('idTour', [$objTour->id])->get();
-      
+
 
         return view('Home.Layout.Pages.Tour.tour_details', compact('categories', 'tour', 'objTour', 'historyTour', 'tourlist', 'blogsiml', 'roomsiml', 'listCommentTour'));
     }
@@ -84,4 +84,20 @@ class tourController extends Controller
             return redirect()->back()->with('Error', 'Thêm Mới Thất Bại!');
         }
     }
+    public function getComments(Request $request)
+    {
+        $tourId = $request->tourId; // Assuming 'tourId' is passed as a query parameter
+
+        $comments = CommentTour::where('idTour', $tourId)
+            ->orderBy('id', 'desc')
+            ->paginate(3);
+
+        if ($comments->isEmpty()) {
+            return response()->json(['error' => 'No comments found for this tour'], 404);
+        }
+
+        return response()->json($comments);
+    }
+
+
 }

@@ -384,11 +384,13 @@
                                 @endif
                             @endforeach
                         </div>
-                        <div class="tour-listing__load-more">
-                            <div class="form-one__btn-box">
-                                <a href="/danh-sach-tour" class="form-one__btn trevlo-btn trevlo-btn--base">
-                                    <span>Xem Thêm</span></a>
-                            </div>
+                                    <div class="tour-listing__load-more">
+                                        <div class="form-one__btn-box">
+                                            <a href="#"
+                                               class="form-one__btn trevlo-btn trevlo-btn--base view_all_comments">
+                                                <span>Xem Thêm</span></a>
+                                        </div>
+                                    </div>
                         </div>
 
                         <div class="tour-listing-details__add-review mobile-review">
@@ -567,5 +569,85 @@
             </div>
         </div>
         </div>
-    </section>
+    </section><div class="modal fade" id="commentRoomModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel"
+                   aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="commentModalLabel">Đánh giá của khách hàng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Content will be loaded dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Define tourId safely using a ternary operator to check if it's set
+            var roomId = {{ isset($objRoom) ? $objRoom->id : 'null' }};
+
+            function fetchComments(page = 1) {
+                var url = '/commentRoom?page=' + page;
+                if (roomId !== null) {
+                    url += '&roomId=' + roomId;
+                }
+
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function (response) {
+                        var html = '';
+                        if (response.data.length > 0) {
+                            response.data.forEach(function (comment) {
+                                html += '<div class="card-body">' +
+                                    '<div class="comment" style="padding: 10px; background: aliceblue; border-radius: 10px;">' +
+                                    '<div class="d-flex align-items-center mb-3">' +
+                                    '<div class="chat-avatar"><img class="rounded-circle img-fluid wid-30" src="../assets/images/user/avatar-2.jpg" alt="User image">' +
+                                    '</div>' +
+                                    '<div class="flex-grow-1 mx-2">' +
+                                    '<h5 class="mb-0">' + comment.name + '</h5>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '<p class="my-4">' + comment.commentUser + '</p>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '<br>';
+                            });
+                            // Pagination should be added even if there's only one page to handle future additions gracefully
+                            html += '<nav aria-label="Page navigation example"><ul class="pagination">';
+                            for (let i = 1; i <= response.last_page; i++) {
+                                html += `<li class="page-item ${i === response.current_page ? 'active' : ''}"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`;
+                            }
+                            html += '</ul></nav>';
+                        } else {
+                            html = '<p>Không có comment nào ở room này.</p>';
+                        }
+                        $('#commentRoomModal .modal-body').html(html);
+                        $('#commentRoomModal').modal('show');
+                    },
+                    error: function (xhr) {
+                        console.error('Error: ', xhr.responseText);
+                    }
+                });
+            }
+
+            // Bind event handlers for both initial load and pagination
+            $(document).on('click', '.view_all_comments', function (event) {
+                event.preventDefault();
+                fetchComments();  // Initially fetch comments
+            });
+
+            $(document).on('click', '.page-link', function (event) {
+                event.preventDefault();
+                var page = $(this).data('page');
+                fetchComments(page);
+            });
+        });
+    </script>
 @stop

@@ -41,6 +41,8 @@ Route::prefix('')->group(function () {
     Route::get('/chi-tiet-tour/{slug}', [tourUserController::class, 'detailTour'])->name('detailTour');
     Route::post('/chi-tiet-tour/{slug}', [tourUserController::class, 'create_comment_tour'])->name('create_comment_tour');
     Route::get('/danh-sach-tour/danh-muc/{slug}', [tourUserController::class, 'listTour_Category'])->name('listTour_Category');
+    Route::get('/comments/all', [tourUserController::class, 'getComments'])->name('getComments');
+
 
     // Tuyển Dụng
     Route::get('/danh-sach-bai-viet-tuyen-dung', [RecruitmentUserController::class, 'list_blog_recruitment'])->name('list_blog_recruitment');
@@ -52,6 +54,7 @@ Route::prefix('')->group(function () {
     Route::get('/chi-tiet-phong/{slug}', [roomUserController::class, 'detailRoom'])->name('detailRoom');
     Route::post('/chi-tiet-phong/{slug}', [roomUserController::class, 'create_comment_room'])->name('create_comment_room');
     Route::get('/danh-sach-phong/danh-muc/{slug}', [roomUserController::class, 'listRoom_Category'])->name('listRoom_Category');
+    Route::get('/commentRoom', [roomUserController::class, 'getCommentRoom'])->name('getCommentRoom');
 
     // Liên Hệ
     Route::get('/lien-he', [contactUserController::class, 'contact_web'])->name('contact_web');
