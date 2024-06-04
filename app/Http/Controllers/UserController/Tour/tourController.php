@@ -57,7 +57,7 @@ class tourController extends Controller
         }
         $categories = $category->get_orderBy_ASC();
         // Danh Sách tour
-        $tourlist = $tourModel->whereNotIn('id', [$objTour->id])->paginate(4);
+        $tourlist = $tourModel->whereNotIn('id', [$objTour->id])->paginate(3);
         // $toursml = Tour::where('idCategory', $idCategory)->get();
         // Danh sách tour mới nhất
         $tour = $tourModel->get_orderBy_ASC_status_page();
@@ -68,8 +68,8 @@ class tourController extends Controller
         $roomsiml = $room->get_orderBy_ASC_status_page();
         // Bài Viết
         $blogsiml = $blogs->get_orderBy_ASC_status_page();
-        $listCommentTour = $commentTour->where('idTour', [$objTour->id])->paginate(3);
-        // function
+        $listCommentTour = $commentTour->where('idTour', [$objTour->id])->get();
+      
 
         return view('Home.Layout.Pages.Tour.tour_details', compact('categories', 'tour', 'objTour', 'historyTour', 'tourlist', 'blogsiml', 'roomsiml', 'listCommentTour'));
     }
