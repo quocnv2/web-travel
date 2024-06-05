@@ -93,7 +93,10 @@ class tourController extends Controller
             ->paginate(3);
 
         if ($comments->isEmpty()) {
-            return response()->json(['error' => 'No comments found for this tour'], 404);
+            return response()->json([
+                'data' => [],
+                'message' => 'No comments found for this blog'
+            ], 200);
         }
 
         return response()->json($comments);

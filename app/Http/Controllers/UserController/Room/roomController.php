@@ -76,7 +76,10 @@ class roomController extends Controller
             ->paginate(3);
 
         if ($comments->isEmpty()) {
-            return response()->json(['error' => 'No comments found for this room'], 404);
+            return response()->json([
+                'data' => [],
+                'message' => 'No comments found for this room'
+            ], 200);
         }
 
         return response()->json($comments);
