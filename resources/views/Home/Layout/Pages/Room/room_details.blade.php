@@ -391,13 +391,12 @@
                                         @endif
                                         @endforeach
                                     </div>
-                                    <div class="tour-listing__load-more">
-                                        <div class="form-one__btn-box">
-                                            <a href="#"
-                                               class="form-one__btn trevlo-btn trevlo-btn--base view_all_comments">
-                                                <span>Xem Thêm</span></a>
-                                        </div>
+                                    @if($listCommentRoom ->count()> 2)
+                                    <div class="form-one__btn-box">
+                                        <a href="#" class="form-one__btn trevlo-btn trevlo-btn--base view_all_comments">
+                                            <span>Xem Thêm</span></a>
                                     </div>
+                                    @endif
                                     <div class="tour-listing-details__add-review mobile-review">
                                         <h3 class="tour-listing-details__add-review-title tour-listing-details__title">
                                             Để Lại Đánh
