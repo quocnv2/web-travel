@@ -305,26 +305,15 @@
                             var html = '';
                             if (response.data.length > 0) {
                                 response.data.forEach(function (comment) {
-                                    html += '<div class="container">' + // Bắt đầu một container để chứa card
-                                        '<div class="row justify-content-center">' + // Dòng chứa card
-                                        '<div class="col-md-8">' + // Sử dụng grid để căn giữa card và thiết lập chiều rộng
-                                        '<div class="card-lg">' + // Thẻ card
-                                        '<div class="card-body">' + // Thân của card
-                                        '<div class="comment" style="padding: 10px; background: aliceblue; border-radius: 10px;">' + // Phần comment của user
-                                        '<div class="d-flex align-items-center mb-3">' +
-                                        '<div class="chat-avatar"><img class="rounded-circle img-fluid wid-30" src="../assets/images/user/avatar-2.jpg" alt="User image"></div>' +
+                                    html += '<div class="d-flex align-items-center" style="padding: 10px; background: aliceblue; border-radius: 10px; margin-bottom: 10px;">' +
+                                        '<div class="chat-avatar">' +
+                                        '<img class="rounded-circle img-fluid wid-30" src="../assets/images/user/avatar-2.jpg" alt="User image" style="width: 40px; height: 40px;">' +
+                                        '</div>' +
                                         '<div class="flex-grow-1 mx-2">' +
                                         '<h5 class="mb-0">' + comment.name + '</h5>' +
+                                        '<p class="mb-0">' + comment.commentUser + '</p>' +
                                         '</div>' +
-                                        '</div>' +
-                                        '<p class="my-4">' + comment.commentUser + '</p>' +
-                                        '</div>' +
-                                        '</div>' +
-                                        '</div>' +
-                                        '</div>' +
-                                        '</div>' +
-                                        '</div>' +
-                                        '<br>';
+                                        '</div>';
 
                                 });
 

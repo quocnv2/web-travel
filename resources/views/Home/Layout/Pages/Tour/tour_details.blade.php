@@ -688,20 +688,16 @@
                         var html = '';
                         if (response.data.length > 0) {
                             response.data.forEach(function (comment) {
-                                html += '<div class="card-body">' +
-                                    '<div class="comment" style="padding: 10px; background: aliceblue; border-radius: 10px;">' +
-                                    '<div class="d-flex align-items-center mb-3">' +
-                                    '<div class="chat-avatar"><img class="rounded-circle img-fluid wid-30" src="../assets/images/user/avatar-2.jpg" alt="User image">' +
+                                html += '<div class="d-flex align-items-center" style="padding: 10px; background: aliceblue; border-radius: 10px; margin-bottom: 10px;">' +
+                                    '<div class="chat-avatar">' +
+                                    '<img class="rounded-circle img-fluid wid-30" src="../assets/images/user/avatar-2.jpg" alt="User image" style="width: 40px; height: 40px;">' +
                                     '</div>' +
                                     '<div class="flex-grow-1 mx-2">' +
                                     '<h5 class="mb-0">' + comment.name + '</h5>' +
+                                    '<p class="mb-0">' + comment.commentUser + '</p>' +
+                                    '<p class="mb-0">' + comment.commentAdmin + '</p>' +
                                     '</div>' +
-                                    '</div>' +
-                                    '<p class="my-4">' + comment.commentUser + '</p>' +
-                                    '<p class="my-4">' + comment.commentAdmin + '</p>' +
-                                    '</div>' +
-                                    '</div>' +
-                                    '<br>';
+                                    '</div>';
                             });
                             // Pagination should be added even if there's only one page to handle future additions gracefully
 
