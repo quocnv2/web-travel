@@ -651,6 +651,18 @@
                                     '<h5 class="mb-0">' + comment.name + '</h5>' +
                                     '<p class="mb-0">' + comment.commentUser + '</p>' +
                                     '</div>' +
+                                    '</div>' +
+                                    '<div class="d-flex align-items-center" style="padding: 30px;background: aliceblue; border-radius: 10px; margin-bottom: 10px;">' +
+                                    // '<div class="d-flex align-items-start">' +
+                                    '<div class="chat-avtar flex-shrink-0"><img class="rounded-circle img-fluid  wid-30" src="../assets/images/user/avatar-1.jpg" style="width: 40px; height: 40px; alt="User image">' +
+                                    '<div class="bg-success chat-badge"></div>' +
+                                    '</div>' +
+                                    '<div class="flex-grow-1 ms-3" style="background: aliceblue; border-radius: 10px; margin-bottom: 10px;">' +
+                                    '<h5 class="mb-0">Tổng Đài Độc Lạ Tây Bắc</h5>' +
+                                    '<span class="text-sm text-muted">'+comment.commentAdmin+'</span>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>'+
                                     '</div>';
 
 
