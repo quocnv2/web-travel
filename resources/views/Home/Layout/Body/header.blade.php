@@ -3,9 +3,9 @@
         <div class="main-header__inner">
             <div class="main-header__logo">
                 <a href="{{ route('home') }}">
-                    <img src="{{ url('assets') }}/trevlo/images/logo-light-2.png" alt="Trevlo HTML" width="187"
+                    <img src="{{ url('assets') }}/logo/logobanner-removebg.png" alt="Trevlo HTML" width="187"
                         class="main-header__logo__1">
-                    <img src="{{ url('assets') }}/trevlo/images/logo-light-4.png" alt="Trevlo HTML" width="187"
+                    <img src="{{ url('assets') }}/logo/logobanner-removebg.png" alt="Trevlo HTML" width="187"
                         class="main-header__logo__2">
                 </a>
             </div><!-- /.main-header__logo -->

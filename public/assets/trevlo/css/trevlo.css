@@ -5998,7 +5998,7 @@ path {
 }
 
 .main-header__logo img {
-    max-width: 100%;
+    width: 120px;
     height: auto;
 }
 

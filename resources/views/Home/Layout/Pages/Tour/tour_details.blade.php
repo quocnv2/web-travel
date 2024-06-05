@@ -442,7 +442,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp list-detals-moblie "
+                        <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp list-detals-moblie " style="margin-top: 50px;"
                             data-wow-delay="0.1s" data-wow-duration="1500ms">
                             <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title"
                                 style="margin-top: 20px;">Tour Liên Quan
@@ -471,7 +471,7 @@
                                 @endforeach
                             </ul>
                         </div><!-- /.tour-listing-sidebar__post-box tour-listing-sidebar__item -->
-                        <div class="tour-listing-details__similar container-fluid right-menu-moblie   ">
+                        <div class="tour-listing-details__similar container-fluid right-menu-moblie " style="margin-top: 50px;">
                             <h3 class="tour-listing-details__title tour-listing-details__similar-title">Tour
                                 Liên Quan</h3>
                             <div class="row">

@@ -439,7 +439,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="tour-listing-details__similar container-fluid row-room-list-mobile">
+                        <div class="tour-listing-details__similar container-fluid row-room-list-mobile" style="margin-top: 50px;">
                             <h3 class="tour-listing-details__title tour-listing-details__similar-title">
                                 Phòng Liên
                                 Quan</h3>
@@ -535,7 +535,7 @@
                                 @endforeach
                             </div><!-- /.row -->
                         </div><!-- /.tour-listing-details__similar container-fluid -->
-                        <div class="tour-listing-details__similar container-fluid list-room-mobile ">
+                        <div class="tour-listing-details__similar container-fluid list-room-mobile " style="margin-top: 50px;">
                             <div class="tour-listing-sidebar__post-box tour-listing-sidebar__item wow animated fadeInUp"
                                 data-wow-delay="0.1s" data-wow-duration="1500ms">
                                 <h3 class="tour-listing-sidebar__post-title tour-listing-sidebar__post-title">

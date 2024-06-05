@@ -7723,7 +7723,7 @@ body.megamenu-popup-active .mobile-nav__content {
 
 .mobile-nav__content .logo-box {
     margin-bottom: 40px;
-    display: flex;
+    text-align: center;
 }
 
 .mobile-nav__close {

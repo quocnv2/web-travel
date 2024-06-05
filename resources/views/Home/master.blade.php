@@ -38,8 +38,8 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="" aria-label="logo image"><img src="{{ url('assets') }}/trevlo/images/logo-light-2.png"
-                        width="187" alt="" /></a>
+                <a href="{{ route('home') }}" aria-label="logo image"><img src="{{ url('assets') }}/logo/logobanner-removebg.png"
+                        style="width: 120px;" alt="" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>
