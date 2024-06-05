@@ -1004,6 +1004,9 @@
     .right-controller .tour-list-pc {
         display: none;
     }
+    .tour-list-pc {
+        display: none;
+    }
     .mobile-review {
         padding-top: 20px;
     }
@@ -1024,6 +1027,11 @@
     }
     .fadeInLeft {
         display: none;
+    }
+    .form-one__btn-box-button-mobile {
+        position: relative;
+        top: 15px;
+        text-align: center;
     }
     .faq-page {
         padding: 0px;

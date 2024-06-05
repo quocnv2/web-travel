@@ -385,12 +385,12 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="tour-listing__load-more">
-                        <div class="form-one__btn-box">
+                    @if ($listCommentTour->count() > 2)
+                        <div class="form-one__btn-box-button-mobile">
                             <a href="#" class="form-one__btn trevlo-btn trevlo-btn--base view_all_comments">
                                 <span>Xem Thêm</span></a>
                         </div>
-                    </div>
+                    @endif
                     <div class="tour-listing-details__add-review mobile-review">
                         <h3 class="tour-listing-details__add-review-title tour-listing-details__title">
                             Để Lại Đánh
@@ -583,16 +583,12 @@
                         </div><!-- /.row -->
                     </div><!-- /.tour-listing-details__similar container-fluid -->
                     @if ($tourpc->count() > 3)
-                        <div class="tour-listing__load-more">
-                            <div class="form-one__btn-box">
-                                <a href="/danh-sach-tour" class="form-one__btn trevlo-btn trevlo-btn--base">
-                                    <span>Xem Thêm</span></a>
-                            </div>
+                        <div class="form-one__btn-box-button-mobile">
+                            <a href="/danh-sach-tour" class="form-one__btn trevlo-btn trevlo-btn--base">
+                                <span>Xem Thêm</span></a>
                         </div>
                     @endif
-
                 </div>
-
             </div>
         </div>
         </div>

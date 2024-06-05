@@ -29,7 +29,7 @@
     <section class="tour-listing-style tour-listing section-space">
         <div class="container">
             <div class="row">
-                <div class="col-xl-4 col-12 left-controller">
+                <div class="col-xl-4 col-12 left-controller tour-list-pc" >
                     <aside class="tour-listing-sidebar">
                         <form action="#"
                             class="tour-listing-sidebar__form tour-listing-sidebar__item wow animated fadeInUp"

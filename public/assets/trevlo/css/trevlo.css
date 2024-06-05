@@ -4696,6 +4696,11 @@ path {
     text-align: center;
 }
 
+.form-one__btn-box-button-mobile {
+    position: relative;
+    text-align: center;
+}
+
 .banner-form {
     position: relative;
     padding: 0;
@@ -15127,7 +15132,6 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 .tour-listing-details__included {
-    padding-bottom: 42px;
     border-bottom: 1px solid var(--trevlo-white3, #EBE6DE);
     margin-bottom: 40px;
 }
@@ -15386,7 +15390,7 @@ body.megamenu-popup-active .mobile-nav__content {
 }
 
 .tour-listing-details__reviews {
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
 }
 
 .tour-listing-details__reviews-title {
@@ -15496,6 +15500,7 @@ body.megamenu-popup-active .mobile-nav__content {
     text-transform: capitalize;
     line-height: 1.083;
     margin-bottom: 0;
+    padding-top: 10px;
 }
 
 .tour-listing-details__reviews-date-text {

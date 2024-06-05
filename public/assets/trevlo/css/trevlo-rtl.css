@@ -4672,7 +4672,7 @@ path {
 
 .form-one__btn-box {
     position: relative;
-    top: -15px;
+    /* top: -15px; */
     text-align: center;
 }
 
