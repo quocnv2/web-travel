@@ -158,6 +158,7 @@
                                             </p>
                                         </div><!-- /.tour-listing-details__reviews-content -->
                                     </div><!-- /.tour-listing-details__reviews-comment-box -->
+                                </div>
                                 @elseif ($comment->status == 1)
                                     <div class="tour-listing-details__reviews-comment-box">
                                         <div class="tour-listing-details__reviews-image wow animated fadeInUp"
@@ -181,7 +182,6 @@
                             @endif
                         @endforeach
                     </div>
-                </div>
                 @if ($listCommentBlog->count() > 2)
                     <div class="form-one__btn-box">
                         <a href="#" class="form-one__btn trevlo-btn trevlo-btn--base view_all_comments">
@@ -189,7 +189,7 @@
                     </div>
                 @endif
 
-            </div>
+
             <div class="tour-listing-details__add-review mobile-review">
                 <h3 class="tour-listing-details__add-review-title tour-listing-details__title">Để
                     Lại Đánh
