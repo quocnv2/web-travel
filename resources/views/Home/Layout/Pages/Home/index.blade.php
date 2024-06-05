@@ -40,11 +40,11 @@
                             <i class="fab fa-facebook-messenger" aria-hidden="true"></i>
                             <span class="sr-only">Messenger</span>
                         </a>
-                        <a href="https://www.facebook.com/profile.php?id=100069226627675" target="black">
+                        <a href="https://youtube.com/@songtratour?si=Ckp7LGtfd-p2m9rC" target="black">
                             <i class="fab fa-youtube" aria-hidden="true"></i>
                             <span class="sr-only">Youtube</span>
                         </a>
-                        <a href="https://www.facebook.com/profile.php?id=100069226627675" target="black">
+                        <a href="https://www.tiktok.com/@ngocsongtratour?_t=8mrqWgYXeu9&_r=1" target="black">
                             <i class="fab fa-tiktok" aria-hidden="true"></i>
                             <span class="sr-only">Tiktok</span>
                         </a>

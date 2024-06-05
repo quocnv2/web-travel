@@ -51,11 +51,11 @@
                                         target="black">Zalo</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.facebook.com/profile.php?id=100069226627675"
+                                    <a href="https://youtube.com/@songtratour?si=Ckp7LGtfd-p2m9rC"
                                         target="black">Youtube</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.facebook.com/profile.php?id=100069226627675"
+                                    <a href="https://www.tiktok.com/@ngocsongtratour?_t=8mrqWgYXeu9&_r=1"
                                         target="black">Tiktok</a>
                                 </li>
                             </ul>
