@@ -25,6 +25,14 @@
     $imageArray = json_decode($objTour->imageArray, true);
     $videoArray = json_decode($objTour->videoArray, true);
 @endphp
+@section('css_view')
+    <style>
+        .modal-dialog.custom-modal {
+            max-width: 80%; /* Adjust the percentage as needed */
+        }
+
+    </style>
+@stop
 @section('view')
     <section class="page-header">
         <div class="page-header__bg"></div>
@@ -623,7 +631,7 @@
         </div>
     </section>
     <!-- Bootstrap Modal for Displaying Comment Details -->
-    <div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel"
+    <div class="modal fade modal-lg" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -640,8 +648,8 @@
         </div>
     </div>
 
-    <<div id="no__tour_comments_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noCommentsLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div id="no__tour_comments_modal mocal-xl" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noCommentsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="noCommentsLabel">Thông báo</h5>
@@ -658,11 +666,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {

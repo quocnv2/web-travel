@@ -588,7 +588,7 @@
             </div>
         </div>
     </section>
-    <div class="modal fade" id="commentRoomModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel"
+    <div class="modal fade modal-lg" id="commentRoomModal" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -604,7 +604,7 @@
             </div>
         </div>
     </div>
-    <div id="no__room_comments_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noCommentsLabel"
+    <div id="no__room_comments_modal modal-lg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noCommentsLabel"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

@@ -249,7 +249,7 @@
             </div><!-- /.container -->
         </div><!-- /.blog-page -->
         <!-- Blog Page End -->
-        <div class="modal fade" id="blog_modal_comment" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel"
+        <div class="modal fade modal-lg" id="blog_modal_comment" tabindex="-1" role="dialog" aria-labelledby="commentModalLabel"
              aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -266,7 +266,7 @@
             </div>
         </div>
         <!-- Modal for no comments -->
-        <div id="no_comments_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noCommentsLabel" aria-hidden="true">
+        <div id="no_comments_modal modal-lg" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noCommentsLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
