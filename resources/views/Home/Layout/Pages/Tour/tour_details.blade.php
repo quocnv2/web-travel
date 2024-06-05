@@ -608,7 +608,7 @@
                                     @if ($tourpc->count() > 3)
                                         <div class="tour-listing__load-more">
                                             <div class="form-one__btn-box">
-                                                <a href="/danh-sach-tour"
+                                                <a href="#"
                                                    class="form-one__btn trevlo-btn trevlo-btn--base">
                                                     <span>Xem Thêm</span></a>
                                             </div>
@@ -640,6 +640,29 @@
         </div>
     </div>
 
+    <<div id="no__tour_comments_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="noCommentsLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="noCommentsLabel">Thông báo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Không có comment nào ở tour này.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -647,6 +670,12 @@
             var tourId = {{ isset($objTour) ? $objTour->id : 'null' }};
 
             function fetchComments(page = 1) {
+                // Check if tourId is valid
+                if (tourId === null) {
+                    $('#no__tour_comments_modal').modal('show');
+                    return;
+                }
+
                 var url = '/comments/all?page=' + page;
                 if (tourId !== null) {
                     url += '&tourId=' + tourId;
@@ -675,13 +704,11 @@
                                     '<br>';
                             });
                             // Pagination should be added even if there's only one page to handle future additions gracefully
-                            html += '<nav aria-label="Page navigation example"><ul class="pagination">';
-                            for (let i = 1; i <= response.last_page; i++) {
-                                html += `<li class="page-item ${i === response.current_page ? 'active' : ''}"><a class="page-link" href="#" data-page="${i}">${i}</a></li>`;
-                            }
-                            html += '</ul></nav>';
+
                         } else {
-                            html = '<p>Không có comment nào ở tour này.</p>';
+                            // Show no comments modal
+                            $('#no__tour_comments_modal').modal('show');
+                            return; // Exit the function early
                         }
                         $('#commentModal .modal-body').html(html);
                         $('#commentModal').modal('show');

@@ -35,6 +35,7 @@ Route::prefix('')->group(function () {
     Route::get('/chi-tiet-bai-viet/{slug}', [BlogUserController::class, 'detailBlog'])->name('detailBlog');
     Route::post('/chi-tiet-bai-viet/{slug}', [BlogUserController::class, 'create_comment_blog'])->name('create_comment_blog');
     Route::get('/danh-sach-bai-viet/danh-muc/{slug}', [blogUserController::class, 'listBlog_Category'])->name('listBlog_Category');
+    Route::get('/commentBlog', [blogUserController::class, 'getCommentBlog'])->name('getCommentBlog');
 
     // Tour
     Route::get('/danh-sach-tour', [tourUserController::class, 'listTour'])->name('listTour');
@@ -47,6 +48,7 @@ Route::prefix('')->group(function () {
     // Tuyển Dụng
     Route::get('/danh-sach-bai-viet-tuyen-dung', [RecruitmentUserController::class, 'list_blog_recruitment'])->name('list_blog_recruitment');
     Route::get('/chi-tiet-bai-viet-tuyen-dung/{slug}', [RecruitmentUserController::class, 'detailRecruitment'])->name('detailRecruitment');
+
 
 
     // Room

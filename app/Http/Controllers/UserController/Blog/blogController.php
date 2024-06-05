@@ -7,6 +7,7 @@ use App\Http\Requests\CommentBlog\createRequest;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\CommentBlog;
+use Illuminate\Http\Request;
 
 class blogController extends Controller
 {
@@ -39,7 +40,7 @@ class blogController extends Controller
             return redirect()->route('error404');
         }
 
-        $categories = $category->get_orderBy_ASC(); 
+        $categories = $category->get_orderBy_ASC();
         $blog_new = $blog->get_orderBy_ASC_status_page();
         $listCommentBlog = $commentBlog->where('idBlog', $objBlog->id)->orderBy('id', 'DESC')->get();
         return view('Home.Layout.Pages.Blog.blog_details', compact('categories', 'blog_new', 'objBlog', 'listCommentBlog'));
@@ -56,5 +57,24 @@ class blogController extends Controller
             return redirect()->back()->with('Error', 'Thêm Mới Thất Bại!');
         }
     }
+
+    public function getCommentBlog(Request $request)
+    {
+        $blogId = $request->blogId; // Assuming 'blogId' is passed as a query parameter
+
+        $comments = CommentBlog::where('idBlog', $blogId)
+            ->orderBy('id', 'desc')
+            ->paginate(3);
+
+        if ($comments->isEmpty()) {
+            return response()->json([
+                'data' => [],
+                'message' => 'No comments found for this blog'
+            ], 200);
+        }
+
+        return response()->json($comments);
+    }
+
 
 }
